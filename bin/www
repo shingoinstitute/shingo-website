@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+
+// TODO ^^ What are those?!
+
+/**
+*   Module dependencies
+*/
+
+var app = require('../app')
+  , debug = require('debug')('ScratchSite:server')
+  , http = require('http')
+
+/* Get Port from Environment */
+var port = normalizePort(process.env.PORT || '4000');
+app.set('port', port);
+
+/* Create HTTP Server */
+var server = http.createServer(app);
+
+server.listen(port);  //Set server to listen on 'port', on all network interfaces
+server.on('error', onError);  // TODO Not sure what 'onError' is?
+server.on('listening', onListening);
+
+
+/* Normalize Port into a number, string, or false */
+// TODO  Why normalize it?
+
+function normalizePort(val){
+  var port = parseInt(val, 10);
+
+  if(isNaN(port)){
+    return val; // Named pipe  TODO What??
+  }
+
+  if(port >= 0){
+    return port; //Port Number
+  }
+
+  return false;
+}
+
+/*  Event Listener for HTTP Server "error" event  */
+
+function onError(error){
+  if(error.syscall !== 'listen'){
+    throw error;
+  }
+
+  var bind = typeof port === 'string'   // TODO What is typeof?
+      ? 'Pipe ' + port : 'Port ' + port;
+
+  //Handle Specific Listen Errors with friendly passive aggressive messages
+  switch(error.code){
+    case 'EACCES':
+      console.error('Yo! You cant handle ' + bind + '. Keep working your way up the corporate latter and maybe one day youll have that privilege');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already being used. Youll be dead long before its free. Just give up now I tell you');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/*  Event Listeners for HTTP Server "Listening" event  */
+
+function onListening(){
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'Pipe ' + addr : 'Port ' + addr.port;
+  debug('I be eaves droppin on you on port ' + bind + '!');
+}
