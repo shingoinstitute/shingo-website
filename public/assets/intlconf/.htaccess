@@ -1,0 +1,8 @@
+
+RewriteOptions inherit
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+#This line allows for users to type pages without the html extension
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+#Find code at http://alexcican.com/post/how-to-remove-php-html-htm-extensions-with-htaccess/
