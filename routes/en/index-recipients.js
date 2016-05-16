@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /******* Recipients Route *********/
+// All .pdf files are served statically and can be found at /public/assets/press
 
 /* GET awards  */
 router.get('/', function(req, res, next) {
@@ -59,24 +60,6 @@ router.get('/prize-goodyear-brasil', function(req, res, next) {
   res.render('./layouts/awards/prize-shingo/prize-goodyear-brasil', { title: 'Recipients - Shingo Institute' });
 });
 
-// TODO Fix File Send!
-
-/* GET US Synthetic */
-router.get('/ProfileSheet-USSynthetic', function(req, res, next) {
-  res.send('../assets/press/prize-USSynthetic.pdf');
-});
-
-/* GET John Deere */
-router.get('/JohnDeereGreenevilleTN.pdf', function(req, res, next) {
-  res.send('../assets/press/prize-JohnDeereGreenevilleTN.pdf');
-});
-
-/* GET Lycoming Engines */
-router.get('/LycomingEngines.pdf', function(req, res, next) {
-  res.send('../assets/press/prize-LycomingEngines.pdf');
-});
-
-
 
                       /******* Silver Recipients *********/
 /* GET commonwealth */
@@ -126,6 +109,6 @@ router.get('/research_jeffrey-liker', function(req, res, next) {
 
 
 /* Historical .pdf */
-
+//Served Statically as .pdf file. Can be found at public/assets/press
 
 module.exports = router;

@@ -1,14 +1,34 @@
-var express = require('express')
-  , exphbs = require('express-handlebars')
-  , path = require('path')
-  , favicon = require('serve-favicon')
-  , logger = require('morgan')
+// require('dotenv').load();
+
+var express      = require('express')
+  , exphbs       = require('express-handlebars')
+  , path         = require('path')
+  , favicon      = require('serve-favicon')
+  , logger       = require('morgan')
   , cookieParser = require('cookie-parser')
-  , bodyParser = require('body-parser')
+  , bodyParser   = require('body-parser')
+  , sass         = require('node-sass')
+  , config       = require('./config')
 
 var languageTree = require('./routes/tree.js');
 
 var app = express();
+
+// Complie SASS
+// sass.render({
+//     file: config.scsspath,
+//     outputStyle: 'compressed',
+//   }, function(error, result){
+//     if(error){
+//       console.log(JSON.stringify(error))
+//     } else {
+//       console.log("SASS compiled successfully")
+//       var file = require('fs')
+//       file.writeFile(config.cssout, result.css.toString(),function(error){
+//         if(error) console.log(JSON.stringify(error))
+//       })
+//     }
+// })
 
 // Setup View Engine
 app.set('views', path.join(__dirname,  'views'));

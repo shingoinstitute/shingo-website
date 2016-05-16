@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-// TODO ^^ What are those?!
-
 /**
 *   Module dependencies
 */
@@ -11,14 +9,14 @@ var app = require('../app')
   , http = require('http')
 
 /* Get Port from Environment */
-var port = normalizePort(process.env.PORT || '4000');
+var port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
 
 /* Create HTTP Server */
 var server = http.createServer(app);
 
 server.listen(port);  //Set server to listen on 'port', on all network interfaces
-server.on('error', onError);  // TODO Not sure what 'onError' is?
+server.on('error', onError);
 server.on('listening', onListening);
 
 
