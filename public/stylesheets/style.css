@@ -186,7 +186,26 @@ footer img { margin-top:10px; }
 	text-align:center;
 }
 	/*#summits {	background-color: rgba(101, 8, 32, 1); }*/
-  #international { background-color: rgba(101, 8, 32, 1); }
+  #international { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
+                  background-size:cover;
+                  height:450px;
+                  max-height: 600px;
+                  text-align:center;
+                }
+  #international #transborder {
+      /*background: rgba(132, 132, 132, 0.73);
+      border-radius: 15px;
+      padding: 20px 0;
+      max-width: 900px;*/
+      background: rgba(0, 0, 0, 0.26);
+      border-radius: 15px;
+      padding: 20px 0;
+      -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+      -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
+      max-width: 900px;
+    }
+  
 	#exEd {	background-color: rgba(0, 51, 89, 1); }
 	#workshops { background-color:rgba(239, 222, 186, 1); }
 	#workshops img { max-width:150px; }

@@ -169,9 +169,17 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
                 height: 750px
                 text-align:center;
               }
-  #europe #transborder {    background: rgba(132, 132, 132, 0.73);
+  #europe #transborder {
+    /*background: rgba(132, 132, 132, 0.73);
     border-radius: 15px;
     padding: 20px 0;
+    max-width: 900px;*/
+    background: rgba(0, 0, 0, 0.26);
+    border-radius: 15px;
+    padding: 20px 0;
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
     max-width: 900px;
   }
   #europe #home h3 { color: white;}
@@ -202,9 +210,17 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
                 height: 750px
                 text-align:center;
               }
-#manufacturing #transborder {    background: rgba(132, 132, 132, 0.73);
+#manufacturing #transborder {
+    /*background: rgba(132, 132, 132, 0.73);
     border-radius: 15px;
     padding: 20px 0;
+    max-width: 900px;*/
+    background: rgba(0, 0, 0, 0.26);
+    border-radius: 15px;
+    padding: 20px 0;
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
     max-width: 900px;
   }
   #manufacturing #home h3 { color: white;}
@@ -230,9 +246,17 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
 #mexico table thead { background-color:#640921; }
 
 #mexico #home { background:url('http://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg') no-repeat top center; background-size:cover; }
-#mexico #transborder {    background: rgba(132, 132, 132, 0.73);
+#mexico #transborder {
+  /*background: rgba(132, 132, 132, 0.73);
   border-radius: 15px;
   padding: 20px 0;
+  max-width: 900px;*/
+  background: rgba(0, 0, 0, 0.26);
+  border-radius: 15px;
+  padding: 20px 0;
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
   max-width: 900px;
 }
 
