@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
                       /* Education Menu */
 /* GET model  */
 router.get('/model', function(req, res, next) {
-  res.render('./layouts/education/model', { title: 'The Shingo Model - Shingo Institute' });
+  res.render('education/model', { title: 'The Shingo Model - Shingo Institute' });
 });
 
 /* GET education */
@@ -37,22 +37,22 @@ router.get('/education', function(req, res, next) {
         query_res[events[i].Course__c].push(events[i])
       }
       // console.log(JSON.stringify(query_res,null,4));
-      res.render('./layouts/education/education', { title: 'Education - Shingo Institute', workshops: query_res });
+      res.render('education/education', { title: 'Education - Shingo Institute', workshops: query_res });
     }).catch(function(err){
       console.log("sf.js:Line 40 " + err)
-      res.render('./layouts/education/education', { title: 'Education - Shingo Institute', workshops: query_res });
+      res.render('education/education', { title: 'Education - Shingo Institute', workshops: query_res });
     })
 
 });
 
 /* GET Japan studytour */
 router.get('/japanstudytour', function(req, res, next) {
-  res.render('./layouts/education/japanstudytour', { title: 'Study Tour - Shingo Institute' });
+  res.render('education/japanstudytour', { title: 'Study Tour - Shingo Institute' });
 });
 
 /* GET USA studytour */
 router.get('/usastudytour', function(req, res, next) {
-  res.render('./layouts/education/usastudytour', { title: 'Study Tour - Shingo Institute' });
+  res.render('education/usastudytour', { title: 'Study Tour - Shingo Institute' });
 });
 
                         /* LEAN Network */
@@ -80,7 +80,7 @@ router.get('/teaching-lean/professors', function(req, res, next) {
                        /*  Awards Route */
 /* GET challengefortheprize */
 router.get('/challengefortheprize', function(req, res, next) {
-  res.render('./layouts/awards/challengefortheprize', { title: 'The Shingo Prize - Shingo Institute' });
+  res.render('awards/challengefortheprize', { title: 'The Shingo Prize - Shingo Institute' });
 });
 
 /* GET awards routes */
@@ -88,7 +88,7 @@ router.use('/awards', routes_recipients);
 
 /* GET researchaward  */
 router.get('/researchaward', function(req, res, next) {
-  res.render('./layouts/awards/researchaward', { title: 'Research Publication Award - Shingo Institute' });
+  res.render('awards/researchaward', { title: 'Research Publication Award - Shingo Institute' });
 });
 
 // TODO: Add Affiliates Route based on url param to render specific awards page content. Fetch Content from SF
@@ -104,44 +104,44 @@ router.use('/affiliates', routes_affiliates);
 
 /* GET about */
 router.get('/about', function(req, res, next) {
-  res.render('./layouts/about/about', { title: 'Mission & History - Shingo Institute' });
+  res.render('about/about', { title: 'Mission & History - Shingo Institute' });
 });
 
 /* GET academy */
 router.get('/academy', function(req, res, next) {
-  res.render('./layouts/about/academy', { title: 'Shingo Academy - Shingo Institute' });
+  res.render('about/academy', { title: 'Shingo Academy - Shingo Institute' });
 });
 
 /* GET examiner */
 router.get('/examiners', function(req, res, next) {
-  res.render('./layouts/about/examiners', { title: 'Examiners - Shingo Institute' });
+  res.render('about/examiners', { title: 'Examiners - Shingo Institute' });
 });
 
 /* GET seab */
 router.get('/seab', function(req, res, next) {
-  res.render('./layouts/about/seab', { title: 'Shingo Executive Advisory Board - Shingo Institute' });
+  res.render('about/seab', { title: 'Shingo Executive Advisory Board - Shingo Institute' });
 });
 
 /* GET shingoteam */
 router.get('/shingoteam', function(req, res, next) {
-  res.render('./layouts/about/shingoteam', { title: 'The Shingo Team - Shingo Institute' });
+  res.render('about/shingoteam', { title: 'The Shingo Team - Shingo Institute' });
 });
 
 
                           /*Other Routes*/
 /* GET research - Linked from homepage only */
 router.get('/research', function(req, res, next) {
-  res.render('./layouts/about/research', { title: 'Insight - Shingo Institute' });
+  res.render('about/research', { title: 'Insight - Shingo Institute' });
 });
 
 /* GET privacy policy - Linked from homepage only */
 router.get('/privacy-policy', function(req, res, next) {
-  res.render('./layouts/about/privacy-policy', { title: 'Privacy Policy - Shingo Institute' });
+  res.render('about/privacy-policy', { title: 'Privacy Policy - Shingo Institute' });
 });
 
 /* GET Prize FAQ */
 router.get('/prizefaq', function(req, res, next) {
-  res.render('./layouts/about/prizefaq', { title: 'Prize Questions - Shingo Institute' });
+  res.render('about/prizefaq', { title: 'Prize Questions - Shingo Institute' });
 });
 
 
