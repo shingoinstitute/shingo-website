@@ -1,7 +1,5 @@
-require('dotenv').load();
-
-var jsforce = require('jsforce')
-    , config       = require('./config');
+var jsforce     = require('jsforce')
+    , config    = require('../config.js')
 
 var conn = new jsforce.Connection();
 

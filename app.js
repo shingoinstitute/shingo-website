@@ -1,4 +1,4 @@
-// require('dotenv').load();
+require('dotenv').load();
 
 var express      = require('express')
   , exphbs       = require('express-handlebars')
@@ -8,7 +8,7 @@ var express      = require('express')
   , cookieParser = require('cookie-parser')
   , bodyParser   = require('body-parser')
   , sass         = require('node-sass')
-  , config       = require('./config')
+  , config       = require('./config.js')
 
 var languageTree = require('./routes/tree.js');
 
@@ -29,6 +29,8 @@ var app = express();
 //       })
 //     }
 // })
+
+app.set('port', config.port)
 
 // Setup View Engine
 app.set('views', path.join(__dirname,  'views'));
@@ -72,5 +74,9 @@ app.use(function(err, req, res, next){
     error: {}
   });
 });
+
+app.listen(app.get('port'), function(){
+  console.log('Node is on port', app.get('port'));
+})
 
 module.exports = app;

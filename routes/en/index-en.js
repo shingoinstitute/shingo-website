@@ -1,8 +1,11 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+  , Promise      = require('bluebird')
+  , SF           = Promise.promisifyAll(require('../../models/sf'))
+  , router       = express.Router()
 
 var routes_affiliates = require('./index-affiliates.js');
 var routes_recipients = require('./index-recipients.js');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -18,7 +21,28 @@ router.get('/model', function(req, res, next) {
 
 /* GET education */
 router.get('/education', function(req, res, next) {
-  res.render('./layouts/education/education', { title: 'Education - Shingo Institute' });
+    var ws_query  = 'SELECT Id, Name, Organizing_Group__r.Name, Organizing_Group__r.Page_Path__c, Course__c, Event_Start_Date__c, Event_End_Date__c, Host_Organization__c, Host_City__c, Host_Country__c, Event_Website__c FROM Event__c WHERE Visibility__c=\'Public\' AND Event_Type__c=\'Affiliate Event\' AND Verified__c=true AND Course__c!=null AND Event_End_Date__c>=YESTERDAY AND Event_Status__c=\'Active event\' ORDER BY Event_Start_Date__c';
+
+    var query_res = {
+      "Discover": new Array(),
+      "Enable": new Array(),
+      "Improve": new Array(),
+      "Align": new Array()
+    }
+
+    SF.queryAsync(ws_query)
+    .then(function(results){
+      var events = results.records
+      for(var i in events){
+        query_res[events[i].Course__c].push(events[i])
+      }
+      // console.log(JSON.stringify(query_res,null,4));
+      res.render('./layouts/education/education', { title: 'Education - Shingo Institute', workshops: query_res });
+    }).catch(function(err){
+      console.log("sf.js:Line 40 " + err)
+      res.render('./layouts/education/education', { title: 'Education - Shingo Institute', workshops: query_res });
+    })
+
 });
 
 /* GET Japan studytour */
