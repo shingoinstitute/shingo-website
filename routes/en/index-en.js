@@ -45,6 +45,23 @@ router.get('/education', function(req, res, next) {
 
 });
 
+            /*  Conference, Summits & Study Tour */
+/* GET manufacturing  */
+router.get('/events/manufacturing', function(req, res, next) {
+  res.render('conference/manufacturing', { layout: 'summit', title: 'Manufacturing Summit - Shingo Institute' });
+});
+
+/* GET europe  */
+router.get('/events/europe', function(req, res, next) {
+  res.render('conference/europe', { layout: 'summit', title: 'European Conference - Shingo Institute' });
+});
+
+/* GET latinamerica  */
+router.get('/events/latinamerica', function(req, res, next) {
+  res.render('conference/latinamerica', { layout: 'summit', title: 'Congreso Latin America - Shingo Institute' });
+});
+
+
 /* GET Japan studytour */
 router.get('/japanstudytour', function(req, res, next) {
   res.render('education/japanstudytour', { title: 'Study Tour - Shingo Institute' });

@@ -205,7 +205,7 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
 
 #manufacturing table thead { background-color: #dfc486; color: #333333; }
 
-#manufacturing #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
+#home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
                 background-size:cover;
                 height: 750px
                 text-align:center;
