@@ -1,0 +1,15 @@
+<li>
+    <div class="twelve columns">
+        <img src="{{speaker.Speaker_Image__c}}" alt="{{speaker.Speaker_Contact__r.Name}}">
+    </div>
+    <div class="row name">
+        <div class="nine columns">
+            <h5><strong>{{speaker.Speaker_Contact__r.Name}}</strong></h5>
+            <p>{{speaker.Speaker_Contact__r.Title}},
+                <br>{{speaker.Speaker_Contact__r.Account.Name}}</p>
+        </div>
+        <div class="two columns text-center hide-for-small">
+            <h3><a href="#{{speaker.Id}}" class="switch" gumby-trigger="#{{speaker.Id}}"><i class="icon-plus"></i></a></h3>
+        </div>
+    </div>
+</li>

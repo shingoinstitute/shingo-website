@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
   #s-travel .four h4:not(:first-of-type) { margin-top:15px; }
 
 
-#s-sponsors { padding:20px; position:relative; background:#f9f9f9; }
+#s-sponsors { padding:20px; position:relative; background:#f9f9f9; z-index: -100;}
  #benefactors { border-top:5px solid #002f56; border-left:5px solid #002f56; border-right:5px solid #002f56; border-bottom:3px solid #002f56; padding:10px; background:#FFFFFF; }
  #supporters { border-left:5px solid #640921; border-right:5px solid #640921; border-top:3px solid #640921; border-bottom:3px solid #640921; padding:10px; background:#FFFFFF; }
  #friends { border-left:5px solid #b17c31; border-right:5px solid #b17c31; border-bottom:5px solid #b17c31; border-top:3px solid #b17c31; padding:10px; background:#FFFFFF; }
@@ -205,7 +205,7 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
 
 #manufacturing table thead { background-color: #dfc486; color: #333333; }
 
-#home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
+#manufacturing #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
                 background-size:cover;
                 height: 750px
                 text-align:center;
@@ -295,6 +295,9 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
 #costa .navbar { border-bottom:3px solid #407dbe; }
 
   #contact h4, #contact h6 { color:black; }
+
+
+
 
 /********INDIA********/
 /*Accent color is PURPLE*/
