@@ -1,5 +1,6 @@
 var express = require('express'),
     Promise = require('bluebird'),
+    jsonfile = require('jsonfile'),
     SF = Promise.promisifyAll(require('../../models/sf')),
     router = express.Router()
 
@@ -57,47 +58,30 @@ router.get('/education', function(req, res, next) {
 
 /*  Conference, Summits & Study Tour */
 /* GET manufacturing  */
-router.get('/events/manufacturing', function(req, res, next) {
-    var query = "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UmjyDEAR' ORDER BY Speaker_Contact__r.LastName"
-    SF.queryAsync(query).then(function(event) {
+router.get('/events/:name', function(req, res, next) {
+    var event = jsonfile.readFileSync(__dirname + '/../../models/' + req.params.name + '.json')
+    SF.queryAsync(event.speaker_query).then(function(results) {
         var keynote = new Array()
         var concurrent = new Array()
-        for(var i = 0; i < event.records.length; i++){
-          console.log(event.records[i].Speaker_Type__c);
-          if(event.records[i].Speaker_Type__c == 'Keynote Speaker'){
-            keynote.push(event.records[i])
+        for(var i = 0; i < results.records.length; i++){
+          if(results.records[i].Speaker_Type__c == 'Keynote Speaker'){
+            keynote.push(results.records[i])
           }
           else {
-            concurrent.push(event.records[i])
+            concurrent.push(results.records[i])
           }
         }
         res.render('conference/manufacturing', {
             layout: 'summit',
-            title: 'Manufacturing Summit - Shingo Institute',
+            title: event.name + ' - Shingo Institute',
             keynote: keynote,
-            concurrent: concurrent
+            concurrent: concurrent,
+            event:event
         });
     }).catch(function(err){
       console.log("Line 69: " + err);
     })
 });
-
-/* GET europe  */
-router.get('/events/europe', function(req, res, next) {
-    res.render('conference/europe', {
-        layout: 'summit',
-        title: 'European Conference - Shingo Institute'
-    });
-});
-
-/* GET latinamerica  */
-router.get('/events/latinamerica', function(req, res, next) {
-    res.render('conference/latinamerica', {
-        layout: 'summit',
-        title: 'Congreso Latin America - Shingo Institute'
-    });
-});
-
 
 /* GET Japan studytour */
 router.get('/japanstudytour', function(req, res, next) {

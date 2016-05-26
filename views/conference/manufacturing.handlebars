@@ -2,10 +2,10 @@
     <article class="container" id="home">
         <br>
         <div class="row text-center" id="transborder">
-            <img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png">
-            <h1><strong>Manufacturing Summit</strong></h1>
-            <h2><strong>September 20-21, 2016</strong></h2>
-            <h3><strong>Knoxville, Tennessee</strong></h3>
+            <img src="{{event.logo}}">
+            <h1><strong>{{event.name}}</strong></h1>
+            <h2><strong>{{event.date}}</strong></h2>
+            <h3><strong>{{event.location}}</strong></h3>
         </div>
         <br>
         <br>
@@ -19,452 +19,14 @@
             </div>
         </div>
         <div id="s-text" class="row text-center">
-            <p>Come learn from manufacturing leaders about how mid-level managers can make big transformations in their organizations using the principles of the <em>Shingo Model</em>™. Smart, dedicated managers are critical for enterprise excellence. At
-                this summit, you will discover what managers like you have done to make notable improvements to their organizations. Listen to experienced leaders in keynote and break-out sessions and join in on the discussion. Network with leaders and
-                managers like you who are all striving to improve their manufacturing companies. If you’re in manufacturing and want continuous improvement, this summit for you!</p>
+            <p>{{{event.intro}}}</p>
         </div>
         <div class="hidden" id="agenda">&nbsp;</div>
     </article>
 
+    {{>_agenda event}}
 
 
-    <!-- <article class="container" id="s-agenda">
-  <div class="row">
-    <div class="six columns centered">
-      <h3 class="text-center">AGENDA</h3>
-      <hr>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="tabs">
-      <ul class="tab-nav"> -->
-    <!-- <li class="active"><a href="#tuesday">Tuesday</a></li> -->
-    <!-- <li class="active"><a href="#wednesday">Wednesday</a></li>
-        <li><a href="#thursday">Thursday</a></li>
-        <li><a href="#friday">Friday</a></li>
-      </ul> -->
-    <!-- <div class="tab-content active"> -->
-    <!--All 'detail' modals are at the end of each table-->
-    <!-- <table class="striped" id="tuesday">
-          <thead>
-            <tr>
-              <th colspan="3">Tuesday, November 29 - Main Conference</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="tabular">08:30 - 08:50</td>
-              <td><strong>Welcome/Shingo Announcements</strong></td>
-              <td><a href="#" class="switch" gumby-trigger="#demo">How Could I Be A Successful Leader in China</a></td>
-            </tr>
-            <tr>
-              <td class="tabular">08:50 - 09:00</td>
-              <td>Intermission</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">09:00 - 09:50</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">09:50 - 10:20</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">10:20 - 11:10</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:10 - 11:20</td>
-              <td>Intermission</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:20 - 12:10</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">12:10 - 13:30</td>
-              <td><strong>Lunch</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">13:30 - 14:30</td>
-              <td>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">14:30 - 15:00</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">15:00 - 16:00</td>
-              <td>
-                  <strong>Plenary Session </strong><br><br>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">16:00 - 17:00</td>
-              <td><strong>Intermission</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">17:00 - 18:00</td>
-              <td><strong>Guided Tour of Historical Downtown</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">18:00 - 20:00</td>
-              <td><strong>VIP Cocktail Reception</strong></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-Modal Template
-        <div class="modal" id="demo">
-          <div class="content">
-            <a class="close switch" gumby-trigger="|.modal"><i class="icon-cancel"></i></a>
-            <br>
-            <div class="row">
-              <div class="eleven columns centered">
-                <h4>Associates: How They Live Operational Excellence</h4>
-                <h5 class="quattrocento">Alejandro Ponce</h5>
-                <br>
-                <p>Alejandro Ponce will share his experience on how the associate (employees adding direct value) lives "Operational Excellence"	not only in their organizations but also within their community and day-to-day life. He will share how he’s been able to impact and improve their personal lives through "Operational Excellence."</p>
-                <br>
-                <div class="text-center"><p class="btn secondary medium"><a href="#" class="switch" gumby-trigger="|.modal">Close</a></p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    <!-- Wednesday Schedule -->
-    <!-- <div class="tab-content"> -->
-    <!-- <div class="tab-content active">
-        <table class="striped" id="wednesday">
-          <thead>
-            <tr>
-              <th colspan="3">Wednesday, November 30</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="tabular">13:00 - 15:30</td>
-              <td>
-                <strong>Lundbeck Tour</strong>
-                <p>Lundbeck is a Danish based pharmaceutical company engaged in research to find new drugs for the treatment of brain disorders, including Depression, Schizophrenia, Alzheimer’s disease, Parkinson’s disease and Alcohol Dependence. Lundbeck’s mission is to improve the quality of life of people suffering from psychiatric and neurological disorders. Lundbeck is the only fully integrated pharmaceutical company that focus exclusively on brain disorders. Lundbeck has a turnover of approximately 2 billion Euros and employ 5.000 people.</p>
-                <p>**Bus will depart at 12:30 and return by 16:00</p>
-              </td>
-              <td></td> -->
-    <!-- <td><a href="#" class="switch" gumby-trigger="#demo">How Could I Be A Successful Leader in China</a></td> -->
-    <!-- </tr> -->
-    <!-- <tr>
-              <td class="tabular">08:50 - 09:00</td>
-              <td>Intermission</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">09:00 - 09:50</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">09:50 - 10:20</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">10:20 - 11:10</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:10 - 11:20</td>
-              <td>Intermission</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:20 - 12:10</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">12:10 - 13:30</td>
-              <td><strong>Lunch</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">13:30 - 14:30</td>
-              <td>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">14:30 - 15:00</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">15:00 - 16:00</td>
-              <td>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong><br>
-                  <strong>Plenary Session </strong>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">16:00 - 17:00</td>
-              <td><strong>Keynote Presentation</strong></td>
-              <td></td>
-            </tr> -->
-    <!-- </tbody>
-        </table> -->
-    <!-- Modal Tempalate -->
-    <!-- <div class="modal" id="demo">
-          <div class="content">
-            <a class="close switch" gumby-trigger="|.modal"><i class="icon-cancel"></i></a>
-            <br>
-            <div class="row">
-              <div class="eleven columns centered">
-                <h4>Fireside Chat</h4>
-                <h5 class="quattrocento">Ritsuo Shingo</h5>
-                <br>
-                <p>Former US President Franklin D. Roosevelt led his nation through two of the greatest crises in its history: the Great Depression of the 1930s and World War II. From March 1933 to June 1944 President Roosevelt addressed the American people in some 30 speeches broadcast via radio, speaking on a variety of topics from banking to unemployment to fighting fascism in Europe. Millions of people found comfort and renewed confidence in these speeches, which became known as the "fireside chats."</p>
-                <p>Today, we expand on this concept by bringing in best practitioners and leaders who have a wealth of knowledge on the pursuit of enterprise excellence and how to build a culture of continuous improvement. Spend an evening with these leaders as they share their experience with you in an intimate setting and give you valuable time to ask questions and to network with other like-minded people.</p>
-                <br>
-                <div class="text-center"><p class="btn secondary medium"><a href="#" class="switch" gumby-trigger="|.modal">Close</a></p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    <!-- Thursday  -->
-    <!-- <div class="tab-content">
-        <table class="striped" id="thursday">
-          <thead>
-            <tr>
-              <th colspan="3">Thursday, December 1 - Main Conference</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="tabular">07:00 - 09:00</td>
-              <td><strong>Breakfast &amp; Registration</strong></td>
-              <td></td> -->
-    <!-- <td><a href="#" class="switch" gumby-trigger="#demo">How Could I Be A Successful Leader in China</a></td> -->
-    <!-- </tr>
-            <tr>
-              <td class="tabular">09:00 - 09:50</td>
-              <td><strong>Keynote Presentation</strong> - <strong>Ken Snyder</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">09:50 - 10:00</td>
-              <td>Intermission</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">10:00 - 10:50</td>
-              <td><strong>Keynote Presentation</strong> - <strong>Ciarán Corcoran</strong> &amp; <strong>Seán Kelly</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">10:50 - 11:20</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:20 - 12:10</td>
-              <td><strong>Keynote Presentation</strong> - <strong>Håkan Forss</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">12:10 - 13:30</td>
-              <td><strong>Lunch</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">13:30 - 14:30</td>
-              <td>
-                  <strong>Concurrent Sessions</strong>
-                  <ul class="square">
-                    <li>Stefan de Raedemaecker - Senior Expert Operations, McKinsey &amp; Company</li>
-                    <li>Mustafa Kemal Altay - Production System Manager, Bosch</li>
-                    <li> </li>
-                  </ul>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">14:30 - 15:00</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">15:00 - 16:00</td>
-              <td>
-                <strong>Concurrent Sessions</strong>
-                <ul class="square">
-                  <li>Jacob Eskildsen, Professor in Business &amp; Quantitative Methods, Aarhus University</li>
-                  <li>Jose Luis Ordorica, Sr. Consultant Continental Business System, Continental Automotive Systems</li>
-                  <li> </li>
-                </ul>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">17:30 - 21:00</td>
-              <td>
-                <strong>Dinner &amp; Entertainment</strong>
-                <ul class="square">
-                  <li>Wallman's Dinnershow</li>
-                </ul>
-                ** Guests must be seated by 18:30
-              </td>
-              <td>
-                <br>
-                <a href="http://www.wallmans.dk/en/new-show-music-box" target="blank">Details</a>
-              </td>
-            </tr>
-          </tbody>
-        </table> -->
-    <!-- Modal Tempalate -->
-    <!-- <div class="modal" id="demo">
-          <div class="content">
-            <a class="close switch" gumby-trigger="|.modal"><i class="icon-cancel"></i></a>
-            <br>
-            <div class="row">
-              <div class="eleven columns centered">
-                <h4>Fireside Chat</h4>
-                <h5 class="quattrocento">Ritsuo Shingo</h5>
-                <br>
-                <p>Former US President Franklin D. Roosevelt led his nation through two of the greatest crises in its history: the Great Depression of the 1930s and World War II. From March 1933 to June 1944 President Roosevelt addressed the American people in some 30 speeches broadcast via radio, speaking on a variety of topics from banking to unemployment to fighting fascism in Europe. Millions of people found comfort and renewed confidence in these speeches, which became known as the "fireside chats."</p>
-                <p>Today, we expand on this concept by bringing in best practitioners and leaders who have a wealth of knowledge on the pursuit of enterprise excellence and how to build a culture of continuous improvement. Spend an evening with these leaders as they share their experience with you in an intimate setting and give you valuable time to ask questions and to network with other like-minded people.</p>
-                <br>
-                <div class="text-center"><p class="btn secondary medium"><a href="#" class="switch" gumby-trigger="|.modal">Close</a></p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    <!-- Friday -->
-    <!-- <div class="tab-content">
-        <table class="striped" id="friday">
-          <thead>
-            <tr>
-              <th colspan="3">Friday, December 2 - Main Conference</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="tabular">07:30 - 09:00</td>
-              <td><strong>Breakfast &amp; Exhibitors</strong></td>
-              <td></td>
-              <td><a href="#" class="switch" gumby-trigger="#demo">How Could I Be A Successful Leader in China</a></td>
-            </tr>
-            <tr>
-              <td class="tabular">09:00 - 10:00</td>
-              <td>
-                  <strong>Concurrent Sessions</strong>
-                  <ul class="square">
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                  </ul>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">10:00 - 10:10</td>
-              <td>Intermission</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">10:10 - 11:10</td>
-              <td>
-                  <strong>Concurrent Sessions</strong>
-                  <ul class="square">
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                  </ul>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:10 - 11:40</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">11:40 - 12:40</td>
-              <td><strong>Keynote</strong> - <strong>Billy Taylor</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">12:40 - 13:30</td>
-              <td><strong>Lunch</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">13:30 - 14:30</td>
-              <td><strong>Keynote</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">14:30 - 15:00</td>
-              <td>Networking Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="tabular">15:00 - 16:00</td>
-              <td><strong>Keynote</strong></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table> -->
-    <!-- Modal Tempalate -->
-    <!-- <div class="modal" id="demo">
-          <div class="content">
-            <a class="close switch" gumby-trigger="|.modal"><i class="icon-cancel"></i></a>
-            <br>
-            <div class="row">
-              <div class="eleven columns centered">
-                <h4>Fireside Chat</h4>
-                <h5 class="quattrocento">Ritsuo Shingo</h5>
-                <br>
-                <p>Former US President Franklin D. Roosevelt led his nation through two of the greatest crises in its history: the Great Depression of the 1930s and World War II. From March 1933 to June 1944 President Roosevelt addressed the American people in some 30 speeches broadcast via radio, speaking on a variety of topics from banking to unemployment to fighting fascism in Europe. Millions of people found comfort and renewed confidence in these speeches, which became known as the "fireside chats."</p>
-                <p>Today, we expand on this concept by bringing in best practitioners and leaders who have a wealth of knowledge on the pursuit of enterprise excellence and how to build a culture of continuous improvement. Spend an evening with these leaders as they share their experience with you in an intimate setting and give you valuable time to ask questions and to network with other like-minded people.</p>
-                <br>
-                <div class="text-center"><p class="btn secondary medium"><a href="#" class="switch" gumby-trigger="|.modal">Close</a></p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h5><strong><a href="https://shingoconference.wufoo.com/forms/call-for-presentations" target="new">Call for Presentations</a></strong></h5>
-      <h6><em>The language of the Summit will be English.</em></h6>
-    </div>
-  </div>
-  <div class="hidden" id="registration">&nbsp;</div>
-</article> -->
 
     <article class="container" id="s-registration">
         <div class="row">
@@ -483,21 +45,23 @@ Modal Template
                         </tr>
                     </thead>
                     <tbody>
+                      {{#each event.registration.prices}}
                         <tr>
-                            <td>
-                                <h5>Registration</h5></td>
-                            <td>
-                                <h5>$895</h5>
-                                <br>
-                            </td>
+                          <td>
+                            <h5>{{this.type}}</h5>
+                          </td>
+                          <td>
+                            <h5>{{this.price}}</h5>
+                          </td>
                         </tr>
+                      {{/each}}
                     </tbody>
                 </table>
             </div>
             <div class="five columns text-center">
                 <br>
                 <br>
-                <div class="text-center large info btn"><a href="https://shingoconference.wufoo.com/forms/2016-shingo-manufacturing-summit/ " target="_blank">Register</a></div>
+                <div class="text-center large info btn"><a href="{{event.registration.link}}" target="_blank">Register</a></div>
                 <br>
                 <br>
                 <!-- <p id="discount"></p> -->
@@ -521,7 +85,7 @@ Modal Template
                 {{/each}}
             </ul>
             {{#each keynote}}
-              {{>_speaker-bio speaker=this}}
+                {{>_speaker-bio speaker=this}}
             {{/each}}
             <!-- Concurrent Speakers -->
             <!-- Jose Ordorica Bio -->
@@ -532,7 +96,7 @@ Modal Template
                 {{/each}}
             </ul>
             {{#each concurrent}}
-              {{>_speaker-bio speaker=this}}
+                {{>_speaker-bio speaker=this}}
             {{/each}}
         </div>
         <div class="hidden" id="travel">&nbsp;</div>
@@ -656,12 +220,7 @@ Modal Template
             </div>
         </div>
         <div class="row">
-            <p>Exhibitors at the Shingo Manufacturing Summit get the chance to talk with the people who make and influence purchasing decisions within manufacturing companies. Only a limited number of exhibitor slots are available in this low-key, low-pressure
-                event designed for about 400 attendees. It’s a terrific opportunity to talk seriously to your future customers and begin lasting relationships with them.</p>
-            <p>As an exhibitor at the Shingo Manufacturing Summit, your company will get an opt-in list of attendees, have your name and logo on the Shingo App and various printed materials at the Summit. You’ll also have your name and logo as an exhibitor
-                on announcements that go out to over 25,000 leaders and manager around the world. This is your chance to position your company as a leader committed to manufacturing excellence in front of the people who can bring the most to your bottom
-                line.</p>
-            <p>For more information about exhibiting or becoming a sponsor, please contact Mary Price: <a href="mailto:mary.price@usu.edu">mary.price@usu.edu</a> &nbsp; | &nbsp; (435) 7979-3785</p>
+            {{{event.se_info}}}
         </div>
         <div class="hidden" id="faq">&nbsp;</div>
     </article>
