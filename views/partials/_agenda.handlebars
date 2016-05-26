@@ -1,0 +1,24 @@
+<article class="container" id="s-agenda">
+    <div class="row">
+        <div class="six columns centered">
+            <h3 class="text-center">AGENDA</h3>
+            <hr>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="tabs">
+            <ul class="tab-nav">
+                {{#each agenda}}
+                  <li><a href="#{{this.name}}">{{this.name}}</a></li>
+                {{/each}}
+            </ul>
+            {{#each agenda}}
+              {{>_agenda-detail day=this}}
+            {{/each}}
+                <h5><strong><a href="https://shingoconference.wufoo.com/forms/call-for-presentations" target="new">Call for Presentations</a></strong></h5>
+                <h6><em>{{@root.event.presentation_copy}}</em></h6>
+            </div>
+        </div>
+        <div class="hidden" id="registration">&nbsp;</div>
+</article>
