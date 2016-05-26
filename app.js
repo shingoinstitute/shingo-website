@@ -8,7 +8,8 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     sass = require('node-sass'),
-    config = require('./config.js')
+    config = require('./config.js'),
+    api_route = require('./admin-app/events')
 
 var languageTree = require('./routes/tree.js');
 
@@ -50,6 +51,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', languageTree);
+app.get('/admin',function(req,res){
+  res.sendFile(__dirname + '/public/admin-app/index.html')
+})
+app.use('/api', api_route);
 
 /*   Error Handling  */
 //Catch 404 and forward
