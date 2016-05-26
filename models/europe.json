@@ -1,0 +1,64 @@
+{
+  "name": "European Conference",
+  "date": "November 29 - December 2, 2016",
+  "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
+  "location": "Copenhagen, Denmark",
+  "intro": "Come and learn from people who have made notable transformations in their organizations on their road to enterprise excellence. Each year we are joined by leaders from all around Europe to join in and enjoy an opportunity to learn from what others are doing and successfully have done to improve their organization. Along with renound keynote speakers, you will get an opportunity to participate in break-outs where you will be able to ask questions and discuss with experienced leaders and business professionals. Whatever the industry may be, people with a desire to improve business should attend.",
+  "presentation_copy": "The language of the Conference will be English.",
+  "agenda": [
+    {
+      "name": "Monday",
+      "title": "September 19 - Main Conference",
+      "sessions": [
+        {
+          "time": "07:00 - 09:00",
+          "info": {
+            "name": "Breakfast & Registration",
+            "detail": []
+          }
+        },
+        {
+          "time": "09:00 - 09:50",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+        {
+          "time": "09:50 - 10:00",
+          "info": {
+            "name": "Intermission",
+            "detail": []
+          }
+        },
+        {
+          "time": "15:00 - 16:00",
+          "info": {
+            "name": "Concurrent Sessions",
+            "detail": [
+              {
+                "id": "con-padilla",
+                "speaker": "Rafael Padilla - CI Manager, Heineken",
+                "detail": "Rafael Padilla",
+                "title": "Ensure Continuous Improvement through Change Management",
+                "abstract": "When we try to develop continuous improvement initiatives and deploy them throughout the organization, we rarely take care of the people we are impacting most. And we underestimate the use of powerful tools that can gain engagement and momentum toward achieving our desired results. We must have a clear roadmap that guides us toward excellence, with change management embedded in it. Throughout this presentation, Rafael Padilla will help you understand the importance of having a clear roadmap for implementation; John Kotter’s 8-step process for leading change through practical examples; and the three elements that drive people based on Daniel Pink’s book, <em>Drive: The Surprising Truth About What Motivates Us</em>. You will also learn about the influence process that helps you change anything, based on Kerry Patterson’s book, <em>Influencer</em>, and you will realize how to apply it all to the transformation plan."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "registration": {
+    "link": "https://shingoconference.wufoo.com/forms/2016-shingo-manufacturing-summit/",
+    "prices":[
+      {
+        "type":"Main Conference",
+        "price": "$895"
+      }
+    ]
+  },
+  "se_info": "<p>Exhibitors at the Shingo Manufacturing Summit get the chance to talk with the people make and influence purchasing decisions within manufacturing companies. Only a limited number of exhibitor slots are available in this low-key, low pressure event designed for about 400 attendees. It’s a terrific opportunity to talk seriously to your future customers and begin lasting relationships with them.</p><p>As an exhibitor at the Shingo Manufacturing Summit, your company will get an opt-in list of attendees, have your name and logo on the Shingo App and various printed materials at the Summit. You’ll also have your name and logo as an exhibitor on announcements that go out to over 25,000 leaders and manager around the world. This is your chance to position your company as a leader committed to manufacturing excellence in front of the people who can bring the most to your bottom line.</p><p>For more information about exhibiting or becoming a sponsor, please contact Mary Price: <a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>  |  (435) 7979-3785</p>",
+  "travel": {},
+  "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UmjyDEAR' ORDER BY Speaker_Contact__r.LastName"
+}
