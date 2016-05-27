@@ -1,175 +1,453 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,400italic,300,700,300italic,400);
 @import url(http://fonts.googleapis.com/css?family=Muli:300,400,400italic);
-
-h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
-
-.muli { font-family:"Muli"; }
-.quattrocento { font-family:"Quattrocento Sans"; }
-.roboto { font-family:"Roboto"; }
-
-.valign:before { height:0; }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Muli";
+    font-weight: 300;
+}
+.muli {
+    font-family: "Muli";
+}
+.quattrocento {
+    font-family: "Quattrocento Sans";
+}
+.roboto {
+    font-family: "Roboto";
+}
+.valign:before {
+    height: 0;
+}
 
 /********NAVIGATION********/
-#nav-sites { background:#DEDEDE; }
 
-.navcontain { height:113px; }
-
-.navbar { min-height:110px; }
-.navbar .four.columns.logo { float:left; height:110px; line-height:105px; }
-.navbar .eight.columns { float:right; margin-left:0; }
-  .navbar ul { float:right; }
-  .navbar ul li a { color: #002f56; text-shadow:none; }
-	.navbar ul li a:hover { background:none !important; color:#d04526; font-size:1.05em; }
-    .navbar ul li .dropdown li a { color:#002f56; }
-	  .navbar ul li .dropdown li a:hover { color:#d04526; }
-	  .navbar .logo, .navbar .logo a { height:110px; line-height:105px; }
-	  .navbar .logo a img { max-height:100%; vertical-align:middle; padding-bottom:5px; }
-
-.gumby-no-touch .navbar ul li:hover > a, .gumby-touch .navbar ul li.active > a { background:none; color:#d04526; font-size:1.05em; }
-
+#nav-sites {
+    background: #DEDEDE;
+}
+.navcontain {
+    height: 113px;
+}
+.navbar {
+    min-height: 110px;
+}
+.navbar .four.columns.logo {
+    float: left;
+    height: 110px;
+    line-height: 105px;
+}
+.navbar .eight.columns {
+    float: right;
+    margin-left: 0;
+}
+.navbar ul {
+    float: right;
+}
+.navbar ul li a {
+    color: #002f56;
+    text-shadow: none;
+}
+.navbar ul li a:hover {
+    background: none !important;
+    color: #d04526;
+    font-size: 1.05em;
+}
+.navbar ul li .dropdown li a {
+    color: #002f56;
+}
+.navbar ul li .dropdown li a:hover {
+    color: #d04526;
+}
+.navbar .logo, .navbar .logo a {
+    height: 110px;
+    line-height: 105px;
+}
+.navbar .logo a img {
+    max-height: 100%;
+    vertical-align: middle;
+    padding-bottom: 5px;
+}
+.gumby-no-touch .navbar ul li:hover > a, .gumby-touch .navbar ul li.active > a {
+    background: none;
+    color: #d04526;
+    font-size: 1.05em;
+}
 @media only screen and (min-width: 768px) {
-	.navbar ul li a { height:110px; line-height:105px; }
-	}
-
+    .navbar ul li a {
+        height: 110px;
+        line-height: 105px;
+    }
+}
 @media only screen and (max-width: 767px) {
-	.navbar ul { background:#FFFFFF; top: 120px; }
-	.navbar ul li .dropdown ul li a { color:#002f56 !important; }
-	  .navbar ul li .dropdown ul li a:hover { color:#d04526 !important; }
-
-	  .navbar { padding-top:15px; }
-	  .navbar ul li a { height:auto; }
-	  .navbar a.toggle { top: 38%; }
-	  .navbar .logo a img {
-	  	max-width:200px;
-	  }
-	}
+    .navbar ul {
+        background: #FFFFFF;
+        top: 120px;
+    }
+    .navbar ul li .dropdown ul li a {
+        color: #002f56 !important;
+    }
+    .navbar ul li .dropdown ul li a:hover {
+        color: #d04526 !important;
+    }
+    .navbar {
+        padding-top: 15px;
+    }
+    .navbar ul li a {
+        height: auto;
+    }
+    .navbar a.toggle {
+        top: 38%;
+    }
+    .navbar .logo a img {
+        max-width: 200px;
+    }
+}
 
 /********FOOTER********/
-#footer { padding:20px; background:#f7f7f7; }
-  #footer p { line-height:1.3em; }
-  #footer .three p { font-size:0.9em; }
-    .half { width:49%; margin-right:0.5%; display:inline-block; }
+
+#footer {
+    padding: 20px;
+    background: #f7f7f7;
+}
+#footer p {
+    line-height: 1.3em;
+}
+#footer .three p {
+    font-size: 0.9em;
+}
+.half {
+    width: 49%;
+    margin-right: 0.5%;
+    display: inline-block;
+}
 
 /********OTHER********/
-.show-for-small { display:none; }
-@media only screen and (max-width: 768px) { .hide-for-small { display:none; } .show-for-small { display:inherit; } }
-  @media only screen and (min-width: 768px) { .show-for-small { display:none; } }
 
-.hidden { height:120px; position:absolute; bottom:0; }
-
-.indent { margin-left: 2em; }
-
+.show-for-small {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .hide-for-small {
+        display: none;
+    }
+    .show-for-small {
+        display: inherit;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .show-for-small {
+        display: none;
+    }
+}
+.hidden {
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+}
+.indent {
+    margin-left: 2em;
+}
 
 /****OLD****OLD****OLD****/
 
+
 /*#getApp { background:#002f56; min-height:55px; color:white; text-align:right; padding-top:10px; } #getApp img { height:35px; padding-left:10px; } */
-	@media only screen and (max-width: 768px) { #getApp { text-align:center; } }
-#main-nav ul li a { text-align:center; margin:auto; }
 
-#home { min-height:60%; position:relative; padding:60px 20px 20px; }
-  #home h2 { color:#ffffff; font-family:"Roboto"; font-weight:400; margin:5px auto 3px; padding:0; text-shadow:1px 1px 3px #666; }
-  #home h1 { color:#ffffff; text-shadow:1px 1px 5px #333333; }
-  #home .btn > a { font-size:1.35em; padding:35px 25px; text-shadow:1px 1px 3px #333333; box-shadow:2px 2px 3px #333333; }
-
-#s-agenda { padding:20px; position:relative; }
-  #s-agenda table tr td:first-of-type { width:20%; }
-  #s-agenda table tr td:last-of-type { text-align:center; width:20%; }
-  #s-agenda .tabular { font-family: Verdana, Geneva, sans-serif; font-size: .9em; }
-
-#s-registration { padding:20px 20px 40px 20px; background:#f5f5f5; position:relative; }
-  #s-registration thead h4 { font-family:"Quattrocento Sans"; }
-
-#s-speakers { padding:20px; background-size:cover; position:relative; opacity:0.9; }
-#all-speakers { background:white; padding:0; position:relative; }
-  #s-speakers h4 { padding-top:10px; padding-bottom:10px; margin-bottom:5px; font-family:"Quattrocento Sans"; }
-  #s-speakers h5 { margin-top:10px; }
-	#s-speakers .row.drawer.active { padding:15px; background:none; border:none; box-shadow:none; }
-
-@media only screen and (max-width: 767px) {
-	#s-speakers p > a[class="toggle"] { display:none; }
+@media only screen and (max-width: 768px) {
+    #getApp {
+        text-align: center;
+    }
 }
-
-#s-speakers .row .three { max-width:300px; margin:auto; border:5px solid #ffffff; box-shadow:0 -2px 1px #888888;  }
-
-.name h6 { font-family:"Quattrocento Sans"; font-weight:700; }
-  .name .columns { padding:10px; }
-  #key .name { background:#ffffff; }
-  #plen .name { background:#ffffff;  }
-.mini { font-size:0.9em; }
-
-#s-travel { background-size:cover; padding:20px; position:relative; }
-  .accommodations { border:none; }
-    .accommodations i { text-decoration:none; }
-	  .accommodations a:hover { color:#407dbe; }
-    .accommodations h5 { margin-bottom:7px; color:black; }
-    .accommodations th { padding:20px 20px 40px; }
-      .accommodations td { padding:20px; width:33.33%; border:3px solid #002f56; }
-	.accommodations .row .columns { padding:5px; }
-  #s-travel .four h4:not(:first-of-type) { margin-top:15px; }
-
-
-#s-sponsors { padding:20px; position:relative; background:#f9f9f9; z-index: -100;}
- #benefactors { border-top:5px solid #002f56; border-left:5px solid #002f56; border-right:5px solid #002f56; border-bottom:3px solid #002f56; padding:10px; background:#FFFFFF; }
- #supporters { border-left:5px solid #640921; border-right:5px solid #640921; border-top:3px solid #640921; border-bottom:3px solid #640921; padding:10px; background:#FFFFFF; }
- #friends { border-left:5px solid #b17c31; border-right:5px solid #b17c31; border-bottom:5px solid #b17c31; border-top:3px solid #b17c31; padding:10px; background:#FFFFFF; }
-   #benefactors h6, #supporters h6, #friends h6 { margin-bottom:10px; font-weight:400; }
- #learnSponsors { background:none; }
-
-#s-faq { padding:20px; }
-  #s-faq .row:not(:first-of-type) { border-left:3px solid #003; }
-  #s-faq dd { margin-bottom:15px; }
-
-#s-text { padding:20px; }
-  #s-text p { font-size:1.38em; font-weight:500; word-spacing:-0.1em; text-align:left; }
-
-#contact { padding:30px;  }
-  #contact form { max-width:750px; margin:20px auto; padding:15px;  }
-  #contact label { margin-bottom:3px; font-family:"Roboto"; }
-  #contact form li { margin-bottom:20px; }
-  #contact form .btn { background:#CCCCCC; }
+#main-nav ul li a {
+    text-align: center;
+    margin: auto;
+}
+#home {
+    min-height: 60%;
+    position: relative;
+    padding: 60px 20px 20px;
+}
+#home h2 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-weight: 400;
+    margin: 5px auto 3px;
+    padding: 0;
+    text-shadow: 1px 1px 3px #666;
+}
+#home h1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 5px #333333;
+}
+#home .btn > a {
+    font-size: 1.35em;
+    padding: 35px 25px;
+    text-shadow: 1px 1px 3px #333333;
+    box-shadow: 2px 2px 3px #333333;
+}
+#s-agenda {
+    padding: 20px;
+    position: relative;
+}
+#s-agenda table tr td:first-of-type {
+    width: 20%;
+}
+#s-agenda table tr td:last-of-type {
+    text-align: center;
+    width: 20%;
+}
+#s-agenda .tabular {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: .9em;
+}
+#s-registration {
+    padding: 20px 20px 40px 20px;
+    background: #f5f5f5;
+    position: relative;
+}
+#s-registration thead h4 {
+    font-family: "Quattrocento Sans";
+}
+#s-speakers {
+    padding: 20px;
+    background-size: cover;
+    position: relative;
+    opacity: 0.9;
+}
+#all-speakers {
+    background: white;
+    padding: 0;
+    position: relative;
+}
+#s-speakers h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    font-family: "Quattrocento Sans";
+}
+#s-speakers h5 {
+    margin-top: 10px;
+}
+#s-speakers .row.drawer.active {
+    padding: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+@media only screen and (max-width: 767px) {
+    #s-speakers p > a[class="toggle"] {
+        display: none;
+    }
+}
+#s-speakers .row .three {
+    max-width: 300px;
+    margin: auto;
+    border: 5px solid #ffffff;
+    box-shadow: 0 -2px 1px #888888;
+}
+.name h6 {
+    font-family: "Quattrocento Sans";
+    font-weight: 700;
+}
+.name .columns {
+    padding: 10px;
+}
+#key .name {
+    background: #ffffff;
+}
+#plen .name {
+    background: #ffffff;
+}
+.mini {
+    font-size: 0.9em;
+}
+#s-travel {
+    background-size: cover;
+    padding: 20px;
+    position: relative;
+}
+.accommodations {
+    border: none;
+}
+.accommodations i {
+    text-decoration: none;
+}
+.accommodations a:hover {
+    color: #407dbe;
+}
+.accommodations h5 {
+    margin-bottom: 7px;
+    color: black;
+}
+.accommodations th {
+    padding: 20px 20px 40px;
+}
+.accommodations td {
+    padding: 20px;
+    width: 33.33%;
+    border: 3px solid #002f56;
+}
+.accommodations .row .columns {
+    padding: 5px;
+}
+#s-travel .four h4:not(:first-of-type) {
+    margin-top: 15px;
+}
+#s-sponsors {
+    padding: 20px;
+    position: relative;
+    background: #f9f9f9;
+    z-index: -100;
+}
+#benefactors {
+    border-top: 5px solid #002f56;
+    border-left: 5px solid #002f56;
+    border-right: 5px solid #002f56;
+    border-bottom: 3px solid #002f56;
+    padding: 10px;
+    background: #FFFFFF;
+}
+#supporters {
+    border-left: 5px solid #640921;
+    border-right: 5px solid #640921;
+    border-top: 3px solid #640921;
+    border-bottom: 3px solid #640921;
+    padding: 10px;
+    background: #FFFFFF;
+}
+#friends {
+    border-left: 5px solid #b17c31;
+    border-right: 5px solid #b17c31;
+    border-bottom: 5px solid #b17c31;
+    border-top: 3px solid #b17c31;
+    padding: 10px;
+    background: #FFFFFF;
+}
+#benefactors h6, #supporters h6, #friends h6 {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+#learnSponsors {
+    background: none;
+}
+#s-faq {
+    padding: 20px;
+}
+#s-faq .row:not(:first-of-type) {
+    border-left: 3px solid #003;
+}
+#s-faq dd {
+    margin-bottom: 15px;
+}
+#s-text {
+    padding: 20px;
+}
+#s-text p {
+    font-size: 1.38em;
+    font-weight: 500;
+    word-spacing: -0.1em;
+    text-align: left;
+}
+#contact {
+    padding: 30px;
+}
+#contact form {
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 15px;
+}
+#contact label {
+    margin-bottom: 3px;
+    font-family: "Roboto";
+}
+#contact form li {
+    margin-bottom: 20px;
+}
+#contact form .btn {
+    background: #CCCCCC;
+}
 
 /*********Mobile********/
 
 @media only screen and (max-width: 767px) {
-	#s-agenda { padding:5px; position:relative; }
-	   #s-agenda table tr td:first-of-type { width:35%; }
-	   #s-agenda table tr td:last-of-type { text-align:center; width:10%; }
-	   #s-agenda table tr td { font-size: .7em; }
-	   #s-agenda .tabular { font-size: .6em; }
-
-	#s-speakers p { font-size: .7em; }
-	#s-speakers h5 { font-size: .8em; }
-
-	#s-travel h3 {font-size: 1.8em; }
+    #s-agenda {
+        padding: 5px;
+        position: relative;
+    }
+    #s-agenda table tr td:first-of-type {
+        width: 35%;
+    }
+    #s-agenda table tr td:last-of-type {
+        text-align: center;
+        width: 10%;
+    }
+    #s-agenda table tr td {
+        font-size: .7em;
+    }
+    #s-agenda .tabular {
+        font-size: .6em;
+    }
+    #s-speakers p {
+        font-size: .7em;
+    }
+    #s-speakers h5 {
+        font-size: .8em;
+    }
+    #s-travel h3 {
+        font-size: 1.8em;
+    }
 }
-
 @media only screen and (max-width: 340px) {
-	#s-agenda { padding:5px; position:relative; }
-	   #s-agenda table tr td:first-of-type { width:35%; }
-	   #s-agenda table tr td:last-of-type { text-align:center; width:10%; }
-	   #s-agenda table tr td { font-size: .6em; }
-	   #s-agenda .tabular { font-size: .5em; }
-
-	#s-speakers p { font-size: .7em; }
-	#s-speakers h5 { font-size: .8em; }
-
-	#s-travel h3 {font-size: 1.4em; }
+    #s-agenda {
+        padding: 5px;
+        position: relative;
+    }
+    #s-agenda table tr td:first-of-type {
+        width: 35%;
+    }
+    #s-agenda table tr td:last-of-type {
+        text-align: center;
+        width: 10%;
+    }
+    #s-agenda table tr td {
+        font-size: .6em;
+    }
+    #s-agenda .tabular {
+        font-size: .5em;
+    }
+    #s-speakers p {
+        font-size: .7em;
+    }
+    #s-speakers h5 {
+        font-size: .8em;
+    }
+    #s-travel h3 {
+        font-size: 1.4em;
+    }
 }
 
 /********europe********/
-#europe .tab-nav { border-bottom:none; }
-  #europe .tab-nav li.active { border-left:2px solid #dfc486; border-top:2px solid #dfc486; border-right:2px solid #dfc486; }
 
-#europe .navbar { border-bottom:3px solid #dfc486;  }
+#europe .tab-nav {
+    border-bottom: none;
+}
+#europe .tab-nav li.active {
+    border-left: 2px solid #dfc486;
+    border-top: 2px solid #dfc486;
+    border-right: 2px solid #dfc486;
+}
+#europe .navbar {
+    border-bottom: 3px solid #dfc486;
+}
+#europe table thead {
+    background-color: #dfc486;
+    color: #333333;
+}
 
-#europe table thead { background-color: #dfc486; color: #333333; }
-
-#europe #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg") no-repeat center center;
+/*#europe #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg") no-repeat center center;
                 background-size:cover;
                 height: 750px
                 text-align:center;
-              }
-  #europe #transborder {
+              }*/
+
+#europe #transborder {
     /*background: rgba(132, 132, 132, 0.73);
     border-radius: 15px;
     padding: 20px 0;
@@ -181,40 +459,138 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
     -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
     max-width: 900px;
-  }
-  #europe #home h3 { color: white;}
+}
+#europe #home h3 {
+    color: white;
+}
 
 /*Agenda*/
-#europe #s-agenda .tab-nav li { border-right:2px solid #dfc486; border-top:2px solid #dfc486; border-left:2px solid #dfc486; }
-  #europe #s-agenda .tab-nav { border-bottom:1px solid #dfc486; }
+
+#europe #s-agenda .tab-nav li {
+    border-right: 2px solid #dfc486;
+    border-top: 2px solid #dfc486;
+    border-left: 2px solid #dfc486;
+}
+#europe #s-agenda .tab-nav {
+    border-bottom: 1px solid #dfc486;
+}
 
 /*Speakers*/
-#europe #s-speakers h4 { background:#dfc486; }
-  #europe #all-speakers { border:2px dotted #dfc486; }
+
+#europe #s-speakers h4 {
+    background: #dfc486;
+}
+#europe #all-speakers {
+    border: 2px dotted #dfc486;
+}
 
 /*Footer*/
-#europe footer #contact { background:url('../img/blarney-castle.jpg') no-repeat top center; background-size:cover; color:black; }
-  #europe #contact h4, #europe #contact h6 { color:black; }
 
+#europe footer #contact {
+    background: url('../img/blarney-castle.jpg') no-repeat top center;
+    background-size: cover;
+    color: black;
+}
+#europe #contact h4, #europe #contact h6 {
+    color: black;
+}
 
 /********manufacturing********/
-#manufacturing .tab-nav { border-bottom:none; }
-  #manufacturing .tab-nav li.active { border-left:2px solid #dfc486; border-top:2px solid #dfc486; border-right:2px solid #dfc486; }
 
-#manufacturing .navbar { border-bottom:3px solid #dfc486;  }
+#manufacturing .tab-nav {
+    border-bottom: none;
+}
+#manufacturing .tab-nav li.active {
+    border-left: 2px solid #dfc486;
+    border-top: 2px solid #dfc486;
+    border-right: 2px solid #dfc486;
+}
+#manufacturing .navbar {
+    border-bottom: 3px solid #dfc486;
+}
+#manufacturing table thead {
+    background-color: #dfc486;
+    color: #333333;
+}
 
-#manufacturing table thead { background-color: #dfc486; color: #333333; }
-
-#manufacturing #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
+/*#manufacturing #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
                 background-size:cover;
                 height: 750px
                 text-align:center;
-              }
+              }*/
+
 #manufacturing #transborder {
     /*background: rgba(132, 132, 132, 0.73);
     border-radius: 15px;
     padding: 20px 0;
     max-width: 900px;*/
+    background: rgba(0, 0, 0, 0.40);
+    border-radius: 15px;
+    padding: 20px 0;
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
+    max-width: 900px;
+}
+#manufacturing #home h3 {
+    color: white;
+}
+
+/*Agenda*/
+
+#manufacturing #s-agenda .tab-nav li {
+    border-right: 2px solid #dfc486;
+    border-top: 2px solid #dfc486;
+    border-left: 2px solid #dfc486;
+}
+#manufacturing #s-agenda .tab-nav {
+    border-bottom: 1px solid #dfc486;
+}
+
+/*Speakers*/
+
+#manufacturing #s-speakers h4 {
+    background: #dfc486;
+}
+#manufacturing #all-speakers {
+    border: 2px dotted #dfc486;
+}
+
+/*Footer*/
+
+#manufacturing footer #contact {
+    background: url('../img/blarney-castle.jpg') no-repeat top center;
+    background-size: cover;
+    color: black;
+}
+#manufacturing #contact h4, #manufacturing #contact h6 {
+    color: black;
+}
+
+/********MEXICO********/
+
+#mexico .tab-nav {
+    border-bottom: none;
+}
+#mexico .tab-nav li.active {
+    border-left: 2px solid #640921;
+    border-top: 2px solid #640921;
+    border-right: 2px solid #640921;
+}
+#mexico .navbar {
+    border-bottom: 3px solid #640921;
+}
+#mexico table thead {
+    background-color: #640921;
+}
+
+/*#mexico #home { background:url('http://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg') no-repeat top center; background-size:cover; }*/
+
+#mexico #transborder {
+    /*background: rgba(132, 132, 132, 0.73);
+  border-radius: 15px;
+  padding: 20px 0;
+  max-width: 900px;*/
     background: rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 20px 0;
@@ -222,88 +598,103 @@ h1, h2, h3, h4, h5, h6 { font-family:"Muli"; font-weight:300; }
     -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
     max-width: 900px;
-  }
-  #manufacturing #home h3 { color: white;}
-
-/*Agenda*/
-#manufacturing #s-agenda .tab-nav li { border-right:2px solid #dfc486; border-top:2px solid #dfc486; border-left:2px solid #dfc486; }
-  #manufacturing #s-agenda .tab-nav { border-bottom:1px solid #dfc486; }
-
-/*Speakers*/
-#manufacturing #s-speakers h4 { background:#dfc486; }
-  #manufacturing #all-speakers { border:2px dotted #dfc486; }
-
-/*Footer*/
-#manufacturing footer #contact { background:url('../img/blarney-castle.jpg') no-repeat top center; background-size:cover; color:black; }
-  #manufacturing #contact h4, #manufacturing #contact h6 { color:black; }
-
-/********MEXICO********/
-#mexico .tab-nav { border-bottom:none; }
-  #mexico .tab-nav li.active { border-left:2px solid #640921; border-top:2px solid #640921; border-right:2px solid #640921; }
-
-#mexico .navbar { border-bottom:3px solid #640921; }
-
-#mexico table thead { background-color:#640921; }
-
-#mexico #home { background:url('http://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg') no-repeat top center; background-size:cover; }
-#mexico #transborder {
-  /*background: rgba(132, 132, 132, 0.73);
-  border-radius: 15px;
-  padding: 20px 0;
-  max-width: 900px;*/
-  background: rgba(0, 0, 0, 0.26);
-  border-radius: 15px;
-  padding: 20px 0;
-  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
-  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5)!important;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.31);
-  max-width: 900px;
+}
+#mexico #home h3 {
+    color: white;
 }
 
-  #mexico #home h3 { color: white; }
-
 /*Agenda*/
-#mexico #s-agenda .tab-nav li { border-right:2px solid #640921; border-top:2px solid #640921; border-left:2px solid #640921; }
-  #mexico #s-agenda .tab-nav { border-bottom:1px solid #640921; }
+
+#mexico #s-agenda .tab-nav li {
+    border-right: 2px solid #640921;
+    border-top: 2px solid #640921;
+    border-left: 2px solid #640921;
+}
+#mexico #s-agenda .tab-nav {
+    border-bottom: 1px solid #640921;
+}
 
 /*Registration*/
-#mexico #s-registration thead h4 { color:white; }
+
+#mexico #s-registration thead h4 {
+    color: white;
+}
 
 /*Speakers*/
-#mexico #s-speakers h4 { background:#640921; color:white; }
-  #mexico #all-speakers { border:2px dotted #640921; }
+
+#mexico #s-speakers h4 {
+    background: #640921;
+    color: white;
+}
+#mexico #all-speakers {
+    border: 2px dotted #640921;
+}
 
 /*Travel*/
-#mexico #s-travel { background:#F9F9F9; }
-  #s-travel .row.drawer.active{ padding: 15px; background: none; border: none; box-shadow:none; }
+
+#mexico #s-travel {
+    background: #F9F9F9;
+}
+#s-travel .row.drawer.active {
+    padding: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
 
 /*Sponsors*/
-#mexico #s-sponsors { background:white; }
+
+#mexico #s-sponsors {
+    background: white;
+}
 
 /*Footer*/
-#mexico footer #contact { background:#fafafa; color:#333333; }
-  #contact h4, #contact h6 { color:#333333; }
-  #contact form .btn { background:#CCCCCC; color:#333333; }
 
-
+#mexico footer #contact {
+    background: #fafafa;
+    color: #333333;
+}
+#contact h4, #contact h6 {
+    color: #333333;
+}
+#contact form .btn {
+    background: #CCCCCC;
+    color: #333333;
+}
 
 /********COSTA RICA********/
+
+
 /*The Costa Rica page no longer exists but it will again in the future.*/
-#costa .tab-nav { border-bottom:none; }
-  #costa .tab-nav li.active { border-left:2px solid #407dbe; border-top:2px solid #407dbe; border-right:2px solid #407dbe; }
 
-#costa .navbar { border-bottom:3px solid #407dbe; }
-
-  #contact h4, #contact h6 { color:black; }
-
-
-
+#costa .tab-nav {
+    border-bottom: none;
+}
+#costa .tab-nav li.active {
+    border-left: 2px solid #407dbe;
+    border-top: 2px solid #407dbe;
+    border-right: 2px solid #407dbe;
+}
+#costa .navbar {
+    border-bottom: 3px solid #407dbe;
+}
+#contact h4, #contact h6 {
+    color: black;
+}
 
 /********INDIA********/
+
+
 /*Accent color is PURPLE*/
 
+
 /********AUSTRALIA********/
+
+
 /*Accent color is ORANGE*/
 
+
 /********BRAZIL********/
+
+
 /*Accent color is EMERALD GREEN (like Oz - or its flag - whatever)*/

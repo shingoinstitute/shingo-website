@@ -2,13 +2,14 @@
   "name": "Manufacturing Summit",
   "date": "September 19-21, 2016",
   "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
+  "background_image": "http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png",
   "location": "Knoxville, Tennessee",
   "intro": "Come learn from manufacturing leaders how mid-level managers can make big transformations in their organizations using the principles of the <em>Shingo Model™</em>. Smart, dedicated managers are critical for enterprise excellence. Come and learn what managers like you have done to make notable improvements to their organizations. You’ll hear experienced leaders as keynote speakers and in break-out sessions where you can join the discussion. You’ll network with leaders and managers like you who are all striving to improve their manufacturing companies. If you’re in manufacturing and want continuous improvement, please join us.",
   "presentation_copy": "Speakers at this congreso will speak in either Spanish or English. Free translation service will be available for all sessions",
   "agenda": [
     {
-      "name": "Monday",
-      "title": "September 19 - Main Conference",
+      "name": "Thursday",
+      "title": "October 6 - Main Conference",
       "sessions": [
         {
           "time": "07:00 - 09:00",
@@ -32,18 +33,174 @@
           }
         },
         {
+          "time": "10:00 - 10:50",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+        {
+          "time": "10:50 - 11:20",
+          "info": {
+            "name": "Networking Break",
+            "detail": []
+          }
+        },
+        {
+          "time": "11:20 - 12:10",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+        {
+          "time": "12:10 - 13:30",
+          "info": {
+            "name": "Lunch",
+            "detail": []
+          }
+        },
+        {
+          "time": "13:30 - 14:30",
+          "info": {
+            "name": "Concurrent Sessions",
+            "detail": []
+          }
+        },
+        {
+          "time": "14:30 - 15:00",
+          "info": {
+            "name": "Networking Break",
+            "detail": []
+          }
+        },
+        {
           "time": "15:00 - 16:00",
           "info": {
             "name": "Concurrent Sessions",
-            "detail": [
-              {
-                "id": "con-padilla",
-                "speaker": "Rafael Padilla - CI Manager, Heineken",
-                "detail": "Rafael Padilla",
-                "title": "Ensure Continuous Improvement through Change Management",
-                "abstract": "When we try to develop continuous improvement initiatives and deploy them throughout the organization, we rarely take care of the people we are impacting most. And we underestimate the use of powerful tools that can gain engagement and momentum toward achieving our desired results. We must have a clear roadmap that guides us toward excellence, with change management embedded in it. Throughout this presentation, Rafael Padilla will help you understand the importance of having a clear roadmap for implementation; John Kotter’s 8-step process for leading change through practical examples; and the three elements that drive people based on Daniel Pink’s book, <em>Drive: The Surprising Truth About What Motivates Us</em>. You will also learn about the influence process that helps you change anything, based on Kerry Patterson’s book, <em>Influencer</em>, and you will realize how to apply it all to the transformation plan."
-              }
-            ]
+            "detail": []
+          }
+        },
+
+        {
+          "time": "17:30 - 21:00",
+          "info": {
+            "name": "Dinner & Entertainment",
+            "detail": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Friday",
+      "title": "October 2 - Main Conference",
+      "sessions": [
+        {
+          "time": "07:00 - 09:00",
+          "info": {
+            "name": "Breakfast & Registration",
+            "detail": []
+          }
+        },
+        {
+          "time": "09:00 - 10:00",
+          "info": {
+            "name": "Concurrent Sessions",
+            "detail": []
+          }
+        },
+        {
+          "time": "10:00 - 10:10",
+          "info": {
+            "name": "Intermission",
+            "detail": []
+          }
+        },
+        {
+          "time": "10:10 - 11:10",
+          "info": {
+            "name": "Concurrent Sessions",
+            "detail": []
+          }
+        },
+        {
+          "time": "11:10 - 11:40",
+          "info": {
+            "name": "Networking Break",
+            "detail": []
+          }
+        },
+        {
+          "time": "11:40 - 12:40",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+        {
+          "time": "12:40 - 13:30",
+          "info": {
+            "name": "Lunch",
+            "detail": []
+          }
+        },
+        {
+          "time": "12:30 - 14:30",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+
+
+        {
+          "time": "09:50 - 10:00",
+          "info": {
+            "name": "Intermission",
+            "detail": []
+          }
+        },
+        {
+          "time": "10:00 - 10:50",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+        {
+          "time": "10:50 - 11:20",
+          "info": {
+            "name": "Networking Break",
+            "detail": []
+          }
+        },
+        {
+          "time": "11:20 - 12:10",
+          "info": {
+            "name": "Keynote Presentation",
+            "detail": []
+          }
+        },
+
+        {
+          "time": "13:30 - 14:30",
+          "info": {
+            "name": "Concurrent Sessions",
+            "detail": []
+          }
+        },
+        {
+          "time": "14:30 - 15:00",
+          "info": {
+            "name": "Networking Break",
+            "detail": []
+          }
+        },
+        {
+          "time": "15:00 - 16:00",
+          "info": {
+            "name": "Keynote",
+            "detail": []
           }
         }
       ]

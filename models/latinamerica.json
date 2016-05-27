@@ -1,29 +1,14 @@
 {
-    "name": "European Conference",
-    "date": "November 30 - December 2, 2016",
+    "name": "Congreso Shingo Latin America",
+    "date": "October 6 - 7, 2016",
     "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
-    "background_image": "http://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg",
-    "location": "Copenhagen, Denmark",
-    "intro": "Come and learn from people who have made notable transformations in their organizations on their road to enterprise excellence. Each year we are joined by leaders from all around Europe to join in and enjoy an opportunity to learn from what others are doing and successfully have done to improve their organization. Along with renound keynote speakers, you will get an opportunity to participate in break-outs where you will be able to ask questions and discuss with experienced leaders and business professionals. Whatever the industry may be, people with a desire to improve business should attend.",
-    "presentation_copy": "The language of the Conference will be English.",
+    "background_image": "http://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg",
+    "location": "Monterrey, México",
+    "intro": "Come and learn from people who have made notable transformations in their organizations on their road to enterprise excellence. Each year we are joined by leaders from all around Latin America to join in and enjoy an opportunity to learn from what others are doing and have successfully done to improve their organization. Along with renowned keynote speakers, you will get an opportunity to participate in break-outs where you will be able to ask questions and discuss with experienced leaders and business professionals. Whatever industry you come from, if you have a desire to improve business operations, you should attend.",
+    "presentation_copy": "Speakers at this congreso will speak in either Spanish or English. Free translation service will be available for all sessions",
     "agenda": [{
-        "name": "Wednesday",
-        "title": "November 30",
-        "sessions": [{
-            "time": "13:00 - 15:30",
-            "info": {
-                "name": "Lundbeck Tour",
-                "detail": [{
-                    "id": "lundbeck-tour",
-                    "speaker": "Lundbeck is a Danish based pharmaceutical company engaged in research to find new drugs for the treatment of brain disorders, including Depression, Schizophrenia, Alzheimer’s disease, Parkinson’s disease and Alcohol Dependence. Lundbeck’s mission is to improve the quality of life of people suffering from psychiatric and neurological disorders. Lundbeck is the only fully integrated pharmaceutical company that focus exclusively on brain disorders. Lundbeck has a turnover of approximately 2 billion Euros and employ 5.000 people. **Bus will depart at 12:30 and return by 16:00",
-                    "detail": "",
-                    "title": "Lundbeck Tour"
-                }]
-            }
-        }]
-    }, {
         "name": "Thursday",
-        "title": "December 1 - Main Conference",
+        "title": "October 6 - Main Conference",
         "sessions": [{
                 "time": "07:00 - 09:00",
                 "info": {
@@ -33,7 +18,7 @@
             }, {
                 "time": "09:00 - 09:50",
                 "info": {
-                    "name": "Keynote Presentation - Ken Snyder",
+                    "name": "Keynote Presentation",
                     "detail": []
                 }
             }, {
@@ -45,7 +30,7 @@
             }, {
                 "time": "10:00 - 10:50",
                 "info": {
-                    "name": "Keynote Presentation -  Ciarán Corcoran & Seán Kelly",
+                    "name": "Keynote Presentation",
                     "detail": []
                 }
             }, {
@@ -57,7 +42,7 @@
             }, {
                 "time": "11:20 - 12:10",
                 "info": {
-                    "name": "Keynote Presentation - Håkan Forss",
+                    "name": "Keynote Presentation",
                     "detail": []
                 }
             }, {
@@ -70,17 +55,7 @@
                 "time": "13:30 - 14:30",
                 "info": {
                     "name": "Concurrent Sessions",
-                    "detail": [{
-                        "id": "stef-rae",
-                        "speaker": "Stefan de Raedemaecker - Senior Expert Operations, McKinsey & Company",
-                        "detail": "Stefan de Raedemaecker"
-                    },
-                    {
-                        "id": "musta-kem",
-                        "speaker": "Mustafa Kemal Altay - Production System Manager, Bosch",
-                        "detail": "Mustafa Kemal Altay"
-                    }
-                  ]
+                    "detail": []
                 }
             }, {
                 "time": "14:30 - 15:00",
@@ -93,31 +68,26 @@
                 "info": {
                     "name": "Concurrent Sessions",
                     "detail": [{
-                        "id": "jac-esk",
-                        "speaker": "Jacob Eskildsen - Professor in Business & Quantitative Methods, Aarhus University",
-                        "detail": "Jacob Eskildsen"
-                    },
-                    {
-                        "id": "jos-lui",
-                        "speaker": "Jose Luis Ordorica - Sr. Consultant Continental Business System, Continental Automotive Systems",
-                        "detail": "Jose Luis Ordorica"
-                    }
-                  ]
+                        "id": "con-padilla",
+                        "speaker": "Rafael Padilla - CI Manager, Heineken",
+                        "detail": "Rafael Padilla",
+                        "title": "Ensure Continuous Improvement through Change Management",
+                        "abstract": "When we try to develop continuous improvement initiatives and deploy them throughout the organization, we rarely take care of the people we are impacting most. And we underestimate the use of powerful tools that can gain engagement and momentum toward achieving our desired results. We must have a clear roadmap that guides us toward excellence, with change management embedded in it. Throughout this presentation, Rafael Padilla will help you understand the importance of having a clear roadmap for implementation; John Kotter’s 8-step process for leading change through practical examples; and the three elements that drive people based on Daniel Pink’s book, <em>Drive: The Surprising Truth About What Motivates Us</em>. You will also learn about the influence process that helps you change anything, based on Kerry Patterson’s book, <em>Influencer</em>, and you will realize how to apply it all to the transformation plan."
+                    }]
                 }
             },
+
             {
                 "time": "17:30 - 21:00",
                 "info": {
                     "name": "Dinner & Entertainment",
-                    "detail": [{
-                      "speaker": "<a href=\"http://www.wallmans.dk/en/new-show-music-box/\">Wallman's Dinnershow - Click for more details</a>"
-                      }]
+                    "detail": []
                 }
             }
         ]
     }, {
         "name": "Friday",
-        "title": "December 2 - Main Conference",
+        "title": "October 2 - Main Conference",
         "sessions": [{
                 "time": "07:00 - 09:00",
                 "info": {
@@ -151,7 +121,7 @@
             }, {
                 "time": "11:40 - 12:40",
                 "info": {
-                    "name": "Keynote Presentation - Billy Taylor",
+                    "name": "Keynote Presentation",
                     "detail": []
                 }
             }, {
@@ -223,7 +193,7 @@
             "price": "€1150"
         }]
     },
-    "se_info": "</p>Exhibitors at the Shingo European Conference enjoy the chance to discover new clients as well as reconnect with current customers in a highly relevant and social atmosphere. With plenty of networking opportunities throughout each day, you’re sure to develop new leads and contacts eager to begin a lasting, mutually beneficial relationship. Exhibitors also receive an opt-in email roster of attendees and are highlighted on the Shingo app and print items.</p><p>We offer several tax-deductible sponsorship opportunities that place your company name in front of more than 16,000 professionals and decision-makers across the globe. As a major contributor to the value and success of the Shingo European Conference, you'll position your brand as a thought-leader committed to excellence. Conference attendees are mid- to senior-level management representing more than 650 companies worldwide.</p><p>The available levels of sponsorship are Friends ($5,000), Supporters ($10,000), and Benefactors ($15,000).</p><p>For more information about exhibiting or becoming a sponsor, please contact Mary Price, <a href=\"mailto:mary.price@usu.edu\" >mary.price@usu.edu</a>, 435.797.3785.</p>",
+    "se_info": "<p>Exhibitors at the Congreso Shingo enjoy the chance to discover new clients as well as reconnect with current customers in a highly relevant and social atmosphere. With plenty of networking opportunities throughout each day, you’re sure to develop new leads and contacts eager to begin a lasting, mutually beneficial relationship. Exhibitors also receive an opt-in email roster of attendees and are highlighted on the Shingo app and print items.</p><p>We offer several tax-deductible sponsorship opportunities that place your company name in front of more than 16,000 professionals and decision-makers across the globe. As a major contributor to the value and success of the Congreso Shingo, you'll position your brand as a thought-leader committed to excellence. Conference attendees are mid- to senior-level management representing more than 650 companies worldwide.</p><p>The available levels of sponsorship are Friends ($5,000), Supporters ($10,000), and Benefactors ($15,000).</p><p>For more information about exhibiting or becoming a sponsor, please contact Mary Price, <a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>, 435.797.3785.</p>",
     "travel": {},
-    "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UrWJFEA3' ORDER BY Speaker_Contact__r.LastName"
+    "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000Umgc1EAB' ORDER BY Speaker_Contact__r.LastName"
 }

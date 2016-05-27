@@ -1,4 +1,4 @@
-<div class="tab-content active">
+<div class="tab-content">
     <!-- All 'detail' modals are at the end of each table -->
     <table class="striped" id="day.name">
         <thead>
@@ -14,25 +14,27 @@
                         {{#if this.info.detail}}
                             <br>
                             <ul class="square">
-                              {{#each this.info.detail}}
-                                <li>{{this.speaker}}</li>
-                              {{/each}}
+                                {{#each this.info.detail}}
+                                    <li>{{{this.speaker}}}</li>
+                                {{/each}}
                             </ul>
                         {{/if}}
                     </td>
                     <td>
                         <br>
                         {{#each this.info.detail}}
-                          <a href="#" class="switch" gumby-trigger="#{{this.id}}">Details</a>
+                            {{#if this.abstract}}
+                                <a href="#" class="switch" gumby-trigger="#{{this.id}}">Details</a>
+                            {{/if}}
                         {{/each}}
                     </td>
                 </tr>
             {{/each}}
         </tbody>
     </table>
-  {{#each day.sessions}}
-    {{#each this.info.detail}}
-      {{>_title-content-modal data=this}}
+    {{#each day.sessions}}
+        {{#each this.info.detail}}
+            {{>_title-content-modal data=this}}
+        {{/each}}
     {{/each}}
-  {{/each}}
 </div>
