@@ -1,19 +1,35 @@
-app.factory('events', ['$http', function($http) {
-    return $http.get('/api')
-        .success(function(data) {
-            return data;
-        })
-        .error(function(data) {
-            return data;
-        })
-}])
+(function() {
+  angular.module('app')
+    .factory('events', ['$http', getEvents]);
 
-app.factory('save', ['$http', function($http) {
-    return $http.post("/api", data)
-        .success(function(data, status) {
+  function getEvents($http) {
+    return {
+      get: function() {
+        return $http.get('/api')
+          .success(function(data) {
             return data;
-        })
-        .error(function(data) {
-            return data
-        })
-}])
+          })
+          .error(function(data) {
+            return data;
+          });
+      },
+      post: function(event) {
+        // var data = $.param({
+        //   event: JSON.stringify(event)
+        // });
+        // console.log("Data " + data);
+        return $http({
+            method: 'post',
+            url: '/api',
+            data: event
+          })
+          .success(function(data, status) {
+            return data;
+          })
+          .error(function(data) {
+            return data;
+          });
+      }
+    }
+  }
+})();

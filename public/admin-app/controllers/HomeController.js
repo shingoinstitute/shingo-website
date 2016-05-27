@@ -1,5 +1,11 @@
-app.controller('HomeController', ['$scope', 'events', function($scope, events) {
-  events.success(function(data) {
-    $scope.events = data;
-  });
-}]);
+(function(){
+  angular.module('app')
+  .controller('HomeController', ['$scope', 'events', HomeController]);
+
+  function HomeController($scope, events){
+    var vm = this;
+    events.get().success(function(data) {
+      vm.events = data;
+    });
+  }
+})();
