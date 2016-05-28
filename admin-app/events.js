@@ -8,7 +8,6 @@ var express = require('express'),
 
 router.get('/', function(req, res) {
   var events = new Array();
-  console.log("api/get called");
   fs.readdirSync(__dirname + '/../models')
     .filter(function(file) {
       return (file.indexOf(".json") !== 0) && (file != 'sf.js');
@@ -22,8 +21,8 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
+  if(!req.session.access_token) { res.end() }
   var event = req.body
-  console.log("api/post called");
   jsonfile.writeFile(__dirname + '/../models/' + event.filename, event, function(err) {
     res.send(err)
   })

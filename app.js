@@ -9,11 +9,28 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     sass = require('node-sass'),
     config = require('./config.js'),
-    api_route = require('./admin-app/events')
+    api_route = require('./admin-app/events'),
+    Promise = require('bluebird'),
+    request = Promise.promisifyAll(require('request')),
+    session = require('express-session'),
+    MySQLStore = require('express-mysql-session')(session)
 
 var languageTree = require('./routes/tree.js');
 
 var app = express();
+var store = new MySQLStore(config.mysql_connection)
+app.use(
+    session({
+        secret: 'iamawesome',
+        store: store,
+        resave: true,
+        saveUninitialized: true,
+        cookie: {
+            secure: config.cookie_security,
+            maxAge: 3600000
+        }
+    })
+)
 
 // Complie SASS
 // sass.render({
@@ -51,9 +68,46 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', languageTree);
-app.get('/admin',function(req,res){
-  res.sendFile(__dirname + '/public/admin-app/index.html')
+
+app.get('/admin', function(req, res) {
+    if (!req.session.access_token) {
+        return res.redirect('/sflogin')
+    }
+    res.sendFile(__dirname + '/public/admin-app/index.html')
 })
+
+app.get('/sflogin', function(req, res) {
+    res.redirect(config.sf.environment + "/services/oauth2/authorize?response_type=code&client_id=" + config.sf.client_id + "&redirect_uri=" + config.sf.redirect_uri)
+})
+
+app.get('/auth_callback', function(req, res) {
+    var post_data = {
+        grant_type: 'authorization_code',
+        code: req.query.code,
+        client_id: config.sf.client_id,
+        client_secret: config.sf.client_secret,
+        redirect_uri: config.sf.redirect_uri,
+    }
+
+    var options = {
+        url: config.sf.environment + '/services/oauth2/token',
+        form: post_data
+    }
+
+    request.postAsync(options).then(function(body) {
+        if (body.statusCode != 200) {
+            throw new Error("status_code:" + body.status_code)
+        }
+        response = JSON.parse(body.body);
+
+        req.session.access_token = response.access_token
+        return res.redirect('/admin')
+    }).catch(function(err) {
+        console.log(err);
+        return res.redirect('/')
+    })
+})
+
 app.use('/api', api_route);
 
 /*   Error Handling  */
