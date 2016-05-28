@@ -71,7 +71,7 @@ router.get('/events/:name', function(req, res, next) {
             concurrent.push(results.records[i])
           }
         }
-        res.render('conference/manufacturing', {
+        res.render('conference/summit', {
             layout: 'summit',
             title: event.name + ' - Shingo Institute',
             keynote: keynote,
