@@ -1,130 +1,165 @@
 <div class="event" ng-controller="EventController as detail">
-  {{detail.error}}
-  <div class="content">
-    <form novalidate>
-      <fieldset>
-        <legend>Event:</legend>
-        <label>Name:
-          <input type="text" ng-model="detail.ev.name" />
-        </label>
-        </br>
-        <label>Date:
-          <input type="text" ng-model="detail.ev.date" />
-        </label>
-        </br>
-        <label>Logo:
-          <input type="url" ng-model="detail.ev.logo" />
-        </label>
-        </br>
-        <label>Location:
-          <input type="text" ng-model="detail.ev.location" />
-        </label>
-        </br>
-        <label>Intro Copy:
-          <trix-editor angular-trix ng-model="detail.ev.intro" class="trix-content" style="height: 200px;"></trix-editor>
-          </br>
-        </label>
-        </br>
-        <label>Presentation Copy:
-          <input type="text" ng-model="detail.ev.presentation_copy" />
-        </label>
-        </br>
-        <label>Speaker Query:
-          <input type="text" ng-model="detail.ev.speaker_query" />
-        </label>
-        </br>
-        <label>se_info:
-          <trix-editor angular-trix ng-model="detail.ev.se_info" class="trix-content" style="height: 200px;"></trix-editor>
-          </br>
-        </label>
-        </br>
-        <fieldset>
-          <legend>Registration:</legend>
-          <label>Link:
-            <input type="url" ng-model="detail.ev.registration.link" />
-          </label>
-          </br>
-          <h6>Prices:</h6>
-          <div ng-repeat="price in detail.ev.registration.prices">
+    {{detail.error}}
+    <div class="content">
+        <form novalidate>
             <fieldset>
-              <legend>Price:</legend>
-              <label>Type:
-                <input type="text" ng-model="price.type" />
-              </label>
-              </br>
-              <label>Price:
-                <input type="text" ng-model="price.price" />
-              </label>
-              </br>
-            </fieldset>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Agenda:</legend>
-          <div ng-repeat="day in detail.ev.agenda">
-            <fieldset>
-              <legend>Day:</legend>
-              <label>Name:
-                <input type="text" ng-model="day.name" />
-              </label>
-              </br>
-              <label>Title:
-                <input type="text" ng-model="day.title" />
-              </label>
-              </br>
-              <fieldset>
-                <legend>Sessions:</legend>
-                <div ng-repeat="session in day.sessions">
-                  <fieldset>
-                    <legend>Session:</legend>
-                    <label>Time:
-                      <input type="text" ng-model="session.time" />
-                    </label>
-                    </br>
-                    <h6>Info:</h6>
+                <legend>Event:</legend>
+                <div class="row">
+                  <div class="small-4 columns">
                     <label>Name:
-                      <input type="text" ng-model="session.info.name" />
+                        <input type="text" ng-model="detail.ev.name" />
+                    </label>
+                  </div>
+                  <div class="small-4 columns">
+                    <label>Date:
+                        <input type="text" ng-model="detail.ev.date" />
+                    </label>
+                  </div>
+                  <div class="small-4 columns">
+                    <label>Location:
+                        <input type="text" ng-model="detail.ev.location" />
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-6 columns">
+                    <label>Logo:
+                        <input type="url" ng-model="detail.ev.logo" />
+                    </label>
+                  </div>
+                  <div class="small-6 columns">
+                    <label>Presentation Copy:
+                        <input type="text" ng-model="detail.ev.presentation_copy" />
+                    </label>
+                  </div>
+                  <div class="small-12 columns">
+                    <label>Speaker Query:
+                        <input type="text" ng-model="detail.ev.speaker_query" />
+                    </label>
+                  </div>
+                </div>
+                <label>Intro Copy:
+                    <trix-editor angular-trix ng-model="detail.ev.intro" class="trix-content"></trix-editor>
+                    </br>
+                </label>
+                </br>
+                <label>se_info:
+                    <trix-editor angular-trix ng-model="detail.ev.se_info" class="trix-content"></trix-editor>
+                    </br>
+                </label>
+                </br>
+                <fieldset>
+                    <legend>Registration:</legend>
+                    <label>Link:
+                        <input type="url" ng-model="detail.ev.registration.link" />
                     </label>
                     </br>
-                    <fieldset>
-                      <legend>Details:</legend>
-                      <div ng-repeat="detail in session.info.details">
-                        <label>id:
-                          <input type="text" ng-model="detail.id" />
-                        </label>
-                        </br>
-                        <label>Speaker:
-                          <input type="text" ng-model="detail.speaker" />
-                        </label>
-                        </br>
-                        <label>Detail:
-                          <input type="text" ng-model="detail.detail" />
-                        </label>
-                        </br>
-                        <label>Title:
-                          <input type="text" ng-model="detail.title" />
-                        </label>
-                        </br>
-                        <label>Abstract:
-                          <trix-editor angular-trix ng-model="detail.abstract" class="trix-content" style="height: 200px;"></trix-editor>
-                        </label>
-                        </br>
-                      </div>
-                    </fieldset>
-                  </fieldset>
-                </div>
-              </fieldset>
+                    <h6>Prices: <i class="icon fa fa-plus-circle fa-lg" ng-click="detail.addRegistration()"></i></h6>
+                    <div ng-repeat="price in detail.ev.registration.prices">
+                        <fieldset>
+                            <legend>Price: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeRegistration($index)"></i></legend>
+                            <div class="row">
+                                <div class="small-6 columns">
+                                    <label>Type:
+                                        <input type="text" ng-model="price.type" />
+                                    </label>
+                                </div>
+                                <div class="small-6 columns">
+                                    <label>Price:
+                                        <input type="text" ng-model="price.price" />
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Agenda: <i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDay()"></i> </legend>
+                    <div ng-repeat="day in detail.ev.agenda">
+                        <fieldset>
+                            <legend>Day: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeDay($index)"></i> </legend>
+                            <div class="row">
+                                <div class="small-6 columns">
+                                    <label>Name:
+                                        <input type="text" ng-model="day.name" />
+                                    </label>
+                                </div>
+                                <div class="small-6 columns">
+                                    <label>Title:
+                                        <input type="text" ng-model="day.title" />
+                                    </label>
+                                </div>
+                            </div>
+                            <fieldset>
+                                <legend>Sessions: <i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addSession($index)"></i> </legend>
+                                <div ng-repeat="session in day.sessions">
+                                    <fieldset>
+                                        <legend>Session: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeSession($parent.$index, $index)"></i> </legend>
+                                        <div class="row">
+                                            <div class="small-6 columns">
+                                                <label>Time:
+                                                    <input type="text" ng-model="session.time" />
+                                                </label>
+                                            </div>
+                                            <div class="small-6 columns">
+                                                <label>Name:
+                                                    <input type="text" ng-model="session.info.name" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <fieldset>
+                                            <legend>Details: <i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDetail($parent.$index, $index)"></i> </legend>
+                                            <div ng-repeat="d in session.info.detail">
+                                                <fieldset>
+                                                    <legend>Detail: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeDetail($parent.$parent.$index, $parent.$index, $index)"></i> </legend>
+                                                    <div class="row">
+                                                        <div class="small-6 columns">
+                                                            <label>id:
+                                                                <input type="text" ng-model="d.id" />
+                                                            </label>
+                                                        </div>
+                                                        <div class="small-6 columns">
+                                                            <label>Speaker:
+                                                                <input type="text" ng-model="d.speaker" />
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="small-6 columns">
+                                                            <label>Detail:
+                                                                <input type="text" ng-model="d.detail" />
+                                                            </label>
+                                                        </div>
+                                                        <div class="small-6 columns">
+                                                            <label>Title:
+                                                                <input type="text" ng-model="d.title" />
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <label>Abstract:
+                                                        <trix-editor angular-trix ng-model="d.abstract" class="trix-content"></trix-editor>
+                                                    </label>
+                                                    </br>
+                                                </fieldset>
+                                            </div>
+                                        </fieldset>
+                                    </fieldset>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <input class="primary button hollow float-center" type="submit" ng-click="detail.saveEvent(detail.ev)" value="Save Event" />
             </fieldset>
-          </div>
-        </fieldset>
-        <input class="primary button hollow float-center" type="submit" ng-click="detail.saveEvent(detail.ev)" value="Save Event" />
-      </fieldset>
-    </form>
-    <br>
-    <hr>
-    <hr>
-    <br>
-    <h3>Resulting JSON</h3>
-    <pre>event = {{ detail.ev | json }}</pre>
-  </div>
+        </form>
+        <br>
+        <hr>
+        <hr>
+        <br>
+        <label>Display JSON: <i class="fa fa-expand fa-2x" ng-click="detail.toggleJSON($event)" /></label>
+        <div class="row" ng-show="detail.display">
+          <h3>Resulting JSON</h3>
+          <pre>event = {{ detail.ev | json }}</pre>
+        </div>
+    </div>
 </div>

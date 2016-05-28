@@ -6,3 +6,10 @@ fieldset {
   border-radius: 5px;
   box-shadow: 3px 3px 3px 2px #eee;
 }
+.icon {
+  color: rgba(100, 9, 33, 1);
+}
+
+.icon:hover {
+  color: grey;
+}
