@@ -1,8 +1,8 @@
 (function(){
   angular.module('app')
-  .controller('EventController', ['$scope', 'events', '$routeParams', EventController]);
+  .controller('EventController', ['$scope', 'events', '$routeParams', '$location', EventController]);
 
-  function EventController ($scope, events, $routeParams){
+  function EventController ($scope, events, $routeParams, $location){
     var vm = this;
     vm.display = false;
     vm.toggleJSON = function($event){
@@ -16,9 +16,13 @@
     vm.saveEvent = function(event){
       events.post(event).success(function(data){
         vm.ev = event
+        vm.success = "Your event saved successfully!"
       }).error(function(data){
-        vm.error = "An error occured"
+        vm.error = "An error occured while saving..."
       });
+    }
+    vm.destroy = function(type){
+      delete vm[type]
     }
     vm.addRegistration = function(){
       vm.ev.registration.prices.push({});
@@ -52,7 +56,16 @@
     vm.removeDetail = function(a_id, s_id, id){
       vm.ev.agenda[a_id].sessions[s_id].info.detail.splice(id,1);
     }
+    vm.move = function(index){
+      if(vm.data_length){
+        var newIndex = parseInt($routeParams.id) + index;
+        var n = parseInt(vm.data_length);
+        var i = ((newIndex % n) + n) % n;
+        $location.url('events/' + i);
+      }
+    }
     events.get().success(function(data) {
+      vm.data_length = data.length;
       vm.ev = data[$routeParams.id];
     });
   }

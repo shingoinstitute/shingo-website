@@ -1,6 +1,20 @@
 <div class="event" ng-controller="EventController as detail">
-    {{detail.error}}
     <div class="content">
+        <div class="row">
+          <div class="small-4 columns text-left">
+            <a class="float-left" href="/admin"><i title="Event List" class="fa fa-list icon fa-2x"></i></a>
+          </div>
+          <div class="small-4 columns text-center">
+            <i title="Previous" class="fa fa-arrow-left fa-2x icon" ng-click="detail.move(-1,$location)"></i>
+            <i title="Next" class="fa fa-arrow-right fa-2x icon" ng-click="detail.move(1,$location)"></i>
+          </div>
+          <div class="small-4 columns text-right">
+            <a class="float-right" ng-href="/events/{{detail.ev.filename | split:'.':0}}"><i title="View Site" class="fa fa-external-link icon fa-2x"></i></a>
+          </div>
+        </div>
+        <div class="error message" ng-show="detail.error" ng-click="detail.destroy('error')">{{detail.error}}</div>
+        <div class="info message" ng-show="detail.info" ng-click="detail.destroy('info')">{{detail.info}}</div>
+        <div class="success message" ng-show="detail.success" ng-click="detail.destroy('success')">{{detail.success}}</div>
         <form novalidate>
             <fieldset>
                 <legend>Event:</legend>
@@ -54,10 +68,10 @@
                         <input type="url" ng-model="detail.ev.registration.link" />
                     </label>
                     </br>
-                    <h6>Prices: <i class="icon fa fa-plus-circle fa-lg" ng-click="detail.addRegistration()"></i></h6>
+                    <h6>Prices: &nbsp;<i class="icon fa fa-plus-circle fa-lg" ng-click="detail.addRegistration()"></i></h6>
                     <div ng-repeat="price in detail.ev.registration.prices">
                         <fieldset>
-                            <legend>Price: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeRegistration($index)"></i></legend>
+                            <legend>Price: &nbsp;<i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeRegistration($index)"></i></legend>
                             <div class="row">
                                 <div class="small-6 columns">
                                     <label>Type:
@@ -74,10 +88,10 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>Agenda: <i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDay()"></i> </legend>
+                    <legend>Agenda: &nbsp;<i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDay()"></i> </legend>
                     <div ng-repeat="day in detail.ev.agenda">
                         <fieldset>
-                            <legend>Day: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeDay($index)"></i> </legend>
+                            <legend>Day: &nbsp;<i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeDay($index)"></i> </legend>
                             <div class="row">
                                 <div class="small-6 columns">
                                     <label>Name:
@@ -91,10 +105,10 @@
                                 </div>
                             </div>
                             <fieldset>
-                                <legend>Sessions: <i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addSession($index)"></i> </legend>
+                                <legend>Sessions: &nbsp;<i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addSession($index)"></i> </legend>
                                 <div ng-repeat="session in day.sessions">
                                     <fieldset>
-                                        <legend>Session: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeSession($parent.$index, $index)"></i> </legend>
+                                        <legend>Session: &nbsp;<i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeSession($parent.$index, $index)"></i> </legend>
                                         <div class="row">
                                             <div class="small-6 columns">
                                                 <label>Time:
@@ -108,10 +122,10 @@
                                             </div>
                                         </div>
                                         <fieldset>
-                                            <legend>Details: <i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDetail($parent.$index, $index)"></i> </legend>
+                                            <legend>Details: &nbsp;<i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDetail($parent.$index, $index)"></i> </legend>
                                             <div ng-repeat="d in session.info.detail">
                                                 <fieldset>
-                                                    <legend>Detail: <i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeDetail($parent.$parent.$index, $parent.$index, $index)"></i> </legend>
+                                                    <legend>Detail: &nbsp;<i class="fa fa-minus-circle fa-lg icon" ng-click="detail.removeDetail($parent.$parent.$index, $parent.$index, $index)"></i> </legend>
                                                     <div class="row">
                                                         <div class="small-6 columns">
                                                             <label>id:
@@ -156,10 +170,10 @@
         <hr>
         <hr>
         <br>
-        <label>Display JSON: <i class="fa fa-expand fa-2x" ng-click="detail.toggleJSON($event)" /></label>
+        <label>Display JSON:&nbsp;&nbsp;<i class="fa fa-expand fa-2x" ng-click="detail.toggleJSON($event)" /></label>
         <div class="row" ng-show="detail.display">
           <h3>Resulting JSON</h3>
-          <pre>event = {{ detail.ev | json }}</pre>
+          <pre>{{ detail.ev | json }}</pre>
         </div>
     </div>
 </div>
