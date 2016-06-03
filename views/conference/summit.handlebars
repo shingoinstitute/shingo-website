@@ -6,7 +6,7 @@
         <br>
         <div class="row text-center" id="transborder">
             <img src="{{event.logo}}">
-            <h1><strong>{{event.name}}</strong></h1>
+            <h1><strong>{{{event.name}}}</strong></h1>
             <h2><strong>{{event.date}}</strong></h2>
             <h3><strong>{{event.location}}</strong></h3>
         </div>
@@ -105,12 +105,12 @@
         <div class="hidden" id="travel">&nbsp;</div>
     </article>
 
-    <!-- <article class="container" id="s-travel">
+    <article class="container" id="s-travel">
   <div class="row">
     <div class="six columns centered">
       <h3 class="text-center">TRAVEL &amp; ACCOMMODATIONS</h3>
       <hr>
-      <h4 class="roboto text-center">This year's European Summit will be held in Copenhagen, Denmark.</h4>
+      <h4 class="roboto text-center">{{event.ta_info.title}}</h4>
     </div>
   </div>
   <br>
@@ -119,54 +119,29 @@
       <tr>
         <td id="loc">
           <h5 class="text-center">LOCATION</h5>
-          <p><strong>Scandic Copenhagen <a href="https://goo.gl/maps/5sGSyKbSmGC2" title="https://goo.gl/maps/5sGSyKbSmGC2" target="_blank"><i class="icon-location"></i></a></strong><br>
-            Vester Søgade 6,<br>
-            Dk- 1601 København V,<br>
-            Copenhagen, Denmark<br>
-          </p>
+          {{{event.ta_info.location}}}
         </td>
         <td id="trav">
           <h5 class="text-center">TRAVEL</h5>
-          <p>
-            McGhee Tyson Airport (TYS)
-            Free parking in downtown Knoxville after 5 pm
-          </p>
+          {{{event.ta_info.travel}}}
         </td>
         <td id="hot">
-          <div class="row">
-            <h5 class="text-center">HOTEL</h5>
-            <p><strong>Scandic Copenhagen</strong><br>
-            Vester Søgade 6,<br>
-            Dk- 1601 København V,<br>
-            Copenhagen, Denmark<br>
-            +45 33 75 70 88
-            </p>
-            <p><a href="#ratesinfo" class="toggle" gumby-trigger="#rates">Rates &amp; Information</a></p>
-          </div>
-          <div class="row drawer" id="rates">
-            <a href="http://www.scandichotels.dk/Hotels/Danmark/Kobenhavn/Scandic-Copenhagen/#.Vqp-HRgrIsk">Scandic Copenhagen</a>
-            <p>Single room rate, <strong>DKK 1,345</strong><br>
-            Double room rate, <strong>DKK 1545</strong><br>
-            Discount Booking Code: <strong>BSHI301116</strong>
-            <a href="mailto:copenhagen@scandichotels.com">copenhagen@scandichotels.com</a>
-            </p>
-            <p><em>Rates include complimentary<br>
-            breakfast and Internet.</em></p>
-          </div>
+          <h5 class="text-center">HOTEL</h5>
+          {{{event.ta_info.hotel}}}
         </td>
       </tr>
       <tr>
         <td id="park">
           <h5 class="text-center">PARKING</h5>
-          <p>Free parking in downtown Knoxville after 5 pm</p>
+          {{{event.ta_info.parking}}}
         </td>
         <td id="int">
           <h5 class="text-center">INTERNET</h5>
-          <p>Complimentary Wi-Fi Internet access is available in all areas of the convention center as well as the hotel for conference participants.</p>
+          {{{event.ta_info.internet}}}
         </td>
         <td id="todo">
           <h5 class="text-center">THINGS TO DO</h5>
-          <p>Wondering what to do in your free time? Do you have family members traveling with you? Learn more about <a href="http://www.visitcopenhagen.com/copenhagen-tourist" target="_blank">visiting Copenhagen</a>. <br> Also, the <a href="http://www.visitcopenhagen.com/copenhagen/sightseeing/top-30-attractions">Top 30 Attractions</a> of the city</p>
+          {{{event.ta_info.things}}}
         </td>
       </tr>
     </table>
@@ -174,43 +149,36 @@
       <div class="row">
         <div class="four columns">
           <h5 class="text-center">LOCATION</h5>
-          <p><strong>Club Industriales de Querétaro A.C. <a href="https://goo.gl/maps/6t6JN" title="https://goo.gl/maps/0b7JJ" target="_blank"><i class="icon-location"></i></a></strong><br>
-          Estadio 113, Fraccionamiento Colinas de Cimatario,<br>
-          76090 Santiago de Querétaro<br>
-          Qro., Mexico</p>
+          {{{event.ta_info.location}}}
         </div>
         <div class="four columns">
           <h5 class="text-center">TRAVEL</h5>
-          <p>The Querétaro airport is about 30 minutes from the convention center. The hotel provides complimentary shuttle to and from the airport.</p>
+          {{{event.ta_info.travel}}}
         </div>
         <div class="four columns">
           <h5 class="text-center">HOTEL</h5>
-          <p><strong>Hotel Casa Inn Querétaro</strong><br>
-          Paseo de Miranda 2 Monte Miranda cp,<br>
-          El Marqués, Santiago de Querétaro,<br>
-          Qro., Mexico<br>
-          +52 442 101 4100</p>
+          {{{event.ta_info.hotel}}}
         </div>
       </div>
       <div class="row">
         <div class="four columns">
           <h5 class="text-center">PARKING</h5>
-          <p>All conference attendees will enjoy free parking at the convention center in designated lots. Guests of the hotel will enjoy free parking in designated hotel lots.</p>
+          {{{event.ta_info.parking}}}
         </div>
         <div class="four columns">
           <h5 class="text-center">INTERNET</h5>
-          <p>Complimentary Wi-Fi Internet access is available in all areas of the convention center as well as the hotel for conference participants.</p>
+          {{{event.ta_info.internet}}}
         </div>
         <div class="four columns">
           <h5 class="text-center">THINGS TO DO</h5>
-          <p>Wondering what to do in your free time? Do you have family members traveling with you? Learn more about visiting Copenhagen <a href="http://www.visitcopenhagen.com/copenhagen-tourist" target="_blank">here</a>. Also, <a href="http://www.visitcopenhagen.com/copenhagen/sightseeing/top-30-attractions" target="_blank">The Top 30 Attractions</a></p>
+          {{{event.ta_info.things}}}
         </div>
       </div>
     </div>
   </div>
   <br>
   <div class="hidden" id="sponsors"></div>
-</article> -->
+</article>
 
 
 

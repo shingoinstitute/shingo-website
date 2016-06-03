@@ -86,15 +86,7 @@
 					<h4 class="text-center" style="text-decoration: underline;"><strong>DISCOVER</strong></h4><br>
 					<ul>
 						{{#each workshops.Discover}}
-							<li>
-								<h6 class="quattrocento"><strong>{{Event_Start_Date__c}} - {{Event_End_Date__c}}</strong></h6>
-								<p class="indent">Host Company: {{Host_Organization__c}}<br>
-								Location: {{Host_City__c}}, {{Host_Country__c}}<br>
-								Affiliate: <a href="{{Organizing_Group__r.Page_Path__c}}"><em><strong>{{Organizing_Group__r.Name}}</strong></em></a></p>  <!-- TODO Name and website linke -->
-								<div class="text-center">
-										<p class="brown medium btn"><a href="{{Event_Website__c}}" target="_blank">Register</a></p>
-								</div>
-							</li>
+							{{>_aff-event this}}
 						{{/each}}
 					</ul>
 			</div>
@@ -103,15 +95,7 @@
 					<h4 class="text-center" style="text-decoration: underline;"><strong>ENABLE</strong></h4><br>
 					<ul>
 						{{#each workshops.Enable}}
-							<li>
-								<h6 class="quattrocento"><strong>{{Event_Start_Date__c}} - {{Event_End_Date__c}}</strong></h6>
-								<p class="indent">Host Company: {{Host_Organization__c}}<br>
-								Location: {{Host_City__c}}, {{Host_Country__c}}<br>
-								Affiliate: <a href="./affiliates/sapartners"><em><strong>{{Organizing_Group__r.Name}}</strong></em></a></p>  <!-- TODO Name and website linke -->
-								<div class="text-center">
-										<p class="brown medium btn"><a href="{{Event_Website__c}}" target="_blank">Register</a></p>
-								</div>
-							</li>
+							{{>_aff-event this}}
 						{{/each}}
 					</ul>
 			</div>
@@ -120,15 +104,7 @@
 					<h4 class="text-center" style="text-decoration: underline;"><strong>IMPROVE</strong></h4><br>
 					<ul>
 						{{#each workshops.Improve}}
-							<li>
-								<h6 class="quattrocento"><strong>{{Event_Start_Date__c}} - {{Event_End_Date__c}}</strong></h6>
-								<p class="indent">Host Company: {{Host_Organization__c}}<br>
-								Location: {{Host_City__c}}, {{Host_Country__c}}<br>
-								Affiliate: <a href="./affiliates/sapartners"><em><strong>{{Organizing_Group__r.Name}}</strong></em></a></p>  <!-- TODO Name and website linke -->
-								<div class="text-center">
-										<p class="brown medium btn"><a href="{{Event_Website__c}}" target="_blank">Register</a></p>
-								</div>
-							</li>
+							{{>_aff-event this}}
 						{{/each}}
 					</ul>
 			</div>
@@ -137,15 +113,7 @@
 					<h4 class="text-center" style="text-decoration: underline;"><strong>ALIGN</strong></h4><br>
 					<ul>
 						{{#each workshops.Align}}
-							<li>
-								<h6 class="quattrocento"><strong>{{Event_Start_Date__c}} - {{Event_End_Date__c}}</strong></h6>
-								<p class="indent">Host Company: {{Host_Organization__c}}<br>
-								Location: {{Host_City__c}}, {{Host_Country__c}}<br>
-								Affiliate: <a href="./affiliates/sapartners"><em><strong>{{Organizing_Group__r.Name}}</strong></em></a></p>  <!-- TODO Name and website linke -->
-								<div class="text-center">
-										<p class="brown medium btn"><a href="{{Event_Website__c}}" target="_blank">Register</a></p>
-								</div>
-							</li>
+							{{>_aff-event this}}
 						{{/each}}
 					</ul>
 			</div>

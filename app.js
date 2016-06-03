@@ -13,7 +13,8 @@ var express = require('express'),
     Promise = require('bluebird'),
     request = Promise.promisifyAll(require('request')),
     session = require('express-session'),
-    MySQLStore = require('express-mysql-session')(session)
+    MySQLStore = require('express-mysql-session')(session),
+    moment = require('moment')
 
 var languageTree = require('./routes/tree.js');
 
@@ -53,7 +54,26 @@ app.set('port', config.port)
 // Setup View Engine
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({
-    defaultLayout: 'base'
+    defaultLayout: 'base',
+    helpers: {
+      prettyDate: function(start, end) {
+        var s = moment(start)
+        var e = moment(end)
+        var format = 'Do MMM YYYY'
+        if(s.year() != e.year()){
+          return s.format(format) + " - " + e.format(format)
+        }
+        else if(s.month() != e.month()){
+          return s.format('Do MMM') + " - " + e.format(format)
+        }
+        else if(s.date() != e.date()){
+          return s.format('Do') + " - " + e.format(format)
+        }
+        else {
+          return e.format(format)
+        }
+      }
+    }
 }));
 app.set('view engine', 'handlebars');
 

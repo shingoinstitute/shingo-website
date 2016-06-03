@@ -1,5 +1,5 @@
 {
-    "name": "Congreso Shingo Latin America",
+    "name": "Congreso Shingo <br> Latin America",
     "date": "October 6 - 7, 2016",
     "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
     "background_image": "http://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg",
@@ -87,7 +87,7 @@
         ]
     }, {
         "name": "Friday",
-        "title": "October 2 - Main Conference",
+        "title": "October 7 - Main Conference",
         "sessions": [{
                 "time": "07:00 - 09:00",
                 "info": {
@@ -190,10 +190,18 @@
         "link": "https://shingoconference.wufoo.com/forms/2016-shingo-european-summit/",
         "prices": [{
             "type": "Main Conference",
-            "price": "€1150"
+            "price": "$890"
         }]
     },
     "se_info": "<p>Exhibitors at the Congreso Shingo enjoy the chance to discover new clients as well as reconnect with current customers in a highly relevant and social atmosphere. With plenty of networking opportunities throughout each day, you’re sure to develop new leads and contacts eager to begin a lasting, mutually beneficial relationship. Exhibitors also receive an opt-in email roster of attendees and are highlighted on the Shingo app and print items.</p><p>We offer several tax-deductible sponsorship opportunities that place your company name in front of more than 16,000 professionals and decision-makers across the globe. As a major contributor to the value and success of the Congreso Shingo, you'll position your brand as a thought-leader committed to excellence. Conference attendees are mid- to senior-level management representing more than 650 companies worldwide.</p><p>The available levels of sponsorship are Friends ($5,000), Supporters ($10,000), and Benefactors ($15,000).</p><p>For more information about exhibiting or becoming a sponsor, please contact Mary Price, <a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>, 435.797.3785.</p>",
-    "travel": {},
+    "ta_info": {
+      "title": "",
+      "location": "",
+      "travel": "",
+      "hotel": "",
+      "parking": "",
+      "internet": "",
+      "things": ""
+    },
     "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000Umgc1EAB' ORDER BY Speaker_Contact__r.LastName"
 }

@@ -18,6 +18,7 @@
         <form novalidate>
             <fieldset>
                 <legend>Event:</legend>
+                <input class="primary button hollow float-center" type="submit" shortcut="'ctrl+s':detail.saveEvent(detail.ev)" ng-click="detail.saveEvent(detail.ev)" value="Save Event" />
                 <div class="row">
                   <div class="small-4 columns">
                     <label>Name:
@@ -86,6 +87,23 @@
                             </div>
                         </fieldset>
                     </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Travel &amp; Accomodation: </legend>
+                    <h6>Title:</h6>
+                    <input type="text" ng-model="detail.ev.ta_info.title" />
+                    <h6>Location:</h6>
+                    <trix-editor angular-trix ng-model="detail.ev.ta_info.location" class="trix-content"></trix-editor>
+                    <h6>Travel:</h6>
+                    <trix-editor angular-trix ng-model="detail.ev.ta_info.travel" class="trix-content"></trix-editor>
+                    <h6>Hotel:</h6>
+                    <trix-editor angular-trix ng-model="detail.ev.ta_info.hotel" class="trix-content"></trix-editor>
+                    <h6>Parking:</h6>
+                    <trix-editor angular-trix ng-model="detail.ev.ta_info.parking" class="trix-content"></trix-editor>
+                    <h6>Internet:</h6>
+                    <trix-editor angular-trix ng-model="detail.ev.ta_info.internet" class="trix-content"></trix-editor>
+                    <h6>Things To Do:</h6>
+                    <trix-editor angular-trix ng-model="detail.ev.ta_info.things" class="trix-content"></trix-editor>
                 </fieldset>
                 <fieldset>
                     <legend>Agenda: &nbsp;<i class="fa fa-plus-circle fa-lg icon" ng-click="detail.addDay()"></i> </legend>

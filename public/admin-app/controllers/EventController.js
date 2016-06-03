@@ -1,8 +1,8 @@
 (function(){
   angular.module('app')
-  .controller('EventController', ['$scope', 'events', '$routeParams', '$location', EventController]);
+  .controller('EventController', ['$scope', 'events', '$routeParams', '$location', '$window', EventController]);
 
-  function EventController ($scope, events, $routeParams, $location){
+  function EventController ($scope, events, $routeParams, $location, $window){
     var vm = this;
     vm.display = false;
     vm.toggleJSON = function($event){
@@ -68,5 +68,24 @@
       vm.data_length = data.length;
       vm.ev = data[$routeParams.id];
     });
+
+    vm.key_buffer = [];
+    vm.ctrlDown = false;
+    vm.ctrlKey = 91, vm.sKey = 83;
+
+    angular.element($window).bind("keyup", function($event) {
+        vm.key_buffer = [];
+    });
+
+    angular.element($window).bind("keydown", function($event) {
+        if(vm.key_buffer.indexOf($event.keyCode) < 0){
+          vm.key_buffer.push($event.keyCode);
+        }
+        if(vm.key_buffer.indexOf(vm.ctrlKey) >= 0 && vm.key_buffer.indexOf(vm.sKey) >= 0){
+          $event.preventDefault();
+          vm.saveEvent(vm.ev);
+        }
+    });
+
   }
 })();

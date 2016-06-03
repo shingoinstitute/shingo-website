@@ -5,11 +5,11 @@
   "background_image": "http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png",
   "location": "Knoxville, Tennessee",
   "intro": "Come learn from manufacturing leaders how mid-level managers can make big transformations in their organizations using the principles of the <em>Shingo Model™</em>. Smart, dedicated managers are critical for enterprise excellence. Come and learn what managers like you have done to make notable improvements to their organizations. You’ll hear experienced leaders as keynote speakers and in break-out sessions where you can join the discussion. You’ll network with leaders and managers like you who are all striving to improve their manufacturing companies. If you’re in manufacturing and want continuous improvement, please join us.",
-  "presentation_copy": "Speakers at this congreso will speak in either Spanish or English. Free translation service will be available for all sessions",
+  "presentation_copy": "This summit will be presented in English.",
   "agenda": [
     {
-      "name": "Thursday",
-      "title": "October 6 - Main Conference",
+      "name": "Tuesday",
+      "title": "September 20  - Main Conference",
       "sessions": [
         {
           "time": "07:00 - 09:00",
@@ -92,8 +92,8 @@
       ]
     },
     {
-      "name": "Friday",
-      "title": "October 2 - Main Conference",
+      "name": "Wednesday",
+      "title": "September 21 - Main Conference",
       "sessions": [
         {
           "time": "07:00 - 09:00",
@@ -216,6 +216,14 @@
     ]
   },
   "se_info": "<p>Exhibitors at the Shingo Manufacturing Summit get the chance to talk with the people make and influence purchasing decisions within manufacturing companies. Only a limited number of exhibitor slots are available in this low-key, low pressure event designed for about 400 attendees. It’s a terrific opportunity to talk seriously to your future customers and begin lasting relationships with them.</p><p>As an exhibitor at the Shingo Manufacturing Summit, your company will get an opt-in list of attendees, have your name and logo on the Shingo App and various printed materials at the Summit. You’ll also have your name and logo as an exhibitor on announcements that go out to over 25,000 leaders and manager around the world. This is your chance to position your company as a leader committed to manufacturing excellence in front of the people who can bring the most to your bottom line.</p><p>For more information about exhibiting or becoming a sponsor, please contact Mary Price: <a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>  |  (435) 7979-3785</p>",
-  "travel": {},
+  "ta_info": {
+    "title": "",
+    "location": "",
+    "travel": "",
+    "hotel": "",
+    "parking": "",
+    "internet": "",
+    "things": ""
+  },
   "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UmjyDEAR' ORDER BY Speaker_Contact__r.LastName"
 }
