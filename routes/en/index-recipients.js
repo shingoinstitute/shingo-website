@@ -97,6 +97,31 @@ router.get('/bronze_vistaprint-australia', function(req, res, next) {
 
 
                       /******* Research Recipients *********/
+/* GET lean farm */
+router.get('/research-ben-hartman', function(req, res, next) {
+  res.render('awards/prize-research/research-ben-hartman', { title: 'Recipients - Shingo Institute' });
+});
+
+/* GET management on the mend */
+router.get('/research-john-toussaint', function(req, res, next) {
+  res.render('awards/prize-research/research-john-toussaint', { title: 'Recipients - Shingo Institute' });
+});
+
+/* GET lean-driven */
+router.get('/research-norbert-majerus', function(req, res, next) {
+  res.render('awards/prize-research/research-norbert-majerus', { title: 'Recipients - Shingo Institute' });
+});
+
+/* GET lean long term */
+router.get('/research-baker-rolfes', function(req, res, next) {
+  res.render('awards/prize-research/research-baker-rolfes', { title: 'Recipients - Shingo Institute' });
+});
+
+/* GET fit org */
+router.get('/research-daniel-markovitz', function(req, res, next) {
+  res.render('awards/prize-research/research-daniel-markovitz', { title: 'Recipients - Shingo Institute' });
+});
+
 /* GET gemba walk */
 router.get('/research_michael-bremer', function(req, res, next) {
   res.render('awards/prize-research/research-michael-bremer-gemba-walk', { title: 'Recipients - Shingo Institute' });
