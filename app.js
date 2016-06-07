@@ -14,9 +14,18 @@ var express = require('express'),
     request = Promise.promisifyAll(require('request')),
     session = require('express-session'),
     MySQLStore = require('express-mysql-session')(session),
-    moment = require('moment')
+    moment = require('moment'),
+    fs = require('fs'),
+    https = require('https');
 
 var languageTree = require('./routes/tree.js');
+
+var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
+    certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
+    credentials = {
+        key: privateKey,
+        cert: certificate
+    }
 
 var app = express();
 var store = new MySQLStore(config.mysql_connection)
@@ -91,13 +100,9 @@ app.use('/', languageTree);
 
 app.get('/admin', function(req, res) {
     if (!req.session.access_token) {
-        return res.redirect('/sflogin')
+        return res.redirect(config.sf.environment + "/services/oauth2/authorize?response_type=code&client_id=" + config.sf.client_id + "&redirect_uri=" + config.sf.redirect_uri)
     }
     res.sendFile(__dirname + '/public/admin-app/index.html')
-})
-
-app.get('/sflogin', function(req, res) {
-    res.redirect(config.sf.environment + "/services/oauth2/authorize?response_type=code&client_id=" + config.sf.client_id + "&redirect_uri=" + config.sf.redirect_uri)
 })
 
 app.get('/auth_callback', function(req, res) {
@@ -160,6 +165,10 @@ app.use(function(err, req, res, next) {
 
 app.listen(app.get('port'), function() {
     console.log('Node is on port', app.get('port'));
-})
+});
+
+var httpsServer = https.createServer(credentials, app)
+
+httpsServer.listen(8443);
 
 module.exports = app;
