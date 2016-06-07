@@ -1,0 +1,12 @@
+<div class="row">
+{{#if files}}
+<h2>Presentations</h2>
+<ul>
+  {{#each files}}
+    <li><a href="/presentations/{{this}}">{{this}}</a>
+  {{/each}}
+</ul>
+{{else}}
+No files to download. Please check back later...
+{{/if}}
+</div>
