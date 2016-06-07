@@ -133,7 +133,7 @@
           siblings = tab.siblings(),
           settings = tabs.data(this.attr_name(true) + '-init'),
           interpret_keyup_action = function (e) {
-            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js
+            // Light modification of Heydon Pickering's Practical ARIA Examples: https://heydonworks.com/practical_aria_examples/js/a11y.js
 
             // define current, previous and next (possible) tabs
 
