@@ -1,18 +1,36 @@
 {
   "name": "Manufacturing Summit",
   "date": "September 19-21, 2016",
-  "logo": "https://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
-  "background_image": "https://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png",
+  "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
+  "background_image": "http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png",
   "location": "Knoxville, Tennessee",
-  "intro": "Come learn from manufacturing leaders how mid-level managers can make big transformations in their organizations using the principles of the <em>Shingo Model™</em>. Smart, dedicated managers are critical for enterprise excellence. Come and learn what managers like you have done to make notable improvements to their organizations. You’ll hear experienced leaders as keynote speakers and in break-out sessions where you can join the discussion. You’ll network with leaders and managers like you who are all striving to improve their manufacturing companies. If you’re in manufacturing and want continuous improvement, please join us.",
+  "intro": "<div><!--block-->Come learn from manufacturing leaders how mid-level managers can make big transformations in their organizations using the principles of the&nbsp;<em>Shingo Model™</em>. Smart, dedicated managers are critical for enterprise excellence. Come and learn what managers like you have done to make notable improvements to their organizations. You’ll hear experienced leaders as keynote speakers and in break-out sessions where you can join the discussion. You’ll network with leaders and managers like you who are all striving to improve their manufacturing companies. If you’re in manufacturing and want continuous improvement, please join us.</div>",
   "presentation_copy": "This summit will be presented in English.",
   "agenda": [
+  {
+    "name": "Monday",
+    "title": "September 19 - Pre-Conference",
+    "sessions": [
+      {
+        "time": "8:00 - 17:00",
+        "info": {
+          "name": "Six Sigma Innovation Workshop"
+        }
+      },
+      {
+        "time": "13:00 - 16:30",
+        "info": {
+          "name": "Denso Tour"
+        }
+      }
+    ]
+  },
     {
       "name": "Tuesday",
-      "title": "September 20  - Main Conference",
+      "title": "September 20 - Main Conference",
       "sessions": [
         {
-          "time": "07:00 - 09:00",
+          "time": "07:30 - 09:00",
           "info": {
             "name": "Breakfast & Registration",
             "detail": []
@@ -21,7 +39,7 @@
         {
           "time": "09:00 - 09:50",
           "info": {
-            "name": "Keynote Presentation",
+            "name": "Executive Director Remarks - Ken Snyder",
             "detail": []
           }
         },
@@ -49,8 +67,17 @@
         {
           "time": "11:20 - 12:10",
           "info": {
-            "name": "Keynote Presentation",
-            "detail": []
+            "name": "Concurrent Sessions",
+            "detail": [
+              {
+                "speaker": "Michael Muilenburg",
+                "id": "mich-muil"
+              },
+              {
+                "speaker": "Tom Moore",
+                "id": "tom-moor"
+              }
+            ]
           }
         },
         {
@@ -61,32 +88,44 @@
           }
         },
         {
-          "time": "13:30 - 14:30",
+          "time": "13:30 - 17:00",
           "info": {
-            "name": "Concurrent Sessions",
-            "detail": []
+            "name": "Workshops",
+            "detail": [
+              {
+                "speaker": "Mike Martyn",
+                "title": "Coaching",
+                "id": "mik-mart"
+              },
+              {
+                "speaker": "Norbert Majerus",
+                "detail": "",
+                "title": "Lean Innovation",
+                "id": "nor-maj"
+              },
+              {
+                "speaker": "Shannon Barrett",
+                "title": "Transactional Value Stream Mapping",
+                "id": "shan-barr"
+              },
+              {
+                "speaker": "Shaun Barker",
+                "title": "Shingo Assessments & Challenging for the Prize",
+                "id": "shau-bark"
+              }
+            ]
           }
         },
         {
-          "time": "14:30 - 15:00",
+          "time": "15:00 - 15:30",
           "info": {
-            "name": "Networking Break",
-            "detail": []
+            "name": "Networking Break"
           }
         },
         {
-          "time": "15:00 - 16:00",
+          "time": "17:00 - 18:00",
           "info": {
-            "name": "Concurrent Sessions",
-            "detail": []
-          }
-        },
-
-        {
-          "time": "17:30 - 21:00",
-          "info": {
-            "name": "Dinner & Entertainment",
-            "detail": []
+            "name": "Networking Happy Hour"
           }
         }
       ]
@@ -96,110 +135,77 @@
       "title": "September 21 - Main Conference",
       "sessions": [
         {
-          "time": "07:00 - 09:00",
+          "time": "07:00 - 08:30",
           "info": {
             "name": "Breakfast & Registration",
             "detail": []
           }
         },
         {
-          "time": "09:00 - 10:00",
+          "time": "08:30 - 12:00",
           "info": {
-            "name": "Concurrent Sessions",
-            "detail": []
+            "name": "Workshops",
+            "detail": [
+              {
+                "speaker": "Steve Moore",
+                "title": "Leader Standard Work",
+                "id": "stev-moor"
+              }
+            ]
           }
         },
         {
-          "time": "10:00 - 10:10",
-          "info": {
-            "name": "Intermission",
-            "detail": []
-          }
-        },
-        {
-          "time": "10:10 - 11:10",
-          "info": {
-            "name": "Concurrent Sessions",
-            "detail": []
-          }
-        },
-        {
-          "time": "11:10 - 11:40",
+          "time": "10:00 - 10:30",
           "info": {
             "name": "Networking Break",
             "detail": []
           }
         },
         {
-          "time": "11:40 - 12:40",
-          "info": {
-            "name": "Keynote Presentation",
-            "detail": []
-          }
-        },
-        {
-          "time": "12:40 - 13:30",
+          "time": "12:00 - 13:30",
           "info": {
             "name": "Lunch",
             "detail": []
           }
         },
         {
-          "time": "12:30 - 14:30",
-          "info": {
-            "name": "Keynote Presentation",
-            "detail": []
-          }
-        },
-
-
-        {
-          "time": "09:50 - 10:00",
-          "info": {
-            "name": "Intermission",
-            "detail": []
-          }
-        },
-        {
-          "time": "10:00 - 10:50",
-          "info": {
-            "name": "Keynote Presentation",
-            "detail": []
-          }
-        },
-        {
-          "time": "10:50 - 11:20",
-          "info": {
-            "name": "Networking Break",
-            "detail": []
-          }
-        },
-        {
-          "time": "11:20 - 12:10",
-          "info": {
-            "name": "Keynote Presentation",
-            "detail": []
-          }
-        },
-
-        {
-          "time": "13:30 - 14:30",
+          "time": "13:30 - 14:20",
           "info": {
             "name": "Concurrent Sessions",
-            "detail": []
+            "detail": [
+              {
+                "speaker": "Pamela Adams",
+                "id": "pam-ada"
+              },
+              {
+                "speaker": "Tom Wieck",
+                "id": "tom-wie"
+              },
+              {
+                "speaker": "Tyson Heaton",
+                "id": "tys-hea"
+              }
+            ]
           }
         },
         {
-          "time": "14:30 - 15:00",
+          "time": "14:20 - 14:50",
           "info": {
             "name": "Networking Break",
             "detail": []
           }
         },
         {
-          "time": "15:00 - 16:00",
+          "time": "14:50 - 15:40",
           "info": {
             "name": "Keynote",
+            "detail": []
+          }
+        },
+        {
+          "time": "15:50 - 16:40",
+          "info": {
+            "name": "Keynote - Don Tracy",
             "detail": []
           }
         }
@@ -208,22 +214,31 @@
   ],
   "registration": {
     "link": "https://shingoconference.wufoo.com/forms/2016-shingo-manufacturing-summit/",
-    "prices":[
+    "prices": [
       {
-        "type":"Main Conference",
+        "type": "Main Conference",
         "price": "$895"
+      },
+      {
+        "type": "Tours",
+        "price": "$195"
+      },
+      {
+        "type": "Six Sigma Innovation Workshop",
+        "price": "$495"
       }
     ]
   },
-  "se_info": "<p>Exhibitors at the Shingo Manufacturing Summit get the chance to talk with the people make and influence purchasing decisions within manufacturing companies. Only a limited number of exhibitor slots are available in this low-key, low pressure event designed for about 400 attendees. It’s a terrific opportunity to talk seriously to your future customers and begin lasting relationships with them.</p><p>As an exhibitor at the Shingo Manufacturing Summit, your company will get an opt-in list of attendees, have your name and logo on the Shingo App and various printed materials at the Summit. You’ll also have your name and logo as an exhibitor on announcements that go out to over 25,000 leaders and manager around the world. This is your chance to position your company as a leader committed to manufacturing excellence in front of the people who can bring the most to your bottom line.</p><p>For more information about exhibiting or becoming a sponsor, please contact Mary Price: <a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>  |  (435) 7979-3785</p>",
+  "se_info": "<div><!--block-->Exhibitors at the Shingo Manufacturing Summit get the chance to talk with the people make and influence purchasing decisions within manufacturing companies. Only a limited number of exhibitor slots are available in this low-key, low pressure event designed for about 400 attendees. It’s a terrific opportunity to talk seriously to your future customers and begin lasting relationships with them.<br><br></div><div><!--block-->As an exhibitor at the Shingo Manufacturing Summit, your company will get an opt-in list of attendees, have your name and logo on the Shingo App and various printed materials at the Summit. You’ll also have your name and logo as an exhibitor on announcements that go out to over 25,000 leaders and manager around the world. This is your chance to position your company as a leader committed to manufacturing excellence in front of the people who can bring the most to your bottom line.<br><br></div><div><!--block-->For more information about exhibiting or becoming a sponsor, please contact Mary Price:&nbsp;<a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>&nbsp; |&nbsp; (435) 7979-3785<br><br></div>",
   "ta_info": {
     "title": "",
-    "location": "",
-    "travel": "",
-    "hotel": "",
-    "parking": "",
-    "internet": "",
-    "things": ""
+    "location": "<div><!--block-->Marriott Knoxville,</div><div><!--block-->501 E. Hill Aven</div><div><!--block-->Knoxville, TN 37915</div><div><!--block-->1-865-637-1234</div>",
+    "travel": "<div><!--block-->Airport: McGhee Tyson Airport (TYS)</div>",
+    "hotel": "<div><!--block-->Marriott Knoxville,</div><div><!--block-->501 E. Hill Aven</div><div><!--block-->Knoxville, TN 37915</div><div><!--block-->1-865-637-1234</div>",
+    "parking": "<div><!--block-->- Free parking at the hotel<br>- Free parking in downtown Knoxville after 5 pm<br>- Complimentary shuttle from hotel to downtown</div>",
+    "internet": "<div><!--block-->Complimentary internet for Shingo Attendees</div>",
+    "things": "<div><!--block-->Things to do in Knoxville:&nbsp;<a href=\"http://www.visitknoxville.com/things-to-do\">http://www.visitknoxville.com/things-to-do</a>/&nbsp;</div>"
   },
-  "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UmjyDEAR' ORDER BY Speaker_Contact__r.LastName"
+  "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UmjyDEAR' ORDER BY Speaker_Contact__r.LastName",
+  "filename": "manufacturing.json"
 }
