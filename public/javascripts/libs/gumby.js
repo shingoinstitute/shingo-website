@@ -7,13 +7,13 @@
 * All we ask is you leave this intact. #gumbyisawesome
 *
 * Gumby Framework
-* http://gumbyframework.com
+* https://gumbyframework.com
 *
 * Built with love by your friends @digitalsurgeons
-* http://www.digitalsurgeons.com
+* https://www.digitalsurgeons.com
 *
 * Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
+* https://www.opensource.org/licenses/mit-license.php
 */
 !function($) {
 

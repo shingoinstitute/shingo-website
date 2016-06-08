@@ -21,7 +21,7 @@ Node Server for Public Facing Website to distribute public content
       "Host_Organization__c": "Laboratorios Clinic",
       "Host_City__c": "Querétaro",
       "Host_Country__c": "Mexico",
-      "Event_Website__c": "http://www.lensys.mx/calendario/discover-excellence-4/"
+      "Event_Website__c": "https://www.lensys.mx/calendario/discover-excellence-4/"
     }, ...
   ],
   "Enable": [
@@ -38,7 +38,7 @@ Node Server for Public Facing Website to distribute public content
       "Host_Organization__c": "Biamp Systems",
       "Host_City__c": "Tigard. OR",
       "Host_Country__c": "United States of America",
-      "Event_Website__c": "http://www.gbmp.org/our-events.html"
+      "Event_Website__c": "https://www.gbmp.org/our-events.html"
     }, ...
   ],
   "Improve": [
@@ -55,7 +55,7 @@ Node Server for Public Facing Website to distribute public content
       "Host_Organization__c": "Accurounds",
       "Host_City__c": "Avon, MA",
       "Host_Country__c": "United States of America",
-      "Event_Website__c": "http://www.gbmp.org/gbmp-list-of-events/icalrepeat.detail/2016/05/18/99/66/shingo-institute-course-continuous-improvement-northeast"
+      "Event_Website__c": "https://www.gbmp.org/gbmp-list-of-events/icalrepeat.detail/2016/05/18/99/66/shingo-institute-course-continuous-improvement-northeast"
     }, ...
   ],
   "Align": [
@@ -72,7 +72,7 @@ Node Server for Public Facing Website to distribute public content
       "Host_Organization__c": "Accurounds",
       "Host_City__c": "Avon, MA",
       "Host_Country__c": "United States of America",
-      "Event_Website__c": "http://www.gbmp.org/gbmp-list-of-events/icalrepeat.detail/2016/06/15/100/66/shingo-institute-course-enterprise-alignment-northeast"
+      "Event_Website__c": "https://www.gbmp.org/gbmp-list-of-events/icalrepeat.detail/2016/06/15/100/66/shingo-institute-course-enterprise-alignment-northeast"
     }, ...
   ]
 }

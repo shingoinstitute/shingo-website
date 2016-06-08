@@ -1,9 +1,9 @@
 /*
  * Foundation Responsive Library
- * http://foundation.zurb.com
+ * https://foundation.zurb.com
  * Copyright 2014, ZURB
  * Free to use under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
+ * https://www.opensource.org/licenses/mit-license.php
 */
 
 (function ($, window, document, undefined) {
@@ -218,8 +218,8 @@
 
   // requestAnimationFrame polyfill adapted from Erik Möller
   // fixes from Paul Irish and Tino Zijdel
-  // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-  // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+  // https://paulirish.com/2011/requestanimationframe-for-smart-animating/
+  // https://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
 
   var animating,
       lastTime = 0,
@@ -462,7 +462,7 @@
 
       // Description:
       //    Executes a function when it stops being invoked for n seconds
-      //    Modified version of _.debounce() http://underscorejs.org
+      //    Modified version of _.debounce() https://underscorejs.org
       //
       // Arguments:
       //    Func (Function): Function to be debounced.

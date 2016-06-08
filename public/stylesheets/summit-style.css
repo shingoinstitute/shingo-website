@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:500,400italic,300,700,300italic,400);
-@import url(http://fonts.googleapis.com/css?family=Muli:300,400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,700,300italic,400);
+@import url(https://fonts.googleapis.com/css?family=Muli:300,400,400italic);
 h1, h2, h3, h4, h5, h6 {
     font-family: "Muli";
     font-weight: 300;
@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #333333;
 }
 
-/*#europe #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg") no-repeat center center;
+/*#europe #home { background:url("https://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg") no-repeat center center;
                 background-size:cover;
                 height: 750px
                 text-align:center;
@@ -513,7 +513,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #333333;
 }
 
-/*#manufacturing #home { background:url("http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
+/*#manufacturing #home { background:url("https://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
                 background-size:cover;
                 height: 750px
                 text-align:center;
@@ -584,7 +584,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #640921;
 }
 
-/*#mexico #home { background:url('http://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg') no-repeat top center; background-size:cover; }*/
+/*#mexico #home { background:url('https://res.cloudinary.com/shingo/image/upload/v1457047735/Latin%20Summit/MexicoSummit1.jpg') no-repeat top center; background-size:cover; }*/
 
 #mexico #transborder {
     /*background: rgba(132, 132, 132, 0.73);

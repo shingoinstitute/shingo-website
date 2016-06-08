@@ -2,7 +2,7 @@
   <article class="container" id="challenge-prize">
   	<div class="row">
   		<div class="twelve centered text-center columns">
-  			<img src="http://res.cloudinary.com/shingo/image/upload/v1447775203/ShingoLogo_268x55_flvo4k.jpg" />
+  			<img src="https://res.cloudinary.com/shingo/image/upload/v1447775203/ShingoLogo_268x55_flvo4k.jpg" />
   		</div>
   	</div>
       <div class="row">
@@ -49,7 +49,7 @@
               <h5><strong>View our frequently asked questions <a href="prizefaq">here</a>.</strong></h5>
               <div class="row valign">
               	<div><p>Click on the thumbnail to view a flow chart of the application process: &nbsp; </p></div>
-                  <div><a href="assets/Assessment_Process_Flow_Chart.pdf"><img src="http://res.cloudinary.com/shingo/image/upload/bo_2px_solid_rgb:b17c31,c_thumb,h_60,w_60/v1428963364/Assessment_Process_Flow_Chart_zsakbx.png" alt="Assessment Process Flow"></a></div>
+                  <div><a href="assets/Assessment_Process_Flow_Chart.pdf"><img src="https://res.cloudinary.com/shingo/image/upload/bo_2px_solid_rgb:b17c31,c_thumb,h_60,w_60/v1428963364/Assessment_Process_Flow_Chart_zsakbx.png" alt="Assessment Process Flow"></a></div>
               </div>
               <p>*Note: Achievement reports will be accepted at anytime throughout the year. Achievement reports not received in time to process before the International Shingo Conference and Awards Ceremony (usually held in April or May) will be recognized at the following International Shingo Conference and Awards Ceremony.</p>
               <p>If you are trying to assure recognition at a specific year’s International Shingo Conference, you should submit your achievement report by August 1. If the achievement report is turned in after this date, we will process it as quickly as possible on a FIFO basis. It still may be processed in time for the conference.</p>
@@ -60,7 +60,7 @@
             <a href="" class="close switch" gumby-trigger="|#challenge"><i class="icon-cancel"></i></a>
             <div class="row">
                 <div class="text-center centered columns">
-                    <% include ../partials/templates/download-prize-app.ejs %>
+                    {{>_download-prize-app}}
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <a href="#" class="close switch" gumby-trigger="|.modal"><i class="icon-cancel"></i></a>
             <div class="row">
                 <div class="text-center">
-                    <% include ../partials/templates/download-prize-reapp.ejs %>
+                    {{>_download-prize-reapp}}
                 </div>
             </div>
         </div>

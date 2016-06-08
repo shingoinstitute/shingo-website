@@ -218,17 +218,17 @@ router.get('/prizefaq', function(req, res, next) {
 /*Files*/
 /* GET .pdf - From challengefortheprize */
 router.get('/assets/Assessment_Process_Flow_Chart.pdf', function(req, res, next) {
-    res.send('../assets/Assessment_Process_Flow_Chart.pdf');
+    res.download('../assets/Assessment_Process_Flow_Chart.pdf');
 });
 
 /* GET .pdf - From challengefortheprize*/
 router.get('/assets/Application_Guidelines.pdf', function(req, res, next) {
-    res.send('../assets/Application_Guidelines.pdf');
+    res.download('../assets/Application_Guidelines.pdf');
 });
 
 /* GET .pdf - From researchaward*/
 router.get('/assets/Research-Award-Application-Form.pdf', function(req, res, next) {
-    res.send('../assets/Research-Award-Application-Form.pdf');
+    res.download('../assets/Research-Award-Application-Form.pdf');
 });
 
 

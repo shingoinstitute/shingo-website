@@ -15,7 +15,7 @@
                             <br>
                             <ul class="square">
                                 {{#each this.info.detail}}
-                                    <li>{{{this.speaker}}}</li>
+                                    <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li>
                                 {{/each}}
                             </ul>
                         {{/if}}
