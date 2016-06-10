@@ -16,9 +16,10 @@ var express = require('express'),
     MySQLStore = require('express-mysql-session')(session),
     moment = require('moment'),
     fs = require('fs'),
-    https = require('https');
-
-var languageTree = require('./routes/tree.js');
+    https = require('https'),
+    subdomain = require('express-subdomain'),
+    insight_route =require('./routes/insight.js'),
+    languageTree = require('./routes/tree');
 
 var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
     certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
@@ -28,6 +29,7 @@ var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
     }
 
 var app = express();
+
 var store = new MySQLStore(config.mysql_connection)
 app.use(
     session({
@@ -86,7 +88,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-//TODO Fix favicon
+
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -97,6 +99,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', languageTree);
+app.use(subdomain('insight.shingo', insight_route))
+
 
 app.get('/admin', function(req, res) {
     if (!req.session.access_token) {
