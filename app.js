@@ -17,8 +17,8 @@ var express = require('express'),
     moment = require('moment'),
     fs = require('fs'),
     https = require('https'),
-    subdomain = require('express-subdomain'),
-    insight_route =require('./routes/insight.js'),
+    subdomains = require('express-subdomains'),
+    insight_routes =require('./routes/insight.js'),
     languageTree = require('./routes/tree');
 
 var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
@@ -98,8 +98,14 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+subdomains.use('insight')
+  .use('api');
+app.use(subdomains.middleware);
+app.use('/insight', insight_routes);
+
 app.use('/', languageTree);
-app.use(subdomain('insight.shingo', insight_route))
+
+
 
 
 app.get('/admin', function(req, res) {
