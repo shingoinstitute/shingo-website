@@ -114,7 +114,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 subdomains.use('insight')
-  .use('api');
   
 app.use(subdomains.middleware);
 
