@@ -100,8 +100,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 subdomains.use('insight')
   .use('api');
+  
 app.use(subdomains.middleware);
+
 app.use('/insight', insight_routes);
+app.use('/api', api_route);
 
 app.use('/', languageTree);
 
@@ -142,8 +145,6 @@ app.get('/auth_callback', function(req, res) {
         return res.redirect('/')
     })
 })
-
-app.use('/api', api_route);
 
 /*   Error Handling  */
 //Catch 404 and forward
