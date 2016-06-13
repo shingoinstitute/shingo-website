@@ -16,9 +16,10 @@ var express = require('express'),
     MySQLStore = require('express-mysql-session')(session),
     moment = require('moment'),
     fs = require('fs'),
-    https = require('https');
-
-var languageTree = require('./routes/tree.js');
+    https = require('https'),
+    subdomains = require('express-subdomains'),
+    insight_routes =require('./routes/insight.js'),
+    languageTree = require('./routes/tree');
 
 var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
     certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
@@ -28,6 +29,7 @@ var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
     }
 
 var app = express();
+
 var store = new MySQLStore(config.mysql_connection)
 app.use(
     session({
@@ -101,7 +103,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-//TODO Fix favicon
+
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -111,7 +113,18 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+subdomains.use('insight')
+  .use('api');
+  
+app.use(subdomains.middleware);
+
+app.use('/insight', insight_routes);
+app.use('/api', api_route);
+
 app.use('/', languageTree);
+
+
+
 
 app.get('/admin', function(req, res) {
     if (!req.session.access_token) {
@@ -147,8 +160,6 @@ app.get('/auth_callback', function(req, res) {
         return res.redirect('/')
     })
 })
-
-app.use('/api', api_route);
 
 /*   Error Handling  */
 //Catch 404 and forward
