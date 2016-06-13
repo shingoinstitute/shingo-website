@@ -40,3 +40,6 @@ node_modules
 
 # Mac Archive Files
 .DS_Store
+
+# Event Models
+models/*.json
