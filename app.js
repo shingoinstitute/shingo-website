@@ -114,7 +114,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 subdomains.use('insight')
-  
+
 app.use(subdomains.middleware);
 
 app.use('/insight', insight_routes);
@@ -179,14 +179,14 @@ app.use(function(req, res, next) {
 //     });
 // }
 
-// // Production Error: No stacktrace leaked to user
-// app.use(function(err, req, res, next) {
-//     res.status(err.status || 500);
-//     res.render('error', {
-//         message: err.message,
-//         error: {}
-//     });
-// });
+// Production Error: No stacktrace leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
+});
 
 app.listen(app.get('port'), function() {
     console.log('Node is on port', app.get('port'));
