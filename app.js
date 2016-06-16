@@ -18,7 +18,7 @@ var express = require('express'),
     fs = require('fs'),
     https = require('https'),
     subdomains = require('express-subdomains'),
-    insight_routes =require('./routes/insight.js'),
+    insight_routes = require('./routes/insight.js'),
     languageTree = require('./routes/tree');
 
 var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
@@ -45,18 +45,18 @@ app.use(
 )
 
 app.get('/presentations', function(req, res) {
-  var files = new Array();
-  fs.readdirSync(__dirname + '/public/presentations')
-    .filter(function(file) {
-      return (file.indexOf(".pdf") !== 0);
+    var files = new Array();
+    fs.readdirSync(__dirname + '/public/presentations')
+        .filter(function(file) {
+            return (file.indexOf(".pdf") !== 0);
+        })
+        .forEach(function(file) {
+            files.push(file);
+        });
+    res.render('presentations', {
+        title: "Download",
+        files: files
     })
-    .forEach(function(file) {
-      files.push(file);
-    });
-  res.render('presentations', {
-    title: "Download",
-    files: files
-  })
 })
 
 // Complie SASS
@@ -82,30 +82,27 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({
     defaultLayout: 'base',
     helpers: {
-      prettyDate: function(start, end) {
-        var s = moment(start)
-        var e = moment(end)
-        var format = 'Do MMM YYYY'
-        if(s.year() != e.year()){
-          return s.format(format) + " - " + e.format(format)
+        prettyDate: function(start, end) {
+            var s = moment(start)
+            var e = moment(end)
+            var format = 'Do MMM YYYY'
+            if (s.year() != e.year()) {
+                return s.format(format) + " - " + e.format(format)
+            } else if (s.month() != e.month()) {
+                return s.format('Do MMM') + " - " + e.format(format)
+            } else if (s.date() != e.date()) {
+                return s.format('Do') + " - " + e.format(format)
+            } else {
+                return e.format(format)
+            }
         }
-        else if(s.month() != e.month()){
-          return s.format('Do MMM') + " - " + e.format(format)
-        }
-        else if(s.date() != e.date()){
-          return s.format('Do') + " - " + e.format(format)
-        }
-        else {
-          return e.format(format)
-        }
-      }
     }
 }));
 app.set('view engine', 'handlebars');
 
 
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
