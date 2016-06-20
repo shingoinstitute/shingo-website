@@ -685,7 +685,7 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 125px;
     right: 0px;
-    height: 125px;
+    height: 100px;
     width: 150px;
     background: #640921;
     border-radius: 10px 0px 0px 10px;

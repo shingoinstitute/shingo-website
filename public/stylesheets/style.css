@@ -1341,7 +1341,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     position: fixed;
     top: 125px;
     right: 0px;
-    height: 125px;
+    height: 100px;
     width: 150px;
     background: #640921;
     border-radius: 10px 0px 0px 10px;
