@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align: middle;
     padding-bottom: 5px;
 }
-.gumby-no-touch .navbar ul li:hover > a, .gumby-touch .navbar ul li.active > a {
+.gumby-no-touch .navbar ul li:hover> a, .gumby-touch .navbar ul li.active> a {
     background: none;
     color: #d04526;
     font-size: 1.05em;
@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
     text-shadow: 1px 1px 5px #333333;
 }
-#home .btn > a {
+#home .btn> a {
     font-size: 1.35em;
     padding: 35px 25px;
     text-shadow: 1px 1px 3px #333333;
@@ -232,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 @media only screen and (max-width: 767px) {
-    #s-speakers p > a[class="toggle"] {
+    #s-speakers p> a[class="toggle"] {
         display: none;
     }
 }
@@ -681,20 +681,20 @@ h1, h2, h3, h4, h5, h6 {
 #contact h4, #contact h6 {
     color: black;
 }
-
-/********INDIA********/
-
-
-/*Accent color is PURPLE*/
-
-
-/********AUSTRALIA********/
-
-
-/*Accent color is ORANGE*/
-
-
-/********BRAZIL********/
-
-
-/*Accent color is EMERALD GREEN (like Oz - or its flag - whatever)*/
+#sticky-Right-Banner {
+    position: fixed;
+    top: 125px;
+    right: 0px;
+    height: 125px;
+    width: 150px;
+    background: #640921;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 2px 3px 5px #888;
+    border: 1px solid white;
+    z-index: 10;
+}
+@media only screen and (max-width: 768px) {
+    #sticky-Right-Banner {
+        position: absolute;
+    }
+}

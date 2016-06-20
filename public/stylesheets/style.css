@@ -1338,20 +1338,19 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     font-family: "Quattrocento Sans";
 }
 #sticky-Right-Banner {
-  position: fixed;
-top: 125px;
-right: 0px;
-height: 100px;
-width:150px;
-background: #640921;
-border-radius: 10px 0px 0px 10px;
-box-shadow: 2px 3px 5px #888;
-border:1px solid white;
-z-index:10;
+    position: fixed;
+    top: 125px;
+    right: 0px;
+    height: 125px;
+    width: 150px;
+    background: #640921;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 2px 3px 5px #888;
+    border: 1px solid white;
+    z-index: 10;
 }
-
 @media only screen and (max-width: 768px) {
-  #sticky-Right-Banner {
-    position:absolute;
-  }
+    #sticky-Right-Banner {
+        position: absolute;
+    }
 }
