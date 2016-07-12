@@ -15,19 +15,24 @@
                             <br>
                             <ul class="square">
                                 {{#each this.info.detail}}
-                                    <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li>
+                                    {{#if this.abstract}}
+                                      <li><a href="#" class="switch" gumby-trigger="#{{this.id}}">{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</a></li>
+                                    {{else}}
+                                      <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li>
+                                    {{/if}}
+                                    <!-- <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li> -->
                                 {{/each}}
                             </ul>
                         {{/if}}
                     </td>
                     <td>
-                        <br>
+                        <!-- <br>
                         {{#each this.info.detail}}
                             {{#if this.abstract}}
                                 <a href="#" class="switch" gumby-trigger="#{{this.id}}">Details</a>
                             {{/if}}
                             <br>
-                        {{/each}}
+                        {{/each}} -->
                     </td>
                 </tr>
             {{/each}}
