@@ -79,7 +79,7 @@ router.get('/events/:name', function(req, res, next) {
             event:event
         });
     }).catch(function(err){
-      console.log("Line 69: " + err);
+      console.log(err);
     })
 });
 
@@ -156,10 +156,22 @@ router.use('/affiliates', routes_affiliates);
 /*  About Menu  */
 // TODO: Pages contain content that can be populated from salesforce
 
-/* GET about */
-router.get('/about', function(req, res, next) {
-    res.render('about/about', {
-        title: 'Mission & History - Shingo Institute'
+router.get('/about',  function(req, res, next){
+  var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
+
+  SF.queryAsync(staff_query)
+    .then(function(results){
+      // console.log(JSON.stringify(results.records,null,4));
+      res.render('about/about', {
+        title: 'Mission & History - Shingo Institute',
+        staff: results.records
+      })
+    }).catch(function(err){
+      console.log('index-en.js:Line 200' + err)
+      res.render('about/about', {
+        title:'Mission & History - Shingo Institute',
+        staff: restults.records
+      })
     });
 });
 
