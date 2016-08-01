@@ -154,7 +154,6 @@ router.use('/affiliates', routes_affiliates);
 
 
 /*  About Menu  */
-// TODO: Pages contain content that can be populated from salesforce
 
 router.get('/about',  function(req, res, next){
   var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
@@ -190,9 +189,22 @@ router.get('/examiners', function(req, res, next) {
 });
 
 /* GET seab */
-router.get('/seab', function(req, res, next) {
-    res.render('about/seab', {
-        title: 'Shingo Executive Advisory Board - Shingo Institute'
+router.get('/seab',  function(req, res, next){
+  var seab_query = "SELECT Id, Name, Title, Account.Name, Photograph__c, Biography__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName"
+
+  SF.queryAsync(seab_query)
+    .then(function(results){
+      // console.log(JSON.stringify(results.records,null,4));
+      res.render('about/seab', {
+        title: 'Mission & History - Shingo Institute',
+        members: results.records
+      })
+    }).catch(function(err){
+      console.log('index-en.js:Line 203' + err)
+      res.render('about/seab', {
+        title:'Shingo Executive Advisory Board - Shingo Institute',
+        members: restults.records
+      })
     });
 });
 

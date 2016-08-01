@@ -1,498 +1,82 @@
 <!-- InstanceBeginEditable name="main" -->
 <article class="container" id="seab">
 	<div class="row">
-    	<div class="nine centered columns text-center">
-            <h2 class="quattrocento">Shingo Executive Advisory Board</h2>
-            <hr>
-            <p>The Shingo Executive Advisory Board consists of outstanding leaders from a wide variety of organizations and industries who have established themselves in their careers as principle-centered leaders building cultures of excellence. Members are chosen based on their expertise, commitment to, and willingness to endorse, and promote the principles and mission of the Shingo Institute. In their role as board members, they provide valuable insights, feedback and guidance regarding the work and direction of the Shingo Institute.</p>
-        </div>
-    </div>
-    <br>
+		<div class="nine centered columns text-center">
+			<h2 class="quattrocento">Shingo Executive Advisory Board</h2>
+			<hr>
+			<p>The Shingo Executive Advisory Board consists of outstanding leaders from a wide variety of organizations and industries who have established themselves in their careers as principle-centered leaders building cultures of excellence. Members are chosen
+				based on their expertise, commitment to, and willingness to endorse, and promote the principles and mission of the Shingo Institute. In their role as board members, they provide valuable insights, feedback and guidance regarding the work and direction
+				of the Shingo Institute.</p>
+		</div>
+	</div>
+	<br>
 	<div class="row">
-    <!--Comment in these next lines (the entire ul) to put up the pictures and some bios for the board. Make sure to comment out the table if putting up this block.-->
-    	<ul class="two_up tiles">
+		<ul class="two_up tiles">
+			{{#each members}}
+				<li>
+					<div class="row">
+						<div class="six columns">
+							<img src="{{Photograph__c}}" alt="{{Name}}">
+						</div>
+						<div class="six columns">
+							<h5><strong>{{Name}}</strong></h5>
+							<br>
+							<p>{{Title}}
+								<br><strong>{{Account.Name}}</strong></p>
+							<p><a href="#" class="switch" gumby-trigger="#{{Id}}">About</a></p>
+						</div>
+						<div class="modal" id="{{Id}}">
+							<div class="content">
+								{{{Biography__c}}}
+								<div class="text-center">
+									<p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div id="specialadvisors" class="row">
+		<div class="nine centered columns text-center">
+			<h2 class="quattrocento">Special Advisors</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<ul class="two_up tiles">
 			<li>
 				<div class="row">
 					<div class="six columns">
-						<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1436889038/Jon_Alder_9_lhsggf.jpg" alt="Jon Alder">
+						<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1465240490/WilliamWang_vu98lx.jpg" alt="William Wang">
 					</div>
 					<div class="six columns">
-						<h5><strong>Jon Alder</strong></h5>
+						<h5><strong>William Wang</strong></h5>
 						<br>
-						<p>Director, Group Lean Enterprise<br><strong>Rexam PLC</strong></p>
-						<p><a href="#" class="switch" gumby-trigger="#jalder">About</a></p>
+						<p>Senior Advisor for China Affairs</strong>
+						</p>
+						<p><a href="#" class="switch" gumby-trigger="#wwang">About</a></p>
 					</div>
-					<div class="modal" id="jalder">
-						<div class="content">
-							<p><strong>Jon Alder</strong> has spent over 25 years in manufacturing and operational excellence working for global FTSE 100 companies. His career began in operational management for the Siebe organization (to become Invensys Plc), a provider of world-class power supply solutions for blue chip companies such as BT, Siemens, Philips and Raytheon.</p>
-							<p>At Siebe in 1997, Mr. Alder embarked on a journey of implementing six sigma and lean enterprise, with responsibility to lead its lean and six sigma initiatives across the Power Systems division in regions as diverse as Mexico, Malaysia and China, the US and Europe.</p>
-							<p>Mr. Alder then moved to global consumer packaging company Rexam, to lead the deployment of lean enterprise and six sigma across more than 100 plants worldwide. In 2011, he started a program to move Rexam forward towards the Shingo Prize, where Rexam now has accreditation for 11 plants including two Shingo Prizes. Rexam’s global lean program has delivered more than £300 million in efficiency savings since 2004 and continues to push forward with an intense philosophy of “Zero Loss.”</p>
-							<p>In the last 8 years, Mr. Alder’s work has included the creation and deployment of an innovation system for Rexam and a continuous improvement focus to advance its global health and safety program. More recently he led the development and adoption of a sustainability strategy across the Rexam business before returning to refocus the organization on its continuous improvement and lean enterprise aims.</p>
-							<p>Mr. Alder is a six sigma master black belt covering both operational black belt and design for six sigma.</p>
-							<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
+				</div>
+				<div class="modal" id="wwang">
+					<div class="content">
+						<p><strong>William Wang</strong>has spent over 15 years in lean six sigma study, research, practice and consulting. Mr. Wang is a certified six sigma master black belt covering DMAIC, DFSS and lean. He is a member of the China Association for Quality
+							(CAQ) six sigma steering committee, and a certified training instructor for six sigma black belts.</p>
+						<p>In 2005, Mr. Wang was a member of the pioneer batch of CAQ certified six sigma black belts, and he now serves as a master black belt providing 500+ clients with six sigma management system plans; and six sigma knowledge, training and project coaching.
+							He mentors the teams to improve Cpk, RTY, reliability, etc.; and reduce COPQ, lead time, etc. using DMAIC, DFSS and lean methodologies. Mr. Wang has trained 3000+ students, coached 1000+ black belt and green belts, and created about RMB:1 billion
+							cost savings for clients.</p>
+						<div class="text-center">
+							<p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li>
-					<div class="row">
-							<div class="six columns">
-									<img src="http://res.cloudinary.com/shingo/image/upload/c_crop,g_face,h_800,w_800/c_fill,g_face,h_300,w_300/v1446219686/board-photos/Doug_pic_oak_hill.jpg" alt="Douglas Carlberg">
-								</div>
-								<div class="six columns">
-									<h5><strong>Douglas F. Carlberg</strong></h5>
-										<br>
-										<p>President &amp; CEO<br><strong>M2 Global Inc.</strong></p>
-										<p><a href="#" class="switch" gumby-trigger="#dcarlberg">About</a></p>
-								</div>
-						</div>
-						<div class="modal" id="dcarlberg">
-								<div class="content">
-									<h4>Professional Experience</h4>
-									<p><strong>Mr. Carlberg</strong> has over 35 years of experience in operations management in the electronics, telecommunications, and defense industries. This includes more than 20 years of executive leadership with profit/loss responsibility for leading high-technology commercial and defense firms. His areas of expertise include directing all lean manufacturing aspects of product development, production, supply chain management, sales, and service. He is president and chairman of the board of M2 Global Inc., a general partnership that owns and operates M2 Global Technology Ltd. The company provides high-performance microwave components and value-added aerospace contract manufacturing services.</p>
-									<p>Previously Mr. Carlberg served as senior vice president of worldwide operations of Harris Corporation’s Microwave Communications Division, which produces a broad range of microwave radios and microwave components for world markets. During his tenure at Harris, he contributed significantly to the Microwave Communications Division moving from a potentially “going out of business” posture to a number one position in US markets and a number four position in world markets. Under Mr. Carlberg’s leadership, the division’s San Antonio operation earned numerous awards and recognitions including the 1996 Shingo Prize for Excellence in Manufacturing, the 1996 Texas Business of the Year Award, the Organizational Excellence Award by the Association for Quality and Participation, and Clemson University’s 21st Century Organizational Excellence Premier Award. In both 1996 and 1998, the San Antonio operation was selected by Industry Week as one of the Top 25 Best Plants in North America. M2 Global received the U.S. Air Force 2005 Teaming to Succeed Award, the 2007 Association for Manufacturing Excellence Manufacturing Excellence Award, the 2011 SBA Small Business Subcontractor of the Year and the Texas Manufacturing Star Award in 2012.</p>
-									<p>Mr. Carlberg serves on the Executive Advisory Board for the Shingo Prize, the world’s highest standard for operational excellence and the board of directors for the Association for Manufacturing Excellence, an international nonprofit educational and benchmarking organization.</p>
-									<h4>Education</h4>
-									<ul>
-										<li>Graduate, Arizona Executive Program, University of Arizona, Tucson, Arizona</li>
-										<li>Graduate, Defense Systems Management College, Fort Belvoir, Virginia</li>
-										<li>Bachelor of Science, Mechanical Engineering, University of Arizona, Tucson, Arizona</li>
-										<li>Associate of Science, Aerospace Engineering, Wentworth Institute, Boston, Massachusetts</li>
-									</ul>
-									<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-								</div>
-						</div>
-				</li>
-    	<li>
-        	<div class="row">
-            	<div class="six columns">
-                	<img src="http://res.cloudinary.com/shingo/image/upload/c_crop,g_face,h_700,w_700/c_scale,h_300,w_300/v1423068023/melanie_foley_bdvce2.jpg" alt="Melanie Foley">
-                </div>
-                <div class="six columns">
-                	<h5><strong>Melanie Foley</strong></h5>
-                    <br>
-                    <p>Executive VP/Chief Talent and Enterprise Services Officer<br><strong>Liberty Mutual Insurance</strong></p>
-                    <p><a href="#" class="switch" gumby-trigger="#mfoley">About</a></p>
-                </div>
-            </div>
-            <div class="modal" id="mfoley">
-								<div class="content">
-                	<p><strong>Melanie Foley</strong> is the executive vice president and chief talent and enterprise services officer for Liberty Mutual Insurance, a diversified global insurer and third largest property and casualty insurer in the U.S. employing more than 50,000 people in approximately 900 offices throughout the world.</p>
-                  <p>A Boston native who earned a bachelor’s degree in marketing from Boston College and an MBA from Bentley College, Ms. Foley joined Liberty Mutual in 1996 as an account executive. For more than a decade she was promoted into several positions of increasing responsibility in the sales and marketing functions of the US Personal Insurance business. Effective January 1, 2009, she was appointed as executive vice president and general manager of distribution.</p>
-                  <p>In December of 2011, Melanie was appointed to her current role where she has led the company’s talent, procurement, communications, real estate, and workplace services and strategies. She also developed Liberty Mutual’s Strategic Services function, which designs and applies a common way of working across the global enterprise. This approach to planning work, delivering value to customers and engaging front-line employees in defining and improving processes allows Liberty Mutual to share best practices, leverage talent, continuously improve and compete in an ever-changing marketplace.</p>
-                  <p>Ms. Foley previously served on the board of Insurance.com, a privately held Internet insurance agency. She is a member of the Board of Trustees at Boston Medical Center, and a memeber of the Shingo Executive Advisory Board.</p>
-                  <p>She lives in Walpole, Massachusetts with her husband, Frank and two daughters, Kaitlyn and Emma.</p>
-									<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-								</div>
-            </div>
-        </li>
-		<li>
-				<div class="row">
-						<div class="six columns">
-								<img src="http://res.cloudinary.com/shingo/image/upload/c_crop,g_face,h_1200,w_1500/c_fill,g_face,h_300,w_300/v1418664154/WalterGarvin_gdyeag.png" alt="Walt Garvin">
-							</div>
-							<div class="six columns">
-								<h5><strong>Walt Garvin</strong></h5>
-									<br>
-									<p>VP Lean Six Sigma<br><strong>Jabil</strong></p>
-									<p><a href="#" class="switch" gumby-trigger="#wgarvin">About</a></p>
-							</div>
-					</div>
-					<div class="modal" id="wgarvin">
-						<div class="content">
-							<p><strong>Walter Garvin</strong> is vice president of Lean Six Sigma at Jabil, a global electronics manufacturing services company. Mr. Garvin joined Jabil in 2000 as an industrial engineering manager and later served as an European operations development manager, global technical director and Americas operations development manager. Prior to Jabil, Mr. Garvin worked in various engineering roles in plastics, stamping, textiles and die casting operations. Mr. Garvin earned a bachelor’s degree from Clemson University, as well as a master’s degree in industrial and systems engineering and an MBA both from the University of Florida.</p>
-							<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-						</div>
-					</div>
+				<!-- Space Holder -->
 			</li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,e_improve,g_face,h_300,w_300/v1445980497/board-photos/Tom_Hartman.jpg" alt="Thomas G. Hartman">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Thomas G. Hartman</strong></h5>
-                        <br>
-                        <p>Executive Coach<br><strong>ThedaCare Center for Healthcare Value </strong></p>
-                    </div>
-                </div>
-            </li>
-						<li>
-							<div class="row">
-								<div class="six columns">
-									<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1443714979/CHOU_edited-1_2_e4khh5.jpg" alt="Christian Houborg">
-								</div>
-								<div class="six columns">
-									<h5><strong>Christian Houborg</strong></h5>
-									<br>
-									<p>Vice President, Service &amp; Technical Operations<br><strong>H. Lundbeck A/S</strong></p>
-									<p><a href="#" class="switch" gumby-trigger="#chouborg">About</a></p>
-								</div>
-								<div class="modal" id="chouborg">
-									<div class="content">
-										<p><strong>Christian Houborg</strong> has been responsible for the past nine years for the lean transformation at Lundbeck, a Danish-based pharmaceutical company. Before taking on the lean challenge, he was responsible for Lundbeck’s supply chain strategy and management processes in his role as personal assistant to the executive vice president for Production. Since 2009, Mr. Houborg has combined the leadership of the lean transformation with the role of vice president for service and technical operations, which includes the following areas: facility services, corporate real estate, corporate health, safety and environment, corporate engineering and technical services.</p>
-										<p>With a master’s degree in engineering, Mr. Houborg has been instrumental in Lundbeck’s success. Three out of four Lundbeck manufacturing plants have received Shingo recognition. In 2012, Lundbeck was the first European company to be recognized with a Shingo Silver Medallion and the first pharma company globally. Lundbeck’s Italian chemical plant received a Shingo Bronze Medallion in 2015.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-							</div>
-						</li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1403715315/George-Koenigsaecker_e4uhmw.jpg" alt="George J. Koenigsaecker">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>George J. Koenigsaecker</strong></h5>
-                        <br>
-                        <p>President<br><strong>Lean Investments, LLC</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#gkoenig">About</a></p>
-                    </div>
-                </div>
-                <div class="modal" id="gkoenig">
-									<div class="content">
-	                	<p><strong>George Koenigsaecker</strong> is a principal investor in several lean enterprises.    Mr. Koenigsaecker is a Board Member of the Shingo Prize, the international award for “lean enterprises”,   The Thedacare Center for Healthcare Value,  Peacock Engineering, and  Watlow Electric Corporation.</p>
-										<p>From 1992 until 1999 Mr. Koenigsaecker led the lean conversion of the HON Company, a $1.5 billion office furniture manufacturer.  During this period his efforts led a tripling of volume and culminated in HON Industries being named by Industry Week Magazine as one of the “World’s Best Managed Companies”.</p>
-										<p>Prior to this time, Mr. Koenigsaecker was with the Danaher Corporation, where he was President of the Jacob’s Vehicle Equipment Company (whose lean conversion is featured in the book “Lean Thinking” by Jim Womack and Dan Jones),and Group President of the Tool Group, then the largest business unit of Danaher.  In addition to leading the lean conversion of these operations, Mr. Koenigsaecker developed and implemented the “Danaher Business System”, a comprehensive lean enterprise model.</p>
-										<p>In addition Mr. Koenigsaecker has held senior management positions in Finance, Marketing and Operations with Rockwell International and Deere &amp; Company.</p>
-										<p>In 2009 Mr. Koenigsaecker authored Leading The Lean Enterprise Transformation, where he outlined his “lessons learned” for senior executives on the path to building a lean enterprise.  In 2010, Mr. Koenigsaecker was selected as a member of Industry Week’s Manufacturing Hall of Fame.  He is a graduate of the Harvard Business School.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-                </div>
-            </li>
-						<li>
-								<div class="row">
-										<div class="six columns">
-												<img src="http://res.cloudinary.com/shingo/image/upload/c_crop,g_xy_center,h_850,w_850,x_600,y_600/c_fill,g_face,h_300,w_300/v1444340901/frank-koentgen_wgj65e.jpg" alt="Frank Koentgen">
-											</div>
-											<div class="six columns">
-												<h5><strong>Frank Koentgen, PhD</strong></h5>
-													<br>
-													<p>CEO<br><strong>Ozgene - Perth Australia</strong></p>
-													<p><a href="#" class="switch" gumby-trigger="#fkoentgen">About</a></p>
-											</div>
-									</div>
-									<div class="modal" id="fkoentgen">
-										<div class="content">
-											<p><strong>Dr Frank Koentgen</strong> is a successful entrepreneur, research scientist, and international biotechnology leader with more than 25 years experience in Research and Development in Molecular Genetics.</p>
-											<p>He is Co-founder and CEO of Ozgene, located in Perth, Western Australia. Ozgene provides contract research services for global markets and prides itself as a research organisation managed by scientists, for scientists. Under Dr Koentgen’s leadership, Ozgene was awarded an “Emerging Exporter Award” by the Premier of Western Australia. Ozgene has also been a recipient of the “Rising Stars Award”, which recognises and celebrates the ten fastest growing, private companies in Western Australia. In addition, Dr Koentgen is a former Ernst &amp; Young “Entrepreneur of the Year” finalist in Western Australia.</p>
-											<p>Dr Koentgen received his PhD from the University of Freiburg, Germany in affiliation with the Max Planck Institute (MPI) for Immunobiology and Roche Pharmaceuticals (Basel, Switzerland). His work culminated in the establishment of the world’s first successful C57BL/6 knockout mouse.</p>
-											<p>He then went on to complete post doctoral research at the Roche Institute for Molecular Biology (RIMB) located in Nutley, New Jersey, USA. After completing his initial post doctoral research, Dr Koentgen was awarded a German DFG research fellowship and moved to the Walter and Eliza Hall Institute (WEHI) in Melbourne, Victoria, Australia. His research at the WEHI resulted in numerous peer-reviewed publications in prestigious scientific journals and multiple patents granted worldwide.</p>
-											<p>Today, Dr Koentgen is very passionate about applying Lean thinking into research environments. He has studied Toyota, and many other Lean practitioners in Japan, as part of the Shingo Study Tour. Within his own research organisation, Ozgene’s unique style of lean transformation drives the company’s new leadership mindset as the very basis for all of its scientific endeavours:</p>
-											<p><em>“to advance humanity – inspire curiosity”</em></p>
-											<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-										</div>
-									</div>
-							</li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,e_saturation:-15,g_face,h_300,w_300/v1430326327/Sheila_Montney_kbcbzj.jpg" alt="Sheila Montney">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Sheila Montney</strong></h5>
-                        <br>
-                        <p>AVP - Life Health<br><strong>State Farm</strong></p>
-                        <p><a href="#" class="switch" gumby-trigger="#smontney">About</a></p>
-                    </div>
-                </div>
-                <div class="modal" id="smontney">
-									<div class="content">
-	                	<p><strong>Sheila Montney</strong> has held a variety of positions with State Farm Insurance Companies since 1985 in seven locations across the United States. She currently leads Life/Health/Mutual Funds Centralized Operations, and is based at State Farm’s corporate headquarters in Bloomington, Illinois.</p>
-                    <p>Centralized Operations provides the “how to” for State Farm’s Life, Health &amp; Mutual Funds’ product lines. Centralized Operations departments include Strategic Planning, Operational Excellence, Procedures, Vendor &amp; Operations Risk Management, Program &amp; Project Management, Data Analytics, Logistics, Quality, and Development &amp; Knowledge Management. Centralized Operations associates are located at State Farm’s Bloomington, Illinois corporate headquarters, with field staff in Ohio, Texas, Colorado, and Illinois.</p>
-                    <p>Sheila earned a Bachelor’s Degree in English from the University of North Texas in Denton, and a Master’s Degree in Government from Harvard University in Cambridge, Massachusetts.  She has earned the Chartered Property Casualty Underwriter designation (The Institutes), Chartered Financial Consultant (The American College), and LIMRA Leadership Institute Fellow. Sheila represents State Farm as a member of the SSA Chicago Process Roundtable, CEB Operations Leadership Council, American Society of Quality, and is a former member of the Hammer &amp; Company Phoenix Research Consortium.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-                </div>
-            </li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1444336215/board-photos/steve-moore.jpg" alt="Steve Moore">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Steve Moore</strong></h5>
-                        <br>
-                        <p>Former General Manager<br><strong>Barnes Aerospace Ogden</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#smoore">About</a></p>
-                    </div>
-                </div>
-								<div class="modal" id="smoore">
-									<div class="content">
-										<p><strong>Steve Moore</strong> has a long career of operations general management experience with profit and loss responsibility over two aerospace manufacturing companies located in Ogden, Utah, and Lansing, Michigan. Prior to his assignment as general manager, Mr. Moore held various positions of increasing responsibility including division manager, operations manager and lean/continuous improvement manager.</p>
-										<p>Under Mr. Moore's leadership, the Ogden Division achieved 700% sales growth and succeeding year-over-year record profits - driving record business metric results from a consistent pursuit of lean and operational excellence. Most importantly, he helped create a workplace culture of operational excellence and employee empowerment and engagement – going from “having to” to “wanting to.” As a result, the Barnes Aerospace Ogden Division received the Shingo Prize in 2014.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-            </li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1443631760/Gary_Peterson_pjbfky.jpg" alt="Gary Peterson">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Gary Peterson</strong></h5>
-                        <br>
-                        <p>Executive VP of Supply Chain<br><strong>O.C. Tanner Company</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#gpeterson">About</a></p>
-                    </div>
-                </div>
-								<div class="modal" id="gpeterson">
-									<div class="content">
-										<p><strong>Gary Peterson</strong> has worked for The O.C. Tanner Company for 28 years. His current assignment is executive vice president of supply chain &amp; production. Prior to working in his current role, Mr. Peterson has held an impressively diverse set of jobs with the O.C. Tanner Company, including manager of market research, manufacturing change facilitator (where he was instrumental in moving the operation from “batch” to lean, resulting in receiving the Shingo Prize for Excellence in Manufacturing), vice president of manufacturing, marketing vice president of award development, and vice president of research and professional services.</p>
-										<p>Mr. Peterson serves on the Executive Advisory Board for the Shingo Institute and is a Shingo Examiner. His experience with lean enterprise sends him around the globe helping others improve their operations.</p>
-										<p>He earned an MBA and a bachelor’s degree in statistics from Brigham Young University. Mr. Peterson recharges his batteries by snowboarding, playing basketball, hiking, watching his 16-year old daughter play soccer, and spending time with his six grandchildren.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-            </li>
-						<li>
-							<div class="row">
-								<div class="six columns">
-									<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/a_0/v1446765137/board-photos/fransico.jpg" alt="Fernando Ramirez Garza">
-								</div>
-								<div class="six columns">
-									<h5><strong>Fernando Ramirez Garza</strong></h5>
-									<br>
-									<p>Director of Quality<br><strong>Deacero, Inc.</strong></p>
-									<p><a href="#" class="switch" gumby-trigger="#framirez">About</a></p>
-								</div>
-							</div>
-							<div class="modal" id="framirez">
-								<div class="content">
-									<p><strong>Fernando Ramírez Garza</strong> is the corporate quality director and champion of the operational excellence strategy at Deacero Group, a major steel products conglomerate based in Monterrey, Mexico. Mr. Ramírez has worked at Deacero for 27 years in different fields, mainly those related to operations in wire manufacturing, lab tests, quality control, product development and equipment installation. He also directed the construction, start-up and operation of a steel wire products mill for 14 years, with more than 400 workers and a capacity of 250,000 tons per year.</p>
-									<p>Recently named to his current position, Mr. Ramírez’s main goal is to redesign and implement an overall total quality and operational excellence strategy among the company’s 18 production facilities, including steel mills, rolling mills, wire plants and distribution centers. This effort will require the commitment of 5,000 people working throughout the organization, and he is leading this transformation by using the Shingo Model™ and passing it through the company’s executive operations committee.</p>
-									<p>Mr. Ramírez earned a degree in industrial engineering at ITESM in Monterrey, Mexico, where he resides with his loving wife, two beautiful daughters and one son.</p>
-									<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-								</div>
-							</div>
-						</li>
-							<li>
-								<div class="row">
-									<div class="six columns">
-										<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1444757663/Rice_Kevin_i6qw1y.jpg" alt="Kevin Rice">
-									</div>
-									<div class="six columns">
-										<h5><strong>Kevin Rice</strong></h5>
-										<br>
-										<p>Executive Director of Corporate Partnerships &amp; Community Relations<br><strong>Utah State University</strong></p>
-										<p><a href="#" class="switch" gumby-trigger="#krice">About</a></p>
-									</div>
-								</div>
-								<div class="modal" id="krice">
-									<div class="content">
-										<p>Having spent 21 years as a business owner as well as a regional Vice President for a multi-national corporation, <strong>Kevin</strong> is now entering his fourth year at Utah State University as the Executive Director for Corporate Partnerships & Community Relations for The Huntsman School of Business. Prior to joining The Huntsman School of Business Kevin served as Assistant Vice President of Development &amp; Alumni Relations at Utah State University. Kevin is married to the former Stacy Shulsen, an '89 USU alumna, and together they have two sons; Austin (19), Kade (13).</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-							</li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1444336215/board-photos/richard-schonberger.jpg" alt="Richard J. Schonberger">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Richard J. Schonberger</strong></h5>
-                        <br>
-                        <p>President<br><strong>Schonberger &amp; Associates, Inc.</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#rschonberger">About</a></p>
-                    </div>
-                </div>
-								<div class="modal" id="rschonberger">
-									<div class="content">
-										<p><strong>Richard Schonberger</strong> is author of 15 trade/text books, including Japanese Manufacturing Techniques (Free Press, 1982); World Class Manufacturing (Free Press, 1986); and, his latest, Best Practices in Lean Six Sigma Process Improvement: A Deeper Look (Wiley, 2008). His 200-plus articles have appeared in a wide range of academic and practitioner periodicals. After eight years as a practicing industrial engineer, he joined the University of Nebraska faculty, becoming George Cook (chaired) Professor; and later affiliate professor in management science, University of Washington-Seattle. Dr. Schonberger’s honors include: 1995 Academy of the Shingo Prize; 1990 British Institution of Production Engineers’ International Award in Manufacturing Management; and 1988 IIE Production and Inventory Control Award. Dr. Schonberger is on several editorial boards and currently is director of the “Global Leanness Studies” and the “World Class by Principles” international benchmarking project.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-            </li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1386711613/RitsuoShingo_sw4rfz.jpg" alt="Ritsuo Shingo">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Ritsuo Shingo</strong></h5>
-                        <br>
-                        <p>President<br><strong>Institute of Management Improvement</strong></p>
-                        <p><a href="#" class="switch" gumby-trigger="#rshingo">About</a></p>
-                    </div>
-                </div>
-                <div class="modal" id="rshingo">
-									<div class="content">
-	                	<p><strong>Ritsuo Shingo</strong> is president of Institute of Management Improvement, a company started by his father and namesake of the Shingo Institute, Shigeo Shingo, and former president of Toyota China and GAC Hino Motors. Dr. Shingo, distinguished himself as one of the world’s leading experts in improving manufacturing processes. Dr. Shingo has been described as an “engineering genius” who helped create and write about many aspects of the revolutionary manufacturing practices, which comprise the renowned Toyota Production System.</p>
-                    <p>Mr. Shingo has followed in his father’s footsteps and has been very successful in the automotive industry. Mr. Shingo started his career with Toyota Motor Company in 1970, after earning a law degree from Waseda University. He worked in Toyota’s legal, public relations and purchasing departments for 13 years before transferring to its purchasing department in Detroit, Michigan.</p>
-                    <p>Mr. Shingo spent two years at Toyota Motor Kentucky and then returned to the purchasing department in Japan. For three years, he worked for Toyota Motor UK and then returned to China, eventually becoming president of Toyota China in 1998.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-                </div>
-            </li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_crop,g_face,h_400,w_500/c_fill,h_300,w_300/v1432327182/Ken_Snyder_ysjdxd.jpg" alt="Ken Snyder">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Kenneth Snyder</strong></h5>
-                        <br>
-                        <p>Executive Director<br><strong>Shingo Institute</strong><br>Executive Dean, Jon M. Huntsman School of Business<br><strong>Utah State University</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#ksnyder">About</a></p>
-                    </div>
-                </div>
-								<div class="modal" id="ksnyder">
-									<div class="content">
-										<p><strong>Ken Snyder</strong>, the executive dean and chief administrative officer of the Jon M. Huntsman School of Business, recently joined the Shingo Institute as the executive director. Mr. Snyder has served as a member of the Shingo Executive Advisory Board for the past seven years and has intimate knowledge of the Institute and its history.</p>
-		                <p>Mr. Snyder developed an interest in Japanese business practices while living in Japan during the time he was a student. His interest led him to major in Japanese history and then to pursue an MBA for the purpose of working with a Japanese business expanding to the United States. Inspired by the work of Professor Mike Yoshino and Professor William Ouchi, Mr. Snyder wrote his master’s thesis on “Applying Japanese Business Practices in American Companies.”</p>
-		                <p>Immediately after graduation, Mr. Snyder joined a Japanese electronics manufacturing company and helped lead the establishment of its U.S. affiliate company. As plant manager, and later president of that company, he led the company through the implementation of TQC, QC Circles, and then later as the company implemented JIT and kanban initiatives.</p>
-		                <p>After ten+ years with the Japanese company, Mr. Snyder led the startup of Progressive Impressions International (PII) in Bloomington, Illinois. There he created a “lean accounting” system even before that term existed, and he led the growth of PII from pre-revenue to over $25 million in annual revenues.</p>
-		                <p>Before joining the Huntsman School, Mr. Snyder was president of Marketing Communication Inc., an operating division of Taylor Corporation, where he directed a group of six companies while growing revenues from $25 million to over $80 million. He joined the Jon M. Huntsman School of Business in 2008.</p>
-		                <p>Mr. Snyder has served as a member of the Shingo Executive Advisory Board since 2009, and as a Shingo examiner since 2010. He was named chairman of the Shingo board and executive director of the Shingo Institute in 2015.</p>
-		                <p>He earned an MBA from the Harvard Graduate School of Business in 1980 with an emphasis in international business. Prior to that he earned a bachelor’s degree in Japanese history from the University of Utah in 1978.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-            </li>
-						<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1429561595/Billy_Ray_Taylor_Photo_rf6d18.jpg" alt="Billy Ray Taylor">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Billy Ray Taylor</strong></h5>
-                        <br>
-                        <p>Director of North America Manufacturing<br><strong>Goodyear</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#btaylor">About</a></p>
-                    </div>
-                </div>
-								<div class="modal" id="btaylor">
-									<div class="content">
-										<p><strong>Billy Taylor</strong> is a highly respected, motivating and visionary leader with over 20 years of diverse experience in all phases of manufacturing management, offering business focused solutions that are communicated passionately with an enhanced ability to construct and present business concepts and plans in a clear and persuasive manner. Often selected to pilot leading edge and innovative processes, he has been repeatedly called upon to successfully implement improvement strategies in under-performing operations, improving production efficiency and employee engagement and has built a reputation negotiating complex contractual issues, with the highest level of integrity, fairness, and honesty, while dealing with a range of sensitive issues.</p>
-										<p>Mr. Taylor was appointed to his current role in January 2105, after serving as the director of Commercial Manufacturing North America for nearly three years. Previously, Mr. Taylor has led numerous manufacturing teams as a plant, production and business center manager for Goodyear, consistently improving plant performance across all areas of production, labor costs, quality and safety, winning numerous internal and external awards and recognition such as the Shingo Silver Medallion. Mr. Taylor was also recognized as one of the Most Admired Executives in Oklahoma by The Journal Record, the Oklahoma City-based business newspaper affiliated with Dolan Media Company.</p>
-										<p>He has been an invited guest of the Goodyear Board of Directors and participant at several senior Goodyear international and global conferences and state CEO roundtables as a “Transformation Leader,” to offer his own unique insights and strategies in lean manufacturing, leadership and employee engagement. He is also a member of the Oklahoma Governors Business Roundtable and the Oklahoma Most Admired CEO Roundtable, as well as the Shingo Executive Advisory Board.</p>
-										<p>Mr. Taylor earned a MBA from Baker University, where he was rated a top student in his year, and a bachelor’s degree in electrical engineering from Prairie View A&amp;M University. Mr. Taylor also recently completed the Goodyear Senior Leadership Development Program at Harvard Business School.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-            </li>
-	        	<li>
-	            	<div class="row">
-	                	<div class="six columns">
-	                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1447360507/board-photos/Tracy_LoRes_003.jpg" alt="Don Tracy">
-	                    </div>
-	                    <div class="six columns">
-	                    	<h5><strong>Don Tracy</strong></h5>
-	                        <br>
-	                        <p>Director, Electronic Products Division<br><strong>DENSO Manufacturing Tennessee, Inc.</strong></p>
-													<p><a href="#" class="switch" gumby-trigger="#dtracy">About</a></p>
-	                    </div>
-											<div class="modal" id="dtracy">
-												<div class="content">
-													<p><strong>Don Tracy</strong> has over 34 years of automotive engineering and management experience. He has worked in American and Japanese cultures developing world-class lean organizations to meet and exceed the changing global competition. As director of one of the world’s largest automotive parts manufacturer, Mr. Tracy is responsible for the ongoing successful operation of the Body Electronics Division. He joined DENSO in 1989 and eventually led DENSO to align the concepts and requirements of the Shingo criteria to receive a 2007 Shingo Prize. Mr. Tracy is responsible for leading the Tennessee site through its cultural transformation and changing leadership behaviors and practice, which enabled the site to improve business results year-on-year in an ultra-competitive market.</p>
-													<p>Mr. Tracy earned a bachelor’s degree in management and mechanical engineering, and he studied and instructed DENSO (EF) and Toyota (TPS) production systems in the U.S. and in Japan for both companies.</p>
-													<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-												</div>
-											</div>
-	                </div>
-	            </li>
-		<!--  Fulian Ye Bio-->
-							<li>
-									<div class="row">
-											<div class="six columns">
-													<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1454540175/SEAB/Fulian_Ye_ye3zir.jpg" alt="Fulian Ye">
-												</div>
-												<div class="six columns">
-													<h5><strong>Fulian Ye</strong></h5>
-														<br>
-														<p>Founder and Chairman of the Board,<br><strong>Haumann Precision Technology</strong></p>
-														<p><a href="#" class="switch" gumby-trigger="#fYe">About</a></p>
-												</div>
-										</div>
-										<div class="modal" id="fYe">
-											<div class="content">
-													<p><strong>Fulian Ye</strong> is the founder and chairman of the board at Haumann Precision Technology. He has spent 25 years in industry working for various companies, including global companies such as Delphi, ABB and Konecranes.</p>
-													<p>Mr. Ye studied mechanical engineering at Beijing Institute of Technology. After graduation in 1991, he worked in China for nine years in various industries, such as aerospace, automotive, machinery and construction. He worked in diverse roles such as design engineer, product engineer and project manager. He began his lean journey at Basler AG in Hamburg as a performance manager.</p>
-													<p>In 2008, Mr. Ye took the position of lean production director at Framas Group, a German company in the plastic injection molding industry. Framas produces plastic components for sporting goods products made by companies such as Nike, Adidas and New Balance. He was in charge of establishing a lean production system throughout the entire group, including eight factories all over the world. Mr. Ye is a certified trainer for the Japan Industrial Association (JITA) and serves in the Training Within Industry (TWI) program. Through implementing a lean production system, and the TWI program throughout the group, the efficiency and quality of the entire group improved significantly.</p>
-													<p>In 2014, Mr. Ye founded Haumann Precision Technology, which provides turn-key solutions for plastics injection molds and parts manufacturers in the automotive industry.</p>
-													<p>Mr. Ye earned a master’s degree in engineering and an MBA from the Technical University of Hamburg-Harburg and Northern Institute of Technology in 2004, with an emphasis in international production management. Prior to that he earned a bachelor’s degree in mechanical engineering from Beijing Institute of Technology.</p>
-												<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-											</div>
-										</div>
-								</li>
-        	<li>
-            	<div class="row">
-                	<div class="six columns">
-                    	<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1444336240/board-photos/helen-zak.jpg" alt="Helen Zak">
-                    </div>
-                    <div class="six columns">
-                    	<h5><strong>Helen Zak</strong></h5>
-                        <br>
-                        <p>President &amp; COO<br><strong>ThedaCare Center for Healthcare Value</strong></p>
-												<p><a href="#" class="switch" gumby-trigger="#hzak">About</a></p>
-                    </div>
-                </div>
-								<div class="modal" id="hzak">
-									<div class="content">
-										<p><strong>Helen Zak</strong> serves as the Chief Development Officer of the ThedaCare Center for Healthcare Value, a not for profit educational institute with a mission to create a healthcare marketplace that rewards providers for delivering value.</p>
-										<p>Helen has 30 years of lean leadership experience in a wide range of industries, including automotive, capital equipment and high tech.  Formerly, COO of the Lean Enterprise Institute for 11  years,  Helen worked with Jim Womack to spread the topic of lean throughout the world and to every industry.  Helen has contributed to 20 published works on the topic of lean as well as numerous educational programs and is a frequent speaker on the topic.</p>
-										<p>Helen helped to establish the Lean Education Academic Network, The Lean Global Network and the Healthcare Value Network.</p>
-										<p>Helen is on the Shingo Institute Advisory Committee, New England VERC Advisory Board, Greater Boston Manufacturing Partnership Board of Directors and a Steering Committee Member of the Lean Education Academic Network.  In addition, Helen is faculty for the Institute of Healthcare Improvement and faculty and coach for the Master of Business of Operational Excellence Program at Fisher College of Business at Ohio State.</p>
-										<p>Helen received a BS in Mechanical Engineering from Marquette University and a MS in Operations Management and MS in Manufacturing Management from Kettering University.</p>
-										<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-									</div>
-								</div>
-            </li>
-			</ul>
-    </div>
-		<div id="specialadvisors" class="row">
-			<div class="nine centered columns text-center">
-					 <h2 class="quattrocento">Special Advisors</h2>
-					<hr> 
-					<!-- <p>The Shingo Executive Advisory Board consists of outstanding leaders from a wide variety of organizations and industries who have established themselves in their careers as principle-centered leaders building cultures of excellence. Members are chosen based on their expertise, commitment to, and willingness to endorse, and promote the principles and mission of the Shingo Institute. In their role as board members, they provide valuable insights, feedback and guidance regarding the work and direction of the Shingo Institute.</p> -->
-			</div>
-		</div>
-		<div class="row">
-		<ul class="two_up tiles">
-			 <li>
-						<div class="row">
-							<div class="six columns">
-									<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1465240490/WilliamWang_vu98lx.jpg" alt="William Wang">
-								</div>
-								<div class="six columns">
-									<h5><strong>William Wang</strong></h5>
-										<br>
-										<p>Senior Advisor for China Affairs</strong></p>
-										<p><a href="#" class="switch" gumby-trigger="#wwang">About</a></p>
-								</div>
-						</div>
-						<div class="modal" id="wwang">
-							<div class="content">
-								<p><strong>William Wang</strong>has spent over 15 years in lean six sigma study, research, practice and consulting. Mr. Wang is a certified six sigma master black belt covering DMAIC, DFSS and lean. He is a member of the China Association for Quality (CAQ) six sigma steering committee, and a certified training instructor for six sigma black belts.</p>
-								<p>In 2005, Mr. Wang was a member of the pioneer batch of CAQ certified six sigma black belts, and he now serves as a master black belt providing 500+ clients with six sigma management system plans; and six sigma knowledge, training and project coaching. He mentors the teams to improve Cpk, RTY, reliability, etc.; and reduce COPQ, lead time, etc. using DMAIC, DFSS and lean methodologies. Mr. Wang has trained 3000+ students, coached 1000+ black belt and green belts, and created about RMB:1 billion cost savings for clients.</p>
-								<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-							</div>
-						</div>
-				</li>
-				<li>
-						<!-- <div class="row">
-								<div class="six columns">
-										<img src="http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_300,w_300/v1444336240/board-photos/helen-zak.jpg" alt="William Wang">
-									</div>
-									<div class="six columns">
-										<h5><strong>William Wang</strong></h5>
-											<br>
-											<p>President &amp; COO<br><strong>ThedaCare Center for Healthcare Value</strong></p>
-											<p><a href="#" class="switch" gumby-trigger="#wwang">About</a></p>
-									</div>
-							</div>
-							<div class="modal" id="wwang">
-								<div class="content">
-									<p><strong>William Wang</strong>has spent over 15 years in lean six sigma study, research, practice and consulting. Mr. Wang is a certified six sigma master black belt covering DMAIC, DFSS and lean. He is a member of the China Association for Quality (CAQ) six sigma steering committee, and a certified training instructor for six sigma black belts.</p>
-									<p>In 2005, Mr. Wang was a member of the pioneer batch of CAQ certified six sigma black belts, and he now serves as a master black belt providing 500+ clients with six sigma management system plans; and six sigma knowledge, training and project coaching. He mentors the teams to improve Cpk, RTY, reliability, etc.; and reduce COPQ, lead time, etc. using DMAIC, DFSS and lean methodologies. Mr. Wang has trained 3000+ students, coached 1000+ black belt and green belts, and created about RMB:1 billion cost savings for clients.</p>
-									<div class="text-center"><p class="btn secondary medium"><a href="#" class="switch active" gumby-trigger="|.modal">Close</a></p></div>
-								</div>
-							</div> -->
-					</li>
-				</ul>
-		</div>
-		</div>
+		</ul>
+	</div>
+	</div>
 </article>
 <!-- InstanceEndEditable -->
