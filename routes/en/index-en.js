@@ -63,23 +63,22 @@ router.get('/events/:name', function(req, res, next) {
     SF.queryAsync(event.speaker_query).then(function(results) {
         var keynote = new Array()
         var concurrent = new Array()
-        for(var i = 0; i < results.records.length; i++){
-          if(results.records[i].Speaker_Type__c == 'Keynote Speaker'){
-            keynote.push(results.records[i])
-          }
-          else {
-            concurrent.push(results.records[i])
-          }
+        for (var i = 0; i < results.records.length; i++) {
+            if (results.records[i].Speaker_Type__c == 'Keynote Speaker') {
+                keynote.push(results.records[i])
+            } else {
+                concurrent.push(results.records[i])
+            }
         }
         res.render('conference/summit', {
             layout: 'summit',
             title: event.name + ' - Shingo Institute',
             keynote: keynote,
             concurrent: concurrent,
-            event:event
+            event: event
         });
-    }).catch(function(err){
-      console.log(err);
+    }).catch(function(err) {
+        console.log(err);
     })
 });
 
@@ -155,30 +154,43 @@ router.use('/affiliates', routes_affiliates);
 
 /*  About Menu  */
 
-router.get('/about',  function(req, res, next){
-  var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
+router.get('/about', function(req, res, next) {
+    var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
 
-  SF.queryAsync(staff_query)
-    .then(function(results){
-      // console.log(JSON.stringify(results.records,null,4));
-      res.render('about/about', {
-        title: 'Mission & History - Shingo Institute',
-        staff: results.records
-      })
-    }).catch(function(err){
-      console.log('index-en.js:Line 200' + err)
-      res.render('about/about', {
-        title:'Mission & History - Shingo Institute',
-        staff: restults.records
-      })
-    });
+    SF.queryAsync(staff_query)
+        .then(function(results) {
+            // console.log(JSON.stringify(results.records,null,4));
+            res.render('about/about', {
+                title: 'Mission & History - Shingo Institute',
+                staff: results.records
+            })
+        }).catch(function(err) {
+            console.log('index-en.js:Line 200' + err)
+            res.render('about/about', {
+                title: 'Mission & History - Shingo Institute',
+                staff: restults.records
+            })
+        });
 });
 
 /* GET academy */
 router.get('/academy', function(req, res, next) {
-    res.render('about/academy', {
-        title: 'Shingo Academy - Shingo Institute'
-    });
+    var academy_query = "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Shingo Academy') ORDER BY LastName"
+
+    SF.queryAsync(academy_query)
+        .then(function(results) {
+            // console.log(JSON.stringify(results.records,null,4));
+            res.render('about/academy', {
+                title: 'Shingo Academy - Shingo Institute',
+                academy: results.records
+            })
+        }).catch(function(err) {
+            console.log('index-en.js:Line 189' + err)
+            res.render('about/academy', {
+                title: 'Shingo Academy - Shingo Institute',
+                academy: restults.records
+            })
+        });
 });
 
 /* GET examiner */
@@ -189,23 +201,23 @@ router.get('/examiners', function(req, res, next) {
 });
 
 /* GET seab */
-router.get('/seab',  function(req, res, next){
-  var seab_query = "SELECT Id, Name, Title, Account.Name, Photograph__c, Biography__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName"
+router.get('/seab', function(req, res, next) {
+    var seab_query = "SELECT Id, Name, Title, Account.Name, Photograph__c, Biography__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName"
 
-  SF.queryAsync(seab_query)
-    .then(function(results){
-      // console.log(JSON.stringify(results.records,null,4));
-      res.render('about/seab', {
-        title: 'Mission & History - Shingo Institute',
-        members: results.records
-      })
-    }).catch(function(err){
-      console.log('index-en.js:Line 203' + err)
-      res.render('about/seab', {
-        title:'Shingo Executive Advisory Board - Shingo Institute',
-        members: restults.records
-      })
-    });
+    SF.queryAsync(seab_query)
+        .then(function(results) {
+            // console.log(JSON.stringify(results.records,null,4));
+            res.render('about/seab', {
+                title: 'Shingo Executive Advisory Board - Shingo Institute',
+                members: results.records
+            })
+        }).catch(function(err) {
+            console.log('index-en.js:Line 203' + err)
+            res.render('about/seab', {
+                title: 'Shingo Executive Advisory Board - Shingo Institute',
+                members: restults.records
+            })
+        });
 });
 
 /* GET shingoteam */
