@@ -35,7 +35,7 @@ router.get('/education', function(req, res, next) {
       //   console.log(JSON.stringify(content))
       // }
       // })
-      var site = 'http://api.shingo.org/salesforce/events/hotels';
+      // var site = 'http://api.shingo.org/salesforce/events/hotels';
 
 
 
@@ -48,11 +48,11 @@ router.get('/education', function(req, res, next) {
         "Align": new Array()
     }
 
-    request.getAsync(site)
-      .then(function(response) {
-        var content = JSON.parse(response.body)
-        console.log(JSON.stringify(content))
-    })
+    // request.getAsync(site)
+    //   .then(function(response) {
+    //     var content = JSON.parse(response.body)
+    //     console.log(JSON.stringify(content))
+    // })
 
 
 
