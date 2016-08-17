@@ -401,13 +401,43 @@ footer img {
 
 /*#summits {	background-color: rgba(101, 8, 32, 1); }*/
 
+#manufacturing {
+    background: url("http://res.cloudinary.com/shingo/image/upload/v1470334352/Summits/2016Manufacturing/Manufacturing-knoxville-home-page-web.png") no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    max-height: 600px;
+    text-align: center;
+}
+
+#transborder {
+    /*background: rgba(132, 132, 132, 0.73);
+      border-radius: 15px;
+      padding: 20px 0;
+      max-width: 900px;*/
+    background: rgba(0, 0, 0, 0.28);
+    padding: 20px 0;
+    max-width: 900px;
+    height: 100%;
+}
+
+#congresso {
+    background: url("http://res.cloudinary.com/shingo/image/upload/v1470332388/Latin%20Summit/Monterrey-Home-Web-Banner.png") no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    max-width: 540px;
+    max-height: 600px;
+    text-align: center;
+}
+
 #international {
     background: url("https://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png") no-repeat center center;
     background-size: cover;
     height: 450px;
+    max-width: 540px;
     max-height: 600px;
     text-align: center;
 }
+
 #international #transborder {
     /*background: rgba(132, 132, 132, 0.73);
       border-radius: 15px;
