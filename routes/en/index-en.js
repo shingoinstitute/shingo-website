@@ -37,8 +37,6 @@ router.get('/education', function(req, res, next) {
       // })
       // var site = 'http://api.shingo.org/salesforce/events/hotels';
 
-
-
     var ws_query = 'SELECT Id, Name, Organizing_Group__r.Name, Organizing_Group__r.Page_Path__c, Course__c, Event_Start_Date__c, Event_End_Date__c, Host_Organization__c, Host_City__c, Host_Country__c, Event_Website__c FROM Event__c WHERE Visibility__c=\'Public\' AND Event_Type__c=\'Affiliate Event\' AND Verified__c=true AND Course__c!=null AND Event_End_Date__c>=YESTERDAY AND Event_Status__c=\'Active event\' ORDER BY Event_Start_Date__c';
 
     var query_res = {
@@ -53,8 +51,6 @@ router.get('/education', function(req, res, next) {
     //     var content = JSON.parse(response.body)
     //     console.log(JSON.stringify(content))
     // })
-
-
 
     SF.queryAsync(ws_query)
         .then(function(results) {
