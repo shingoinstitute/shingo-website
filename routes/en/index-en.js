@@ -253,7 +253,7 @@ router.get('/research', function(req, res, next) {
     });
 });
 
-/* GET privacy policy - Linked from homepage only */
+/* GET privacy policy */
 router.get('/privacy-policy', function(req, res, next) {
     res.render('about/privacy-policy', {
         title: 'Privacy Policy - Shingo Institute'
@@ -264,6 +264,13 @@ router.get('/privacy-policy', function(req, res, next) {
 router.get('/prizefaq', function(req, res, next) {
     res.render('about/prizefaq', {
         title: 'Prize Questions - Shingo Institute'
+    });
+});
+
+/* GET Craftsmanship Landing Page */
+router.get('/craftsmanship', function(req, res, next) {
+    res.render('about/craftsmanship', {
+        title: 'The Craftsmanship Project - Shingo Institute'
     });
 });
 
