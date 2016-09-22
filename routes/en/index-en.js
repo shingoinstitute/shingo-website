@@ -157,7 +157,14 @@ router.use('/awards', routes_recipients);
 /* GET researchaward  */
 router.get('/researchaward', function(req, res, next) {
     res.render('awards/researchaward', {
-        title: 'Research Publication Award - Shingo Institute'
+        title: 'Research Award - Shingo Institute'
+    });
+});
+
+/* GET researchaward  */
+router.get('/publicationaward', function(req, res, next) {
+    res.render('awards/publicationaward', {
+        title: 'Professional Publication Award - Shingo Institute'
     });
 });
 
