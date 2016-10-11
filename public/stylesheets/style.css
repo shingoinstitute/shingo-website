@@ -402,7 +402,7 @@ footer img {
 /*#summits {	background-color: rgba(101, 8, 32, 1); }*/
 
 #manufacturing {
-    background: url("http://res.cloudinary.com/shingo/image/upload/v1474580402/Summits/2016EuropeanSummit/Copenhagen-Web-Banner.png") no-repeat center center;
+    background: url("https://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg") no-repeat center center;
     background-size: cover;
     height: 400px;
     max-height: 600px;
@@ -414,9 +414,9 @@ footer img {
       border-radius: 15px;
       padding: 20px 0;
       max-width: 900px;*/
-    background: rgba(0, 0, 0, 0.28);
+    background: rgba(0, 0, 0, 0.54);
     padding: 20px 0;
-    max-width: 900px;
+    max-width: 100%;
     height: 100%;
 }
 
