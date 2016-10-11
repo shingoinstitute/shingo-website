@@ -209,7 +209,6 @@ router.get('/academy', function(req, res, next) {
                 academy: results.records
             })
         }).catch(function(err) {
-            console.log('index-en.js:Line 189' + err)
             res.render('about/academy', {
                 title: 'Shingo Academy - Shingo Institute',
                 academy: restults.records
