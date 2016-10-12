@@ -59,6 +59,21 @@ app.get('/presentations', function(req, res) {
     })
 })
 
+app.get('/latinamerica', function(req, res) {
+    var files = new Array();
+    fs.readdirSync(__dirname + '/public/presentations/LatinAmerica')
+        .filter(function(file) {
+            return (file.indexOf(".pdf") !== 0);
+        })
+        .forEach(function(file) {
+            files.push(file);
+        });
+    res.render('presentations', {
+        title: "Download",
+        files: files
+    })
+})
+
 // Complie SASS
 // sass.render({
 //     file: config.scsspath,
