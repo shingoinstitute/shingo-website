@@ -98,6 +98,11 @@ router.get('/bronze_vistaprint-australia', function(req, res, next) {
 
                       /******* Research Recipients *********/
 /* GET lean farm */
+router.get('/publication-jan-compton', function(req, res, next) {
+  res.render('awards/prize-research/publication-jan-compton', { title: 'Recipients - Shingo Institute' });
+});
+
+/* GET lean farm */
 router.get('/research-paul-aker', function(req, res, next) {
   res.render('awards/prize-research/research-paul-aker', { title: 'Recipients - Shingo Institute' });
 });
