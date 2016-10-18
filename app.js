@@ -66,7 +66,7 @@ app.get('/latinamerica', function(req, res) {
             return (file.indexOf(".pdf") !== 0);
         })
         .forEach(function(file) {
-            files.push(file);
+            files.push("LatinAmerica/" + file);
         });
     res.render('presentations', {
         title: "Download",

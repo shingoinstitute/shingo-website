@@ -1,9 +1,9 @@
 <div class="row">
 {{#if files}}
-<h2>Presentations</h2>
+<h2>Presentations {{dir}}</h2>
 <ul>
   {{#each files}}
-    <li><a href="/presentations/{{this}}">{{this}}</a>
+    <li><a href="/presentations/{{dir}}{{this}}">{{this}}</a>
   {{/each}}
 </ul>
 {{else}}
