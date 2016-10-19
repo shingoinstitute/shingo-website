@@ -10,7 +10,9 @@
 // TODO Handle static file routing & storage
 // TODO Remove language tree options
 // TODO Build out language site plans
-// Refactor pages from gumby to bootstrap/foundation
+// TODO Refactor pages from gumby to bootstrap/foundation
+// TODO Transfer admin pages to salesforce
+// TODO Transfer blog
 
 
 
