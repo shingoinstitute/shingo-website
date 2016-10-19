@@ -71,9 +71,9 @@ router.get('/tmi', function(req, res, next) {
 res.render('affiliates/tmi', { title: 'The Manufacturing Institute - A Shingo Institute Affiliate' });
 });
 
-/* GET TMI */
-router.get('/truenorth', function(req, res, next) {
-res.render('affiliates/truenorth', { title: 'True North - A Shingo Institute Affiliate' });
+/* GET KPC */
+router.get('/kpc', function(req, res, next) {
+res.render('affiliates/kpc', { title: 'Key Performance Consulting - A Shingo Institute Affiliate' });
 });
 
 /* GET ul */

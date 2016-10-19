@@ -25,7 +25,7 @@ router.get('/model', function(req, res, next) {
     });
 });
 
-/* GET education */
+/* GET education */ // TODO Convert to web api
 router.get('/education', function(req, res, next) {
       // request.get('http://api.shingo.org/salesforce/events/hotels', function (error, response, body) {
       // if (!error && response.statusCode == 200) {
@@ -74,7 +74,7 @@ router.get('/education', function(req, res, next) {
 });
 
 /*  Conference, Summits & Study Tour */
-/* GET manufacturing  */
+/* GET manufacturing  */  // TODO Convert to web api
 router.get('/events/:name', function(req, res, next) {
     var event = jsonfile.readFileSync(__dirname + '/../../models/' + req.params.name + '.json')
     SF.queryAsync(event.speaker_query).then(function(results) {
@@ -99,7 +99,7 @@ router.get('/events/:name', function(req, res, next) {
     })
 });
 
-/* GET Japan studytour */
+/* GET Japan studytour */   // TODO Templatize Study TOUR
 router.get('/japanstudytour', function(req, res, next) {
     res.render('education/japanstudytour', {
         title: 'Study Tour - Shingo Institute'
@@ -113,7 +113,7 @@ router.get('/usastudytour', function(req, res, next) {
     });
 });
 
-/* LEAN Network */
+/* LEAN Network */   // TODO Remove lean routes!
 /*GET LEAN Home Page*/
 router.get('/teaching-lean', function(req, res, next) {
     res.render('./LEAN/teaching-lean', {
@@ -143,7 +143,7 @@ router.get('/teaching-lean/professors', function(req, res, next) {
 });
 
 
-/*  Awards Route */
+/*  Awards Route */   // TODO PUll awards from SF.  // TODO Split prize and publisher
 /* GET challengefortheprize */
 router.get('/challengefortheprize', function(req, res, next) {
     res.render('awards/challengefortheprize', {
@@ -176,7 +176,7 @@ router.get('/publicationaward', function(req, res, next) {
 router.use('/affiliates', routes_affiliates);
 
 
-/*  About Menu  */
+/*  About Menu  */  // TODO Pull from api?!
 
 router.get('/about', function(req, res, next) {
     var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
@@ -197,7 +197,7 @@ router.get('/about', function(req, res, next) {
         });
 });
 
-/* GET academy */
+/* GET academy */  // TODO Pull from api
 router.get('/academy', function(req, res, next) {
     var academy_query = "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Shingo Academy') ORDER BY LastName"
 
@@ -223,7 +223,7 @@ router.get('/examiners', function(req, res, next) {
     });
 });
 
-/* GET seab */
+/* GET seab */  // TODO Pull from api
 router.get('/seab', function(req, res, next) {
     var seab_query = "SELECT Id, Name, Title, Account.Name, Photograph__c, Biography__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName"
 
@@ -243,7 +243,7 @@ router.get('/seab', function(req, res, next) {
         });
 });
 
-/* GET shingoteam */
+/* GET shingoteam */  // TODO Restructure about menu
 router.get('/shingoteam', function(req, res, next) {
     res.render('about/shingoteam', {
         title: 'The Shingo Team - Shingo Institute'
@@ -281,7 +281,7 @@ router.get('/craftsmanship', function(req, res, next) {
 });
 
 
-/*Files*/
+/*Files*/  // TODO Handle static file routing & storage
 /* GET .pdf - From challengefortheprize */
 router.get('/assets/Assessment_Process_Flow_Chart.pdf', function(req, res, next) {
     res.download('../assets/Assessment_Process_Flow_Chart.pdf');
