@@ -11,7 +11,7 @@ hr {
 }
 
 header {
-	background-color: rgb(223, 196, 134);
+	background-color: rgb(5,74,118);
 	width: 100%;
 	position: fixed;
 	z-index: 5;
@@ -29,26 +29,37 @@ nav {
 	padding-right: 0;
 }
 
+.copy
+{
+	padding-top: 55px;
+}
+
 #big-menu ul {
 	float: left;
 	list-style: none;
 	width: 600px;
 	display: inline-block;
-	margin:15px;
+	margin:10px;
+}
+
+#logo img {
+	padding: 5px;
 }
 
 #big-menu ul > li:not(:last-child) {
 	float: left;
 	width: 100px;
-	border-right: 1px solid black;
+	border-right: 2px solid black;
 }
 
 #big-menu ul > li > a {
-	color: #640921;
+	color: rgb(68,176,214)
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 #big-menu ul > li > a:hover {
-	color: #003768;
+	color: rgb(234,162,67);
 }
 
 
@@ -61,9 +72,9 @@ nav {
 }
 
 #home {
-	background: url("https://res.cloudinary.com/shingo/image/upload/w_1920/v1439494481/national-mall_rtglsv.jpg") no-repeat center center;
+	background: url("http://res.cloudinary.com/shingo/image/upload/v1478640272/Events/IntlConference/iStock_23898798_Banner.jpg") no-repeat center center;
     background-size: cover;
-		height: 750px;
+		height: 450px;
 	text-align:center;
 }
 	#home h1 {
@@ -82,9 +93,9 @@ nav {
 	}
 
 #box {
-	background-color: rgba(223, 196, 134, 0.74);
+	background-color: rgba(223, 196, 134, 0.00);
   border-radius: 5px;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 #s-registration table {
@@ -94,10 +105,10 @@ nav {
 	box-shadow: 3px 3px 3px #ddd;
 }
 	#s-registration table > thead {
-		background-color: #b17c31;
+		background-color: rgb(5,74,118);
 	}
 	#s-registration table > thead th {
-		color: #333333;
+		color: white;
 		height: 50px;
 		font-family: "Roboto";
 		font-size: 1.5em;
@@ -341,7 +352,7 @@ nav .button:hover {
 }
 
 #s-registration .button {
-	background-color: #5b3416;
+	background-color: rgb(5,74,118);
 }
 
 #s-registration .button:hover {
