@@ -1045,7 +1045,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 }
 #education img[src*="Button"] {
     max-width: 150px;
-    margin: 5px 3% 30px;
+    margin: 5px 25px 25px;
 }
 #education .tiles li {
     min-height: 225px;
