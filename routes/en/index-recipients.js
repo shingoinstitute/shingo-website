@@ -11,6 +11,11 @@ router.get('/', function(req, res, next) {
 
                       /********** Shingo Prize Recipients *********/
 /* Rexam Prize Profile */
+router.get('/prize-boston', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-boston', { title: 'Recipients - Shingo Institute' });
+});
+
+/* Rexam Prize Profile */
 router.get('/prize-rexam-bev', function(req, res, next) {
   res.render('awards/prize-shingo/prize-rexam-bev', { title: 'Recipients - Shingo Institute' });
 });
