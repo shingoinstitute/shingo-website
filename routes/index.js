@@ -130,34 +130,33 @@ router.get('/publicationaward', function(req, res, next) {
 router.use('/affiliates', routes_affiliates);
 
 
-/*  About Menu  */  // TODO Pull from api?!
-
+/*  About Menu  */
 router.get('/about', function(req, res, next) {
-    var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
-
-    SF.queryAsync(staff_query)
-        .then(function(results) {
-            // console.log(JSON.stringify(results.records,null,4));
-            res.render('about/about', {
-                title: 'Mission & History - Shingo Institute',
-                staff: results.records
-            })
-        }).catch(function(err) {
-            console.log('index-en.js:Line 200' + err)
-            res.render('about/about', {
-                title: 'Mission & History - Shingo Institute',
-                staff: restults.records
-            })
-        });
-});
-
-/* GET academy */  // TODO Pull from api
-router.get('/academy', function(req, res, next) {
-  var academy = null;
-  request.getAsync('http://api.shingo.org:8080/salesforce/about/academy')
+  var staff = null;
+  request.getAsync('http://api.shingo.org/salesforce/about/staff')
   .then(function(results) {
     var response = JSON.parse(results.body);
-    console.log(JSON.stringify(response.records, null, 4));
+    staff = response.staff;
+    res.render('about/about', {
+        title: 'Shingo Mission - Shingo Institute',
+        staff: staff
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js:Line 40 " + err)
+      res.render('about/about', {
+          title: 'Shingo Mission - Shingo Institute',
+          staff: staff
+      });
+  })
+});
+
+/* GET academy */
+router.get('/academy', function(req, res, next) {
+  var academy = null;
+  request.getAsync('http://api.shingo.org/salesforce/about/academy')
+  .then(function(results) {
+    var response = JSON.parse(results.body);
     academy = response.records;
     res.render('about/academy', {
         title: 'Shingo Academy - Shingo Institute',
@@ -173,7 +172,7 @@ router.get('/academy', function(req, res, next) {
   })
 });
 
-/* GET examiner */
+/* GET examiner */ // TODO Divide lists and pull from api
 router.get('/examiners', function(req, res, next) {
     res.render('about/examiners', {
         title: 'Examiners - Shingo Institute'
@@ -199,14 +198,6 @@ router.get('/seab', function(req, res, next) {
             })
         });
 });
-
-/* GET shingoteam */  // TODO Restructure about menu
-router.get('/shingoteam', function(req, res, next) {
-    res.render('about/shingoteam', {
-        title: 'The Shingo Team - Shingo Institute'
-    });
-});
-
 
 /*Other Routes*/
 router.get('/linkedin', function(req, res, next) {
