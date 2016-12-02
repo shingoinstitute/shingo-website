@@ -153,13 +153,12 @@ router.get('/about', function(req, res, next) {
 
 /* GET academy */  // TODO Pull from api
 router.get('/academy', function(req, res, next) {
-  console.log("route called");
   var academy = null;
-  request.getAsync('http://api.shingo.org/salesforce/about/academy')
+  request.getAsync('http://api.shingo.org:8080/salesforce/about/academy')
   .then(function(results) {
     var response = JSON.parse(results.body);
-    console.log(JSON.stringify(response, null, 4));
-    academy = response.academy;
+    console.log(JSON.stringify(response.records, null, 4));
+    academy = response.records;
     res.render('about/academy', {
         title: 'Shingo Academy - Shingo Institute',
         academy: academy
@@ -172,23 +171,6 @@ router.get('/academy', function(req, res, next) {
           academy: academy
       });
   })
-
-
-    // var academy_query = "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Shingo Academy') ORDER BY LastName"
-    //
-    // SF.queryAsync(academy_query)
-    //     .then(function(results) {
-    //         // console.log(JSON.stringify(results.records,null,4));
-    //         res.render('about/academy', {
-    //             title: 'Shingo Academy - Shingo Institute',
-    //             academy: results.records
-    //         })
-    //     }).catch(function(err) {
-    //         res.render('about/academy', {
-    //             title: 'Shingo Academy - Shingo Institute',
-    //             academy: restults.records
-    //         })
-    //     });
 });
 
 /* GET examiner */
