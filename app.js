@@ -19,7 +19,7 @@ var express = require('express'),
     https = require('https'),
     subdomains = require('express-subdomains'),
     insight_routes = require('./routes/insight.js'),
-    languageTree = require('./routes/tree');
+    index = require('./routes/index.js');
 
 var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
     certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
@@ -132,7 +132,7 @@ app.use(subdomains.middleware);
 app.use('/insight', insight_routes);
 app.use('/api', api_route);
 
-app.use('/', languageTree);
+app.use('/', index);
 
 
 

@@ -1,7 +1,7 @@
 var express = require('express'),
     Promise = require('bluebird'),
     jsonfile = require('jsonfile'),
-    SF = Promise.promisifyAll(require('../../models/sf')),
+    SF = Promise.promisifyAll(require('../models/sf')),
     request = Promise.promisifyAll(require('request')),
     router = express.Router()
 
