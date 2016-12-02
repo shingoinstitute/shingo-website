@@ -25,52 +25,36 @@ router.get('/model', function(req, res, next) {
     });
 });
 
-/* GET education */ // TODO Convert to web api
+/* GET education */
 router.get('/education', function(req, res, next) {
-      // request.get('http://api.shingo.org/salesforce/events/hotels', function (error, response, body) {
-      // if (!error && response.statusCode == 200) {
-      //   console.log(body)
-      //   console.log('______________')
-      //   var content = JSON.parse(body)
-      //   console.log(JSON.stringify(content))
-      // }
-      // })
-      // var site = 'http://api.shingo.org/salesforce/events/hotels';
+  var query_res = {
+      "Discover": new Array(),
+      "Enable": new Array(),
+      "Improve": new Array(),
+      "Align": new Array(),
+      "Build": new Array()
+  }
 
-    var ws_query = 'SELECT Id, Name, Organizing_Group__r.Name, Organizing_Group__r.Page_Path__c, Course__c, Event_Start_Date__c, Event_End_Date__c, Host_Organization__c, Host_City__c, Host_Country__c, Event_Website__c FROM Event__c WHERE Visibility__c=\'Public\' AND Event_Type__c=\'Affiliate Event\' AND Verified__c=true AND Course__c!=null AND Event_End_Date__c>=YESTERDAY AND Event_Status__c=\'Active event\' ORDER BY Event_Start_Date__c';
-
-    var query_res = {
-        "Discover": new Array(),
-        "Enable": new Array(),
-        "Improve": new Array(),
-        "Align": new Array()
+  request.getAsync('http://api.shingo.org/salesforce/workshops')
+  .then(function(results) {
+    var records = JSON.parse(results.body);
+    workshops = records.workshops;
+    for (var i in workshops) {
+      query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
 
-    // request.getAsync(site)
-    //   .then(function(response) {
-    //     var content = JSON.parse(response.body)
-    //     console.log(JSON.stringify(content))
-    // })
-
-    SF.queryAsync(ws_query)
-        .then(function(results) {
-            var events = results.records
-            for (var i in events) {
-                query_res[events[i].Course__c].push(events[i])
-            }
-            // console.log(JSON.stringify(query_res,null,4));
-            res.render('education/education', {
-                title: 'Education - Shingo Institute',
-                workshops: query_res
-            });
-        }).catch(function(err) {
-            console.log("sf.js:Line 40 " + err)
-            res.render('education/education', {
-                title: 'Education - Shingo Institute',
-                workshops: query_res
-            });
-        })
-
+    res.render('education/education', {
+        title: 'Education - Shingo Institute',
+        workshops: query_res
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js:Line 40 " + err)
+      res.render('education/education', {
+          title: 'Education - Shingo Institute',
+          workshops: query_res
+      });
+  })
 });
 
 /*  Conference, Summits & Study Tour */

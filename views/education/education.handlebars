@@ -28,7 +28,7 @@
   </article>
   <article class="invisible" >
     <!-- The "attend" id is here so when coming
-       in form an anchor url the overview is
+       in from an anchor url the overview is
          displayed under the fold. -->
     <div id="attend" class="hidden">&nbsp;</div>
   </article>
@@ -86,7 +86,6 @@
 		</div>
     <div class="row">
 			<div class="two columns">
-					<!-- User brown class for button -->
 					<h4 class="text-center" style="text-decoration: underline;"><strong>DISCOVER</strong></h4><br>
 					<ul>
 						{{#each workshops.Discover}}
@@ -95,7 +94,6 @@
 					</ul>
 			</div>
 			<div class="two columns">
-					<!-- User brown class for button -->
 					<h4 class="text-center" style="text-decoration: underline;"><strong>ENABLE</strong></h4><br>
 					<ul>
 						{{#each workshops.Enable}}
@@ -104,7 +102,6 @@
 					</ul>
 			</div>
 			<div class="two columns">
-					<!-- User brown class for button -->
 					<h4 class="text-center" style="text-decoration: underline;"><strong>IMPROVE</strong></h4><br>
 					<ul>
 						{{#each workshops.Improve}}
@@ -113,7 +110,6 @@
 					</ul>
 			</div>
 			<div class="two columns">
-					<!-- User brown class for button -->
 					<h4 class="text-center" style="text-decoration: underline;"><strong>ALIGN</strong></h4><br>
 					<ul>
 						{{#each workshops.Align}}
@@ -122,31 +118,16 @@
 					</ul>
 			</div>
 			<div class="two columns">
-					<!-- User brown class for button -->
-					<h4 class="text-center" style="text-decoration: underline;"><strong>Build</strong></h4><br>
+					<h4 class="text-center" style="text-decoration: underline;"><strong>BUILD</strong></h4><br>
 					<ul>
-						<li>
-						  <h6 class="quattrocento"><strong>22nd - 23rd Feb 2017</strong></h6>
-						  <p class="indent">Host Company: Accurounds<br>
-						  Location: Avon, MA, United States of America<br>
-						  Affiliate: <a href="/affiliates/gbmp"><em><strong>GBMP</strong></em></a></p>  <!-- TODO Name and website linke -->
-						  <div class="text-center">
-						      <p class="brown medium btn"><a href="http://www.gbmp.org/our-events.html" target="_blank">Register</a></p>
-						  </div>
-						</li>
-						<li>
-						  <h6 class="quattrocento"><strong>17th - 18th July 2017</strong></h6>
-						  <p class="indent">Host Company: Waters Corp.<br>
-						  Location: Millford, MA, United States of America<br>
-						  Affiliate: <a href="/affiliate/gbmp"><em><strong>GBMP</strong></em></a></p>  <!-- TODO Name and website linke -->
-						  <div class="text-center">
-						      <p class="brown medium btn"><a href="http://www.gbmp.org/our-events.html" target="_blank">Register</a></p>
-						  </div>
-						</li>
+						{{#each workshops.Build}}
+							{{>_aff-event this}}
+						{{/each}}
 					</ul>
 			</div>
     </div>
 </article>
+
 <article class="container" id="more-edu">
     <div class="row">
 	<hr>
