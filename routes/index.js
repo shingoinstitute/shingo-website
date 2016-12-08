@@ -49,7 +49,7 @@ router.get('/education', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js:Line 40 " + err)
+      console.log("sf.js:  " + err)
       res.render('education/education', {
           title: 'Education - Shingo Institute',
           workshops: query_res
@@ -143,7 +143,7 @@ router.get('/about', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js:Line 40 " + err)
+      console.log("sf.js: " + err)
       res.render('about/about', {
           title: 'Shingo Mission - Shingo Institute',
           staff: staff
@@ -164,7 +164,7 @@ router.get('/academy', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js:Line 40 " + err)
+      console.log("sf.js: " + err)
       res.render('about/academy', {
           title: 'Shingo Academy - Shingo Institute',
           academy: academy
