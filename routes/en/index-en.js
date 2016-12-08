@@ -113,36 +113,6 @@ router.get('/usastudytour', function(req, res, next) {
     });
 });
 
-/* LEAN Network */   // TODO Remove lean routes!
-/*GET LEAN Home Page*/
-router.get('/teaching-lean', function(req, res, next) {
-    res.render('./LEAN/teaching-lean', {
-        title: 'Lean Education Academic Network - Shingo Institute'
-    });
-});
-
-/*GET LEAN Resource Page*/
-router.get('/teaching-lean/resources', function(req, res, next) {
-    res.render('./LEAN/resources', {
-        title: 'Resources - Lean Education Academic Network - Shingo Institute'
-    });
-});
-
-/*GET LEAN Events Page*/
-router.get('/teaching-lean/events', function(req, res, next) {
-    res.render('./LEAN/events', {
-        title: 'Events - Lean Education Academic Network - Shingo Institute'
-    });
-});
-
-/*GET LEAN Professors Page*/
-router.get('/teaching-lean/professors', function(req, res, next) {
-    res.render('./LEAN/professors', {
-        title: 'Professors - Lean Education Academic Network - Shingo Institute'
-    });
-});
-
-
 /*  Awards Route */   // TODO PUll awards from SF.  // TODO Split prize and publisher
 /* GET challengefortheprize */
 router.get('/challengefortheprize', function(req, res, next) {
@@ -252,6 +222,12 @@ router.get('/shingoteam', function(req, res, next) {
 
 
 /*Other Routes*/
+router.get('/linkedin', function(req, res, next) {
+  res.render('about/linkedin', {
+    title: 'The Shingo Institute'
+  })
+})
+
 /* GET research - Linked from homepage only */
 router.get('/research', function(req, res, next) {
     res.render('about/research', {
