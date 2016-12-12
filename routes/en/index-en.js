@@ -186,11 +186,26 @@ router.get('/academy', function(req, res, next) {
         });
 });
 
-/* GET examiner */
+
+/* GET examiner */ // TODO Divide lists
 router.get('/examiners', function(req, res, next) {
+  var examiners = null;
+  request.getAsync('http://api.shingo.org/salesforce/about/examiner/')
+  .then(function(results) {
+    var response = JSON.parse(results.body);
+    examiners = response.examiners;
     res.render('about/examiners', {
-        title: 'Examiners - Shingo Institute'
+        title: 'Examiners - Shingo Institute',
+        examiner: examiners
     });
+  })
+  .catch(function(err) {
+      console.log("sf.js: " + err)
+      res.render('about/examiners', {
+          title: 'Examiners - Shingo Institute',
+          examiner: examiners
+      });
+  })
 });
 
 /* GET seab */  // TODO Pull from api
