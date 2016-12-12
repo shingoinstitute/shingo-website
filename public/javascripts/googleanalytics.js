@@ -4,7 +4,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-54391255-1', 'auto');
-ga('create', 'UA-54391255-3', 'auto', 'shingo'); //Conference Container
 ga('require', 'linkid');
 ga('send', 'pageview');
 ga('shingo.send', 'pageview'); //Conference Container
