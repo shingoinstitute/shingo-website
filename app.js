@@ -74,6 +74,21 @@ app.get('/latinamerica', function(req, res) {
     })
 })
 
+app.get('/copenhagen', function(req, res) {
+    var files = new Array();
+    fs.readdirSync(__dirname + '/public/presentations/Copenhagen')
+        .filter(function(file) {
+            return (file.indexOf(".pdf") !== 0);
+        })
+        .forEach(function(file) {
+            files.push("Copenhagen/" + file);
+        });
+    res.render('presentations', {
+        title: "Download",
+        files: files
+    })
+})
+
 // Complie SASS
 // sass.render({
 //     file: config.scsspath,
