@@ -57,6 +57,13 @@ router.get('/education', function(req, res, next) {
   })
 });
 
+router.get('/events/international', function(req, res, next){
+  res.render('conference/international', {
+    layout: 'intl',
+    title: '29th International Conference - Shingo Institute'
+  })
+})
+
 /*  Conference, Summits & Study Tour */
 /* GET manufacturing  */  // TODO Convert to web api
 router.get('/events/:name', function(req, res, next) {
