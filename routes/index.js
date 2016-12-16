@@ -1,7 +1,7 @@
 var express = require('express'),
     Promise = require('bluebird'),
     jsonfile = require('jsonfile'),
-    SF = Promise.promisifyAll(require('../../models/sf')),
+    SF = Promise.promisifyAll(require('../models/sf')),
     request = Promise.promisifyAll(require('request')),
     router = express.Router()
 
@@ -25,53 +25,44 @@ router.get('/model', function(req, res, next) {
     });
 });
 
-/* GET education */ // TODO Convert to web api
+/* GET education */
 router.get('/education', function(req, res, next) {
-      // request.get('http://api.shingo.org/salesforce/events/hotels', function (error, response, body) {
-      // if (!error && response.statusCode == 200) {
-      //   console.log(body)
-      //   console.log('______________')
-      //   var content = JSON.parse(body)
-      //   console.log(JSON.stringify(content))
-      // }
-      // })
-      // var site = 'http://api.shingo.org/salesforce/events/hotels';
+  var query_res = {
+      "Discover": new Array(),
+      "Enable": new Array(),
+      "Improve": new Array(),
+      "Align": new Array(),
+      "Build": new Array()
+  }
 
-    var ws_query = 'SELECT Id, Name, Organizing_Group__r.Name, Organizing_Group__r.Page_Path__c, Course__c, Event_Start_Date__c, Event_End_Date__c, Host_Organization__c, Host_City__c, Host_Country__c, Event_Website__c FROM Event__c WHERE Visibility__c=\'Public\' AND Event_Type__c=\'Affiliate Event\' AND Verified__c=true AND Course__c!=null AND Event_End_Date__c>=YESTERDAY AND Event_Status__c=\'Active event\' ORDER BY Event_Start_Date__c';
-
-    var query_res = {
-        "Discover": new Array(),
-        "Enable": new Array(),
-        "Improve": new Array(),
-        "Align": new Array()
+  request.getAsync('http://api.shingo.org/salesforce/workshops')
+  .then(function(results) {
+    var records = JSON.parse(results.body);
+    workshops = records.workshops;
+    for (var i in workshops) {
+      query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
 
-    // request.getAsync(site)
-    //   .then(function(response) {
-    //     var content = JSON.parse(response.body)
-    //     console.log(JSON.stringify(content))
-    // })
-
-    SF.queryAsync(ws_query)
-        .then(function(results) {
-            var events = results.records
-            for (var i in events) {
-                query_res[events[i].Course__c].push(events[i])
-            }
-            // console.log(JSON.stringify(query_res,null,4));
-            res.render('education/education', {
-                title: 'Education - Shingo Institute',
-                workshops: query_res
-            });
-        }).catch(function(err) {
-            console.log("sf.js:Line 40 " + err)
-            res.render('education/education', {
-                title: 'Education - Shingo Institute',
-                workshops: query_res
-            });
-        })
-
+    res.render('education/education', {
+        title: 'Education - Shingo Institute',
+        workshops: query_res
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js:  " + err)
+      res.render('education/education', {
+          title: 'Education - Shingo Institute',
+          workshops: query_res
+      });
+  })
 });
+
+router.get('/events/international', function(req, res, next){
+  res.render('conference/international', {
+    layout: 'intl',
+    title: '29th International Conference - Shingo Institute'
+  })
+})
 
 /*  Conference, Summits & Study Tour */
 /* GET manufacturing  */  // TODO Convert to web api
@@ -146,46 +137,47 @@ router.get('/publicationaward', function(req, res, next) {
 router.use('/affiliates', routes_affiliates);
 
 
-/*  About Menu  */  // TODO Pull from api?!
-
+/*  About Menu  */
 router.get('/about', function(req, res, next) {
-    var staff_query = 'SELECT Name, Title, Email, Phone, Photograph__c  FROM Contact WHERE AccountId=\'0011200001Gkm2uAAB\' ORDER BY LastName'
-
-    SF.queryAsync(staff_query)
-        .then(function(results) {
-            // console.log(JSON.stringify(results.records,null,4));
-            res.render('about/about', {
-                title: 'Mission & History - Shingo Institute',
-                staff: results.records
-            })
-        }).catch(function(err) {
-            console.log('index-en.js:Line 200' + err)
-            res.render('about/about', {
-                title: 'Mission & History - Shingo Institute',
-                staff: restults.records
-            })
-        });
+  var staff = null;
+  request.getAsync('http://api.shingo.org/salesforce/about/staff')
+  .then(function(results) {
+    var response = JSON.parse(results.body);
+    staff = response.staff;
+    res.render('about/about', {
+        title: 'Shingo Mission - Shingo Institute',
+        staff: staff
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js: " + err)
+      res.render('about/about', {
+          title: 'Shingo Mission - Shingo Institute',
+          staff: staff
+      });
+  })
 });
 
-/* GET academy */  // TODO Pull from api
+/* GET academy */
 router.get('/academy', function(req, res, next) {
-    var academy_query = "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Shingo Academy') ORDER BY LastName"
-
-    SF.queryAsync(academy_query)
-        .then(function(results) {
-            // console.log(JSON.stringify(results.records,null,4));
-            res.render('about/academy', {
-                title: 'Shingo Academy - Shingo Institute',
-                academy: results.records
-            })
-        }).catch(function(err) {
-            res.render('about/academy', {
-                title: 'Shingo Academy - Shingo Institute',
-                academy: restults.records
-            })
-        });
+  var academy = null;
+  request.getAsync('http://api.shingo.org/salesforce/about/academy')
+  .then(function(results) {
+    var response = JSON.parse(results.body);
+    academy = response.records;
+    res.render('about/academy', {
+        title: 'Shingo Academy - Shingo Institute',
+        academy: academy
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js: " + err)
+      res.render('about/academy', {
+          title: 'Shingo Academy - Shingo Institute',
+          academy: academy
+      });
+  })
 });
-
 
 /* GET examiner */ // TODO Divide lists
 router.get('/examiners', function(req, res, next) {
@@ -227,14 +219,6 @@ router.get('/seab', function(req, res, next) {
             })
         });
 });
-
-/* GET shingoteam */  // TODO Restructure about menu
-router.get('/shingoteam', function(req, res, next) {
-    res.render('about/shingoteam', {
-        title: 'The Shingo Team - Shingo Institute'
-    });
-});
-
 
 /*Other Routes*/
 router.get('/linkedin', function(req, res, next) {
