@@ -1,0 +1,198 @@
+<div id="manufacturing">
+    <article class="container" id="home" style="background:url({{event.background_image}}) no-repeat center center;
+                                                background-size:cover;
+                                                height: 750px
+                                                text-align:center;">
+        <br>
+        <div class="row text-center" id="transborder">
+            <img src="{{event.logo}}">
+            <h1><strong>{{{event.name}}}</strong></h1>
+            <h2><strong>{{event.date}}</strong></h2>
+            <h3><strong>{{event.location}}</strong></h3>
+        </div>
+        <br>
+        <br>
+    </article>
+
+    <article class="container" id="s-text">
+        <div class="row">
+            <div class="six columns centered">
+                <!-- <h3 class="text-center">Thank you!</h3> -->
+                <hr>
+            </div>
+        </div>
+        <div id="s-text" class="row text-center">
+            <p>{{{event.intro}}}</p>
+        </div>
+        <div class="hidden" id="agenda">&nbsp;</div>
+    </article>
+
+    {{>_agenda event}}
+
+
+
+    <article class="container" id="s-registration">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">REGISTRATION</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="seven columns">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h4>Pricing for Main Conference</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {{#each event.registration.prices}}
+                        <tr>
+                          <td>
+                            <h5>{{this.type}}</h5>
+                          </td>
+                          <td>
+                            <h5>{{this.price}}</h5>
+                          </td>
+                        </tr>
+                      {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="five columns text-center">
+                <br>
+                <br>
+                <div class="text-center large info btn"><a href="{{event.registration.link}}" target="_blank">Register</a></div>
+                <br>
+                <br>
+                <!-- <p id="discount"></p> -->
+            </div>
+        </div>
+        <div class="hidden" id="speakers">&nbsp;</div>
+    </article>
+
+    <article class="container" id="s-speakers">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">SPEAKERS</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row" id="all-speakers">
+            <h4 class="text-center">Keynote Speakers</h4>
+            <ul class="three_up tiles speakers">
+                {{#each keynote}}
+                    {{>_speaker speaker=this}}
+                {{/each}}
+            </ul>
+            {{#each keynote}}
+                {{>_speaker-bio speaker=this}}
+            {{/each}}
+            <!-- Concurrent Speakers -->
+            <!-- Jose Ordorica Bio -->
+            <h4 class="text-center">Concurrent Speakers</h4>
+            <ul class="four_up tiles speakers">
+                {{#each concurrent}}
+                    {{>_speaker speaker=this}}
+                {{/each}}
+            </ul>
+            {{#each concurrent}}
+                {{>_speaker-bio speaker=this}}
+            {{/each}}
+        </div>
+        <div class="hidden" id="travel">&nbsp;</div>
+    </article>
+
+    <article class="container" id="s-travel">
+  <div class="row">
+    <div class="six columns centered">
+      <h3 class="text-center">TRAVEL &amp; ACCOMMODATIONS</h3>
+      <hr>
+      <h4 class="roboto text-center">{{event.ta_info.title}}</h4>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <table class="hide-for-small accommodations">
+      <tr>
+        <td id="loc">
+          <h5 class="text-center">LOCATION</h5>
+          {{{event.ta_info.location}}}
+        </td>
+        <td id="trav">
+          <h5 class="text-center">TRAVEL</h5>
+          {{{event.ta_info.travel}}}
+        </td>
+        <td id="hot">
+          <h5 class="text-center">HOTEL</h5>
+          {{{event.ta_info.hotel}}}
+        </td>
+      </tr>
+      <tr>
+        <td id="park">
+          <h5 class="text-center">PARKING</h5>
+          {{{event.ta_info.parking}}}
+        </td>
+        <td id="int">
+          <h5 class="text-center">INTERNET</h5>
+          {{{event.ta_info.internet}}}
+        </td>
+        <td id="todo">
+          <h5 class="text-center">THINGS TO DO</h5>
+          {{{event.ta_info.things}}}
+        </td>
+      </tr>
+    </table>
+    <div class="show-for-small accommodations">
+      <div class="row">
+        <div class="four columns">
+          <h5 class="text-center">LOCATION</h5>
+          {{{event.ta_info.location}}}
+        </div>
+        <div class="four columns">
+          <h5 class="text-center">TRAVEL</h5>
+          {{{event.ta_info.travel}}}
+        </div>
+        <div class="four columns">
+          <h5 class="text-center">HOTEL</h5>
+          {{{event.ta_info.hotel}}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="four columns">
+          <h5 class="text-center">PARKING</h5>
+          {{{event.ta_info.parking}}}
+        </div>
+        <div class="four columns">
+          <h5 class="text-center">INTERNET</h5>
+          {{{event.ta_info.internet}}}
+        </div>
+        <div class="four columns">
+          <h5 class="text-center">THINGS TO DO</h5>
+          {{{event.ta_info.things}}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="hidden" id="sponsors"></div>
+</article>
+
+
+
+
+    <article class="container" id="s-sponsors">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">SPONSORS &amp; EXHIBITORS</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            {{{event.se_info}}}
+        </div>
+        <div class="hidden" id="faq">&nbsp;</div>
+    </article>
+</div>
