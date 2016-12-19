@@ -58,8 +58,8 @@ router.get('/education', function(req, res, next) {
 });
 
 router.get('/events/international', function(req, res, next){
-  res.render('conference/international', {
-    layout: 'intl',
+  res.render('conference/internat', {
+    layout: 'international',
     title: '29th International Conference - Shingo Institute'
   })
 })
