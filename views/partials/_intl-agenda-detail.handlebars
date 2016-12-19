@@ -1,0 +1,46 @@
+<div class="tab-content">
+    <!-- All 'detail' modals are at the end of each table -->
+    <table class="striped" id="day.name">
+        <thead>
+            <tr>
+                <th colspan="3">{{day.Display_Name__c}}, {{day.Title}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each day.sessions}}
+                <tr>
+                    <td class="tabular">{{this.time}}</td>
+                    <td><strong>{{this.info.name}}</strong>
+                        {{#if this.info.detail}}
+                            <br>
+                            <ul class="square">
+                                {{#each this.info.detail}}
+                                    {{#if this.abstract}}
+                                      <li><a href="#" class="switch" gumby-trigger="#{{this.id}}">{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</a></li>
+                                    {{else}}
+                                      <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li>
+                                    {{/if}}
+                                    <!-- <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li> -->
+                                {{/each}}
+                            </ul>
+                        {{/if}}
+                    </td>
+                    <td>
+                        <!-- <br>
+                        {{#each this.info.detail}}
+                            {{#if this.abstract}}
+                                <a href="#" class="switch" gumby-trigger="#{{this.id}}">Details</a>
+                            {{/if}}
+                            <br>
+                        {{/each}} -->
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#each day.sessions}}
+        {{#each this.info.detail}}
+            {{>_title-content-modal data=this}}
+        {{/each}}
+    {{/each}}
+</div>

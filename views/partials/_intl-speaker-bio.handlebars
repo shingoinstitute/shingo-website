@@ -1,0 +1,17 @@
+<div class="modal" id="{{{speaker.Id}}}">
+    <div class="content">
+        <a class="close switch" gumby-trigger="|#{{speaker.Id}}"><i class="icon-cancel" /></i>
+        </a>
+        <div class="row">
+            <div class="ten columns centered text-left">
+                {{{speaker.Speaker_Biography__c}}}
+                <br>
+                <div class="text-center">
+                    <p class="btn primary medium" class="center">
+                        <a href="#" class="switch" gumby-trigger="|#{{speaker.Id}}" onClick="toggleVideo('hide');">Close</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

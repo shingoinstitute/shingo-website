@@ -58,9 +58,44 @@ router.get('/education', function(req, res, next) {
 });
 
 router.get('/events/international', function(req, res, next){
-  res.render('conference/internat', {
-    layout: 'international',
-    title: '29th International Conference - Shingo Institute'
+  var event_info
+  //  Arrays for speakers
+  var keynote = new Array()
+  var concurrent = new Array()
+
+  request.getAsync('http://api.shingo.org/salesforce/events/a1B1200000NSAaXEAX')
+  .then(function(results) {
+    response = JSON.parse(results.body)
+    event_info = response.event
+
+    console.log(JSON.stringify(event_info.Shingo_Day_Agendas__r, null, 4));
+
+    return request.getAsync('http://api.shingo.org/salesforce/events/speakers?event_id=a1B1200000NSAaX')
+  })
+  .then(function(results) {
+    // Parse API response into JSON
+    var response = JSON.parse(results.body);
+    // Organize Speakers
+    for (var i = 0; i < response.total_size; i++) {
+        if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
+          keynote.push(response.speakers[i])
+        } else {
+          concurrent.push(response.speakers[i])
+        }
+    }
+  })
+  .then(function(){
+    res.render('conference/international', {
+      layout: 'international',
+      title: '29th International Conference - Shingo Institute',
+      event: event_info,
+      keynote: keynote,
+      concurrent: concurrent
+    })
+  })
+  .catch(function(err){
+    console.log("api err: " + err)
+    // TODO Render empty page
   })
 })
 
@@ -164,9 +199,7 @@ router.get('/academy', function(req, res, next) {
   request.getAsync('http://api.shingo.org/salesforce/about/academy')
   .then(function(results) {
     var response = JSON.parse(results.body);
-    console.log(JSON.stringify(response));
     academy = response.academy;
-    console.log(JSON.stringify(academy, null, 4));
     res.render('about/academy', {
         title: 'Shingo Academy - Shingo Institute',
         academy: academy

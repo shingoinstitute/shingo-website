@@ -1,94 +1,186 @@
-<section id="home">
-    <div id="box" class="row">
-      <div class="text-center">
-        <!-- <img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_350/v1478125375/Events/IntlConference/29th-Logo-web.png" alt="" /> -->
+<div id="manufacturing">
+    <article class="container" id="home" style="background:url({{event.Banner_URL__c}}) no-repeat center center;
+                                                background-size:cover;
+                                                height: 750px
+                                                text-align:center;" alt="Banner Image">
+        <br>
+        <div class="row text-center" id="transborder">
+            <img src="{{event.logo}}">
+            <h1><strong>{{{event.Name}}}</strong></h1>
+            <h2><strong>{{event.date}}</strong></h2>
+            <h3><strong>{{event.Host_City__c}}, {{event.Host_Country__c}}</strong></h3>
+        </div>
+        <br>
+        <br>
+    </article>
 
-        <!-- <div class="large-12 columns text-center">s
-
-          <section>
-            <div class="row text-center">
-              <h2>29<sup>th</sup> Annual International Shingo Conference</h2>
-              <h3>April 25-29, 2016</h3>
-              <h2>Washington, DC, USA</h2>
+    <article class="container" id="s-text">
+        <div class="row">
+            <div class="six columns centered">
+                <!-- <h3 class="text-center">Thank you!</h3> -->
+                <hr>
             </div>
-          </section>
+        </div>
+        <div id="s-text" class="row text-center">
+            <p>{{{event.Sales_Text__c}}}</p>
+        </div>
+        <div class="hidden" id="agenda">&nbsp;</div>
+    </article>
 
-            <p class="roboto"><em>Come and rub shoulders with professionals like you and hear from leaders who've taken organizations from underperformance to world-class. They'll share details on how they did it.
-           <br>Attend a workshop to learn more about the Shingo Model™&nbsp; and how it can shape your organization into one where improvement ideas come from employees at all levels.</em></p>
-           <br>
-           <p><strong><a href="https://shingoconference.wufoo.com/forms/call-for-presentations" target="new">Call for Presentations</a></strong></p>
-        </div> -->
-    </div>
-</section>
+    {{>_intl-agenda agenda=event.Shingo_Day_Agendas__r}}
 
-<section>
-  <div class="row">
-    <div class="small-6 columns left">
-      <img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_350/v1478125375/Events/IntlConference/29th-Logo-web.png" alt="" />
-    </div>
-    <div class="small-6 columns right copy" >
-        <p>The 29th International Shingo Conference provides a low-stress learning atmosphere where leaders and managers can learn from transformation gurus. Find the right combination of culture, systems and tools to improve your results. Attend this conference to change the way you think about continuous improvement.</p>
-        <p>Past attendees have included leaders and managers from manufacturers, healthcare providers, finance and insurance industry leaders, to name a few. Any leader or manager looking for sustainable results should attend.</p>
-    </div>
-  </div>
-</section>
 
-<!-- Atendee Video -->
-<!-- <section id="video" class="row">
-  <div class="text-center">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/shLYMZo_Vlw?showinfo=0" frameborder="0" style="max-width: 100%;" allowfullscreen></iframe>
-    <p id="expvideo"><em>What you can expect from the conference</em></p>
-  </div>
-</section> -->
 
-<!--<div class="row">
-<p><strong>Download the PDF version of the agenda <a href="assets/Schedule May 2015.pdf" target="_blank" title="2015 Shingo Intl Conference Schedule">here.</a></strong></p>
-</div>-->
-</section>
-<section id="s-registration" class="row">
-  <div class="row">
-    <div class="six columns centered">
-      <h3 class="text-center">REGISTRATION</h3>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-7 columns">
-      <table cellspacing="0">
-        <thead>
-          <tr>
-            <th colspan="2">Events Pricing</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><h5>Main Conference (Wed/Th)</h5></td>
-            <td><h5>US$1,595</h5></td>
-          </tr>
-          <tr>
-            <td><h5>Discover Excellence Workshop (Mon/Tues)</h5></td>
-            <td><h5>US$1,595</h5></td>
-          </tr>
-          <tr>
-            <td><h5>Full-day Workshops (Tues)</h5></td>
-            <td><h5>US$795</h5></td>
-          </tr>
-          <tr>
-            <td><h5>Fireside Chat with Ritsuo Shingo (Th)</h5></td>
-            <td><h5>US$295</h5></td>
-          </tr>
-          <tr>
-            <td><h5>Site Tours (Fri)</h5></td>
-            <td><h5>US$295</h5></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="large-5 columns text-center left">
-      <br>
-      <a href="http://www.cvent.com/d/kvq3wt/4W" target="new" class="centered large button radius" id="2016Registration">Register</a>
-      <br><br>
-      <p id="discount"></p>
-    </div>
-  </div>
-</section>
+    <article class="container" id="s-registration">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">REGISTRATION</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="seven columns">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h4>Pricing for Main Conference</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each event.Shingo_Prices__r}}
+                            <tr>
+                                <td>
+                                    <h5>{{this.type}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{this.price}}</h5>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="five columns text-center">
+                <br>
+                <br>
+                <div class="text-center large info btn"><a href="{{event.registration.link}}" target="_blank">Register</a></div>
+                <br>
+                <br>
+                <!-- <p id="discount"></p> -->
+            </div>
+        </div>
+        <div class="hidden" id="speakers">&nbsp;</div>
+    </article>
+
+    <article class="container" id="s-speakers">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">SPEAKERS</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row" id="all-speakers">
+
+            <!-- Keynote Speakers -->
+            <h4 class="text-center">Keynote Speakers</h4>
+            <ul class="three_up tiles speakers">
+                {{#each keynote}}
+                    {{>_intl-speaker speaker=this}}
+                {{/each}}
+            </ul>
+            {{#each keynote}}
+                {{>_intl-speaker-bio speaker=this}}
+            {{/each}}
+
+            <!-- Concurrent Speakers -->
+            <h4 class="text-center">Concurrent Speakers</h4>
+            <ul class="four_up tiles speakers">
+                {{#each concurrent}}
+                    {{>_intl-speaker speaker=this}}
+                {{/each}}
+            </ul>
+            {{#each concurrent}}
+                {{>_intl-speaker-bio speaker=this}}
+            {{/each}}
+
+        </div>
+        <div class="hidden" id="travel">&nbsp;</div>
+    </article>
+
+    <!-- <article class="container" id="s-travel">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">TRAVEL &amp; ACCOMMODATIONS</h3>
+                <hr>
+                <h4 class="roboto text-center">{{event.ta_info.title}}</h4>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <table class="hide-for-small accommodations">
+                <tr>
+                    <td id="loc">
+                        <h5 class="text-center">LOCATION</h5> {{{event.ta_info.location}}}
+                    </td>
+                    <td id="trav">
+                        <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}}
+                    </td>
+                    <td id="hot">
+                        <h5 class="text-center">HOTEL</h5> {{{event.ta_info.hotel}}}
+                    </td>
+                </tr>
+                <tr>
+                    <td id="park">
+                        <h5 class="text-center">PARKING</h5> {{{event.ta_info.parking}}}
+                    </td>
+                    <td id="int">
+                        <h5 class="text-center">INTERNET</h5> {{{event.ta_info.internet}}}
+                    </td>
+                    <td id="todo">
+                        <h5 class="text-center">THINGS TO DO</h5> {{{event.ta_info.things}}}
+                    </td>
+                </tr>
+            </table>
+            <div class="show-for-small accommodations">
+                <div class="row">
+                    <div class="four columns">
+                        <h5 class="text-center">LOCATION</h5> {{{event.ta_info.location}}}
+                    </div>
+                    <div class="four columns">
+                        <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}}
+                    </div>
+                    <div class="four columns">
+                        <h5 class="text-center">HOTEL</h5> {{{event.ta_info.hotel}}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="four columns">
+                        <h5 class="text-center">PARKING</h5> {{{event.ta_info.parking}}}
+                    </div>
+                    <div class="four columns">
+                        <h5 class="text-center">INTERNET</h5> {{{event.ta_info.internet}}}
+                    </div>
+                    <div class="four columns">
+                        <h5 class="text-center">THINGS TO DO</h5> {{{event.ta_info.things}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="hidden" id="sponsors"></div>
+    </article> -->
+
+    <!-- <article class="container" id="s-sponsors">
+        <div class="row">
+            <div class="six columns centered">
+                <h3 class="text-center">SPONSORS &amp; EXHIBITORS</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            {{{event.se_info}}}
+        </div>
+        <div class="hidden" id="faq">&nbsp;</div>
+    </article> -->
+</div>
