@@ -164,7 +164,9 @@ router.get('/academy', function(req, res, next) {
   request.getAsync('http://api.shingo.org/salesforce/about/academy')
   .then(function(results) {
     var response = JSON.parse(results.body);
-    academy = response.records;
+    console.log(JSON.stringify(response));
+    academy = response.academy;
+    console.log(JSON.stringify(academy, null, 4));
     res.render('about/academy', {
         title: 'Shingo Academy - Shingo Institute',
         academy: academy
