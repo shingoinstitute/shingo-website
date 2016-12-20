@@ -1,28 +1,24 @@
 <div id="manufacturing">
-    <article class="container" id="home" style="background:url({{event.Banner_URL__c}}) no-repeat center center;
-                                                background-size:cover;
-                                                height: 750px
-                                                text-align:center;" alt="Banner Image">
+    <article class="container" id="home" alt="Banner Image">
         <br>
-        <div class="row text-center" id="transborder">
+        <!-- <div class="row text-center" id="transborder">
             <img src="{{event.logo}}">
             <h1><strong>{{{event.Name}}}</strong></h1>
             <h2><strong>{{event.date}}</strong></h2>
             <h3><strong>{{event.Host_City__c}}, {{event.Host_Country__c}}</strong></h3>
-        </div>
+        </div> -->
         <br>
         <br>
     </article>
 
-    <article class="container" id="s-text">
+    <article class="container" id="">
         <div class="row">
-            <div class="six columns centered">
-                <!-- <h3 class="text-center">Thank you!</h3> -->
-                <hr>
+            <div class="six columns">
+              <img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_350/v1478125375/Events/IntlConference/29th-Logo-web.png" alt="Conference Logo">
             </div>
-        </div>
-        <div id="s-text" class="row text-center">
-            <p>{{{event.Sales_Text__c}}}</p>
+            <div class="six columns" style="margin-top: 40px;">
+              <p>{{{event.Sales_Text__c}}}</p>
+            </div>
         </div>
         <div class="hidden" id="agenda">&nbsp;</div>
     </article>

@@ -442,11 +442,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #333333;
 }
 
-/*#europe #home { background:url("https://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg") no-repeat center center;
-                background-size:cover;
-                height: 750px
-                text-align:center;
-              }*/
+#home { background:url(http://res.cloudinary.com/shingo/image/upload/v1478640272/Events/IntlConference/iStock_23898798_Banner.jpg) no-repeat center center;
+    background-size:cover;
+    height: 350px;
+    text-align:center;
+}
 
 #europe #transborder {
     /*background: rgba(132, 132, 132, 0.73);
