@@ -125,6 +125,13 @@ app.engine('handlebars', exphbs({
             } else {
                 return e.format(format)
             }
+        },
+
+        prettyDateTime: function(start, end) {
+          var s = moment(start)
+          var e = moment(end)
+          var format = 'hh:mm a'
+          return s.format(format) + " - " + e.format(format)
         }
     }
 }));

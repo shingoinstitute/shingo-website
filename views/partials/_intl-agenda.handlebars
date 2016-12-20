@@ -8,18 +8,19 @@
     <br>
     <div class="row">
         <div class="tabs">
-	    <p>Click on a tab to explore that day's agenda.</p>
+            <p>Click on a tab to explore that day's agenda.</p>
             <ul class="tab-nav">
-                {{#each agenda.records}}
-                  <li><a href="#{{Name}}">{{Display_Name__c}}</a></li>
+                {{#each event.days}}
+                    <li {{#if @first}} class="active" {{/if}}><a href="#{{Id}}">{{Display_Name__c}}</a></li>
                 {{/each}}
             </ul>
-            {{#each agenda.records}}
-              {{>_intl-agenda-detail day=this}} <br>
+            {{#each event.days}}
+                {{>_intl-agenda-detail day=this isFirst=@first}}
             {{/each}}
-                <h5><strong><a href="https://shingoconference.wufoo.com/forms/call-for-presentations" target="new">Call for Presentations</a></strong></h5>
-                <h6><em>{{@root.event.presentation_copy}}</em></h6>
-            </div>
+            <br>
+            <h5><strong><a href="https://shingoconference.wufoo.com/forms/call-for-presentations" target="new">Call for Presentations</a></strong></h5>
+            <h6><em>{{@root.event.presentation_copy}}</em></h6>
         </div>
-        <div class="hidden" id="registration">&nbsp;</div>
+    </div>
+    <div class="hidden" id="registration">&nbsp;</div>
 </article>

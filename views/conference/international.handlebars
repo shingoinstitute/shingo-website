@@ -27,7 +27,7 @@
         <div class="hidden" id="agenda">&nbsp;</div>
     </article>
 
-    {{>_intl-agenda agenda=event.Shingo_Day_Agendas__r}}
+    {{>_intl-agenda event=event}}
 
 
 
@@ -48,13 +48,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each event.Shingo_Prices__r}}
+                        {{#each event.Shingo_Prices__r.records}}
                             <tr>
                                 <td>
-                                    <h5>{{this.type}}</h5>
+                                    <h5>{{this.Name}}</h5>
                                 </td>
                                 <td>
-                                    <h5>{{this.price}}</h5>
+                                    <h5>${{this.Price__c}}</h5>
                                 </td>
                             </tr>
                         {{/each}}

@@ -1,0 +1,19 @@
+<!-- Modal Template -->
+<div class="modal" id="{{data.Id}}">
+    <div class="content">
+        <a class="close switch" gumby-trigger="|.modal"><i class="icon-cancel"></i></a>
+        <br>
+        <div class="row">
+            <div class="eleven columns centered">
+                <h4>{{data.Session_Display_Name__c}}</h4>
+                <!-- <h5 class="quattrocento">{{data.detail}}</h5> -->
+                <br>
+                <p>{{{data.Summary__c}}}</p>
+                <br>
+                <div class="text-center">
+                    <p class="btn secondary medium"><a href="#" class="switch" gumby-trigger="|.modal">Close</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
