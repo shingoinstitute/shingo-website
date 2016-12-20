@@ -3,6 +3,7 @@ var express = require('express'),
     jsonfile = require('jsonfile'),
     SF = Promise.promisifyAll(require('../models/sf')),
     request = Promise.promisifyAll(require('request')),
+    _ = require('lodash'),
     router = express.Router()
 
 var routes_affiliates = require('./index-affiliates.js');
@@ -58,9 +59,81 @@ router.get('/education', function(req, res, next) {
 });
 
 router.get('/events/international', function(req, res, next){
-  res.render('conference/international', {
-    layout: 'intl',
-    title: '29th International Conference - Shingo Institute'
+  var event_info;
+  var sess_dict;
+
+  //  Arrays for speakers
+  var keynote = new Array()
+  var concurrent = new Array()
+
+  request.getAsync('http://api.shingo.org/salesforce/events/a1B1200000NSAaXEAX')
+  .then(function(results) {
+    response = JSON.parse(results.body)
+    event_info = response.event
+
+    event_info.Shingo_Prices__r.records = _.orderBy(event_info.Shingo_Prices__r.records, ['Price__c'], ['desc'])
+    // Get Session Map
+    return request.getAsync('http://api.shingo.org/salesforce/events/sessions?event_id=a1B1200000NSAaXEAX')
+  })
+  .then(function(results) {
+    //Create map from API Call
+    var response = JSON.parse(results.body);
+    sess_dict = _.keyBy(response.sessions, 'Id')
+
+    // Get list of Days
+    return request.getAsync('http://api.shingo.org/salesforce/events/days?event_id=a1B1200000NSAaXEAX')
+  })
+  .then(function(results){
+    var response = JSON.parse(results.body);
+    event_info.days = response.days;
+    event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c'])
+
+    for(var i = 0; i < event_info.days.length; i++) {
+      if(event_info.days[i].Shingo_Sessions__r) {
+        for(var j = 0; j < event_info.days[i].Shingo_Sessions__r.records.length; j++){
+          event_info.days[i].Shingo_Sessions__r.records[j] = sess_dict[event_info.days[i].Shingo_Sessions__r.records[j].Id]
+        }
+        event_info.days[i].Shingo_Sessions__r.records = _.sortBy(event_info.days[i].Shingo_Sessions__r.records, ['Start_Date_Time__c'])
+      }
+      else {
+        event_info.days[i].Shingo_Sessions__r = {'records': []}
+      }
+    }
+    return request.getAsync('http://api.shingo.org/salesforce/events/speakers?event_id=a1B1200000NSAaX')
+  })
+  .then(function(results) {
+    // Parse API response into JSON
+    var response = JSON.parse(results.body);
+    // Organize Speakers
+    for (var i = 0; i < response.total_size; i++) {
+        if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
+          keynote.push(response.speakers[i])
+        } else {
+          concurrent.push(response.speakers[i])
+        }
+    }
+    // Sort Speakers by Last Name
+    keynote = _.sortBy(keynote, ['Contact__r.LastName'])
+    concurrent = _.sortBy(concurrent, ['Contact__r.LastName'])
+  })
+  .then(function(){
+    res.render('conference/international', {
+      layout: 'international',
+      title: '29th International Conference - Shingo Institute',
+      event: event_info,
+      keynote: keynote,
+      concurrent: concurrent
+    })
+  })
+  .catch(function(err){
+    console.log("api err: " + err)
+    res.render('conference/international', {
+      layout: 'international',
+      title: '29th International Conference - Shingo Institute',
+      event: event_info,
+      keynote: keynote,
+      concurrent: concurrent
+    })
   })
 })
 
@@ -164,9 +237,7 @@ router.get('/academy', function(req, res, next) {
   request.getAsync('http://api.shingo.org/salesforce/about/academy')
   .then(function(results) {
     var response = JSON.parse(results.body);
-    console.log(JSON.stringify(response));
     academy = response.academy;
-    console.log(JSON.stringify(academy, null, 4));
     res.render('about/academy', {
         title: 'Shingo Academy - Shingo Institute',
         academy: academy

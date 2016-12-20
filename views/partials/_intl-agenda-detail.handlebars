@@ -1,0 +1,31 @@
+<div  {{#if @first}} class="tab-content active" {{else}} class="tab-content" {{/if}}>
+    <!-- All 'detail' modals are at the end of each table -->
+    <table class="striped" id="day.Id">
+        <thead>
+            <tr>
+                <th colspan="3">{{day.Display_Name__c}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each day.Shingo_Sessions__r.records}}
+                <tr>
+                    <td class="tabular">{{prettyDateTime Start_Date_Time__c End_Date_Time__c}}</td>
+                    <td><strong>{{Name}}</strong>
+                      <br>
+                      {{#if this.Summary__c}}
+                        <p><a href="#" class="switch" gumby-trigger="#{{this.Id}}">{{#if this.Session_Display_Name__c}}{{this.Session_Display_Name__c}}{{/if}}</a></p>
+                      {{else}}
+                        <b>{{#if this.Session_Display_Name__c}}{{this.Session_Display_Name__c}}{{/if}}</b>
+                      {{/if}}
+                      <!-- <li>{{{this.speaker}}} {{#if this.title}}- {{this.title}}{{/if}}</li> -->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#each day.Shingo_Sessions__r.records}}
+      {{>_intl-title-content-modal data=this}}
+    {{/each}}
+</div>
