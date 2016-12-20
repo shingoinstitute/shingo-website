@@ -106,11 +106,23 @@ router.get('/events/international', function(req, res, next){
     var response = JSON.parse(results.body);
     // Organize Speakers
     for (var i = 0; i < response.total_size; i++) {
-        if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
-          keynote.push(response.speakers[i])
-        } else {
-          concurrent.push(response.speakers[i])
-        }
+      // Adjust images to proper sizes
+      var url = response.speakers[i].Picture_URL__c;
+      if (url.indexOf("w_") < 0) {
+        var first = url.split("d/");
+        response.speakers[i].Picture_URL__c = first[0] + "d/c_fill,g_face,h_300,w_300/" + first[1];
+      }
+      else {
+        var first = url.split("d/");
+        var second = first[1].split("/v");
+        response.speakers[i].Picture_URL__c = first[0] + "d/c_fill,g_face,h_300,w_300/v" + second[1];
+      }
+      // Sort speakers into groups
+      if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
+        keynote.push(response.speakers[i]);
+      } else {
+        concurrent.push(response.speakers[i])
+      }
     }
     // Sort Speakers by Last Name
     keynote = _.sortBy(keynote, ['Contact__r.LastName'])
