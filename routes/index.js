@@ -9,6 +9,20 @@ var express = require('express'),
 var routes_affiliates = require('./index-affiliates.js');
 var routes_recipients = require('./index-recipients.js');
 
+var formatImage = function(url, heigth, width){
+  var new_url;
+  if (url.indexOf("w_") < 0) {
+    var first = url.split("d/");
+    new_url = first[0] + "d/c_fill,g_face,h_" + heigth + ",w_" + width + "/" + first[1];
+  }
+  else {
+    var first = url.split("d/");
+    var second = first[1].split("/v");
+    new_url = first[0] + "d/c_fill,g_face,h_" + heigth + ",w_" + width + "/v" + second[1];
+  }
+  return new_url;
+}
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -107,16 +121,7 @@ router.get('/events/international', function(req, res, next){
     // Organize Speakers
     for (var i = 0; i < response.total_size; i++) {
       // Adjust images to proper sizes
-      var url = response.speakers[i].Picture_URL__c;
-      if (url.indexOf("w_") < 0) {
-        var first = url.split("d/");
-        response.speakers[i].Picture_URL__c = first[0] + "d/c_fill,g_face,h_300,w_300/" + first[1];
-      }
-      else {
-        var first = url.split("d/");
-        var second = first[1].split("/v");
-        response.speakers[i].Picture_URL__c = first[0] + "d/c_fill,g_face,h_300,w_300/v" + second[1];
-      }
+      response.speakers[i].Picture_URL__c = formatImage(response.speakers[i].Picture_URL__c, 300, 300)
       // Sort speakers into groups
       if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
         keynote.push(response.speakers[i]);
@@ -285,24 +290,28 @@ router.get('/examiners', function(req, res, next) {
   })
 });
 
-/* GET seab */  // TODO Pull from api
+/* GET seab */
 router.get('/seab', function(req, res, next) {
-    var seab_query = "SELECT Id, Name, Title, Account.Name, Photograph__c, Biography__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName"
-
-    SF.queryAsync(seab_query)
-        .then(function(results) {
-            // console.log(JSON.stringify(results.records,null,4));
-            res.render('about/seab', {
-                title: 'Shingo Executive Advisory Board - Shingo Institute',
-                members: results.records
-            })
-        }).catch(function(err) {
-            console.log('index-en.js:Line 203' + err)
-            res.render('about/seab', {
-                title: 'Shingo Executive Advisory Board - Shingo Institute',
-                members: restults.records
-            })
-        });
+  var seab = null;
+  request.getAsync('http://api.shingo.org/salesforce/about/seab/')
+  .then(function(results) {
+    var response = JSON.parse(results.body);
+    seab = response.records;
+    seab.forEach(function(member){
+      member.Photograph__c = formatImage(member.Photograph__c, 300, 300)
+    })
+    res.render('about/seab', {
+        title: 'Shingo Executive Advisory Board - Shingo Institute',
+        members: seab
+    })
+  })
+  .catch(function(err) {
+      console.log("sf.js: " + err)
+      res.render('about/seab', {
+          title: 'Shingo Executive Advisory Board - Shingo Institute',
+          members: seab
+      })
+  })
 });
 
 /*Other Routes*/
