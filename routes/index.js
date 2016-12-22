@@ -101,7 +101,6 @@ router.get('/events/international', function(req, res, next){
     var response = JSON.parse(results.body);
     event_info.days = response.days;
     event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c'])
-    // Append detailed records to each session
     /* TODO Review nested .forEach loop.  Here I had to use a classic loop inside the forEach function because
      I couldn't assign to the object and maintain data persistance with a double forEach for an unknown reason.
 
@@ -110,6 +109,7 @@ router.get('/events/international', function(req, res, next){
              record = sess_dict[record.Id]
            })
     */
+    // Append detailed records to each session
     event_info.days.forEach(function(day){
       if(day.Shingo_Sessions__r) {
         for(var j = 0; j < day.Shingo_Sessions__r.records.length; j++){
@@ -121,6 +121,7 @@ router.get('/events/international', function(req, res, next){
         day.Shingo_Sessions__r = {'records': []}
       }
     })
+    // Get Speakers
     return request.getAsync('http://api.shingo.org/salesforce/events/speakers?event_id=a1B1200000NSAaX')
   })
   .then(function(results) {
@@ -233,8 +234,54 @@ router.get('/publicationaward', function(req, res, next) {
 
 /*  Affiliates Route */
 /* GET affiliates */
-router.use('/affiliates', routes_affiliates);
+router.get('/affiliates', function(req, res, next) {
+  var affiliates = null;
+  request.getAsync('http://api.shingo.org/salesforce/affiliates')
+  .then(function(results) {
+    var response = JSON.parse(results.body);
+    affiliates = response.affiliates;
+    var i = _.findIndex(affiliates, function(a){ return a.Id == '0011200001Gl4QoAAJ'; })
+    // Remove MyEducator
+    affiliates.splice(i, 1);
+    // Format Logos  // TODO Update function for logos?
+    // affiliates.forEach(function(aff){
+    //   aff.Logo__c = formatImage(aff.Logo__c, 150, 300)
+    // })
 
+    res.render('affiliates/affiliates', {
+        title: 'Affiliates - Shingo Institute',
+        affiliates: affiliates
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js: " + err)
+      res.render('affiliates/affiliates', {
+          title: 'Affiliates - Shingo Institute',
+          affiliates: affiliates
+      });
+  })
+});
+
+/*  GET an affiliate  */
+router.get('/affiliates/:id', function(req, res, next) {
+  var aff = null;
+  request.getAsync('http://api.shingo.org/salesforce/affiliates/' + req.params.id)
+  .then(function(results) {
+    var response = JSON.parse(results.body)
+    aff = response.affiliate
+    console.log(JSON.stringify(aff, null, 4));
+    // aff.Logo__c = formatImage(aff.Logo__c, 150, 300) // TODO Update for logos?
+
+    res.render('affiliates/template', {
+        title: aff.Name + ' - Shingo Institute',
+        affiliate: aff
+    });
+  })
+  .catch(function(err) {
+      console.log("sf.js: " + err)
+      // TODO Render empty page
+  })
+});
 
 /*  About Menu  */
 router.get('/about', function(req, res, next) {
