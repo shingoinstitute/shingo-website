@@ -266,13 +266,13 @@ router.get('/affiliates', function(req, res, next) {
 router.get('/affiliates/:id', function(req, res, next) {
   var aff = null;
   var fac = null;
-  request.getAsync('http://api.shingo.org:8080/salesforce/affiliates/web/' + req.params.id)
+  request.getAsync('http://api.shingo.org/salesforce/affiliates/web/' + req.params.id)
   .then(function(results) {
     var response = JSON.parse(results.body)
     aff = response.affiliate
     // TODO Update for logos? // aff.Logo__c = formatImage(aff.Logo__c, 150, 300)
     // Get Facilitators
-    return request.getAsync('http://api.shingo.org:8080/salesforce/affiliates/facilitators/' + req.params.id)
+    return request.getAsync('http://api.shingo.org/salesforce/affiliates/facilitators/' + req.params.id)
   })
   .then(function(results){
     var response = JSON.parse(results.body)
