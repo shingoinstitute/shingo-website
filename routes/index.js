@@ -9,16 +9,16 @@ var express = require('express'),
 var routes_affiliates = require('./index-affiliates.js');
 var routes_recipients = require('./index-recipients.js');
 
-var formatImage = function(url, heigth, width){
+var formatImage = function(url, height, width){
   var new_url;
   if (url.indexOf("w_") < 0) {
     var first = url.split("d/");
-    new_url = first[0] + "d/c_fill,g_face,h_" + heigth + ",w_" + width + "/" + first[1];
+    new_url = first[0] + "d/c_fill,g_face,h_" + height + ",w_" + width + "/" + first[1];
   }
   else {
     var first = url.split("d/");
     var second = first[1].split("/v");
-    new_url = first[0] + "d/c_fill,g_face,h_" + heigth + ",w_" + width + "/v" + second[1];
+    new_url = first[0] + "d/c_fill,g_face,h_" + height + ",w_" + width + "/v" + second[1];
   }
   return new_url;
 }
@@ -265,16 +265,36 @@ router.get('/affiliates', function(req, res, next) {
 /*  GET an affiliate  */
 router.get('/affiliates/:id', function(req, res, next) {
   var aff = null;
-  request.getAsync('http://api.shingo.org/salesforce/affiliates/' + req.params.id)
+  var fac = null;
+  request.getAsync('http://api.shingo.org:8080/salesforce/affiliates/web/' + req.params.id)
   .then(function(results) {
     var response = JSON.parse(results.body)
     aff = response.affiliate
-    console.log(JSON.stringify(aff, null, 4));
-    // aff.Logo__c = formatImage(aff.Logo__c, 150, 300) // TODO Update for logos?
-
+    // TODO Update for logos? // aff.Logo__c = formatImage(aff.Logo__c, 150, 300)
+    // Get Facilitators
+    return request.getAsync('http://api.shingo.org:8080/salesforce/affiliates/facilitators/' + req.params.id)
+  })
+  .then(function(results){
+    var response = JSON.parse(results.body)
+    fac = response.records
+    // Split into pair for css display requirements
+    var pairs = new Array();
+    for(var i = 0; i < fac.length; i += 2){
+      fac[i].Photograph__c = formatImage(fac[i].Photograph__c, 350, 300)
+      if(fac[i+1]){ fac[i+1].Photograph__c = formatImage(fac[i+1].Photograph__c, 350, 300) }
+      var p = new Object();
+      p.a = fac[i];
+      if(fac[i+1]) {  p.b = fac[i + 1]; }
+      pairs.push(p)
+    }
+    fac = pairs;
+    return
+  })
+  .then(function(){
     res.render('affiliates/template', {
         title: aff.Name + ' - Shingo Institute',
-        affiliate: aff
+        affiliate: aff,
+        fac_pair: fac
     });
   })
   .catch(function(err) {

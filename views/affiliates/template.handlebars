@@ -1,26 +1,25 @@
-
 <article class="container" id="affiliate">
 	<div class="row">
     	<div class="eight columns">
         	<h2 class="text-center">{{affiliate.Name}}</h2>
             <h5 class="text-center"><a href="{{affiliate.Website}}" target="_blank">{{affiliate.Website}}</a></h5>
             <br>
-            <p>{{{affiliate.App_Abstract__c}}}</p>
+            <p>{{{affiliate.Summary__c}}}</p>
             <br>
-            <div class="text-center">
+            <!-- <div class="text-center">
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/CJtfmtCBB58?rel=0" frameborder="0" allowfullscreen></iframe>
-								<p>Add support for youtube video embedding</p>
+								TODO <p>Add support for youtube video embedding</p>
             </div>
-            <br>
-            <p><strong>Contact:</strong> Robert Miller &nbsp; | &nbsp; <a href="mailto:robert@archesleadership.com">robert@archesleadership.com</a> &nbsp; | &nbsp; +1 435.512.2508</p>
+            <br> -->
+            <p class="text-center"><strong>Contact: </strong> &nbsp; {{affiliate.Public_Contact__c}} &nbsp; | &nbsp; <a href="mailto:{{affiliate.Public_Contact_Email__c}}">{{affiliate.Public_Contact_Email__c}}</a> &nbsp; | &nbsp; {{affiliate.Public_Contact_Phone__c}}</p>
         </div>
         <div class="four columns">
         	<h4>Languages</h4>
-            <p>English</p>
+            <p>{{affiliate.Languages__c}}</p>
             <h4>Locations</h4>
-            <p>North America, Latin America, Europe, Asia, India, Australia</p>
+            <p>{{affiliate.Locations__c}}</p>
             <h4>Industries</h4>
-            <p>Manufacturing, Health Care, Financial Services, Insurance, Logistics, Non-Profit, Government</p>
+            <p>{{affiliate.Industry_List__c}}</p>
             <div class="text-center"><img src="{{affiliate.Logo__c}}" alt="{{affiliate.Name}}'s Logo'"></div>
         </div>
     </div>
@@ -31,15 +30,28 @@
     </div>
 </article>
 <article class="container">
+		{{#each fac_pair}}
     <div class="row">
-    	<div class="twelve columns cf">
-        	<div class="cf-name">
-            	<img src="https://res.cloudinary.com/shingo/image/upload/c_fill,e_grayscale,g_face,h_350,w_300/v1406673194/BobMillerPictureFinal_ez9ebo.jpg" alt="Robert Miller">
-                <h4>Robert Miller</h4>
-                <p>Principal, Founder</p>
-            </div>
-            <p><strong>Robert Miller</strong> is the founder, president and principal advisor for Arches Leadership. At Arches Leadership, Mr. Miller guides organizations worldwide in building sustainable cultures of excellence based on principles. Through his highly engaging teaching style, the best companies discover new paradigms that enable seeing and achieving greater potential. Mr. Miller previously led the Shingo Institute for eight years as executive director. During this time he personally guided the thought and development of the <em>Shingo Model</em> that is now fundamentally changing the way leaders think, behave and lead. As lead developer of the <em>Shingo Model</em>, and experienced as a master teacher for all Shingo courses, there is no one with a deeper understanding of the <em>Shingo Model</em> and all of the nuances behind each of the ten Shingo Guiding Principles.</p>
-        </div>
+			{{#if a}}
+			<div class="six columns cf">
+					<div class="cf-name">
+							<img src="{{a.Photograph__c}}" alt="{{a.Name}}">
+								<h4>{{a.Name}}</h4>
+								<p>{{a.Title}}</p>
+						</div>
+						<p>{{{a.Biography__c}}}</p>
+				</div>
+				{{/if}}
+				{{#if b}}
+				<div class="six columns cf">
+						<div class="cf-name">
+								<img src="{{b.Photograph__c}}" alt="{{b.Name}}">
+									<h4>{{b.Name}}</h4>
+									<p>{{b.Title}}</p>
+							</div>
+							<p>{{{b.Biography__c}}}</p>
+				</div>
+				{{/if}}
     </div>
+		{{/each}}
 </article>
-<!-- InstanceEndEditable -->
