@@ -236,28 +236,33 @@ router.get('/publicationaward', function(req, res, next) {
 /* GET affiliates */
 router.get('/affiliates', function(req, res, next) {
   var affiliates = null;
+  var myeducator = null;
   request.getAsync('http://api.shingo.org/salesforce/affiliates')
   .then(function(results) {
     var response = JSON.parse(results.body);
     affiliates = response.affiliates;
-    var i = _.findIndex(affiliates, function(a){ return a.Id == '0011200001Gl4QoAAJ'; })
-    // Remove MyEducator
-    affiliates.splice(i, 1);
     // Format Logos  // TODO Update function for logos?
     // affiliates.forEach(function(aff){
     //   aff.Logo__c = formatImage(aff.Logo__c, 150, 300)
     // })
 
+    // Remove MyEducator
+    var i = _.findIndex(affiliates, function(a){ return a.Id == '0011200001Gl4QoAAJ'; })
+    myeducator = affiliates[i];
+    affiliates.splice(i, 1);
+
     res.render('affiliates/affiliates', {
         title: 'Affiliates - Shingo Institute',
-        affiliates: affiliates
+        affiliates: affiliates,
+        myeducator: myeducator
     });
   })
   .catch(function(err) {
       console.log("sf.js: " + err)
       res.render('affiliates/affiliates', {
           title: 'Affiliates - Shingo Institute',
-          affiliates: affiliates
+          affiliates: affiliates,
+          myeducator: myeducator
       });
   })
 });

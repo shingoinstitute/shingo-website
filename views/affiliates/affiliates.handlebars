@@ -61,14 +61,15 @@
             <li>
                 <div class="row">
                     <div class="twelve columns centered">
-                        <a href="affiliates/myeducator">
+                        <a href="affiliates/0011200001Gl4QoAAJ">
                             <div class="text-center">
-                                <img src="https://res.cloudinary.com/shingo/image/upload/c_scale,h_100/v1461429737/Affiliates/MyEducator.png" alt="Myeducator">
+                                <img src="{{myeducator.Logo__c}}" alt="{{myeducator.Name}}">
                             </div>
-                            <h4>MyEducator</h4>
-                            <p>LANGUAGES: English, Spanish</p>
-                            <br>
+                            <h4>{{myeducator.Name}}</h4>
                         </a>
+                        <p>LANGUAGES: {{myeducator.Languages__c}}</p>
+                        <br>
+                        <!-- Yes.. This section is a bit trivial.. I know. -->
                     </div>
                 </div>
             </li>
@@ -97,7 +98,8 @@
             // get array of list items in current ul
             var $liArr = $ul.children('li');
             // Sort the array of li elements
-            var m = $liArr.length, t, i;
+            var m = $liArr.length,
+                t, i;
             $liArr.detach();
             while (m) {
                 i = Math.floor(Math.random() * m--);
