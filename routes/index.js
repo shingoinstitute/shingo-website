@@ -101,34 +101,42 @@ router.get('/events/international', function(req, res, next){
     var response = JSON.parse(results.body);
     event_info.days = response.days;
     event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c'])
+    // Append detailed records to each session
+    /* TODO Review nested .forEach loop.  Here I had to use a classic loop inside the forEach function because
+     I couldn't assign to the object and maintain data persistance with a double forEach for an unknown reason.
 
-    for(var i = 0; i < event_info.days.length; i++) {
-      if(event_info.days[i].Shingo_Sessions__r) {
-        for(var j = 0; j < event_info.days[i].Shingo_Sessions__r.records.length; j++){
-          event_info.days[i].Shingo_Sessions__r.records[j] = sess_dict[event_info.days[i].Shingo_Sessions__r.records[j].Id]
+    ** Example code for interior purposed loop.
+           day.Shingo_Sessions__r.records.forEach(function(record){
+             record = sess_dict[record.Id]
+           })
+    */
+    event_info.days.forEach(function(day){
+      if(day.Shingo_Sessions__r) {
+        for(var j = 0; j < day.Shingo_Sessions__r.records.length; j++){
+              day.Shingo_Sessions__r.records[j] = sess_dict[day.Shingo_Sessions__r.records[j].Id]
         }
-        event_info.days[i].Shingo_Sessions__r.records = _.sortBy(event_info.days[i].Shingo_Sessions__r.records, ['Start_Date_Time__c'])
+        day.Shingo_Sessions__r.records = _.sortBy(day.Shingo_Sessions__r.records, ['Start_Date_Time__c'])
       }
       else {
-        event_info.days[i].Shingo_Sessions__r = {'records': []}
+        day.Shingo_Sessions__r = {'records': []}
       }
-    }
+    })
     return request.getAsync('http://api.shingo.org/salesforce/events/speakers?event_id=a1B1200000NSAaX')
   })
   .then(function(results) {
     // Parse API response into JSON
     var response = JSON.parse(results.body);
     // Organize Speakers
-    for (var i = 0; i < response.total_size; i++) {
+    response.speakers.forEach(function(speaker){
       // Adjust images to proper sizes
-      response.speakers[i].Picture_URL__c = formatImage(response.speakers[i].Picture_URL__c, 300, 300)
+      speaker.Picture_URL__c = formatImage(speaker.Picture_URL__c, 300, 300)
       // Sort speakers into groups
-      if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
-        keynote.push(response.speakers[i]);
+      if (speaker.Session_Speaker_Associations__r && speaker.Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
+        keynote.push(speaker);
       } else {
-        concurrent.push(response.speakers[i])
+        concurrent.push(speaker)
       }
-    }
+    })
     // Sort Speakers by Last Name
     keynote = _.sortBy(keynote, ['Contact__r.LastName'])
     concurrent = _.sortBy(concurrent, ['Contact__r.LastName'])
@@ -161,6 +169,7 @@ router.get('/events/:name', function(req, res, next) {
     SF.queryAsync(event.speaker_query).then(function(results) {
         var keynote = new Array()
         var concurrent = new Array()
+        // TODO Clean up for loop with a a.forEach(function(item){}) loop
         for (var i = 0; i < results.records.length; i++) {
             if (results.records[i].Speaker_Type__c == 'Keynote Speaker') {
                 keynote.push(results.records[i])
@@ -299,6 +308,7 @@ router.get('/seab', function(req, res, next) {
     seab = response.records;
     seab.forEach(function(member){
       member.Photograph__c = formatImage(member.Photograph__c, 300, 300)
+      console.log(member.Photograph__c);
     })
     res.render('about/seab', {
         title: 'Shingo Executive Advisory Board - Shingo Institute',
