@@ -60,6 +60,7 @@
                         {{/each}}
                     </tbody>
                 </table>
+                <p class="text-center">** Student &amp; Active Military Workshop Discount: $450</p>
             </div>
             <div class="five columns text-center">
                 <br>
@@ -106,15 +107,14 @@
 
         </div>
         <div class="hidden" id="travel">&nbsp;</div>
-        <div class="hidden" id="sponsors"></div>
     </article>
 
-    <!-- <article class="container" id="s-travel">
+    <article class="container" id="s-travel">
         <div class="row">
             <div class="six columns centered">
                 <h3 class="text-center">TRAVEL &amp; ACCOMMODATIONS</h3>
                 <hr>
-                <h4 class="roboto text-center">{{event.ta_info.title}}</h4>
+                <!-- <h4 class="roboto text-center">{{event.ta_info.title}}</h4> -->
             </div>
         </div>
         <br>
@@ -122,37 +122,68 @@
             <table class="hide-for-small accommodations">
                 <tr>
                     <td id="loc">
-                        <h5 class="text-center">LOCATION</h5> {{{event.ta_info.location}}}
+                         <h5 class="text-center">LOCATION</h5> <!-- {{{event.ta_info.location}}} -->
+                        <p>Atlanta Marriott Marquis
+                          <br>265 Peachtree Center Ave NE
+                          <br>Atlanta, GA 30303
+                          <br>(404) 521-0000</p>
                     </td>
                     <td id="trav">
-                        <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}}
+                        <!-- <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}} -->
+                        <h5 class="text-center">TRAVEL</h5>
+                        <p><strong>Marta Map</strong>: <a href="https://martaguide.com/rail-station-map/">https://martaguide.com/rail-station-map/</a>
+                          <br>* From ATL airport get on Red or Gold north-bound line and exit at Peachtree Center Station.  There is a covered walkway that connects to the Marriott Marquis.
+                        <br>Airport: Hartsfield-Jackson International Airport (ATL)</p>
+
                     </td>
                     <td id="hot">
-                        <h5 class="text-center">HOTEL</h5> {{{event.ta_info.hotel}}}
+                        <h5 class="text-center">HOTEL</h5> <!--{{{event.ta_info.hotel}}} -->
+                        <p><strong>Atlanta Marriott Marquis</strong><br>Shingo Group Rate: $175/night</p>
                     </td>
                 </tr>
                 <tr>
                     <td id="park">
-                        <h5 class="text-center">PARKING</h5> {{{event.ta_info.parking}}}
+                        <h5 class="text-center">PARKING</h5> <!-- {{{event.ta_info.parking}}}  -->
                     </td>
                     <td id="int">
-                        <h5 class="text-center">INTERNET</h5> {{{event.ta_info.internet}}}
+                         <h5 class="text-center">INTERNET</h5> <!-- {{{event.ta_info.internet}}} -->
+                        <p>Complimentary wifi for Marriott Rewards members.
+                          <br>Sign up here: <a href="http://bit.ly/2hOB1gF">http://bit.ly/2hOB1gF</a></p>
                     </td>
                     <td id="todo">
-                        <h5 class="text-center">THINGS TO DO</h5> {{{event.ta_info.things}}}
+                        <h5 class="text-center">THINGS TO DO</h5> <!-- {{{event.ta_info.things}}}   -->
+                        <ul class="square">
+                          <li>Peachtree Center Mall</li>
+                          <li>Georgia Aquarium</li>
+                          <li>World of Coca-Cola</li>
+                          <li>Centennial Olympic Park</li>
+                          <li>CNN Center</li>
+                          <li>College Football Hall of Fame</li>
+                          <li>Georgia Dome</li>
+                          <li>Mercedes Benz Stadium</li>
+                          <li>Philips Arena</li>
+                        </ul>
                     </td>
                 </tr>
             </table>
             <div class="show-for-small accommodations">
                 <div class="row">
                     <div class="four columns">
-                        <h5 class="text-center">LOCATION</h5> {{{event.ta_info.location}}}
+                        <h5 class="text-center">LOCATION</h5>
+                        <p>Atlanta Marriott Marquis
+                          <br>265 Peachtree Center Ave NE
+                          <br>Atlanta, GA 30303
+                          <br>(404) 521-0000</p>
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}}
+                        <h5 class="text-center">TRAVEL</h5>
+                        <p><strong>Marta Map</strong>: <a href="https://martaguide.com/rail-station-map/">https://martaguide.com/rail-station-map/</a>
+                          <br>* From ATL airport get on Red or Gold north-bound line and exit at Peachtree Center Station.  There is a covered walkway that connects to the Marriott Marquis.
+                        <br>Airport: Hartsfield-Jackson International Airport (ATL)</p>
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">HOTEL</h5> {{{event.ta_info.hotel}}}
+                        <h5 class="text-center">HOTEL</h5>
+                        <p><strong>Atlanta Marriott Marquis</strong><br>Shingo Group Rate: $175/night</p>
                     </div>
                 </div>
                 <div class="row">
@@ -160,17 +191,30 @@
                         <h5 class="text-center">PARKING</h5> {{{event.ta_info.parking}}}
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">INTERNET</h5> {{{event.ta_info.internet}}}
+                        <h5 class="text-center">INTERNET</h5>
+                        <p>Complimentary wifi for Marriott Rewards members.
+                          <br>Sign up here: <a href="http://bit.ly/2hOB1gF">http://bit.ly/2hOB1gF</a></p>
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">THINGS TO DO</h5> {{{event.ta_info.things}}}
+                        <h5 class="text-center">THINGS TO DO</h5>
+                        <ul class="square">
+                          <li>Peachtree Center Mall</li>
+                          <li>Georgia Aquarium</li>
+                          <li>World of Coca-Cola</li>
+                          <li>Centennial Olympic Park</li>
+                          <li>CNN Center</li>
+                          <li>College Football Hall of Fame</li>
+                          <li>Georgia Dome</li>
+                          <li>Mercedes Benz Stadium</li>
+                          <li>Philips Arena</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <br>
         <div class="hidden" id="sponsors"></div>
-    </article> -->
+    </article>
 
     <article class="container">
         <div class="row">
