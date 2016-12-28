@@ -6,7 +6,6 @@ var express = require('express'),
     _ = require('lodash'),
     router = express.Router()
 
-var routes_affiliates = require('./index-affiliates.js');
 var routes_recipients = require('./index-recipients.js');
 
 var formatImage = function(url, height, width){
@@ -100,7 +99,8 @@ router.get('/events/international', function(req, res, next){
   .then(function(results){
     var response = JSON.parse(results.body);
     event_info.days = response.days;
-    event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c'])
+    event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c']);
+
     /* TODO Review nested .forEach loop.  Here I had to use a classic loop inside the forEach function because
      I couldn't assign to the object and maintain data persistance with a double forEach for an unknown reason.
 
@@ -114,6 +114,11 @@ router.get('/events/international', function(req, res, next){
       if(day.Shingo_Sessions__r) {
         for(var j = 0; j < day.Shingo_Sessions__r.records.length; j++){
               day.Shingo_Sessions__r.records[j] = sess_dict[day.Shingo_Sessions__r.records[j].Id]
+              // Convert time string for correct display
+              var startdate = new Date(day.Shingo_Sessions__r.records[j].Start_Date_Time__c);
+              var enddate = new Date(day.Shingo_Sessions__r.records[j].End_Date_Time__c);
+              day.Shingo_Sessions__r.records[j].Start_Date_Time__c = (new Date(startdate - 2*60*60*1000)).toString();
+              day.Shingo_Sessions__r.records[j].End_Date_Time__c = (new Date(enddate - 2*60*60*1000)).toString();
         }
         day.Shingo_Sessions__r.records = _.sortBy(day.Shingo_Sessions__r.records, ['Start_Date_Time__c'])
       }
@@ -204,7 +209,7 @@ router.get('/usastudytour', function(req, res, next) {
     });
 });
 
-/*  Awards Route */   // TODO PUll awards from SF.  // TODO Split prize and publisher
+/*  Awards Route */   // TODO PUll awards from SF.
 /* GET challengefortheprize */
 router.get('/challengefortheprize', function(req, res, next) {
     res.render('awards/challengefortheprize', {
@@ -228,9 +233,6 @@ router.get('/publicationaward', function(req, res, next) {
         title: 'Professional Publication Award - Shingo Institute'
     });
 });
-
-// TODO: Add Affiliates Route based on url param to render specific awards page content. Fetch Content from SF
-
 
 /*  Affiliates Route */
 /* GET affiliates */
@@ -304,7 +306,11 @@ router.get('/affiliates/:id', function(req, res, next) {
   })
   .catch(function(err) {
       console.log("sf.js: " + err)
-      // TODO Render empty page
+      res.render('affiliates/template', {
+          title: aff.Name + ' - Shingo Institute',
+          affiliate: aff,
+          fac_pair: fac
+      });
   })
 });
 
