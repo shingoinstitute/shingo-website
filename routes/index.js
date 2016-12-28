@@ -92,6 +92,11 @@ router.get('/events/international', function(req, res, next){
       if(event_info.days[i].Shingo_Sessions__r) {
         for(var j = 0; j < event_info.days[i].Shingo_Sessions__r.records.length; j++){
           event_info.days[i].Shingo_Sessions__r.records[j] = sess_dict[event_info.days[i].Shingo_Sessions__r.records[j].Id]
+          // Convert time string for correct display
+          var startdate = new Date(day.Shingo_Sessions__r.records[j].Start_Date_Time__c);
+          var enddate = new Date(day.Shingo_Sessions__r.records[j].End_Date_Time__c);
+          day.Shingo_Sessions__r.records[j].Start_Date_Time__c = (new Date(startdate - 2*60*60*1000)).toString();
+          day.Shingo_Sessions__r.records[j].End_Date_Time__c = (new Date(enddate - 2*60*60*1000)).toString();
         }
         event_info.days[i].Shingo_Sessions__r.records = _.sortBy(event_info.days[i].Shingo_Sessions__r.records, ['Start_Date_Time__c'])
       }
