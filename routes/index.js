@@ -113,6 +113,9 @@ router.get('/events/international', function(req, res, next){
     for (var i = 0; i < response.total_size; i++) {
       // Adjust images to proper sizes
       var url = response.speakers[i].Picture_URL__c;
+      if (!url){
+        url = "http://res.cloudinary.com/shingo/image/upload/c_fill,g_center,h_300,w_300/v1414874243/silhouette_vzugec.png"
+      }
       if (url.indexOf("w_") < 0) {
         var first = url.split("d/");
         response.speakers[i].Picture_URL__c = first[0] + "d/c_fill,g_face,h_300,w_300/" + first[1];
