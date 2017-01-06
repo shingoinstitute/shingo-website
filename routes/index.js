@@ -125,8 +125,26 @@ router.get('/events/international', function(req, res, next){
         var second = first[1].split("/v");
         response.speakers[i].Picture_URL__c = first[0] + "d/c_fill,g_face,h_300,w_300/v" + second[1];
       }
+
+
+      // Helper function to check
+      // if a speaker is a keynote
+      // speaker via the speakers
+      // Session associations. As
+      // the API filters for Is_Keynote__c
+      // == true for populating the associations,
+      // if there are any associations returned
+      // they will be keynote associations.
+      function isKeynote(speaker){
+          if(speaker.Session_Speaker_Associations__r)
+            return true;
+          
+          return false;
+      }
+
+      
       // Sort speakers into groups
-      if (response.speakers[i].Session_Speaker_Associations__r && response.speakers[i].Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
+      if (isKeynote(response.speakers[i])) {
         keynote.push(response.speakers[i]);
       } else {
         concurrent.push(response.speakers[i])
