@@ -138,11 +138,11 @@ router.get('/events/international', function(req, res, next){
       function isKeynote(speaker){
           if(speaker.Session_Speaker_Associations__r)
             return true;
-          
+
           return false;
       }
 
-      
+
       // Sort speakers into groups
       if (isKeynote(response.speakers[i])) {
         keynote.push(response.speakers[i]);
