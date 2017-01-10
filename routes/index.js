@@ -40,6 +40,7 @@ router.get('/education', function(req, res, next) {
   .then(function(results) {
     var records = JSON.parse(results.body);
     workshops = records.workshops;
+    workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
       query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
@@ -138,11 +139,11 @@ router.get('/events/international', function(req, res, next){
       function isKeynote(speaker){
           if(speaker.Session_Speaker_Associations__r)
             return true;
-          
+
           return false;
       }
 
-      
+
       // Sort speakers into groups
       if (isKeynote(response.speakers[i])) {
         keynote.push(response.speakers[i]);
