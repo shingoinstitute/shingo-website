@@ -1,3 +1,5 @@
+<!-- TODO: Clear out all summit related markup -->
+<!-- TODO: Fix CSS names to match semantic context -->
 <div id="manufacturing">
     <article class="container" id="home" alt="Banner Image">
         <br>
@@ -10,27 +12,26 @@
         <br>
         <br>
     </article>
-
     <article class="container" id="">
         <div class="row">
             <div class="six columns">
-              <img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_350/v1478125375/Events/IntlConference/29th-Logo-web.png" alt="Conference Logo">
+                <img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_350/v1478125375/Events/IntlConference/29th-Logo-web.png"
+                    alt="Conference Logo">
             </div>
             <div class="six columns" style="margin-top: 40px;">
-              <p>{{{event.Sales_Text__c}}}</p>
+                <p>{{{event.Sales_Text__c}}}</p>
             </div>
         </div>
-        <div class="hidden" id="agenda">&nbsp;</div>
+        <!-- <div class="hidden" id="agenda">&nbsp;</div> -->
     </article>
-
     <article class="container">
-      <div class="row text-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/LmWhXbdOze0" frameborder="0" allowfullscreen></iframe>
-      </div>
+        <div class="row text-center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LmWhXbdOze0" frameborder="0" allowfullscreen></iframe>
+        </div>
     </article>
-
+    <div id="agenda"></div>
     {{>_intl-agenda event=event}}
-
+    <div id="registration"></div>
     <article class="container" id="s-registration">
         <div class="row">
             <div class="six columns centered">
@@ -44,22 +45,24 @@
                     <thead>
                         <tr>
                             <th colspan="2">
-                                <h4>Pricing for Main Conference</h4></th>
+                                <h4>Pricing for Main Conference</h4>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         {{#each event.Shingo_Prices__r.records}}
-                            <tr>
-                                <td>
-                                    <h5>{{this.Name}}</h5>
-                                </td>
-                                <td>
-                                    <h5>${{this.Price__c}}</h5>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <h5>{{this.Name}}</h5>
+                            </td>
+                            <td>
+                                <h5>${{this.Price__c}}</h5>
+                            </td>
+                        </tr>
                         {{/each}}
                     </tbody>
                 </table>
+                <p class="text-center">** Student &amp; Active Military Price: $450 (Package 1)</p>
             </div>
             <div class="five columns text-center">
                 <br>
@@ -70,9 +73,9 @@
                 <!-- <p id="discount"></p> -->
             </div>
         </div>
-        <div class="hidden" id="speakers">&nbsp;</div>
+        <!-- <div class="hidden" id="speakers">&nbsp;</div> -->
     </article>
-
+    <div id="speakers"></div>
     <article class="container" id="s-speakers">
         <div class="row">
             <div class="six columns centered">
@@ -81,40 +84,28 @@
             </div>
         </div>
         <div class="row" id="all-speakers">
-
             <!-- Keynote Speakers -->
             <h4 class="text-center">Keynote Speakers</h4>
             <ul class="three_up tiles speakers">
-                {{#each keynote}}
-                    {{>_intl-speaker speaker=this}}
-                {{/each}}
+                {{#each keynote}} {{>_intl-speaker speaker=this}} {{/each}}
             </ul>
-            {{#each keynote}}
-                {{>_intl-speaker-bio speaker=this}}
-            {{/each}}
-
+            {{#each keynote}} {{>_intl-speaker-bio speaker=this}} {{/each}}
             <!-- Concurrent Speakers -->
             <h4 class="text-center">Concurrent Speakers</h4>
             <ul class="four_up tiles speakers">
-                {{#each concurrent}}
-                    {{>_intl-speaker speaker=this}}
-                {{/each}}
+                {{#each concurrent}} {{>_intl-speaker speaker=this}} {{/each}}
             </ul>
-            {{#each concurrent}}
-                {{>_intl-speaker-bio speaker=this}}
-            {{/each}}
-
+            {{#each concurrent}} {{>_intl-speaker-bio speaker=this}} {{/each}}
         </div>
-        <div class="hidden" id="travel">&nbsp;</div>
-        <div class="hidden" id="sponsors"></div>
+        <!-- <div class="hidden" id="travel">&nbsp;</div> -->
     </article>
-
-    <!-- <article class="container" id="s-travel">
+    <div id="travel"></div>
+    <article class="container" id="s-travel">
         <div class="row">
             <div class="six columns centered">
                 <h3 class="text-center">TRAVEL &amp; ACCOMMODATIONS</h3>
                 <hr>
-                <h4 class="roboto text-center">{{event.ta_info.title}}</h4>
+                <!-- <h4 class="roboto text-center">{{event.ta_info.title}}</h4> -->
             </div>
         </div>
         <br>
@@ -122,37 +113,76 @@
             <table class="hide-for-small accommodations">
                 <tr>
                     <td id="loc">
-                        <h5 class="text-center">LOCATION</h5> {{{event.ta_info.location}}}
+                        <h5 class="text-center">LOCATION</h5>
+                        <!-- {{{event.ta_info.location}}} -->
+                        <p>Atlanta Marriott Marquis
+                            <br>265 Peachtree Center Ave NE
+                            <br>Atlanta, GA 30303
+                            <br>(404) 521-0000</p>
                     </td>
                     <td id="trav">
-                        <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}}
+                        <!-- <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}} -->
+                        <h5 class="text-center">TRAVEL</h5>
+                        <p><strong>Marta Map</strong>: <a href="https://martaguide.com/rail-station-map/">https://martaguide.com/rail-station-map/</a>
+                            <br>* From ATL airport get on Red or Gold north-bound line and exit at Peachtree Center Station.
+                            There is a covered walkway that connects to the Marriott Marquis.
+                            <br>Airport: Hartsfield-Jackson International Airport (ATL)</p>
                     </td>
                     <td id="hot">
-                        <h5 class="text-center">HOTEL</h5> {{{event.ta_info.hotel}}}
+                        <h5 class="text-center">HOTEL</h5>
+                        <!--{{{event.ta_info.hotel}}} -->
+                        <p><strong>Atlanta Marriott Marquis</strong><br>
+                        Shingo Group Rate: $175/night<br>
+                        <a href="https://aws.passkey.com/e/48962566" target="_blank">Reservations</a></p>
                     </td>
                 </tr>
                 <tr>
                     <td id="park">
-                        <h5 class="text-center">PARKING</h5> {{{event.ta_info.parking}}}
+                        <h5 class="text-center">PARKING</h5>
+                        <!-- {{{event.ta_info.parking}}}  -->
                     </td>
                     <td id="int">
-                        <h5 class="text-center">INTERNET</h5> {{{event.ta_info.internet}}}
+                        <h5 class="text-center">INTERNET</h5>
+                        <!-- {{{event.ta_info.internet}}} -->
+                        <p>Complimentary wifi for Marriott Rewards members.
+                            <br>Sign up here: <a href="http://bit.ly/2hOB1gF">http://bit.ly/2hOB1gF</a></p>
                     </td>
                     <td id="todo">
-                        <h5 class="text-center">THINGS TO DO</h5> {{{event.ta_info.things}}}
+                        <h5 class="text-center">THINGS TO DO</h5>
+                        <!-- {{{event.ta_info.things}}}   -->
+                        <ul class="square">
+                            <li>Peachtree Center Mall</li>
+                            <li>Georgia Aquarium</li>
+                            <li>World of Coca-Cola</li>
+                            <li>Centennial Olympic Park</li>
+                            <li>CNN Center</li>
+                            <li>College Football Hall of Fame</li>
+                            <li>Georgia Dome</li>
+                            <li>Mercedes Benz Stadium</li>
+                            <li>Philips Arena</li>
+                        </ul>
                     </td>
                 </tr>
             </table>
             <div class="show-for-small accommodations">
                 <div class="row">
                     <div class="four columns">
-                        <h5 class="text-center">LOCATION</h5> {{{event.ta_info.location}}}
+                        <h5 class="text-center">LOCATION</h5>
+                        <p>Atlanta Marriott Marquis
+                            <br>265 Peachtree Center Ave NE
+                            <br>Atlanta, GA 30303
+                            <br>(404) 521-0000</p>
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">TRAVEL</h5> {{{event.ta_info.travel}}}
+                        <h5 class="text-center">TRAVEL</h5>
+                        <p><strong>Marta Map</strong>: <a href="https://martaguide.com/rail-station-map/">https://martaguide.com/rail-station-map/</a>
+                            <br>* From ATL airport get on Red or Gold north-bound line and exit at Peachtree Center Station.
+                            There is a covered walkway that connects to the Marriott Marquis.
+                            <br>Airport: Hartsfield-Jackson International Airport (ATL)</p>
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">HOTEL</h5> {{{event.ta_info.hotel}}}
+                        <h5 class="text-center">HOTEL</h5>
+                        <p><strong>Atlanta Marriott Marquis</strong><br>Shingo Group Rate: $175/night</p>
                     </div>
                 </div>
                 <div class="row">
@@ -160,22 +190,35 @@
                         <h5 class="text-center">PARKING</h5> {{{event.ta_info.parking}}}
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">INTERNET</h5> {{{event.ta_info.internet}}}
+                        <h5 class="text-center">INTERNET</h5>
+                        <p>Complimentary wifi for Marriott Rewards members.
+                            <br>Sign up here: <a href="http://bit.ly/2hOB1gF">http://bit.ly/2hOB1gF</a></p>
                     </div>
                     <div class="four columns">
-                        <h5 class="text-center">THINGS TO DO</h5> {{{event.ta_info.things}}}
+                        <h5 class="text-center">THINGS TO DO</h5>
+                        <ul class="square">
+                            <li>Peachtree Center Mall</li>
+                            <li>Georgia Aquarium</li>
+                            <li>World of Coca-Cola</li>
+                            <li>Centennial Olympic Park</li>
+                            <li>CNN Center</li>
+                            <li>College Football Hall of Fame</li>
+                            <li>Georgia Dome</li>
+                            <li>Mercedes Benz Stadium</li>
+                            <li>Philips Arena</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <br>
-        <div class="hidden" id="sponsors"></div>
-    </article> -->
-
+        <!-- <div class="hidden" id="sponsors"></div> -->
+    </article>
+    <div id="sponsors"></div>
     <article class="container">
         <div class="row">
             <div class="six columns centered">
-              <h4 class="text-center"><a href="https://usu.box.com/s/cgikfwjllq2te75x7125x9n61egjbmkp" target="_blank">Sponsor/Exhibitor Information</a></h4>
+                <h4 class="text-center"><a href="https://usu.box.com/s/cgikfwjllq2te75x7125x9n61egjbmkp" target="_blank">Sponsor/Exhibitor Information</a></h4>
             </div>
         </div>
     </article>

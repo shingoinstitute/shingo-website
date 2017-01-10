@@ -136,9 +136,22 @@ router.get('/events/international', function(req, res, next){
     response.speakers.forEach(function(speaker){
       // Adjust images to proper sizes
       speaker.Picture_URL__c = formatImage(speaker.Picture_URL__c, 300, 300)
+
+      // Helper function to check
+      // if a speaker is a keynote
+      // speaker via the speakers
+      // Session associations. As
+      // the API filters for Is_Keynote__c
+      // == true for populating the associations,
+      // if there are any associations returned
+      // they will be keynote associations.
+      function isKeynote(speaker){
+          return speaker.Session_Speaker_Associations__r;
+      }
+
       // Sort speakers into groups
-      if (speaker.Session_Speaker_Associations__r && speaker.Session_Speaker_Associations__r.records[0].Is_Keynote_Speaker__c) {
-        keynote.push(speaker);
+      if (isKeynote(response.speakers[i])) {
+        keynote.push(response.speakers[i]);
       } else {
         concurrent.push(speaker)
       }
@@ -146,8 +159,6 @@ router.get('/events/international', function(req, res, next){
     // Sort Speakers by Last Name
     keynote = _.sortBy(keynote, ['Contact__r.LastName'])
     concurrent = _.sortBy(concurrent, ['Contact__r.LastName'])
-  })
-  .then(function(){
     res.render('conference/international', {
       layout: 'international',
       title: '29th International Conference - Shingo Institute',
