@@ -40,6 +40,7 @@ router.get('/education', function(req, res, next) {
   .then(function(results) {
     var records = JSON.parse(results.body);
     workshops = records.workshops;
+    workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
       query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
