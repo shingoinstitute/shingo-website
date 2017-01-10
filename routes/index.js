@@ -12,7 +12,7 @@ var routes_recipients = require('./index-recipients.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', {
+     res.render('index', {
         title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
     });
 });
