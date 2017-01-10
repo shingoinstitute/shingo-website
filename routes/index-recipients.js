@@ -15,6 +15,10 @@ router.get('/prize-boston', function(req, res, next) {
   res.render('awards/prize-shingo/prize-boston', { title: 'Recipients - Shingo Institute' });
 });
 
+router.get('/prize-boston-pr', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-boston-pr', { title: "Recipients - Shingo Institute" });
+});
+
 /* Rexam Prize Profile */
 router.get('/prize-rexam-bev', function(req, res, next) {
   res.render('awards/prize-shingo/prize-rexam-bev', { title: 'Recipients - Shingo Institute' });
