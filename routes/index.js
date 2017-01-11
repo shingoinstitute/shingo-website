@@ -25,7 +25,7 @@ var formatImage = function(url, height, width){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', {
+     res.render('index', {
         title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
     });
 });
@@ -53,6 +53,7 @@ router.get('/education', function(req, res, next) {
   .then(function(results) {
     var records = JSON.parse(results.body);
     workshops = records.workshops;
+    workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
       query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
