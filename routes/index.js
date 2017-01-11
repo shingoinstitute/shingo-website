@@ -160,7 +160,7 @@ router.get('/events/international', function(req, res, next){
     // Sort Speakers by Last Name
     keynote = _.sortBy(keynote, ['Contact__r.LastName'])
     concurrent = _.sortBy(concurrent, ['Contact__r.LastName'])
-    
+
     res.render('conference/international', {
       layout: 'international',
       title: '29th International Conference - Shingo Institute',

@@ -26,11 +26,11 @@
 </article>
 <article class="container" id="archesCF">
     <div class="row">
-        {{#if fac_pair.a}}<h3 class="roboto">Certified Facilitators</h3>{{/if}}
+        {{#if fac_pair}}<h3 class="roboto">Certified Facilitators</h3>{{/if}}
     </div>
 </article>
 <article class="container">
-		{{#each fac_pair}}
+	{{#each fac_pair}}
     <div class="row">
 			{{#if a}}
 			<div class="six columns cf">
@@ -41,8 +41,8 @@
 						</div>
 						<p>{{{a.Biography__c}}}</p>
 				</div>
-				{{/if}}
-				{{#if b}}
+			{{/if}}
+			{{#if b}}
 				<div class="six columns cf">
 						<div class="cf-name">
 								<img src="{{b.Photograph__c}}" alt="{{b.Name}}">
@@ -51,7 +51,7 @@
 							</div>
 							<p>{{{b.Biography__c}}}</p>
 				</div>
-				{{/if}}
+			{{/if}}
     </div>
-		{{/each}}
+	{{/each}}
 </article>
