@@ -256,11 +256,7 @@ router.get('/affiliates', function(req, res, next) {
   .then(function(results) {
     var response = JSON.parse(results.body);
     affiliates = response.affiliates;
-    // Format Logos  // TODO Update function for logos?
-    // affiliates.forEach(function(aff){
-    //   aff.Logo__c = formatImage(aff.Logo__c, 150, 300)
-    // })
-
+   
     // Remove MyEducator
     var i = _.findIndex(affiliates, function(a){ return a.Id == '0011200001Gl4QoAAJ'; })
     myeducator = affiliates[i];
@@ -290,7 +286,7 @@ router.get('/affiliates/:id', function(req, res, next) {
   .then(function(results) {
     var response = JSON.parse(results.body)
     aff = response.affiliate
-    // TODO Update for logos? // aff.Logo__c = formatImage(aff.Logo__c, 150, 300)
+
     // Get Facilitators
     return request.getAsync('http://api.shingo.org/salesforce/affiliates/facilitators/' + req.params.id)
   })
