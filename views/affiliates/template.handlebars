@@ -6,13 +6,11 @@
             <br>
             <p>{{{affiliate.Summary__c}}}</p>
             <br>
-            <!-- <div class="text-center">
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/CJtfmtCBB58?rel=0" frameborder="0" allowfullscreen></iframe>
-								TODO <p>Add support for youtube video embedding</p>
-            </div>
-            <br> -->
-            <p class="text-center"><strong>Contact: </strong> &nbsp; {{affiliate.Public_Contact__c}} &nbsp; | &nbsp; <a href="mailto:{{affiliate.Public_Contact_Email__c}}">{{affiliate.Public_Contact_Email__c}}</a> &nbsp; | &nbsp; {{affiliate.Public_Contact_Phone__c}}</p>
+			{{#if affiliate.Public_Contact__c}}
+			<p class="text-center"><strong>Contact: </strong> &nbsp; {{affiliate.Public_Contact__c}} &nbsp; | &nbsp; <a href="mailto:{{affiliate.Public_Contact_Email__c}}">{{affiliate.Public_Contact_Email__c}}</a> &nbsp; | &nbsp; {{affiliate.Public_Contact_Phone__c}}</p>
 			<br>
+			{{/if}}
+
 			{{{affiliate.Youtube_Path__c}}}
         </div>
         <div class="four columns">
