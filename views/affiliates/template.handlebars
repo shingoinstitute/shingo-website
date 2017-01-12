@@ -1,0 +1,57 @@
+<article class="container" id="affiliate">
+	<div class="row">
+    	<div class="eight columns">
+        	<h2 class="text-center">{{affiliate.Name}}</h2>
+            <h5 class="text-center"><a href="{{affiliate.Website}}" target="_blank">{{affiliate.Website}}</a></h5>
+            <br>
+            <p>{{{affiliate.Summary__c}}}</p>
+            <br>
+			{{#if affiliate.Public_Contact__c}}
+			<p class="text-center"><strong>Contact: </strong> &nbsp; {{affiliate.Public_Contact__c}} &nbsp; | &nbsp; <a href="mailto:{{affiliate.Public_Contact_Email__c}}">{{affiliate.Public_Contact_Email__c}}</a> &nbsp; | &nbsp; {{affiliate.Public_Contact_Phone__c}}</p>
+			<br>
+			{{/if}}
+
+			{{{affiliate.Youtube_Path__c}}}
+        </div>
+        <div class="four columns">
+        	<h4>Languages</h4>
+            <p>{{affiliate.Languages__c}}</p>
+            <h4>Locations</h4>
+            <p>{{affiliate.Locations__c}}</p>
+            <h4>Industries</h4>
+            <p>{{affiliate.Industry_List__c}}</p>
+            <div class="text-center"><img src="{{affiliate.Logo__c}}" alt="{{affiliate.Name}}'s Logo'"></div>
+        </div>
+    </div>
+</article>
+<article class="container" id="archesCF">
+    <div class="row">
+        {{#if fac_pair}}<h3 class="roboto">Certified Facilitators</h3>{{/if}}
+    </div>
+</article>
+<article class="container">
+	{{#each fac_pair}}
+    <div class="row">
+			{{#if a}}
+			<div class="six columns cf">
+					<div class="cf-name">
+							<img src="{{a.Photograph__c}}" alt="{{a.Name}}">
+								<h4>{{a.Name}}</h4>
+								<p>{{a.Title}}</p>
+						</div>
+						<p>{{{a.Biography__c}}}</p>
+				</div>
+			{{/if}}
+			{{#if b}}
+				<div class="six columns cf">
+						<div class="cf-name">
+								<img src="{{b.Photograph__c}}" alt="{{b.Name}}">
+									<h4>{{b.Name}}</h4>
+									<p>{{b.Title}}</p>
+							</div>
+							<p>{{{b.Biography__c}}}</p>
+				</div>
+			{{/if}}
+    </div>
+	{{/each}}
+</article>
