@@ -10,6 +10,9 @@ var routes_recipients = require('./index-recipients.js');
 
 var formatImage = function(url, height, width){
   var new_url;
+  if (!url){
+      return "http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_" + height + ",w_" + width + "/v1414874243/silhouette_vzugec.png"
+  }
   if (url.indexOf("w_") < 0) {
     var first = url.split("d/");
     new_url = first[0] + "d/c_fill,g_face,h_" + height + ",w_" + width + "/" + first[1];
@@ -146,13 +149,13 @@ router.get('/events/international', function(req, res, next){
       // == true for populating the associations,
       // if there are any associations returned
       // they will be keynote associations.
-      function isKeynote(speaker){
-          return speaker.Session_Speaker_Associations__r;
+      function isKeynote(sp){
+          return sp.Session_Speaker_Associations__r;
       }
 
       // Sort speakers into groups
-      if (isKeynote(response.speakers[i])) {
-        keynote.push(response.speakers[i]);
+      if (isKeynote(speaker)) {
+        keynote.push(speaker);
       } else {
         concurrent.push(speaker)
       }
