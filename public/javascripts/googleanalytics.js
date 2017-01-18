@@ -3,7 +3,8 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-54391255-1', 'auto');
+ga('create', 'UA-54391255-1', 'dev');
+ga('create', 'UA-90530953-1', 'auto')
 ga('require', 'linkid');
 ga('send', 'pageview');
-ga('shingo.send', 'pageview'); //Conference Container
+ga('dev.send', 'pageview'); //Legacy Container
