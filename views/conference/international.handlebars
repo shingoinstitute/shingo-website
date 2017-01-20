@@ -67,7 +67,7 @@
             <div class="five columns text-center">
                 <br>
                 <br>
-                <div class="text-center large info btn"><a href="{{event.Registration_Link__c}}" target="_blank">Register</a></div>
+                <div class="text-center large info btn"><a href="{{event.Registration_Link__c}}" onClick="ga('current.send', 'event', 'button', 'click', '{{event.Name}} Registration', 0)" target="_blank">Register</a></div>
                 <br>
                 <br>
                 <!-- <p id="discount"></p> -->
