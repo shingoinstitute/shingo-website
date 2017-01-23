@@ -71,6 +71,15 @@ router.get('/prize-goodyear-brasil', function(req, res, next) {
 
 
                       /******* Silver Recipients *********/
+/* Mettarottapharm Profile */
+router.get('/silver-medarottapharm', function(req, res, next) {
+  res.render('awards/prize-silver/silver-medarottapharm', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/silver-medarottapharm-pr', function(req, res, next) {
+  res.render('awards/prize-silver/silver-medarottapharm-pr', { title: "Recipients - Shingo Institute" });
+});
+
 /* GET commonwealth */
 router.get('/silver_commonwealth', function(req, res, next) {
   res.render('awards/prize-silver/silver-commonwealth', { title: 'Recipients - Shingo Institute' });
