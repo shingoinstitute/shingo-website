@@ -113,8 +113,8 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'base',
     helpers: {
         prettyDate: function(start, end) {
-            var s = moment(new Date(start))
-            var e = moment(new Date(end))
+            var s = moment(start)
+            var e = moment(end)
             var format = 'Do MMM YYYY'
             if (s.year() != e.year()) {
                 return s.format(format) + " - " + e.format(format)
