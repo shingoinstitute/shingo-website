@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,700,300italic,400);
 @import url(https://fonts.googleapis.com/css?family=Muli:300,400,400italic);
+
+.tab-nav > li {
+    margin: 0 0 0;
+}
+
+.tab-nav > li > a {
+    padding: 4px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Muli";
     font-weight: 300;

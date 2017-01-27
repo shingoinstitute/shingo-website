@@ -9,7 +9,7 @@
     <div class="row">
         <div class="tabs">
             <p>Click on a tab to explore that day's agenda.</p>
-            <ul class="tab-nav">
+            <ul class="tab-nav" id="ag-conf">
                 {{#each event.days}}
                     <li {{#if @first}} class="active" {{/if}}><a href="#{{Id}}">{{Display_Name__c}}</a></li>
                 {{/each}}
