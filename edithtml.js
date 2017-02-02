@@ -1,3 +1,7 @@
+/*
+  Script to clean legacy headers and footers off of old .html pages from legacy site
+*/
+
 var Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
