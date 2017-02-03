@@ -191,7 +191,7 @@ router.get('/events/international', function(req, res, next){
 /*  Conference, Summits & Study Tour */
 /* GET manufacturing  */  // TODO Convert to web api
 router.get('/events/:name', function(req, res, next) {
-    var event = jsonfile.readFileSync(__dirname + '/../../models/' + req.params.name + '.json')
+    var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     SF.queryAsync(event.speaker_query).then(function(results) {
         var keynote = new Array()
         var concurrent = new Array()
