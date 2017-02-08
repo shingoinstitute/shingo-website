@@ -4,7 +4,9 @@ var express = require('express'),
     SF = Promise.promisifyAll(require('../models/sf')),
     request = Promise.promisifyAll(require('request')),
     _ = require('lodash'),
-    router = express.Router()
+    router = express.Router(),
+    Logger = require('../Logger'),
+    logger = new Logger().logger
 
 var routes_recipients = require('./index-recipients.js');
 
@@ -71,7 +73,7 @@ router.get('/education', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js:  " + err)
+      logger.log("error", "EDUCATION ROUTE\n%j", err);
       res.render('education/education', {
           title: 'Education - Shingo Institute',
           workshops: query_res
@@ -177,7 +179,7 @@ router.get('/events/international', function(req, res, next){
     })
   })
   .catch(function(err){
-    console.log("api err: " + err)
+    logger.log("error", "INTERNATIONAL ROUTE\n%j", err)
     res.render('conference/international', {
       layout: 'international',
       title: '29th International Conference - Shingo Institute',
@@ -211,7 +213,14 @@ router.get('/events/:name', function(req, res, next) {
             event: event
         });
     }).catch(function(err) {
-        console.log(err);
+        logger.log("error", "SUMMIT ROUTE: %s\n%j", req.params.name, err)
+        res.render('conference/summit', {
+            layout: 'summit',
+            title: event.name + ' - Shingo Institute',
+            keynote: keynote,
+            concurrent: concurrent,
+            event: event
+        });
     })
 });
 
@@ -276,7 +285,7 @@ router.get('/affiliates', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js: " + err)
+      logger.log("error", "AFFILIATES ROUTE\n%j", err)
       res.render('affiliates/affiliates', {
           title: 'Affiliates - Shingo Institute',
           affiliates: affiliates,
@@ -321,7 +330,7 @@ router.get('/affiliates/:id', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js: " + err)
+      logger.log("error", "AFFILIATE ROUTE: %s\n%j", req.params.id, err)
       res.render('affiliates/template', {
           title: aff.Name + ' - Shingo Institute',
           affiliate: aff,
@@ -343,7 +352,7 @@ router.get('/about', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js: " + err)
+      logger.log("error", "ABOUT ROUTE\n%j", err)
       res.render('about/about', {
           title: 'Shingo Mission - Shingo Institute',
           staff: staff
@@ -364,7 +373,7 @@ router.get('/academy', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js: " + err)
+      logger.log("error", "ACADEMY ROUTE\n%j", err)
       res.render('about/academy', {
           title: 'Shingo Academy - Shingo Institute',
           academy: academy
@@ -385,7 +394,7 @@ router.get('/examiners', function(req, res, next) {
     });
   })
   .catch(function(err) {
-      console.log("sf.js: " + err)
+      logger.log("error", "EXAMINERS ROUTE\n", err)
       res.render('about/examiners', {
           title: 'Examiners - Shingo Institute',
           examiner: examiners
@@ -402,15 +411,16 @@ router.get('/seab', function(req, res, next) {
     seab = response.records;
     seab.forEach(function(member){
       member.Photograph__c = formatImage(member.Photograph__c, 300, 300)
-      console.log(member.Photograph__c);
+      logger.log("debug", "member.Photograph__c (line 412) = %s", member.Photograph__c)
     })
+
     res.render('about/seab', {
         title: 'Shingo Executive Advisory Board - Shingo Institute',
         members: seab
     })
   })
   .catch(function(err) {
-      console.log("sf.js: " + err)
+      logger.log("error", "SEAB ROUTE\n%j", err)
       res.render('about/seab', {
           title: 'Shingo Executive Advisory Board - Shingo Institute',
           members: seab
