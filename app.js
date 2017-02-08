@@ -19,7 +19,9 @@ var express = require('express'),
     https = require('https'),
     subdomains = require('express-subdomains'),
     insight_routes = require('./routes/insight.js'),
-    index = require('./routes/index.js');
+    index = require('./routes/index.js')
+    Logger = require('./Logger'),
+    logger = new Logger().logger;
 
 var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
     certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
@@ -189,7 +191,7 @@ app.get('/auth_callback', function(req, res) {
         req.session.access_token = response.access_token
         return res.redirect('/admin')
     }).catch(function(err) {
-        console.log(err);
+        logger.log("error", "AUTH_CALLBACK ROUTE\n%j", err);
         return res.redirect('/')
     })
 })
@@ -223,7 +225,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(app.get('port'), function() {
-    console.log('Node is on port', app.get('port'));
+    logger.log("info", "Node is on port %s", app.get('port'));
 });
 
 var httpsServer = https.createServer(credentials, app)
