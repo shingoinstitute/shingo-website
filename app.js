@@ -1,4 +1,4 @@
-require('dotenv').load();
+require('dotenv').load({path: '/var/www/shingo-website/.env'});
 
 var express = require('express'),
     exphbs = require('express-handlebars'),
