@@ -9,8 +9,8 @@ var winston = require('winston')
  */
 function Logger(log_level, log_file, log_error_file){
     this.log_level = log_level || process.env.LOG_LEVEL || 'debug';
-    this.log_file = log_file || process.env.LOG_FILE || 'logs/info.log';
-    this.log_error_file = log_error_file  || process.env.LOG_ERROR_FILE || 'logs/error.log';
+    this.log_file = log_file || process.env.LOG_FILE || '/var/www/shingo-website/logs/info.log';
+    this.log_error_file = log_error_file  || process.env.LOG_ERROR_FILE || '/var/www/shingo-website/logs/error.log';
 
     this.logger = new (winston.Logger)({
         level: this.log_level,
