@@ -8,7 +8,7 @@
     <br>
     <div class="row">
         <div class="tabs">
-            <p>Click on a tab to explore that day's agenda.</p>
+            <p>Click on a tab to explore that day's agenda or <a href="#" class="switch" gumby-trigger="#tracks">click here for more information on tracks.</a></p>
             <ul class="tab-nav" id="ag-conf">
                 {{#each event.days}}
                     <li {{#if @first}} class="active" {{/if}}><a href="#{{Id}}">{{Display_Name__c}}</a></li>
@@ -22,5 +22,28 @@
             <h6><em>{{@root.event.presentation_copy}}</em></h6>
         </div>
     </div>
-    <!-- <div class="hidden" id="registration">&nbsp;</div> -->
+    <div class="modal" id="tracks">
+    <div class="content">
+        <a class="close switch" gumby-trigger="|#tracks"><i class="icon-cancel" /></i>
+        </a>
+        <div class="row">
+            <div class="ten columns centered text-left">
+                <h3 class="text-center">5 Tracks Available to Fit Your Needs</h3>
+                <ul class="square">
+                    <li>Principles Track - Focus on the Shingo Guiding Principles and the ideal behaviors they inform.</li>
+                    <li>Systems Track - Explore systems aligned to principles that move the culture closer to sustainability.</li>
+                    <li>Research Track - Hear the latest findings, what they mean, and how to use them.</li>
+                    <li>Master Track - Exclusively for people with 15 years or more of experience in lean improvement.</li>
+                    <li>Executive Track - For C-suite level and senior leaders responsible for organizational change.</li>
+                </ul>
+                <br>
+                <div class="text-center">
+                    <p class="btn primary medium" class="center">
+                        <a href="#" class="switch" gumby-trigger="|#tracks" onClick="">Close</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </article>
