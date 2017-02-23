@@ -7,8 +7,16 @@
     </div>
     <br>
     <div class="row">
+        <div class="row">
+            <div class="six columns">
+                <p>Click on a tab to explore that day's agenda.</p>                
+            </div>
+            <div class="six columns">
+                <div class="text-center medium info btn"><a href="#" class="switch" gumby-trigger="#tracks">Track Information</a></div>                
+            </div>
+        </div>
+        <br>
         <div class="tabs">
-            <p>Click on a tab to explore that day's agenda or <a href="#" class="switch" gumby-trigger="#tracks">click here for more information on tracks.</a></p>
             <ul class="tab-nav" id="ag-conf">
                 {{#each event.days}}
                     <li {{#if @first}} class="active" {{/if}}><a href="#{{Id}}">{{Display_Name__c}}</a></li>
