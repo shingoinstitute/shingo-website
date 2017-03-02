@@ -112,7 +112,10 @@ router.get('/bronze_vistaprint-australia', function(req, res, next) {
   res.render('awards/prize-bronze/bronze-vistaprint-australia', { title: 'Recipients - Shingo Institute' });
 });
 
-
+                      /******* Research Recipients *********/
+router.get('/publication-toyota-way-liker', function(req, res, next) {
+  res.render('awards/prize-publication/publication-toyota-way-liker', { title: 'Recipients - Shingo Institute'});
+});
 
                       /******* Research Recipients *********/
 /* GET card-system */
