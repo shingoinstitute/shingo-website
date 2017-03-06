@@ -231,7 +231,7 @@ router.get('/japanstudytour', function(req, res, next) {
     });
 });
 
-/* GET Japan studytour */   // TODO Templatize Study TOUR
+/* GET Ireland studytour */   // TODO Templatize Study TOUR
 router.get('/irelandstudytour', function(req, res, next) {
   var event_info;
   var sess_dict;
@@ -321,11 +321,44 @@ router.get('/researchaward', function(req, res, next) {
     });
 });
 
-/* GET researchaward  */
+/* GET publication award  */
 router.get('/publicationaward', function(req, res, next) {
-    res.render('awards/publicationaward', {
-        title: 'Professional Publication Award - Shingo Institute'
-    });
+    request.getAsync('http://api.shingo.org/salesforce/awards/publication')
+    .then(function(results) {
+        var response = JSON.parse(results.body)
+        var awards = response.records
+        res.render('awards/publicationaward', {
+            title: 'Professional Publication Award - Shingo Institute',
+            awards: awards
+        })
+    })
+    .catch(function(err){
+        res.rendder('awards/publicationaward', {
+            title: 'Professional Publication Award - Shingo Institute',
+            awards: null
+        })
+    })
+});
+
+// GET Publication Award template
+router.get('/publicationaward/:id', function(req, res, next) {
+    request.getAsync('http://api.shingo.org/salesforce/awards/publication/' + req.params.id)
+   .then(function(results) {
+        var response = JSON.parse(results.body)
+        // How to simplify??
+        var awards = response.records[0]
+
+        res.render('awards/publication-template', {
+            title: 'Professional Publication Award - Shingo Institute',
+            awards: awards
+        })
+    })
+    .catch(function(err){
+        res.rendder('awards/publication-template', {
+            title: 'Professional Publication Award - Shingo Institute',
+            awards: null
+        })
+    })
 });
 
 /*  Affiliates Route */
