@@ -1,0 +1,27 @@
+<div {{#if @first}} class="tab-content active" {{else}} class="tab-content" {{/if}}>
+    <table id="day.Id">
+        <thead>
+            <tr>
+                <th colspan="2">{{day.Display_Name__c}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each day.Shingo_Sessions__r.records}}
+            <tr>
+                <td>{{prettyDateTime Start_Date_Time__c End_Date_Time__c}}</td>
+                <td><strong>{{Name}}</strong>
+                    <br>
+                    {{#if this.Summary__c}}
+                    <p><a href="#" class="switch" gumby-trigger="#{{this.Id}}">{{#if this.Session_Display_Name__c}}{{this.Session_Display_Name__c}}{{/if}}</a></p>
+                    {{else}}
+                    <b>{{#if this.Session_Display_Name__c}}{{this.Session_Display_Name__c}}{{/if}}</b>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#each day.Shingo_Sessions__r.records}}
+      {{>_intl-title-content-modal data=this}}
+    {{/each}}
+</div>

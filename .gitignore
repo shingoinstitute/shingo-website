@@ -44,4 +44,7 @@ node_modules
 # Event Models
 models/*.json
 
-todo.md
+# Crontab Log
+.updatelog
+
+*.sh

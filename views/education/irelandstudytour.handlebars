@@ -1,0 +1,55 @@
+<article class="container" 
+    style=" margin-top: 0;
+    background: url('http://res.cloudinary.com/shingo/image/upload/v1486407118/Events/StudyTours/2017/Cork-Ireland.jpg') no-repeat center bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 65px 0;">
+	<div class="row text-center" id="transborder" style="background: rgba(255, 255, 255, 0.50);">
+				<img src="http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1488323879/Events/StudyTours/2017/Study-Tour-Ireland.png" alt="Study Tour">
+    		<h1><strong>Ireland Study Tour</strong></h1>
+        <br>
+        <h4><strong>May 15th - 19th, 2017</strong></h4>
+    </div>
+</article>
+<br>
+<article class="container" id="japan">
+	<div class="row">
+		<!-- <h4 class="text-center"><strong>Hurry!</strong>  Registration deadline is September 23<sup>rd</sup>.</h4> -->
+    	<h4 class="roboto">Overview</h4>
+        <p>As a participant of the Shingo Study Tour to Ireland, you will see and experience first-hand what is at the heart of the lean business model through a series of plant tours, workshops and peer networking.</p>
+        <p>The tour begins with an overview of the <em>Shingo Model™</em> and a cultural background session so you can understand the context within which the companies you visit operate as well as how best to conduct yourself in your new surroundings.</p>
+        <p>We then give you an inside look at world-class companies and allow you to meet the leaders that have catalyzed lean transformations of their own. Our tour hosts will keep you engaged and challenged as you debrief after each visit and define key takeaways that you can apply to your organization’s efforts. You will see the tools and systems of operational excellence in action – you will visit companies that demonstrate excellence in the fundamentals such as 5S, visual management, problem solving, standardized work, quality at the source, safety, continuous flow, intelligent automation and much more.</p>
+        <p>Always invited to join us are guest hosts, often Shingo Research Award recipients, that will be available to engage in intellectually stimulating dialogues throughout the week and conduct a seminar on their work as experts in the field of continuous improvement.</p>
+        <br>
+        <h4 class="roboto">Pricing</h4>
+        <p><strong>$9,500 USD</strong> - Includes 6 nights hotel, most meals, and transportation to sites</p>
+				<br>
+				<!-- <h4 class="roboto">Itinerary</h4> -->
+        
+        
+    <section class="tabs">
+      <ul class="tab-nav">
+        {{#each event.days}}
+        <li {{#if @first}} class="active" {{/if}}><a href="#{{Id}}" style="padding: 0 10px;">{{Display_Name__c}}</a></li>
+        {{/each}}
+      </ul>
+      {{#each event.days}}
+      {{>_ire-agenda-detail day=this isFirst=@first}}
+      {{/each}}
+    </section>
+
+  </div>
+  <div class="row text-center">
+    <h4 class="roboto">Seem like the right fit for you?</h4>
+    <br>
+    <div class="primary large btn" style="background: rgba(223, 196, 135, 1)"><a href="{{event.Registration_Link__c}}" target="_blank">Register Now</a></div>
+    <br>
+    <br>
+    <h5>For more information, please contact Heather Johnson, <a href="mailto:heather.j.johnson@usu.edu">heather.j.johnson@usu.edu</a>, (435) 797-3844.</h5>
+  </div>
+  <div class="row">
+  </div>
+  <br>
+</article>
