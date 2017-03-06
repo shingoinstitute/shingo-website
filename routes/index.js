@@ -231,8 +231,6 @@ router.get('/japanstudytour', function(req, res, next) {
     });
 });
 
-<<<<<<< Updated upstream
-=======
 /* GET Ireland studytour */   // TODO Templatize Study TOUR
 router.get('/irelandstudytour', function(req, res, next) {
   var event_info;
@@ -298,7 +296,6 @@ router.get('/irelandstudytour', function(req, res, next) {
   })
 })
 
->>>>>>> Stashed changes
 /* GET USA studytour */
 router.get('/usastudytour', function(req, res, next) {
     res.render('education/usastudytour', {
