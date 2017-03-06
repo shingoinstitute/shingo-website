@@ -1,5 +1,5 @@
-var winston = require('winston')
-
+var winston = require('winston');
+var path = require('path');
 /**
  * A wrapper for the winston logger
  * @param log_level :: { error: 0, warn: 1, info: 2, verbose: 3, debug: 4, silly: 5 }. If empty the env var LOG_LEVEL will be checked. Defaults to debug.
@@ -7,11 +7,13 @@ var winston = require('winston')
  * @param log_error_file :: Similar to log_file execpt it only logs errors.
  * @member logger :: the actual logger to use. Reference https://github.com/winstonjs/winston#instantiating-your-own-logger.
  */
-function Logger(log_level, log_file, log_error_file){
+function Logger(log_level, log_path, log_file){
     this.log_level = log_level || process.env.LOG_LEVEL || 'debug';
-    this.log_file = log_file || process.env.LOG_FILE || '/var/www/shingo-website/logs/info.log';
-    this.log_error_file = log_error_file  || process.env.LOG_ERROR_FILE || '/var/www/shingo-website/logs/error.log';
-
+    this.log_path = log_path || process.env.LOG_PATH || 'logs';
+    this.log_file = log_file || process.env.LOG_FILE || 'website.log';
+    process.env.LOG_FILE = this.log_file;
+    console.log('LOG_PATH', this.log_path);
+    console.log('LOG_FILE',this.log_file);
     this.logger = new (winston.Logger)({
         level: this.log_level,
         levels: winston.config.npm.levels,
@@ -24,21 +26,13 @@ function Logger(log_level, log_file, log_error_file){
             }),
             new (winston.transports.File)({ 
                 name: 'info-log',
-                filename: this.log_file,
+                filename: path.normalize(path.join(this.log_path, this.log_file)),
                 level: this.log_level,
-                colorize: true,
-                prettyPrint: true,
+                colorize: false,
+                prettyPrint: false,
                 timestamp: true,
-                tailable: true
-            }),
-            new (winston.transports.File)({ 
-                name: 'error-log',
-                filename: this.log_error_file,
-                level: 'error',
-                colorize: true,
-                prettyPrint: true,
-                timestamp: true,
-                tailable: true
+                tailable: true,
+                json: true
             })
         ],
         exitOnError: false
