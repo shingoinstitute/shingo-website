@@ -76,6 +76,10 @@ router.get('/silver-hospira', function(req, res, next) {
   res.render('awards/prize-silver/silver-hospira', { title: 'Recipients - Shingo Institute' });
 });
 
+router.get('/silver-hospira-pr', function(req, res, next) {
+  res.render('awards/prize-silver/silver-hospira-pr', { title: "Recipients - Shingo Institute" });
+});
+
 /* Mettarottapharm Profile */
 router.get('/silver-medarottapharm', function(req, res, next) {
   res.render('awards/prize-silver/silver-medarottapharm', { title: 'Recipients - Shingo Institute' });
