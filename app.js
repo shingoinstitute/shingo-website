@@ -1,8 +1,8 @@
-require('dotenv').load({path: '/var/www/shingo-website/.env'});
+var path = require('path');
+require('dotenv').load({path: path.normalize(path.join(__dirname, '.env'))});
 
 var express = require('express'),
     exphbs = require('express-handlebars'),
-    path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
