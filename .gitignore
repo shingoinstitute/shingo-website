@@ -3,7 +3,6 @@ public/presentations
 
 # Logs
 npm-debug.log*
-*.log
 logs/*.log
 
 # Runtime data
