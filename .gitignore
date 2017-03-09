@@ -2,9 +2,8 @@
 public/presentations
 
 # Logs
-logs
-*.log
 npm-debug.log*
+logs/*.log
 
 # Runtime data
 pids
