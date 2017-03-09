@@ -66,7 +66,7 @@ router.get('/education', function(req, res, next) {
     for (var i in workshops) {
       query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
-
+    
     res.render('education/education', {
         title: 'Education - Shingo Institute',
         workshops: query_res
