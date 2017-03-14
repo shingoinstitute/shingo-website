@@ -27,7 +27,7 @@
         <div class="hidden" id="agenda">&nbsp;</div>
     </article>
 
-    {{!--{{>_agenda event}}--}}
+    {{>_agenda event}}
 
 
 
@@ -73,7 +73,7 @@
         <div class="hidden" id="speakers">&nbsp;</div>
     </article>
 
-    {{!--<article class="container" id="s-speakers">
+    <article class="container" id="s-speakers">
         <div class="row">
             <div class="six columns centered">
                 <h3 class="text-center">SPEAKERS</h3>
@@ -103,7 +103,7 @@
             {{/each}}
         </div>
         <div class="hidden" id="travel">&nbsp;</div>
-    </article>--}}
+    </article>
 
     <article class="container" id="s-travel">
   <div class="row">
@@ -178,7 +178,11 @@
   </div>
   <br>
   <div class="hidden" id="sponsors"></div>
-{{!--</article>
+</article>
+
+
+
+
     <article class="container" id="s-sponsors">
         <div class="row">
             <div class="six columns centered">
@@ -191,4 +195,4 @@
         </div>
         <div class="hidden" id="faq">&nbsp;</div>
     </article>
-</div>--}}
+</div>

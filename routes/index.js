@@ -190,38 +190,53 @@ router.get('/events/international', function(req, res, next){
   })
 })
 
+
 /*  Conference, Summits & Study Tour */
 /* GET manufacturing  */  // TODO Convert to web api
+// router.get('/events/:name', function(req, res, next) {
+//     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
+//     var keynote = new Array()
+//     var concurrent = new Array()
+//     SF.queryAsync(event.speaker_query).then(function(results) {
+//         // TODO Clean up for loop with a a.forEach(function(item){}) loop
+//         for (var i = 0; i < results.records.length; i++) {
+//             if (results.records[i].Speaker_Type__c == 'Keynote Speaker') {
+//                 keynote.push(results.records[i])
+//             } else {
+//                 concurrent.push(results.records[i])
+//             }
+//         }
+//         res.render('conference/summit', {
+//             layout: 'summit',
+//             title: event.name + ' - Shingo Institute',
+//             keynote: keynote,
+//             concurrent: concurrent,
+//             event: event
+//         });
+//     }).catch(function(err) {
+//         logger.log("error", "SUMMIT ROUTE: %s\n%j", req.params.name, err)
+//         res.render('conference/summit', {
+//             layout: 'summit',
+//             title: event.name + ' - Shingo Institute',
+//             keynote: keynote,
+//             concurrent: concurrent,
+//             event: event
+//         });
+//     })
+// });
+
 router.get('/events/:name', function(req, res, next) {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
-    SF.queryAsync(event.speaker_query).then(function(results) {
-        var keynote = new Array()
-        var concurrent = new Array()
-        // TODO Clean up for loop with a a.forEach(function(item){}) loop
-        for (var i = 0; i < results.records.length; i++) {
-            if (results.records[i].Speaker_Type__c == 'Keynote Speaker') {
-                keynote.push(results.records[i])
-            } else {
-                concurrent.push(results.records[i])
-            }
-        }
-        res.render('conference/summit', {
+    var keynote = new Array()
+    var concurrent = new Array()
+
+    res.render('conference/summit', {
             layout: 'summit',
             title: event.name + ' - Shingo Institute',
             keynote: keynote,
             concurrent: concurrent,
             event: event
-        });
-    }).catch(function(err) {
-        logger.log("error", "SUMMIT ROUTE: %s\n%j", req.params.name, err)
-        res.render('conference/summit', {
-            layout: 'summit',
-            title: event.name + ' - Shingo Institute',
-            keynote: keynote,
-            concurrent: concurrent,
-            event: event
-        });
-    })
+    });
 });
 
 /* GET Japan studytour */   // TODO Templatize Study TOUR
