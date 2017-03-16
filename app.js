@@ -114,6 +114,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({
     defaultLayout: 'base',
     helpers: {
+        prettyMonth: function(date) {
+            var d = moment(date)
+            var format = 'MMM YYYY'
+            return d.format(format)
+        },
+
         prettyDate: function(start, end) {
             var s = moment(start)
             var e = moment(end)
