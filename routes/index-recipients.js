@@ -106,6 +106,14 @@ router.get('/silver_pympsa', function(req, res, next) {
 
 
                     /******** Bronze Recipients ********/
+router.get('/bronze-landapparel', function(req, res, next) {
+  res.render('awards/prize-bronze/bronze-landapparel', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/bronze-landapparel-pr', function(req, res, next) {
+  res.render('awards/prize-bronze/bronze-landapparel-pr', { title: "Recipients - Shingo Institute" });
+});
+
 /* GET rexam */
 router.get('/bronze_lake', function(req, res, next) {
   res.render('awards/prize-bronze/bronze-lake', { title: 'Recipients - Shingo Institute' });
