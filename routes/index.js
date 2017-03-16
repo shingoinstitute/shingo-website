@@ -343,13 +343,13 @@ router.get('/publicationaward', function(req, res, next) {
         var response = JSON.parse(results.body)
         var awards = response.records
         res.render('awards/publicationaward', {
-            title: 'Professional Publication Award - Shingo Institute',
+            title: 'Publication Award - Shingo Institute',
             awards: awards
         })
     })
     .catch(function(err){
         res.rendder('awards/publicationaward', {
-            title: 'Professional Publication Award - Shingo Institute',
+            title: 'Publication Award - Shingo Institute',
             awards: null
         })
     })
@@ -364,13 +364,13 @@ router.get('/publicationaward/:id', function(req, res, next) {
         var awards = response.records[0]
 
         res.render('awards/publication-template', {
-            title: 'Professional Publication Award - Shingo Institute',
+            title: 'Publication Award - Shingo Institute',
             awards: awards
         })
     })
     .catch(function(err){
         res.rendder('awards/publication-template', {
-            title: 'Professional Publication Award - Shingo Institute',
+            title: 'Publication Award - Shingo Institute',
             awards: null
         })
     })
