@@ -1,0 +1,36 @@
+{
+    "name": "43rd Operational Excellence  Conference",
+    "date": "September 18 - 19, 2017",
+    "logo": "",
+    "background_image": "http://res.cloudinary.com/shingo/image/upload/v1490047065/Events/RegionalConference/2017/PiB-OpEx/ThanksgivingPoint.jpg",
+    "location": "Thanksgiving Point, Lehi, Utah",
+    "intro": "Whether your organization has been on the Lean journey for many years or just beginning, the Operational Excellence Conference will arm you with fresh thinking to improve your culture. Join us this fall for the 43rd conference to inspire and recharge your efforts in continuous improvement.",
+    "presentation_copy": "",
+    "agenda": [],
+    "registration": {
+        "link": "http://www.cvent.com/d/85qjgr/4W",
+        "prices": [
+            {
+                "type": "Main Conference",
+                "price": "$750"
+            },
+            {
+                "type": "Groups of 5+ save 15%",
+                "price": ""
+            }
+        ]
+    },
+    "se_info": "",
+    "travel": {},
+    "speaker_query": "",
+    "ta_info": {
+        "title": "",
+        "location": "",
+        "travel": "",
+        "hotel": "",
+        "parking": "",
+        "internet": "",
+        "things": ""
+    },
+    "filename": "oe.json"
+}

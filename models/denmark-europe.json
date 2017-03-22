@@ -1,0 +1,450 @@
+{
+    "name": "European Conference",
+    "date": "November 30 - December 2, 2016",
+    "logo": "https://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
+    "background_image": "https://res.cloudinary.com/shingo/image/upload/v1456179341/Europe%20Summit/CopenhagenSummit.jpg",
+    "location": "Copenhagen, Denmark",
+    "intro": "<div><!--block-->Come and learn from people who have made notable transformations in their organizations on their road to enterprise excellence. Each year we are joined by leaders from all around Europe to learn what others are doing and have successfully done to improve their organization. Along with renowned keynote speakers, you will get an opportunity to participate in breakout sessions where you can ask questions and discuss with experienced leaders and business professionals. Whatever the industry may be, people with a desire to improve business should attend.</div>",
+    "presentation_copy": "The language of the Conference is English.",
+    "agenda": [
+        {
+            "name": "Wednesday",
+            "title": "November 30",
+            "sessions": [
+                {
+                    "time": "13:00 - 16:30",
+                    "info": {
+                        "name": "Lundbeck Tour - FULL",
+                        "detail": [
+                            {
+                                "id": "lundbeck-tour",
+                                "speaker": "Lundbeck Tour",
+                                "detail": "",
+                                "title": "",
+                                "abstract": "<div><!--block-->Lundbeck is a Danish-based pharmaceutical company engaged in research to find new drugs for the treatment of brain disorders, including depression, schizophrenia, Alzheimer’s disease, Parkinson’s disease and alcohol dependence. Lundbeck’s mission is to improve the quality of life of people suffering from psychiatric and neurological disorders. Lundbeck is the only fully integrated pharmaceutical company that focuses exclusively on brain disorders. Lundbeck has a turnover of approximately 2 billion Euros and employs 5,000 people. **Bus will depart at 12:30 and return by 16:00.</div>"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Thursday",
+            "title": "December 1 - Main Conference",
+            "sessions": [
+                {
+                    "time": "7:00 - 8:00",
+                    "info": {
+                        "name": "Breakfast & Registration",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "8:00 - 8:50",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "title": "Leveraging the Shingo Model",
+                                "speaker": "Ken Snyder - Shingo Institute",
+                                "detail": "Ken Snyder",
+                                "id": "kens-synd",
+                                "abstract": "<div><!--block-->Shingo Institute's Executive Director Ken Snyder will share how you can leverage your experience at the Shingo European Conference using the Shingo Model and how to incorporate the principles in your everyday life.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "8:50 - 9:00",
+                    "info": {
+                        "name": "Intermission",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "9:00 - 9:50",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "speaker": "Billy Taylor - Goodyear Tire & Rubber Company",
+                                "detail": "Billy Taylor",
+                                "id": "bill-tayl",
+                                "title": "Managing the Intersections: Linking Functions and Tiers",
+                                "abstract": "<div><!--block--><em>Strategy + Execution = Results</em>. The success of a business organization depends on its ability to convert its plans into results. So why do companies fail to execute their organizational strategy? Because often, people don’t know who owns what’s inside the strategy.&nbsp;<br><br>This presentation features a business operating system that has five process components that are standardized and linked at every level. The management system ensures proper organizational alignment of functions and tiers to the overall business strategy – alignment from the C-suite to the business floor. Mr. Taylor will share examples of proven processes driven by developing strong execution skills and ownership. This is a disciplined and logical approach to getting things done and transforming strategies into favorable outcomes.&nbsp;</div><div><!--block--><br>The benefits include a framework that ensures a strong linkage between customer satisfaction, quality, productivity and profitability, along with a system that links the functions and tiers within an organization to align tactical actions and ensures daily work is focused on strategic objectives and performed in the most efficient way. The system deals with the questions \"why\" (purpose of the work), \"what\" (specific objectives of the work) and \"how\" (the processes used to do the work).</div><div><!--block-->&nbsp;</div><div><!--block-->This management system is the determining factor that sets great companies apart from their competition, and proves that success is less about innovative management practices and more about leadership process discipline.</div><div><!--block--><br><br><br></div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "9:50 - 10:30",
+                    "info": {
+                        "name": "Networking Break",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "10:30-11:40",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "abstract": "<div><!--block-->To improve the efficiency and quality of its operations, Abbott Diagnostics Longford, a healthcare manufacturing facility in Ireland, used its parent organization’s well-established resources, created a customer-focused culture of system-wide empowerment in which employees at all levels would be comfortable with change, applied numerous lean Six Sigma techniques to enhance its processes, and linked its core competencies to the Shingo Principles of operational excellence. As a result, the facility dramatically cut costs, lead times, nonconformance rates, inventory, energy costs, and waste while improving output and employee development and morale. In 2015, Longford earned the Shingo Prize for its accomplishments. Management expects to continue to use the site’s lean management systems and culture of employee empowerment to continue to drive the behaviors and processes consistent with ensuring world-class performance.&nbsp;</div>",
+                                "title": "Creating a Culture of Continuous Improvement and Sustainable Management Systems at Abbott Diagnostics Longford",
+                                "speaker": "Seán Kelly - Abbott Diagnostics",
+                                "detail": "Seán Kelly",
+                                "id": "sean-kell"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "11:40 - 11:50",
+                    "info": {
+                        "name": "Intermission",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "11:50 - 12:40",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "title": "Toyota Kata: Habits for Continuous Learning",
+                                "speaker": "Håkan Forss - King",
+                                "detail": "Håkan Forss",
+                                "id": "haka-fors",
+                                "abstract": "<div><!--block-->Aristotle said, “We are what we repeatedly do. Excellence, then, is not an act, but a habit.” Building on the power of habits, Toyota Kata helps build a daily continuous learning and improvement culture – a kaizen culture.</div><div><!--block-->&nbsp;</div><div><!--block-->In this session, Håkan Forss will introduce two main kata* of Toyota Kata – improvement kata and coaching kata. You will learn how the improvement kata and coaching kata can become your “muscle memory” for continuous learning and improvements in your organization. These daily habits or routines will help you to strive toward your state of awesomeness in small experiments focused on learning. The improvement kata will form the habits of doing small daily experiments focused on learning and improving. The coaching kata will form the habits of leaders in an organization to help the learners learn and improve.</div><div><!--block-->&nbsp;</div><div><!--block-->It’s time to stop collecting problems and start forming new habits of learning and improving!</div><div><!--block-->&nbsp;</div><div><!--block-->(*) Kata means pattern, routine, habits or way of doing things. Kata is about creating a fast “muscle memory” of how to take action instantaneously in a situation without having to go through a slower logical procedure. A kata is something you practice over and over, while striving for perfection. If the kata itself is relatively static, the content of the kata, as we execute it, is modified based on the situation and context in real-time as it happens. A kata is different from a routine in that it contains a continuous self-renewal process.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "12:40 - 14:00",
+                    "info": {
+                        "name": "Lunch & Awards Ceremony",
+                        "detail": [
+                            {
+                                "speaker": "Shingo Recipients",
+                                "id": "shin-reci",
+                                "abstract": "<div><!--block-->Please enjoy a meal as we recognize this year's Shingo recipients.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "14:00 - 15:00",
+                    "info": {
+                        "name": "Concurrent Sessions",
+                        "detail": [
+                            {
+                                "id": "stef-raed",
+                                "speaker": "Deployment: Stefan de Raedemaecker - McKinsey & Company & Colette Roetgering, Formerly Achmea",
+                                "detail": "Stefan de Raedemaecker & Colette Roetgering",
+                                "title": "How to Support Leaders to Drive Sustainable Change",
+                                "abstract": "<div><!--block-->It is clear that leadership is the number one factor that drives sustainable change in organizations. But how can we promote the right leadership behaviors and management practices? What role can a continuous improvement (CI)/lean team play to help assess maturity of the management practices in an organization, and how can they help leaders? In this session, Mr. de Raedemaecker will discuss how a behavioral maturity assessment and leader standard work can help build the leadership practices required to create sustainable change in an organization. Ms. Roetgering, a seasoned CI coach, will join him to share her experiences at a big European insurance company.</div>"
+                            },
+                            {
+                                "id": "must-alta",
+                                "speaker": "Manufacturing: Mustafa Kemal Altay - Bosch",
+                                "detail": "Mustafa Kemal Altay",
+                                "title": "Key Enabler of Lean Transformation is Actively Engaged Associates",
+                                "abstract": "<div><!--block-->The Bosch Production System (BPS) is a sub-system of the Bosch Business System. Its purpose is to continually improve the core process order fulfillment. BPS is a well designed production system with two key implementation elements: process improvement and people development. &nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->The term “production system” originates from the world of production management and describes the systematic approach to the order fulfillment process, i.e. the process of fulfilling customer orders from the date of the order set by the customer, to the time of delivery of the manufactured products to the customer. This approach describes the principles, processes, methods and rules of the order fulfillment process. It serves as a guide to show associates and managers how to carry out tasks and responsibilities. Applicable processes, methods and rules are never set in stone, but are further developed in the course of continuous improvement.&nbsp;<br>&nbsp;</div><div><!--block-->The key success factor in a transformation is not only systems in place nor tools in application, but actively engaged associates from all levels of the organization. The success rate of transformation speed is the sum of each individual’s achievement in transformation. In this session, Mr. Altay will discuss the key success factor – associates and their impact in lean transformation – and share case studies from real-time experiences.&nbsp;</div><div><!--block-->&nbsp;</div>"
+                            },
+                            {
+                                "speaker": "Research: Matthias Thürer - Jinan University",
+                                "detail": "Matthias Thürer",
+                                "id": "mat-thu",
+                                "title": "On the Meaning of Business Excellence: Does Business Excellence Mean Doing Excellent Business?",
+                                "abstract": "<div><!--block-->Achieving business excellence is the objective of concepts such as lean, total companywide quality management, six sigma, and world class manufacturing – just to name a few. It is consequently a widely used term in these contexts. Yet, it has been taken for granted that we have a common understanding of what is meant by business excellence. On the contrary, researchers argue that definitions significantly differ across authors and “Business Excellence” as a concept remains poorly understood. For example, from a theoretical point of view, many definitions are rather tautological, arguing that business excellence is about being excellent in doing something (e.g. business). Meanwhile, from a practical point of view, they find many companies are primarily concerned with efficiencies, machine utilizations or other corporate mandates when striving for business excellence, rather than asking whether their improvements get to the bottom-line profit.&nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->In response, Dr. Thürer and his team first present a critical qualitative discussion that identifies different conceptualizations of business excellence. They then conduct a systematic review of the literature to examine the different uses of these concepts. Their objective is twofold: (i) to distill the essence of the business excellence concept; and, (ii) to explore whether business excellence directly leads to doing excellent business (i.e. winning and satisfying customer orders). It is hoped that the former helps companies to better understand and benchmark business excellence, while the latter embeds business excellence into manufacturing strategy in the form of a two-dimensional framework of horizontal (efficiency) and vertical (effectiveness) alignment.&nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->Different concepts can be used to capture business excellence, just like different conceptualizations have been used throughout history to see nature; but the most important step in achieving business excellence is being able to ‘see’ business excellence. The researchers framework is another way of capturing business excellence, but it is one that they argue improves understanding of business excellence compared to the extant literature.</div>"
+                            },
+                            {
+                                "speaker": "Research: Mike Martyn - SISU Consulting",
+                                "title": "Creating a Principle-based Daily Kaizen Culture in Higher Education",
+                                "detail": "Mike Martyn",
+                                "id": "mik-mar",
+                                "abstract": "<div><!--block-->Since 2010, the University of Washington’s Finance and Facilities organization (F2) has been on a journey to develop a principle-based daily kaizen culture. Since the start of its journey, Mike Martyn, founder of SISU Consulting Group and director emeritus for the Shingo Institute, has assisted F2. Given the highly decentralized nature of higher education, combined with the diversity of a “small city,” the importance of focusing on principles and implementing key systems has been paramount to the organization’s success. &nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->This session will focus on a developed four-phase model utilized to guide teams and leaders in their ability to embed and leverage ideal behaviors for sustained success. During the discussion, Mr. Martyn will demonstrate how each phase integrates the principles of the&nbsp;<em>Shingo Model</em>&nbsp;and how the focus on the use of co-creation and engagement multipliers has resulted in high levels of sustained participation and continuous experimentation and innovation in the daily management system. Each of the phases will be discussed as well as supported by case study examples.</div><div><!--block-->&nbsp;</div><div><!--block-->This approach has resulted in more than $210 million in financial benefit for the university. More importantly, the developing culture has resulted in more than 55,000 implemented ideas and the development of 39 internal coaches. Further, F2 has been benchmarked by more than 110 organizations, featured in national publications, and was awarded both the NCCI Leveraging Excellence Award in 2013 and the NCCI Leadership Award in 2016.</div>"
+                            },
+                            {
+                                "speaker": "Research: Steve Hanks & Jamie Andrus - Utah State University",
+                                "title": "In-Sync or Out-of-Sync: The Complex Relationship Between HR and Continuous Improvement Leaders in Facilitating Lean Transformation",
+                                "detail": "Steve Hanks & Jamie Andrus",
+                                "id": "ste-han",
+                                "abstract": "<div><!--block-->HR policies and processes, working&nbsp;<em>in sync</em>&nbsp;with organizational and business processes, have the promise to be incredibly facilitative of enterprise excellence. On the other hand, HR policies and practices,&nbsp;<em>out of sync</em>&nbsp;with the cadence of excellence and continuous improvement, may be burdensome and distractive to business leaders seeking to drive transformation throughout the enterprise. Dr. Hanks and Ms. Andrus conducted a study that uses a grounded theory approach to tease out and explore the relationship between these two functions in organizations pursuing a lean journey. Drawing from a series of ten focused case studies they build foundational theory regarding perceptions and actions that facilitate and/or constrain lean transformation.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "15:00 - 15:30",
+                    "info": {
+                        "name": "Networking Break",
+                        "detail": []
+                    }
+                },
+                {
+                    "info": {
+                        "detail": [
+                            {
+                                "speaker": "Research: Jacob Eskildsen - Aarhus University",
+                                "id": "Jaco-Eski",
+                                "detail": "Jacob Eskildsen",
+                                "title": "Exploration Versus Exploitation",
+                                "abstract": "<div><!--block-->This presentation will focus on the interaction between incremental improvements and radical change initiatives. When will teams of employees focus on improving existing technologies and procedures and when are they susceptible to more radical change initiatives? What role does emotions and exiting performance levels play in the strategic decision making of teams? Based on empirical work and laboratory experiments, answers to these questions, as well as managerial recommendations, will be provided.</div>"
+                            },
+                            {
+                                "speaker": "Manufacturing: Jose Luis Ordorica - Continental Automotive Systems",
+                                "id": "jose-ordo",
+                                "detail": "Jose Luis Ordorica",
+                                "abstract": "",
+                                "title": "From Methods to Principles"
+                            },
+                            {
+                                "speaker": "Deployment: Eilish Henry - SISU; Jim Evans and Andy Davis - Cummins Turbo",
+                                "detail": "Eilish Henry, Jim Evans and Andy Davis",
+                                "id": "eili-henr",
+                                "title": "The Cummins Story"
+                            }
+                        ],
+                        "name": "Concurrent Sessions"
+                    },
+                    "time": "15:30 - 16:30"
+                },
+                {
+                    "info": {
+                        "detail": [
+                            {
+                                "speaker": "Opening Social",
+                                "title": "",
+                                "id": "wall-sho",
+                                "detail": "Opening Social",
+                                "abstract": "<div><!--block-->Please enjoy light refreshments and a glass of wine as you catch up with old and new friends.</div>"
+                            }
+                        ],
+                        "name": "Networking Happy Hour"
+                    },
+                    "time": "16:30 - 18:00"
+                }
+            ]
+        },
+        {
+            "name": "Friday",
+            "title": "December 2 - Main Conference",
+            "sessions": [
+                {
+                    "time": "07:00 - 08:00",
+                    "info": {
+                        "name": "Breakfast & Registration",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "08:00 - 9:00",
+                    "info": {
+                        "name": "Concurrent Sessions",
+                        "detail": [
+                            {
+                                "speaker": "Deployment: Gert Linthout - Möbius & Marc Noppen - University Hospital Brussels",
+                                "id": "gert-marc",
+                                "detail": "Gert Linthout & Marc Noppen",
+                                "title": "See Bridges Where Others See Holes: Serendipitous Leadership, A Healthcare Testimonial",
+                                "abstract": "<div><!--block-->The discovery of penicillin by Alexander Fleming, gravity by Isaac Newton, the post-it by Art Fry. These ‘inventors’ found something they didn’t search for. Coincidence or genius? Neither and both. Researchers call it ‘serendipity’ and estimate that 90% of innovations are born from it.\r<br>&nbsp;\r<br>How do Western and Eastern leaders regard breakthrough innovation? Why are humble leadership and systems thinking essential leadership principles? What is the synergy and difference between continuous improvement and serendipitous innovation? Is serendipity a capability you can learn as an organization? \r<br>&nbsp;\r<br>Prof. Marc Noppen will testify on the journey within the University Hospital that he leads. How to react appropriately as a hospital in times of austerity? What did hospitals learn from industry? How to build as function of care pathways? How did the hospital grasp the opportunity to open new fertility clinics in Abu Dhabi and Kuwait? What is the role of self-steering teams? All these questions will be addressed during Professor Noppen’s presentation.\r<br><br></div>"
+                            },
+                            {
+                                "speaker": "Research: Seán Kelly - Abbott",
+                                "title": "Discreetly Embedding the Shingo Principles of Operational Excellence at Abbott Diagnostics Manufacturing Facility in Longford Ireland",
+                                "detail": "Seán Kelly",
+                                "id": "sean-kel",
+                                "abstract": "<div><!--block-->From 2005-2011, Abbott Diagnostics Longford’s regent manufacturing facility was primarily focused on transferring products from its sister site in Chicago and ramping up production to meet the delivery demands and quality standards expected by its global customer base and regulatory bodies. Thereafter, the organization set about establishing a lean framework which would connect its many systems and tools and empower every employee in the organization to improve their processes to achieve sustainable results and ensure strategic objectives were achieved.&nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->The&nbsp;<em>Shingo Model</em>™ and its principles of operational excellence were seen as fit for purpose with respect to guiding Abbott Diagnostics Longford’s structural and cultural transformation. However, Abbott Corporation and its Diagnostics Division already had many excellent systems, tools and behavioral expectations which aligned well with the&nbsp;<em>Shingo Guiding Principles</em>. Therefore, to avoid conflict and misalignment with existing corporate systems and to avoid confusing employees by the introduction of new “Shingo Systems,” much effort was spent identifying and connecting the Abbott systems that support the&nbsp;<em>Shingo Guiding Principles</em>. New systems were only created if specific gaps were identified. &nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->Abbott Diagnostic Longford has hence created its lean framework which flows as follows:&nbsp;</div><div><!--block-->·&nbsp; &nbsp; &nbsp;<em>Shingo Guiding Principles</em></div><div><!--block-->·&nbsp; &nbsp; &nbsp;Site Behavioral Standards</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Abbott Corporate Competencies</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Leader &amp; Individual Contributor Behaviors</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Site Vision&nbsp;<br>·&nbsp; &nbsp; &nbsp;Site Strategy</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Departmental/Team Strategy</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Team Visual Management and Lean Management Walks</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Team Daily Huddles</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Problem Solving (quality corrective action &amp; preventative action (CAPA) system, lean management system root cause analysis, lean six sigma DMAIC projects and daily kaizen local improvements)</div><div><!--block-->·&nbsp; &nbsp; &nbsp;Lean Tools (6S, value stream mapping and TIMWOODS waste identification).</div>"
+                            },
+                            {
+                                "speaker": "Research: Peter Hines and Darrin Taylor - Waterford",
+                                "detail": "Hines, Taylor and Walsh",
+                                "id": "pet-hin",
+                                "title": "The Lean Journey: Have We Got It Wrong?",
+                                "abstract": "<div><!--block-->Over the last 25 years there has been a vogue in manufacturing, and increasingly in service organizations, to implement lean, six sigma or other variants of these approaches. These journeys are designed to improve productivity, quality and cost, and to achieve improved performance in the eyes of the customer. However in many, or indeed most cases, these journeys have not been as successful or sustainable as their architects had planned. The question is why? Researchers consider this question and find that the reason is largely due to a results-oriented, tools-only approach of the firms involved. They explore why this approach has been taken and why it does not work. Evidence is presented from a group of UK and Irish organizations that have taken a different approach, based on principle-led behavior change. This approach appears to be more successful and sustainable. A theoretical discussion is then undertaken of how firms might change to this new approach based on either an evolutionary or revolutionary change.</div>"
+                            },
+                            {
+                                "id": "greg-frat",
+                                "speaker": "Research: Greg Frater - Massey University",
+                                "detail": "Greg Frater",
+                                "title": "Sustaining Lean in SME Manufacturers: Findings from an Eight-Year Longitudinal Study",
+                                "abstract": "<div><!--block-->Productivity growth remains a central challenge for the New Zealand (NZ) manufacturing sector. As one strategy to achieve this aim, beginning around 2004, the NZ Government attempted to implement lean widely within the manufacturing sector through targeted investment. Researchers evaluated the effectiveness and success of this strategy, with reference to a sample of NZ SME manufacturers, and extrapolated wider, general findings pertaining to the key elements required for successful, sustained lean implementation. &nbsp;<br><br>Using the Sustainable Lean Iceberg Model (Hines et al, 2008) as a theoretical basis, Greg Frater and his team developed a case study protocol based<br>around the key constructs for sustainable lean. They selected respondents from among 11 manufacturers that had been part of the government’s programs to accelerate lean. Data were collected from these organizations after at least one year from implementation, and again after at least seven years.&nbsp; &nbsp; &nbsp;&nbsp;<br><br></div><div><!--block-->The team found that lean was sustained in only one of the organizations that agreed to participate. Two more were attempting to sustain, and two were<br>attempting to ‘re-implement.’ Four had abandoned lean altogether, and several others had gone out of business entirely. The study reinforces the vital importance of below-the-waterline aspects of lean (‘strategy and alignment,’ ‘leadership’ and ‘behavior and engagement’). The tendency to focus on ‘quick-win’ implementations of tools and techniques does not create the necessary cultural shift to permit sustainable lean.&nbsp; &nbsp; &nbsp;&nbsp;<br><br></div><div><!--block-->Many lean studies lack critical depth, often concluding that lean is ubiquitous, and effective in most situations. This study looks in depth at<br>situations in which lean was not effectively implemented. This makes it a valuable contribution to lean literature.&nbsp;</div>"
+                            },
+                            {
+                                "speaker": "Assessment: Shaun Barker - Shingo Institute",
+                                "title": "The Shingo Prize: Navigating the Guidelines and Assessment",
+                                "detail": "Shaun Barker",
+                                "id": "shau-bark",
+                                "abstract": "<div><!--block-->Shaun Barker will give an overview of the Shingo application process and share some advice on how to make the process run smoothly. He will also provide suggestions on how to make challenging for the Prize more value-added for the applicant. Mr. Barker will cover both Shingo assessments – INSIGHT (the online assessment) and the site assessment. You will learn how the&nbsp;<em>Shingo Model</em>&nbsp;guides the assessment and&nbsp;what examiners look for when they assess the culture of an organization.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "9:00 - 9:10",
+                    "info": {
+                        "name": "Intermission",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "9:10 - 10:10",
+                    "info": {
+                        "name": "Concurrent Sessions",
+                        "detail": [
+                            {
+                                "speaker": "Deployment: Karl Wadensten - VIBCO",
+                                "id": "karl-wade",
+                                "detail": "Karl Wadensten",
+                                "title": "We're in the People Business Not the Manufacturing Business"
+                            },
+                            {
+                                "speaker": "Research: Troy Mumford - Colorado State University",
+                                "detail": "Troy Mumford",
+                                "id": "tro-mum",
+                                "abstract": "<div><!--block-->An organization’s lean culture influences its ability to effectively operate and systematically improve those operations. While it is often assumed that quality cultures are homogenous, this research explores how perceptions of organizational culture can vary significantly due to an employee’s strata in<br>the organization. This strata-effect is analyzed in a sample of four manufacturing firms. Results illustrate that the cultural perceptions vary significantly across organizational strata. In addition, the results indicate that the specific cultural drivers of employee engagement also vary based upon an employee’s organizational strata. The implications for understanding organizational culture and leading cultural change are discussed.</div>",
+                                "title": "Cultural Strata Effects: How lean culture drivers of engagement vary by employees’ level in the organization"
+                            },
+                            {
+                                "speaker": "Research: Rick Edgeman - Utah State University",
+                                "detail": "Rick Edgeman",
+                                "id": "edg-rick",
+                                "title": "Inter-and-Intra Organizational Dynamics of Strong Reciprocity: Synergetic Social-Ecological Innovation in the Anthropocene Age",
+                                "abstract": "<div><!--block-->In past times of abundant resources spanning intellectual, financial, social and natural capital domains, concern for social and environmental performance and impacts was generally limited. The frontiers of those concerns were bounded primarily through legislation or alternative regulatory forms. Often, real or perceived local scarcity of required or desired resources gave rise to “tributes” of those resources from captive nations – ancient precursors to today’s global supply chains.</div><div><!--block-->&nbsp;</div><div><!--block-->We live however, in the&nbsp;<em>Anthropocene Age</em>, one not geologic in origin, but rather, strongly influenced by human activity. As such, practices and policies deemed effective in those former times are rapidly moving into “the rear view mirror” due to mounting social, environmental, and related pressure on enterprises to produce, perform, and innovate responsibly. &nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->Concurrently, consumption of natural capital – which heretofore has been nearly unabated – has become increasingly cost prohibitive. This is due to various factors that range from scarcity (for example, of rare earth and precious metals used in high-technology products) to pariah status associated with generations of pollutants and consequent negative social and environmental impacts.&nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->Set against this backdrop, collaboration both within and across enterprises has ascended in importance. Such collaboration is driven in part by acknowledged needs for efficient stewardship of enterprise resources, and in part by the inherent logic of leveraging intellectual and other competences resident in partner enterprises, but missing, latent, or limited in one’s own enterprise. Equally, this ascendance is accompanied by the expectation that collaborative relationships are not only reciprocal ones, but are synergetic ones that provoke strongly reciprocal deliverables – that is – returns that exceed investments.</div><div><!--block-->&nbsp;</div><div><!--block-->Herein then, we examine the nature and motivations behind reciprocity, with particular attention devoted to its institutionalization and the value that contributes relative to improvements or innovations that produce positive social or environmental performance. At the same time, contributions of reciprocity to sustainable enterprise excellence, resilience, and robustness are discussed.</div>"
+                            },
+                            {
+                                "speaker": "Research: Andrea Birch-Jensen (Chalmers University of Technology), Jacob Hallencreutz (EPSI Rating Group) and Ida Gremyr (Chalmers University of Technology)",
+                                "id": "and-bir",
+                                "detail": "Birch-Jensen, Hallencreutz and Gremyr",
+                                "title": "Customer Perception Measurements as Drivers for Improvements: A Comparative Multiple Case Study",
+                                "abstract": "<div><!--block-->There are many references in literature about the importance of customer satisfaction and related non-financial performance measures. However, previous research within the field has largely focused on why firms should use these measurements, but not on the actual utilization itself. Researchers conducted a study to identify factors influencing the use of customer perception measurements as drivers for improvements. The study is based on more than 35 interviews with 20 companies in numerous different industries operating in Sweden. The companies investigated have different characteristics in terms of industry, size and score on the EPSI Rating Group’s customer satisfaction measurement. This enables an investigation of various factors that potentially influence if, and how, the customer perception measurements are used as a part of the companies’ continuous improvement efforts, e.g. in lean programs.&nbsp;<br><br></div><div><!--block-->The findings show that the challenges experienced when using customer perception measurements as a driver of improvements span across industry boundaries, which is an indicator for a relatively low maturity of using non-financial performance measurements in continuous improvement efforts. Companies that more often utilize customer perception measurements in their improvement efforts score higher than others in regards to the EPSI customer satisfaction measurements. In addition to structural mechanisms, these companies have e.g. a customer-focused organizational culture. The combination of these two domains appear successful in the studied companies, since it has the potential to enable companies to take direct action on the customer perception measurement results. An activity which appears to lead to higher customer satisfaction scores.</div>"
+                            },
+                            {
+                                "speaker": "Energy: Evgeniy Ledenev - DTEK",
+                                "detail": "Evgeniy Ledenev",
+                                "id": "evge-lede",
+                                "title": "Sustaining a Lean Journey in a Crisis",
+                                "abstract": "<div><!--block-->DTEK is an Ukrainian energy company with 120k employees and 40+ entities spread across Ukraine. They started their lean journey in 2013 during calm economic and political conditions. After they defined the lean concept, they made two pilot implementations and started the rollout. Along the journey \"revolution of dignity\" entered into our plans. Ukraine lost the Crimea peninsular and people were divided into two camps - West and East, the currency depreciated by 400 percent, and the GDP dropped by 40 percent, and inflation reached double digits.<br><br>DTEK lost the Crimea Power Distribution Company, half of their business and people located in the Donetsk and Luhansk region. The new government was extremely hostile against DTEK and used all possible means to make them bankrupt.<br>&nbsp;<br>When the crisis started, they had rolled out lean into nine entities. They had a choice of freezing their efforts but decided to continue. Implementing lean in entities, even ones in trouble, gave huge boost to the moral, efficiency and motivation. By the end of the 2015, they covered 43 entities reaching level three out of four in the maturity matrix at some entities.&nbsp;<br><br>Their direct bottom line impact is 1-2 percent of costs, but there are much more unaccounted efficiencies gained. As one of their directors said: \"Without lean we would not be able to fulfill production plan with 20-30 percent of requirements being paid for\".&nbsp;<br><br>How they did it will be discussed in the presentation.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "10:10 - 10:40",
+                    "info": {
+                        "name": "Networking Break",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "10:40 - 11:30",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "id": "john-vell",
+                                "detail": "John Vellema",
+                                "speaker": "John Vellema - Business Through People",
+                                "title": "Building a Global Learning Organization",
+                                "abstract": "<div><!--block-->John Vellema will share his experience on how he and his colleague performed the planning and implementation of the LEGO Group's worldwide Learning Organization. He will share how they developed a global structure for learning to create and sustain standardized work across multiple language and cultural platforms.&nbsp;He will also explain the organizational and planning models used by the LEGO Group to create the internal ability to give and receive tacit skills and knowledge.&nbsp;</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "11:40 - 12:30",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "speaker": "Christian Houborg - Lundbeck",
+                                "detail": "Christian Houborg",
+                                "id": "chri-houb",
+                                "title": "The Lundbeck Lean Transformation",
+                                "abstract": "<div><!--block-->In this session, learn how Lundbeck has kept momentum of their lean journey for ten years through four transformational phases. Learn how they are creating a world-class operational excellence culture. Get insights on how leadership development has been utilized to transfer the ownership of lean to the individual leader. Understand the systems and thinking that drives the lean culture and the associated behavior.&nbsp;<br><br>H. Lundbeck A/S is an international pharmaceutical company highly committed to improving the quality of life for people suffering from central nervous system disorders. For this purpose Lundbeck is engaged in the research and development, production, marketing and sales of pharmaceuticals around the world, targeting disorders such as depression, anxiety, schizophrenia and insomnia as well as Huntington's, Alzheimer's and Parkinson's diseases.<br><br>Lundbeck’s vision is to strive for global leadership in psychiatry and neurology by improving the lives of patients. Lundbeck is the only fully integrated pharmaceutical company that focuses exclusively on brain disorders. Lundbeck has a turnover of approximately 2 billion euros and employ 5,000 people.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "12:30 - 14:00",
+                    "info": {
+                        "name": "Lunch",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "14:00 - 14:50",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "detail": "Shahir Rona",
+                                "id": "shah-rona",
+                                "speaker": "Shahir Rona - Novo Nordisk",
+                                "title": "From Working Tool-Based to Working Principle-Based – Our Journey of Deploying the Shingo Model™",
+                                "abstract": "<div><!--block-->Shair Rona, senior manager and CVP lean partner at Novo Nordisk A/S, will discuss how a Novo Nordisk production site is deploying the Shingo Model. Novo Nordisk is a global healthcare company with more than 90 years of innovation and leadership in diabetes care. Mr. Rona will share his personal learnings and reflections related to the company’s pursuit of excellence.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "14:50 - 15:00",
+                    "info": {
+                        "name": "Intermission",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "15:00 - 15:45",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "speaker": "Ritsuo Shingo - Institute of Management Improvement",
+                                "id": "rits-shin",
+                                "detail": "Ritsuo Shingo",
+                                "title": "My Leadership",
+                                "abstract": "<div><!--block-->In this presentation, Ritsuo Shingo will speak on the following topics:<br>&nbsp; &nbsp; &nbsp;a) Gemba + Go &amp; Watch<br>&nbsp; &nbsp; &nbsp;b) Creek Through the Plant (My Leadership Book)<br>&nbsp; &nbsp; &nbsp;c) Genryu Kanri (Souce Control)<br>&nbsp; &nbsp; &nbsp;d) Up Stream/Down Stream<br>&nbsp; &nbsp; &nbsp;e) Lead Time (Products Flow/Operators Flow)</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "15:50 - 16:00",
+                    "info": {
+                        "name": "Shingo Moment"
+                    }
+                }
+            ]
+        }
+    ],
+    "registration": {
+        "link": "http://www.cvent.com/d/pvqnx5",
+        "prices": [
+            {
+                "type": "Main Conference (December 1-2)",
+                "price": "€1150 + 25% VAT"
+            },
+            {
+                "type": "Lundbeck Tour (November 30) - FULL",
+                "price": "€150 + 25% VAT"
+            }
+        ]
+    },
+    "se_info": "<div><!--block-->Exhibitors at the Shingo European Conference enjoy the chance to discover new clients as well as reconnect with current customers in a highly relevant and social atmosphere. With plenty of networking opportunities throughout each day, you’re sure to develop new leads and contacts eager to begin a lasting, mutually beneficial relationship. Exhibitors also receive an opt-in email roster of attendees and are highlighted on the Shingo app and print items.<br><br></div><div><!--block-->We offer several tax-deductible sponsorship opportunities that place your company name in front of more than 16,000 professionals and decision-makers across the globe. As a major contributor to the value and success of the Shingo European Conference, you'll position your brand as a thought-leader committed to excellence. Conference attendees are mid- to senior-level management representing more than 650 companies worldwide.<br><br></div><div><!--block-->The available levels of sponsorship are as follows:<br><br>Keynote Sponsorship: €3,000&nbsp;<br>&nbsp;- Includes: Logo on printed materials, logo included on mobile app, recognition from podium<br><br>Full page ad in conference daybook: €4,000&nbsp;<br>Half page ad in conference daybook: €2,000<br><br>Logo projection on conference hall: €5,000&nbsp;<br>&nbsp;- Includes: Digital logo displayed on walkways in meeting venue&nbsp;<br><br>Exhibit Booth: €2,500&nbsp;<br>&nbsp;- booths open on December 1 at 7:00 and end on December 2 at 15:00<br>&nbsp;- Includes: one six foot table with drape and two chairs and one conference registration<br><br></div><div><!--block-->For more information about exhibiting or becoming a sponsor, please contact Mary Price,&nbsp;<a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>, 435.797.3785.<br><br></div>",
+    "travel": {},
+    "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UrWJFEA3' ORDER BY Speaker_Contact__r.LastName",
+    "ta_info": {
+        "title": "This year's European Conference will be held in Copenhagen, Denmark.",
+        "location": "<div><!--block--><strong>Scandic Copenhagen&nbsp;</strong><br>Vester Søgade 6,<br>Dk- 1601 København V,<br>Copenhagen, Denmark</div>",
+        "travel": "<div><!--block-->&nbsp; Copenhagen Airport (CPH)<br><br></div>",
+        "hotel": "<div><!--block--><strong>Scandic Copenhagen</strong><br>Vester Søgade 6,<br>Dk- 1601 København V,<br>Copenhagen, Denmark<br>+45 33 75 70 88<br><br>Group Rate: 1,345 DKK/night, including breakfast and wifi. Hotel block has been released.&nbsp; Please call hotel directly to reserve your room. Rates may vary.<br><br></div>",
+        "parking": "<div><!--block-->Parking is available at the hotel for a fee of 195 DKK per day.</div>",
+        "internet": "<div><!--block-->Complimentary Wi-Fi Internet access is available in all areas of the convention center as well as the hotel for conference participants.</div>",
+        "things": "<div><!--block-->Wondering what to do in your free time? Do you have family members traveling with you? Learn more about&nbsp;<a href=\"http://www.visitcopenhagen.com/copenhagen-tourist\">visiting Copenhagen</a>.&nbsp;<br>Also, the&nbsp;<a href=\"https://www.visitcopenhagen.com/copenhagen/sightseeing/top-30-attractions\">Top 30 Attractions</a>&nbsp;of the city.</div>"
+    },
+    "filename": "europe.json"
+}

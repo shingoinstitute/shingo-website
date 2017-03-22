@@ -1,0 +1,316 @@
+{
+    "name": "Manufacturing Summit",
+    "date": "September 19-21, 2016",
+    "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1435177413/ShingoAllWhite_h7jwhw.png",
+    "background_image": "http://res.cloudinary.com/shingo/image/upload/v1461674551/Summits/2016Manufacturing/Web-Banner---Manufacturing.png",
+    "location": "Knoxville, Tennessee",
+    "intro": "<div><!--block-->Come learn from manufacturing leaders how mid-level managers can make big transformations in their organizations using the principles of the&nbsp;<em>Shingo Model™</em>. Smart, dedicated managers are critical for enterprise excellence. Come and learn what managers like you have done to make notable improvements to their organizations. You’ll hear experienced leaders as keynote speakers and in break-out sessions where you can join the discussion. You’ll network with leaders and managers like you who are all striving to improve their manufacturing companies. If you’re in manufacturing and want continuous improvement, please join us.</div>",
+    "presentation_copy": "This summit will be presented in English.",
+    "agenda": [
+        {
+            "name": "Monday",
+            "title": "September 19 - Pre-Conference",
+            "sessions": [
+                {
+                    "info": {
+                        "detail": [
+                            {
+                                "speaker": "Rick Edgeman, Director of Research, Shingo Institute",
+                                "id": "rick-edg",
+                                "abstract": "<div><!--block-->Six sigma has been developed largely in parallel with and complementary to lean enterprise theory and methods with a result often referred to as lean six sigma, wherein radical innovation in and/or design of products, processes and systems are approached through a “lean lens” that is highly resource sensitive, or a “lean and green” lens that also embeds social and ecological considerations. Innovation may be pursued via the define-measure-analyze-improve control (DMAIC) algorithm whereas design for six sigma<em>&nbsp;(</em>DFSS)<em>&nbsp;</em>applies a<em>&nbsp;</em>define-measure-analyze-design-verify (DMADV)<em>&nbsp;</em>approach.</div><div><!--block-->&nbsp;</div><div><!--block-->Integrated design, innovation and lean approaches provide highly structured and complementary strategies for acquiring, assessing and activating customer, competitor and enterprise intelligence that lead to superior product, system or enterprise innovations and designs that are intended to meet and surpass varied stakeholder expectations, thus driving an enterprise’s quest for a sustainable competitive advantages. This is accomplished through strategic linkage of customer-driven, highly resource efficient approaches that yield nearly perfectly performing processes and products.&nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->Six sigma integrates strategies and tools from statistics, quality, business, and engineering and has added billions of dollars/euros to enterprise bottom lines across financial, healthcare, military, manufacturing and other economic sectors. Its focus divides into two significant branches – innovation and design – that share a number of tools, techniques and objectives, but that often apply the tools and techniques differently, owing to their differing objectives. The innovation branch of six sigma focuses on significant innovation/redesign in or of existing products, processes and systems while the second branch, referred to as design for six sigma, is directed at design of new products, processes or systems.&nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->This course provides an overview of the most commonly used six sigma methodology, DMAIC innovation approach, along with integrated consideration of a limited selection of supporting tools. In general, the subject will be approached as one dealing with a value continuum that spans the range from recovery of value sacrificed to poor practices, poor processes, poor partnerships, ad infinitum to creation of new value. &nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->The content will mainly be presented in discussion format with the expectation that participants will practice some methods in small groups. Addressed topics will include:<br><br></div><ul><li><!--block-->● Innovation, Design and Lean Philosophy&nbsp;</li><li><!--block-->● Voice of the Customer Approaches</li><li><!--block-->● Six Sigma for Innovation &amp; Design: Introduction to DMAIC &amp; DMADV Approaches</li><li><!--block-->● Plan-Do-Study-Act (PDSA or Deming Wheel) Cycles</li><li><!--block-->● Process Capability and Control</li><li><!--block-->● Select Management &amp; Planning Tools for Innovation &amp; Design</li><li><!--block-->● Failure Modes &amp; Effects Analysis</li></ul><div><!--block-->&nbsp; &nbsp;</div><div><!--block-->Six sigma approaches are commonly applied in team environments. Similarly, six sigma integrates knowledge and strategies from quality management, engineering, business, and statistics so it is helpful to have a background in these areas, but it is not necessary. Although much of the six sigma methodology and practice is statistically oriented, no recent statistical exposure or practice is expected of participants, as instead, focus will be placed on concepts. Participants should generally be customer/stakeholder-focused.<br><br>Successful completion of this course will facilitate participant understanding of six sigma’s DMAIC approach and the customer focus upon which it is built. Introduction to selected methods will deepen this understanding. At the end of the course, participants will receive a certificate of completion and qualify for eight continuing education credits.&nbsp; &nbsp;</div>",
+                                "detail": "Six Sigma Innovation Workshop"
+                            }
+                        ],
+                        "name": "Six Sigma Innovation Workshop"
+                    },
+                    "time": "8:00 - 17:00"
+                },
+                {
+                    "info": {
+                        "detail": [
+                            {
+                                "speaker": "Denso",
+                                "abstract": "<div><!--block-->DENSO Corporation, headquartered in Kariya, Japan, is one of the world’s largest producers of advanced technology components and systems for all major automakers. With over 105,000 associates in 32 nations, Denso International America is headquartered in Southfield, Michigan, and employs over 15,000 people across North America. DENSO Manufacturing Tennessee is one of the largest companies outside of Japan, with 1.5 million square feet of manufacturing, with four manufacturing divisions on 154 acres of land. With over 90 major customer awards for quality, delivery and cost in its first 16 years of operation, the state-of-the-art facilities in Maryville, Tennessee, employ more than 2,500 associates.</div><div><!--block--><br></div><div><!--block-->Tour participants will see the Instrument Cluster Division, which has won multiple awards for its environmental programs as well as its manufacturing system. A Shingo Prize recipient in 2007, participants will learn how the division has driven significant productivity and quality improvements year-over-year through its use of kaizen circles and employee IDEA suggestion system. A multiple World Team Excellence Competition Finalist and four-time winner of the #1 IDEA Suggestors of the Year, the IC Division is a leader in employee engagement. In addition to seeing how the IC Division engages its employees, participants will spend time on the floor learning how the DENSO production system consistently produces excellence in quality, cost and delivery.</div>",
+                                "detail": "Denso Tour",
+                                "id": "den-tou"
+                            }
+                        ],
+                        "name": "Tours"
+                    },
+                    "time": "13:00 - 16:30"
+                }
+            ]
+        },
+        {
+            "name": "Tuesday",
+            "title": "September 20 - Main Conference",
+            "sessions": [
+                {
+                    "time": "07:30 - 09:00",
+                    "info": {
+                        "name": "Breakfast & Registration",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "09:00 - 09:50",
+                    "info": {
+                        "name": "Executive Director Remarks",
+                        "detail": [
+                            {
+                                "title": "Craftsmanship",
+                                "speaker": "Ken Snyder",
+                                "id": "ken-sny",
+                                "abstract": "<div><!--block-->In the U.S. we have a strong tradition of craftsmanship, particularly in the area of innovation: new ideas and new products. Unfortunately, in order to save money on labor costs, we have shifted more manufacturing jobs outside the U.S. than is healthy for the economy. We can retain more manufacturing jobs if we focus on craftsmanship, and many companies are already doing it.<br><br>Ken Snyder will discuss the Craftsmanship Project, which has been designed to help keep manufacturing jobs local. The project will create a collection of stories and experiences from people who are part of manufacturing companies that have preserved the craftsmanship ethic in their organizations as a way of maintaining local manufacturing jobs. Mr. Snyder will share ways participants can focus on craftsmanship in their organizations.&nbsp;</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "09:50 - 10:00",
+                    "info": {
+                        "name": "Intermission",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "10:00 - 10:50",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "abstract": "<div><!--block-->As a lean transformation leader, you will have to face and overcome a number of critical conditions that doom most lean transformation efforts. Successfully leading your organization through this transformation to the profitable growth beyond is both an art and science and requires a lean leader with a deeper understanding of lean as a comprehensive business system, experience in transformation leadership skills and new discoveries in organizational science, and an understanding of&nbsp;<em>Shingo Guiding Principles</em>&nbsp;to serve as the foundation for your lean culture. Your lean leadership will require a breakthrough strategy that includes new thinking about keystone leadership routines, the science of exponential organizations, structural and environmental changes, and a comprehensive lean business model with the strength to unseat your current leader mindsets, behaviors, routines, management system, and existing culture in order to create a culture that will generate breakthrough performance and an engaging culture of excellence.</div><div><!--block--><br>Internationally recognized lean transformation and lean leadership development expert and former green beret officer, Sam MacPherson will share how he integrates his challenging leadership approach, the&nbsp;<em>Shingo Model™</em>, and the implementation of a comprehensive lean management system, to help you lead a successful lean transformation, breakthrough performance, and create a culture of excellence at every level of the organization. The subject of this presentation is currently the foundation of a three-part research project by Mr. MacPherson and Dr. Eric Olsen of Cal-Poly.</div><div><!--block-->&nbsp;</div><div><!--block-->This keynote session will explore the current state lean and enterprise excellence transformation efforts, barriers to a successful lean transformation and culture of excellence, the three critical “must haves” for a successful lean transformation, the role of the leader in creating a culture of excellence, the&nbsp;<em>Shingo Model</em>&nbsp;as the pilot-light for your culture of excellence, and the secret to getting senior leadership engagement, as well as new discoveries in organizational behavior science that are essential for leading a lean transformation and culture of excellence.</div>",
+                                "speaker": "Sam MacPherson",
+                                "title": "Leading a Culture of Excellence: The Art and Science of Leading a Successful Lean Transformation and Beyond",
+                                "id": "sam-macp",
+                                "detail": "Sam MacPherson"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "10:50 - 11:20",
+                    "info": {
+                        "name": "Networking Break",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "11:20 - 12:10",
+                    "info": {
+                        "name": "Concurrent Sessions",
+                        "detail": [
+                            {
+                                "speaker": "Michael Muilenburg",
+                                "id": "mich-muil",
+                                "abstract": "<ul><li><!--block-->In this session, you’ll hear about positive change and some challenges as 3M applies the enterprise excellence principles across a very large and complex organization. You will learn how 3M leaders have taken several different paths to transform the culture and create lasting improvements by focusing on improving their key systems.</li></ul>",
+                                "title": "Looking through the Enterprise Excellence Lens",
+                                "detail": "Michael Muilenburg"
+                            },
+                            {
+                                "speaker": "Tom Wieck & Pablo Silber",
+                                "id": "tom-wie",
+                                "abstract": "<ul><li><!--block-->In this session you will learn a simple and straightforward problem-solving methodology that all employees can understand and apply. Like any system in the Shingo Model, this methodology is supported by various principles and systems. Come learn the basics using SIPOC diagrams, embedding meaningful metrics, identifying trends, applying basic problem-solving tools and driving to sustainable corrective and preventative actions. See how GELITA USA is successfully utilizing this approach to advance their continuous improvement maturity by developing and engaging all employees.</li></ul>",
+                                "title": "Fix the Issue: Problem-Solving Model for All Employees",
+                                "detail": "Tom Wieck & Pablo Silber"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "info": {
+                        "name": "Lunch",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "13:30 - 17:00",
+                    "info": {
+                        "name": "Workshops",
+                        "detail": [
+                            {
+                                "speaker": "Gwendolyn Galsworth",
+                                "title": "Visual Workplace-Visual Management: Sustainable Operational Excellence",
+                                "id": "gwen-gals",
+                                "abstract": "<div><!--block-->The visual workplace is a compelling operational imperative, crucial to meeting production goals— central to your war on waste, vastly reduced lead times, and an accelerated flow. The result is a self-ordering, self-explaining, and self-regulating workplace where what&nbsp;<em>is supposed</em>&nbsp;to happen&nbsp;<em>does&nbsp;</em>happen—on time, every time, day or night—<em>because&nbsp;</em>of visual solutions. An effective visual conversion can increase productivity by a documented 15% to 30%. Far too many companies, however, focus on point solutions&nbsp;<em>only</em>&nbsp;and miss visuality’s capacity to transform and sustain.&nbsp;</div><div><!--block--><br>In this workshop you will:<br>● Learn to distinguish between visual tools and visual strategy&nbsp;<br>● Understand the vital difference between visual management and the visual workplace<br>● Gain three tools you can use immediately to trigger more robust visual solutions&nbsp;<br>● Learn the six principles that drive every visual conversion<br>● Understand the fit between visuality and lean—and the power of the Visual-Lean® Alliance<br>● Discover how visuality can energize your workforce, even in a multi-lingual/multi-cultural/multi-shift company</div>"
+                            },
+                            {
+                                "speaker": "Norbert Majerus",
+                                "detail": "Norbert Majerus",
+                                "title": "Lean-Driven Innovation",
+                                "id": "nor-maj",
+                                "abstract": "<ul><li><!--block-->Innovation is a major driver for Western industrial growth, but innovation is not limited to a handful of inventors in R&amp;D. Innovation engages a complete enterprise. Engineers must learn to observe customers, manufacturing operations have to collaborate in new ways with R&amp;D and marketing, and the supply chain has to assure efficient distribution by developing innovative methods. The same innovative thinking applies to all involved in the value stream, and lean thinking can help a lot with this process. Although lean originally had a reputation for slowing down innovation, that all changed with Eric Ries’ bestseller book,&nbsp;<em>Lean Startups</em>. The software/web industry was the first to make the lean ideas work, but Goodyear and many other companies have proven that the same concepts work for traditional manufacturing companies as well.&nbsp;</li></ul><div><!--block--><br></div><div><!--block-->There is not a lot of training available on this subject yet, so Goodyear developed a program based on its large experience with innovation, good benchmarking of leading companies, and an extensive review of the published knowledge on the subject. Norbert Majerus, Goodyear’s lean champion, will share this workshop with conference participants.&nbsp;<br><br></div>"
+                            },
+                            {
+                                "speaker": "Shannon Barrett",
+                                "title": "Value Stream Management for Transactional and Back Office Processes",
+                                "id": "shan-barr",
+                                "abstract": "<div><!--block-->The value stream map has been a useful tool for driving operational improvements for years. While the tool is well suited for understanding a manufacturing process, many people struggle to apply value stream mapping techniques into the transactional and back office processes. This presentation will show participants how to take the familiar and effective value stream map from the shop floor to the back office and use it as an engine to drive transformation in administrative processes.</div><div><!--block-->&nbsp;</div><div><!--block-->During this workshop participants will:<br> ● Learn how to construct current and future state value stream maps of a transactional process.  </div><div><!--block-->● Discover how to calculate and document process lead time and capacity in a back office process.</div><div><!--block-->● Gain techniques to understand and document the process complexity and variation inherent in back office processes. </div><div><!--block-->● Understand how to apply the lean process design concepts to a business process.</div><div><!--block-->● Acquire useful tips and tricks to collect critical process data, and learn the use of the value stream map to drive improvements to the flow of work in an administrative process.</div>"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "15:00 - 15:30",
+                    "info": {
+                        "name": "Networking Break"
+                    }
+                },
+                {
+                    "time": "17:00 - 18:00",
+                    "info": {
+                        "name": "Networking Happy Hour"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Wednesday",
+            "title": "September 21 - Main Conference",
+            "sessions": [
+                {
+                    "time": "07:00 - 08:30",
+                    "info": {
+                        "name": "Breakfast & Registration",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "08:30 - 12:00",
+                    "info": {
+                        "name": "Workshops",
+                        "detail": [
+                            {
+                                "speaker": "Steve Moore",
+                                "title": "Leader Standard Work",
+                                "id": "stev-moor",
+                                "abstract": "<ul><li><!--block-->It’s around 7 pm and you are driving home from work exhausted, head spinning, and trying to analyze the day. Then it hits you, “What did I accomplish today?” I was busy, I’m tired, but how many ‘to-dos’ on my list got crossed off?<br>&nbsp;<br>In today’s world of ever-increasing demands on our daily personal time and resources, hours fly by, rapidly turning into days and weeks. Retrospectively we look disappointingly at our uncompleted tasks and plans. We look in the rear-view mirror and re-commit to do better. Something needs to change!<br>&nbsp;<br>This engaging Leader Standard Work workshop will provide solutions and tools to assist you, your managers and organizations accomplish more during the day, and make you accountable for what you originally set out in the morning determined to do.</li></ul>",
+                                "detail": "Steve Moore"
+                            },
+                            {
+                                "title": "Coaching",
+                                "abstract": "<ul><li><!--block-->Mike Martyn is the founder of SISU Consulting Group and a certified facilitator for the Shingo Institute. As a former turnaround specialist, Mr. Martyn has held numerous senior executive positions, rapidly driving business results in both service and manufacturing environments. Since founding SISU, h has coached many world-class organizations including Baxter Healthcare, Boeing, Raytheon, Boston Scientific, La-Z-Boy, O.C. Tanner, Bacardi and Aera Energy. Come learn the tools needed to become an effective change agent and coach in your own organization.&nbsp;</li></ul>",
+                                "speaker": "Mike Martyn",
+                                "id": "mike-mart",
+                                "detail": "Mike Martyn"
+                            },
+                            {
+                                "speaker": "Shaun Barker",
+                                "title": "Shingo Assessments & Challenging for the Prize",
+                                "id": "shau-bark2",
+                                "abstract": "<ul><li><!--block-->Learn some basic tools on how to do your own internal assessments based on the&nbsp;<em>Shingo Model</em>&nbsp;and learn how to prepare yourself to challenge for the Shingo Prize.</li></ul>",
+                                "detail": "Shaun Barker"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "10:00 - 10:30",
+                    "info": {
+                        "name": "Networking Break",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "12:00 - 13:30",
+                    "info": {
+                        "name": "Lunch",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "13:30 - 14:20",
+                    "info": {
+                        "name": "Concurrent Sessions",
+                        "detail": [
+                            {
+                                "speaker": "Tom Moore & Peter Barboni",
+                                "id": "tom-moo",
+                                "abstract": "<ul><li><!--block-->Think systemically: Learn about Intek's continuous improvement journey and how systems drive behaviors.</li></ul>",
+                                "title": "Systems Drive Behavior: How can this be?",
+                                "detail": "Tom Moore & Peter Barboni"
+                            },
+                            {
+                                "speaker": "Tyson Heaton",
+                                "id": "tys-hea",
+                                "abstract": "<div><!--block-->In this session, you'll learn the secrets behind three key routines that keep OC Tanner’s culture healthy and flourishing. This robust culture enables OC Tanner to leverage the&nbsp;<em>Shingo Model&nbsp;</em>to engage every employee in striving for excellence. But what makes a healthy culture? What elements need to be present for a learning organization? And what routines can assist any organization in infusing their culture with the&nbsp;<em>Shingo Model</em>, while simultaneously strengthening organizational values and purpose? By attending this session, you'll find the answers to these questions and more.</div>",
+                                "title": "Beyond the Burning Platform: Harnessing the Power of Routines to Create a Healthy Company Culture that Drives Improvement and Growth",
+                                "detail": "Tyson Heaton"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "14:20 - 14:50",
+                    "info": {
+                        "name": "Networking Break",
+                        "detail": []
+                    }
+                },
+                {
+                    "time": "14:50 - 15:40",
+                    "info": {
+                        "name": "Keynote Presentation",
+                        "detail": [
+                            {
+                                "title": "We're in the People Business, Not the Manufacturing Business",
+                                "id": "kar-wad",
+                                "detail": "Karl Wadensten",
+                                "speaker": "Karl Wadensten"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": "15:50 - 16:40",
+                    "info": {
+                        "name": "Keynote",
+                        "detail": [
+                            {
+                                "speaker": "Don Tracy",
+                                "title": "Culture Drives Behavior",
+                                "abstract": "<div><!--block-->In any business and/or organization, the mission, vision and value help to define and give reference to the decision-making processes that are vital to the organization. But what about culture? Don Tracy will explore the obstacles and behaviors that impede cultural change. He will bring some real-life examples of how a culture of empowerment and associate development can yield positive impact to the bottom line.</div>",
+                                "detail": "Don Tracy",
+                                "id": "don-tra"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "registration": {
+        "link": "http://www.cvent.com/d/3fqbg6",
+        "prices": [
+            {
+                "type": "Main Conference",
+                "price": "$945"
+            },
+            {
+                "type": "- Group of 3 or more (price automatically calculated in reg. system)",
+                "price": "$895"
+            },
+            {
+                "type": "Tours",
+                "price": "$195"
+            },
+            {
+                "type": "Six Sigma Innovation Workshop",
+                "price": "$495"
+            }
+        ]
+    },
+    "se_info": "<div><!--block-->Exhibitors at the Shingo Manufacturing Summit get the chance to talk with the people make and influence purchasing decisions within manufacturing companies. Only a limited number of exhibitor slots are available in this low-key, low pressure event designed for about 400 attendees. It’s a terrific opportunity to talk seriously to your future customers and begin lasting relationships with them.<br><br></div><div><!--block-->As an exhibitor at the Shingo Manufacturing Summit, your company will get an opt-in list of attendees, have your name and logo on the Shingo App and various printed materials at the Summit. You’ll also have your name and logo as an exhibitor on announcements that go out to over 25,000 leaders and manager around the world. This is your chance to position your company as a leader committed to manufacturing excellence in front of the people who can bring the most to your bottom line.<br><br>The available levels of sponsorship are as follows:<br><br>Keynote Sponsorship: $3,000&nbsp;<br>&nbsp;- Includes: Logo on printed materials, logo included on mobile app, recognition from podium<br><br>Full page ad in conference daybook: $4,000&nbsp;<br>Half page ad in conference daybook: $2,000<br><br>Carpet Stickers: $5,000&nbsp;<br>&nbsp;- Includes: Printed logo on 12 inch circle placed on carpeted areas in meeting venue (minimum of two)<br><br>Exhibit Booth: $1,500&nbsp;<br>&nbsp;- booths open on September 20 at 7 am and ends on September 21 at 3 pm<br>&nbsp;- Includes: one six foot table with drape and two chairs and one conference registration<br><br>For more information about exhibiting or becoming a sponsor, please contact Mary Price:&nbsp;<a href=\"mailto:mary.price@usu.edu\">mary.price@usu.edu</a>&nbsp; |&nbsp; (435) 797-3785<br><br></div>",
+    "ta_info": {
+        "title": "",
+        "location": "<div><!--block-->Marriott Knoxville,</div><div><!--block-->501 E. Hill Aven</div><div><!--block-->Knoxville, TN 37915</div><div><!--block-->1-865-637-1234</div>",
+        "travel": "<div><!--block-->Airport: McGhee Tyson Airport (TYS)</div>",
+        "hotel": "<div><!--block-->Marriott Knoxville,</div><div><!--block-->501 E. Hill Ave.</div><div><!--block-->Knoxville, TN 37915</div><div><!--block-->1-865-637-1234<br><br>Rate: $134.95/night<br>Please call the hotel directly to receive the group rate or email reservations771@marriottsales.com.&nbsp;</div>",
+        "parking": "<div><!--block-->- Free parking at the hotel<br>- Free parking in downtown Knoxville after 5 pm<br>- Complimentary shuttle from hotel to downtown</div>",
+        "internet": "<div><!--block-->Complimentary internet for Shingo Attendees</div>",
+        "things": "<div><!--block-->Things to do in Knoxville:&nbsp;<a href=\"http://www.visitknoxville.com/things-to-do\">http://www.visitknoxville.com/things-to-do</a>/&nbsp;</div>"
+    },
+    "speaker_query": "SELECT Id, Speaker_Contact__r.Name, Speaker_Type__c, Speaker_Contact__r.Account.Name, Biography__c, Speaker_Contact__r.Title, Speaker_Image__c FROM Speaker__c WHERE Event__c='a0R1200000UmjyDEAR' ORDER BY Speaker_Contact__r.LastName",
+    "filename": "manufacturing.json"
+}
