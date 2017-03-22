@@ -230,11 +230,7 @@ router.get('/events/:name', function(req, res, next) {
     var keynote = new Array()
     var concurrent = new Array()
     var template = 'summit'
-
     if (req.params.name=='oe') {template = 'partners-summit'}
-    console.log(template)
-
-
     res.render('conference/summit', {
             layout: template,
             title: event.name + ' - Shingo Institute',
