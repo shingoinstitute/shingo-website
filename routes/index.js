@@ -229,9 +229,14 @@ router.get('/events/:name', function(req, res, next) {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     var keynote = new Array()
     var concurrent = new Array()
+    var template = 'summit'
+
+    if (req.params.name=='oe') {template = 'partners-summit'}
+    console.log(template)
+
 
     res.render('conference/summit', {
-            layout: 'summit',
+            layout: template,
             title: event.name + ' - Shingo Institute',
             keynote: keynote,
             concurrent: concurrent,
