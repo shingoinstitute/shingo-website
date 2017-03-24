@@ -25,12 +25,12 @@
     "speaker_query": "",
     "ta_info": {
         "title": "",
-        "location": "",
-        "travel": "",
-        "hotel": "",
-        "parking": "",
-        "internet": "",
-        "things": ""
+        "location": "Thanksgiving Point, 3003 Thanksgiving Way, Lehi, UT 84043",
+        "travel": "Airport: Salt Lake City International (SLC)<br><br>If you are traveling by Frontrunner, please exit at the Lehi Station.  It is a short walk to the Show Barn (large red building). Please note that Frontrunner does not run on Sunday.  For those of you flying in to the event, the SLC airport has many available taxis, car rentals, or you may consider a shared-ride service.  We recommend Express Shuttle.  Please reserve your ride by clicking the following link: <a href='http://www.expressshuttleutah.com/' target='blank'>http://www.expressshuttleutah.com/</a>.",
+        "hotel": "<strong>Hyatt Place Salt Lake City/Lehi</strong><br>3700 Outlet Pkwy,<br> Lehi, UT 84043",
+        "parking": "Free parking at the hotel and venue",
+        "internet": "Complimentary WIFI available",
+        "things": "<a href='https://www.thanksgivingpoint.org/' target='blank'>https://www.thanksgivingpoint.org/</a><br><a href='https://www.visitsaltlake.com/things-to-do/' target='blank'>https://www.visitsaltlake.com/things-to-do/</a>"
     },
     "filename": "oe.json"
 }
