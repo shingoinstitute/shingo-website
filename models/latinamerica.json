@@ -1,6 +1,6 @@
 {
     "name": "Congreso Shingo Latin America",
-    "date": "July 10 - 14, 2017",
+    "date": "July 31 - August 4, 2017",
     "logo": "http://res.cloudinary.com/shingo/image/upload/c_scale,h_150/v1489519910/Events/RegionalConference/2017/Latin%20America/Congreso-Shingo-Latin-America-White.png",
     "background_image": "http://res.cloudinary.com/shingo/image/upload/v1487973305/Events/RegionalConference/2017/SantiagodeChile.jpg",
     "location": "Santiago, Chile",
@@ -9,27 +9,27 @@
     "agenda": [
         {
             "name": "Monday",
-            "title": "July 10 - Tours",
+            "title": "July 31 - Tours",
             "sessions": []
         },
         {
             "name": "Tuesday",
-            "title": "July 11 - Main Conference",
+            "title": "August 1 - Main Conference",
             "sessions": []
         },
         {
             "name": "Wednesday",
-            "title": "July 12 - Main Conference",
+            "title": "August 2 - Main Conference",
             "sessions": []
         },
         {
             "name": "Thursday",
-            "title": "July 13 - Discover Excellence Workshop",
+            "title": "August 3 - Discover Excellence Workshop",
             "sessions": []
         },
         {
             "name": "Friday",
-            "title": "July 14 - Discover Excellence Workshop",
+            "title": "August 4 - Discover Excellence Workshop",
             "sessions": []
         }
     ],
