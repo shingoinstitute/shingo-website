@@ -213,7 +213,7 @@ footer img {
 }
 #home-tri {
     background: #ffffff;
-    padding: 30px 15px;
+    padding: 15px 15px;
 }
 #home-tri .columns h6 {
     line-height: 1.45em;
@@ -235,7 +235,7 @@ footer img {
 }
 @media only screen and (min-width: 768px) {
     #home-tri .four.columns {
-        min-height: 580px;
+        min-height: 380px;
         position: relative;
     }
     #home-tri .btn {
