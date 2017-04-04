@@ -632,7 +632,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     }
     #workshops img {
         max-width: 75px;
-        diplay: inline-block;
+        display: inline-block;
     }
     #workshops li {
         text-align: center;
