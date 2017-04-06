@@ -91,22 +91,6 @@ app.get('/copenhagen', function(req, res) {
     })
 })
 
-// Complie SASS
-// sass.render({
-//     file: config.scsspath,
-//     outputStyle: 'compressed',
-//   }, function(error, result){
-//     if(error){
-//       console.log(JSON.stringify(error))
-//     } else {
-//       console.log("SASS compiled successfully")
-//       var file = require('fs')
-//       file.writeFile(config.cssout, result.css.toString(),function(error){
-//         if(error) console.log(JSON.stringify(error))
-//       })
-//     }
-// })
-
 app.set('port', config.port)
 
 // Setup View Engine
@@ -123,13 +107,13 @@ app.engine('handlebars', exphbs({
         prettyDate: function(start, end) {
             var s = moment(start)
             var e = moment(end)
-            var format = 'Do MMM YYYY'
+            var format = 'DD MMMM YYYY'
             if (s.year() != e.year()) {
                 return s.format(format) + " - " + e.format(format)
             } else if (s.month() != e.month()) {
-                return s.format('Do MMM') + " - " + e.format(format)
+                return s.format('DD MMMM') + " - " + e.format(format)
             } else if (s.date() != e.date()) {
-                return s.format('Do') + " - " + e.format(format)
+                return s.format('DD') + " - " + e.format(format)
             } else {
                 return e.format(format)
             }
