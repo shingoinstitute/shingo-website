@@ -408,6 +408,7 @@ router.get('/affiliates', function(req, res, next) {
 });
 
 /*  GET an affiliate  */
+// TODO Verify http:// at beginning of all affiliate urls
 router.get('/affiliates/:id', function(req, res, next) {
   var aff = null;
   var fac = null;
