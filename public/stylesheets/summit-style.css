@@ -688,19 +688,44 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 #sticky-Right-Banner {
+    display: none;
     position: fixed;
-    top: 125px;
-    right: 0px;
-    height: 100px;
-    width: 150px;
+    height: 50px;
+    min-width: 100%;
     background: #640921;
-    border-radius: 10px 0px 0px 10px;
-    box-shadow: 2px 3px 5px #888;
-    border: 1px solid white;
+    /* box-shadow: 2px 3px 5px #888; */
     z-index: 10;
+    box-shadow: 0 2px 5px #CCC;
+}
+
+#sticky-Right-Banner.active {
+    display: block;
+}
+
+#sticky-Right-Banner h4 {
+    color:white;
+    padding: 0;
+    line-height: 0;
+    font-weight: 500;
+}
+
+#sticky-Right-Banner  .close.toggle {
+    float: right;
+    margin: 0;
+    line-height: 0;
+    color: white;
+    font-size: 175%;
 }
 @media only screen and (max-width: 768px) {
     #sticky-Right-Banner {
-        position: absolute;
+        position: relative;
+    }
+
+    #sticky-Right-Banner h4 {
+        font-size: 100%;
+    }
+
+    #sticky-Right-Banner i {
+        font-size: 100% !important;
     }
 }
