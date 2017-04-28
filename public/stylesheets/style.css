@@ -1406,7 +1406,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     min-width: 100%;
     background: #640921;
     /* box-shadow: 2px 3px 5px #888; */
-    z-index: 999999;
+    z-index: 10;
     box-shadow: 0 2px 5px #CCC;
 }
 
