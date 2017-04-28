@@ -1011,6 +1011,13 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
         left: 35%;
         bottom: 10px;
     }
+
+    .v-75-gt-md {
+        display: block;
+        min-height: 75px;
+        max-height: 75px;
+        width: 1px;
+    }
     .five-gt-md {
         float: left;
         display: block;
@@ -1424,10 +1431,6 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 @media only screen and (max-width: 768px) {
     #sticky-Right-Banner {
         position: relative;
-    }
-
-    #banner-cont {
-        margin-top: 10px !important;
     }
 
     #sticky-Right-Banner h4 {
