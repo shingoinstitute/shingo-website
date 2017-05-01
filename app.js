@@ -23,12 +23,12 @@ var express = require('express'),
     Logger = require('./Logger'),
     logger = new Logger().logger;
 
-var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
-    certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
-    credentials = {
-        key: privateKey,
-        cert: certificate
-    }
+// var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
+//     certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
+//     credentials = {
+//         key: privateKey,
+//         cert: certificate
+//     }
 
 var app = express();
 
@@ -218,8 +218,8 @@ app.listen(app.get('port'), function() {
     logger.log("info", "Node is on port %s", app.get('port'));
 });
 
-var httpsServer = https.createServer(credentials, app)
+// var httpsServer = https.createServer(credentials, app)
 
-httpsServer.listen(8443);
+// httpsServer.listen(8443);
 
 module.exports = app;
