@@ -21,6 +21,8 @@ var express = require('express'),
     insight_routes = require('./routes/insight.js'),
     index = require('./routes/index.js')
     Logger = require('./Logger'),
+    _ = require('lodash'),
+    xmlParser = require('xml2js').parseString,
     logger = new Logger().logger;
 
 // var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
@@ -46,18 +48,27 @@ app.use(
     })
 )
 
-app.get('/presentations', function(req, res) {
+app.get('/presentations', function(req, res, next) {
     var files = new Array();
-    fs.readdirSync(__dirname + '/public/presentations')
-        .filter(function(file) {
-            return (file.indexOf(".pdf") !== 0);
-        })
-        .forEach(function(file) {
-            files.push(file);
+    request("https://s3-us-west-1.amazonaws.com/shingo-presentations", function(error, response, body){
+        if(error) { logger.log('error', error); return next(); }
+
+        xmlParser(body, function(err, bucket){
+            if(err) { logger.log('error', err); return next(); }
+            _.forOwn(bucket.ListBucketResult.Contents, function(val){
+                var pres = _.pick(val, 'Key');
+                if(pres && pres.Key && pres.Key.length) pres = pres.Key[0];
+                // logger.log('debug', "Presentation Path: %s", pres);
+                if(pres.includes("2017 International Conference Presentations") && pres.includes(".pdf")){
+                    var file = "https://s3-us-west-1.amazonaws.com/shingo-presentations/" + pres.replace(new RegExp(" ", 'g'), "+");
+                    files.push({file:file, name:pres});
+                }
+            });
+            res.render('presentations', {
+                title: "Download",
+                files: files
+            });
         });
-    res.render('presentations', {
-        title: "Download",
-        files: files
     })
 })
 
