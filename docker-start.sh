@@ -28,7 +28,9 @@ docker run -itd                                             \
     --network shingo-dev-net                                \
     mysql:5.7
 
-docker exec -it shingo-mysql-local mysql -u"root" -p${MYSQL_PASS} -e "GRANT ALL ON *.* TO root@'172.20.0.%' IDENTIFIED BY '${MYSQL_PASS}'; FLUSH PRIVILEGES;"
+sleep 3
+
+docker exec -it shingo-mysql-local mysql -p${MYSQL_PASS} -e "GRANT ALL ON *.* TO root@'172.%.%.%' IDENTIFIED BY '${MYSQL_PASS}'; FLUSH PRIVILEGES;"
 
 docker kill shingo-website-local
 docker rm shingo-website-local
