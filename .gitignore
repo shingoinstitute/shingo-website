@@ -45,5 +45,4 @@ node_modules
 # Crontab Log
 .updatelog
 
-*.sh
 .vscode/
