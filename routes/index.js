@@ -81,149 +81,15 @@ router.get('/education', function(req, res, next) {
   })
 });
 
-router.get('/events/international', function(req, res, next){
-  var event_info;
-  var sess_dict;
+router.get('/events/international', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000NSAaXEAX'))
 
-  //  Arrays for speakers
-  var keynote = new Array()
-  var concurrent = new Array()
+router.get('/events/manufacturing', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'))
 
-  request.getAsync('http://api.shingo.org/salesforce/events/a1B1200000NSAaXEAX')
-  .then(function(results) {
-    response = JSON.parse(results.body)
-    event_info = response.event
+router.get('/events/latinamerica', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'))
 
-    event_info.Shingo_Prices__r.records = _.orderBy(event_info.Shingo_Prices__r.records, ['Price__c'], ['desc'])
-    // Get Session Map
-    return request.getAsync('http://api.shingo.org/salesforce/events/sessions?event_id=a1B1200000NSAaXEAX')
-  })
-  .then(function(results) {
-    //Create map from API Call
-    var response = JSON.parse(results.body);
-    sess_dict = _.keyBy(response.sessions, 'Id')
+// router.get('/events/europe', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'))
 
-    // Get list of Days
-    return request.getAsync('http://api.shingo.org/salesforce/events/days?event_id=a1B1200000NSAaXEAX')
-  })
-  .then(function(results){
-    var response = JSON.parse(results.body);
-    event_info.days = response.days;
-    event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c']);
-
-    /* TODO Review nested .forEach loop.  Here I had to use a classic loop inside the forEach function because
-     I couldn't assign to the object and maintain data persistance with a double forEach for an unknown reason.
-
-    ** Example code for interior purposed loop.
-           day.Shingo_Sessions__r.records.forEach(function(record){
-             record = sess_dict[record.Id]
-           })
-    */
-    // Append detailed records to each session
-    event_info.days.forEach(function(day){
-      if(day.Shingo_Sessions__r) {
-        for(var j = 0; j < day.Shingo_Sessions__r.records.length; j++){
-              day.Shingo_Sessions__r.records[j] = sess_dict[day.Shingo_Sessions__r.records[j].Id]
-              // Convert time string for correct display
-              var startdate = new Date(day.Shingo_Sessions__r.records[j].Start_Date_Time__c);
-              var enddate = new Date(day.Shingo_Sessions__r.records[j].End_Date_Time__c);
-              day.Shingo_Sessions__r.records[j].Start_Date_Time__c = (new Date(startdate - 2*60*60*1000)).toString();
-              day.Shingo_Sessions__r.records[j].End_Date_Time__c = (new Date(enddate - 2*60*60*1000)).toString();
-        }
-        day.Shingo_Sessions__r.records = _.sortBy(day.Shingo_Sessions__r.records, ['Start_Date_Time__c'])
-      }
-      else {
-        day.Shingo_Sessions__r = {'records': []}
-      }
-    })
-    // Get Speakers
-    return request.getAsync('http://api.shingo.org/salesforce/events/speakers?event_id=a1B1200000NSAaX')
-  })
-  .then(function(results) {
-    // Parse API response into JSON
-    var response = JSON.parse(results.body);
-    // Organize Speakers
-    response.speakers.forEach(function(speaker){
-      // Adjust images to proper sizes
-      speaker.Picture_URL__c = formatImage(speaker.Picture_URL__c, 300, 300)
-
-      // Helper function to check
-      // if a speaker is a keynote
-      // speaker via the speakers
-      // Session associations. As
-      // the API filters for Is_Keynote__c
-      // == true for populating the associations,
-      // if there are any associations returned
-      // they will be keynote associations.
-      function isKeynote(sp){
-          return sp.Session_Speaker_Associations__r;
-      }
-
-      // Sort speakers into groups
-      if (isKeynote(speaker)) {
-        keynote.push(speaker);
-      } else {
-        concurrent.push(speaker)
-      }
-    })
-    // Sort Speakers by Last Name
-    keynote = _.sortBy(keynote, ['Contact__r.LastName'])
-    concurrent = _.sortBy(concurrent, ['Contact__r.LastName'])
-
-    res.render('conference/international', {
-      layout: 'international',
-      title: '29th International Conference - Shingo Institute',
-      event: event_info,
-      keynote: keynote,
-      concurrent: concurrent
-    })
-  })
-  .catch(function(err){
-    logger.log("error", "INTERNATIONAL ROUTE\n%j", err)
-    res.render('conference/international', {
-      layout: 'international',
-      title: '29th International Conference - Shingo Institute',
-      event: event_info,
-      keynote: keynote,
-      concurrent: concurrent
-    })
-  })
-})
-
-
-/*  Conference, Summits & Study Tour */
-/* GET manufacturing  */  // TODO Convert to web api
-// router.get('/events/:name', function(req, res, next) {
-//     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
-//     var keynote = new Array()
-//     var concurrent = new Array()
-//     SF.queryAsync(event.speaker_query).then(function(results) {
-//         // TODO Clean up for loop with a a.forEach(function(item){}) loop
-//         for (var i = 0; i < results.records.length; i++) {
-//             if (results.records[i].Speaker_Type__c == 'Keynote Speaker') {
-//                 keynote.push(results.records[i])
-//             } else {
-//                 concurrent.push(results.records[i])
-//             }
-//         }
-//         res.render('conference/summit', {
-//             layout: 'summit',
-//             title: event.name + ' - Shingo Institute',
-//             keynote: keynote,
-//             concurrent: concurrent,
-//             event: event
-//         });
-//     }).catch(function(err) {
-//         logger.log("error", "SUMMIT ROUTE: %s\n%j", req.params.name, err)
-//         res.render('conference/summit', {
-//             layout: 'summit',
-//             title: event.name + ' - Shingo Institute',
-//             keynote: keynote,
-//             concurrent: concurrent,
-//             event: event
-//         });
-//     })
-// });
+router.get('/usastudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'));
 
 router.get('/events/:name', function(req, res, next) {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
@@ -312,12 +178,6 @@ router.get('/irelandstudytour', function(req, res, next) {
   })
 })
 
-/* GET USA studytour */
-router.get('/usastudytour', function(req, res, next) {
-    res.render('education/usastudytour', {
-        title: 'Study Tour - Shingo Institute'
-    });
-});
 
 /*  Awards Route */   // TODO PUll awards from SF.
 /* GET challengefortheprize */
