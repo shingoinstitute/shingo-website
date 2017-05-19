@@ -1,0 +1,6 @@
+docker run -itd \
+    --name shingo-mysql \
+    -e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} \
+    --volume /var/lib/mysql:/var/lib/mysql:rw \
+    --network="shingo-net" \
+    mysql:5.7
