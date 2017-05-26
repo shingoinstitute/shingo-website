@@ -81,11 +81,13 @@ router.get('/education', function(req, res, next) {
   })
 });
 
-router.get('/events/international', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000NSAaXEAX'))
+router.get('/events/international', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'))
 
 router.get('/events/manufacturing', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'))
 
 router.get('/events/latinamerica', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'))
+
+router.get('/events/oe', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RihJsEAJ'))
 
 // router.get('/events/europe', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'))
 
