@@ -10,14 +10,15 @@
                         <h5><strong>Author</strong></h5>
                         <h6>{{award.Public_Author_Name__c}}</h6><br>
                     </div>
+                    {{#if award.Order_Url__c}}
                     <div class="twelve columns">
                         <ul class="two_up tiles">
-                            <li>
+                            {{#if award.Cover_Image__c}}<li>
                                 <div class="ten columns hide-for-small">
                                     <a href="{{award.Order_Url__c}}" target="_blank">
                                     <img src="{{award.Cover_Image__c}}"></a>
                                 </div>
-                            </li>
+                            </li>{{/if}}
                             <li>
                                 <div class="twelve columns">
                                     <h5><a href="{{award.Order_Url__c}}" target="_blank">Order Now</a></h5>
@@ -25,6 +26,7 @@
                             </li>
                         </ul>
                     </div>
+                    {{/if}}
                 </li>
                 <li>
                     {{#if award.Embedded_Youtube_Url__c}}

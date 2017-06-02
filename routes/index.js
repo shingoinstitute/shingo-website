@@ -10,10 +10,10 @@ var express = require('express'),
 
 var routes_recipients = require('./index-recipients.js');
 
-var formatImage = function(url, height, width){
+var formatImage = (url, height, width) =>{
   var new_url;
   if (!url){
-      return "http://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_" + height + ",w_" + width + "/v1414874243/silhouette_vzugec.png"
+      return "https://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_" + height + ",w_" + width + "/v1414874243/silhouette_vzugec.png"
   }
   if (url.indexOf("w_") < 0) {
     var first = url.split("d/");
@@ -29,7 +29,7 @@ var formatImage = function(url, height, width){
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
      res.render('index', {
         title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
     });
@@ -38,14 +38,14 @@ router.get('/', function(req, res, next) {
 
 /* Education Menu */
 /* GET model  */
-router.get('/model', function(req, res, next) {
+router.get('/model', (req, res, next) => {
     res.render('education/model', {
         title: 'The Shingo Model - Shingo Institute'
     });
 });
 
 /* GET education */
-router.get('/education', function(req, res, next) {
+router.get('/education', (req, res, next) => {
   var query_res = {
       "Discover": new Array(),
       "Enable": new Array(),
@@ -54,13 +54,13 @@ router.get('/education', function(req, res, next) {
       "Build": new Array()
   }
 
-  request.getAsync('http://api.shingo.org/salesforce/workshops')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/workshops')
+  .then(results => {
     var records = JSON.parse(results.body);
     workshops = records.workshops;
     // Verify full url
-    workshops.forEach(function(workshop){
-        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "http://" + workshop.Registration_Website__c;
+    workshops.forEach(workshop =>{
+        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
@@ -72,7 +72,7 @@ router.get('/education', function(req, res, next) {
         workshops: query_res
     });
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "EDUCATION ROUTE\n%j", err);
       res.render('education/education', {
           title: 'Education - Shingo Institute',
@@ -93,7 +93,7 @@ router.get('/events/oe', (req, res) => res.redirect('https://events.shingo.org/#
 
 router.get('/usastudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'));
 
-router.get('/events/:name', function(req, res, next) {
+router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     var keynote = new Array()
     var concurrent = new Array()
@@ -109,35 +109,35 @@ router.get('/events/:name', function(req, res, next) {
 });
 
 /* GET Japan studytour */   // TODO Templatize Study TOUR
-router.get('/japanstudytour', function(req, res, next) {
+router.get('/japanstudytour', (req, res, next) => {
     res.render('education/japanstudytour', {
         title: 'Study Tour - Shingo Institute'
     });
 });
 
 /* GET Ireland studytour */   // TODO Templatize Study TOUR
-router.get('/irelandstudytour', function(req, res, next) {
+router.get('/irelandstudytour', (req, res, next) => {
   var event_info;
   var sess_dict;
 
-  request.getAsync('http://api.shingo.org/salesforce/events/a1B1200000Rin6u')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/events/a1B1200000Rin6u')
+  .then(results => {
     response = JSON.parse(results.body)
     event_info = response.event
 
     event_info.Shingo_Prices__r.records = _.orderBy(event_info.Shingo_Prices__r.records, ['Price__c'], ['desc'])
     // Get Session Map
-    return request.getAsync('http://api.shingo.org/salesforce/events/sessions?event_id=a1B1200000Rin6u')
+    return request.getAsync('https://api.shingo.org/salesforce/events/sessions?event_id=a1B1200000Rin6u')
   })
-  .then(function(results) {
+  .then(results => {
     //Create map from API Call
     var response = JSON.parse(results.body);
     sess_dict = _.keyBy(response.sessions, 'Id')
 
     // Get list of Days
-    return request.getAsync('http://api.shingo.org/salesforce/events/days?event_id=a1B1200000Rin6u')
+    return request.getAsync('https://api.shingo.org/salesforce/events/days?event_id=a1B1200000Rin6u')
   })
-    .then(function(results){
+    .then(results =>{
         var response = JSON.parse(results.body);
         event_info.days = response.days;
         event_info.days = _.sortBy(event_info.days, ['Agenda_Date__c']);
@@ -151,7 +151,7 @@ router.get('/irelandstudytour', function(req, res, next) {
             })
         */
         // Append detailed records to each session
-        event_info.days.forEach(function(day){
+        event_info.days.forEach(day =>{
         if(day.Shingo_Sessions__r) {
             for(var j = 0; j < day.Shingo_Sessions__r.records.length; j++){
                 day.Shingo_Sessions__r.records[j] = sess_dict[day.Shingo_Sessions__r.records[j].Id]
@@ -172,7 +172,7 @@ router.get('/irelandstudytour', function(req, res, next) {
         event: event_info,
         })
     })
-    .catch(function(err){
+    .catch(err =>{
     logger.log("error", "IRELAND STUDY TOUR\n%j", err)
     res.render('education/irelandstudytour', {
       event: event_info,
@@ -183,7 +183,7 @@ router.get('/irelandstudytour', function(req, res, next) {
 
 /*  Awards Route */   // TODO PUll awards from SF.
 /* GET challengefortheprize */
-router.get('/challengefortheprize', function(req, res, next) {
+router.get('/challengefortheprize', (req, res, next) => {
     res.render('awards/challengefortheprize', {
         title: 'The Shingo Prize - Shingo Institute'
     });
@@ -193,16 +193,39 @@ router.get('/challengefortheprize', function(req, res, next) {
 router.use('/awards', routes_recipients);
 
 /* GET researchaward  */
-router.get('/researchaward', function(req, res, next) {
-    res.render('awards/researchaward', {
-        title: 'Research Award - Shingo Institute'
-    });
+router.get('/researchaward', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/research')
+    .then(results => {
+        var response = JSON.parse(results.body);
+        var awards = response.records;
+        res.render('awards/researchaward', {
+            title: 'Research Award - Shingo Institute',
+            awards: awards
+        });
+    });    
+});
+
+// GET Resarch Award template
+router.get('/researchaward/:id', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/research/' + req.params.id)
+   .then(results => {
+        res.render('awards/research-template', {
+            title: 'Research Award - Shingo Institute',
+            award: JSON.parse(results.body).records[0]
+        })
+    })
+    .catch(err =>{
+        res.render('awards/research-template', {
+            title: 'Research Award - Shingo Institute',
+            award: null
+        })
+    })
 });
 
 /* GET publication award  */
-router.get('/publicationaward', function(req, res, next) {
-    request.getAsync('http://api.shingo.org/salesforce/awards/publication')
-    .then(function(results) {
+router.get('/publicationaward', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/publication')
+    .then(results => {
         var response = JSON.parse(results.body)
         var awards = response.records
         res.render('awards/publicationaward', {
@@ -210,7 +233,7 @@ router.get('/publicationaward', function(req, res, next) {
             awards: awards
         })
     })
-    .catch(function(err){
+    .catch(err =>{
         res.rendder('awards/publicationaward', {
             title: 'Publication Award - Shingo Institute',
             awards: null
@@ -219,37 +242,37 @@ router.get('/publicationaward', function(req, res, next) {
 });
 
 // GET Publication Award template
-router.get('/publicationaward/:id', function(req, res, next) {
-    request.getAsync('http://api.shingo.org/salesforce/awards/publication/' + req.params.id)
-   .then(function(results) {
+router.get('/publicationaward/:id', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/publication/' + req.params.id)
+   .then(results => {
         var response = JSON.parse(results.body)
         // How to simplify??
         var awards = response.records[0]
         res.render('awards/publication-template', {
             title: 'Publication Award - Shingo Institute',
-            awards: awards
+            award: awards
         })
     })
-    .catch(function(err){
-        res.rendder('awards/publication-template', {
+    .catch(err =>{
+        res.render('awards/publication-template', {
             title: 'Publication Award - Shingo Institute',
-            awards: null
+            award: null
         })
     })
 });
 
 /*  Affiliates Route */
 /* GET affiliates */
-router.get('/affiliates', function(req, res, next) {
+router.get('/affiliates', (req, res, next) => {
   var affiliates = null;
   var myeducator = null;
-  request.getAsync('http://api.shingo.org/salesforce/affiliates')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/affiliates')
+  .then(results => {
     var response = JSON.parse(results.body);
     affiliates = response.affiliates;
    
     // Remove MyEducator
-    var i = _.findIndex(affiliates, function(a){ return a.Id == '0011200001Gl4QoAAJ'; })
+    var i = _.findIndex(affiliates, a =>{ return a.Id == '0011200001Gl4QoAAJ'; })
     myeducator = affiliates[i];
     affiliates.splice(i, 1);
 
@@ -259,7 +282,7 @@ router.get('/affiliates', function(req, res, next) {
         myeducator: myeducator
     });
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "AFFILIATES ROUTE\n%j", err)
       res.render('affiliates/affiliates', {
           title: 'Affiliates - Shingo Institute',
@@ -270,19 +293,19 @@ router.get('/affiliates', function(req, res, next) {
 });
 
 /*  GET an affiliate  */
-// TODO Verify http:// at beginning of all affiliate urls
-router.get('/affiliates/:id', function(req, res, next) {
+// TODO Verify https:// at beginning of all affiliate urls
+router.get('/affiliates/:id', (req, res, next) => {
   var aff = null;
   var fac = null;
-  request.getAsync('http://api.shingo.org/salesforce/affiliates/web/' + req.params.id)
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/affiliates/web/' + req.params.id)
+  .then(results => {
     var response = JSON.parse(results.body)
     aff = response.affiliate
 
     // Get Facilitators
-    return request.getAsync('http://api.shingo.org/salesforce/affiliates/facilitators/' + req.params.id)
+    return request.getAsync('https://api.shingo.org/salesforce/affiliates/facilitators/' + req.params.id)
   })
-  .then(function(results){
+  .then(results =>{
     var response = JSON.parse(results.body)
     fac = response.records
     // Split into pair for css display requirements
@@ -298,14 +321,14 @@ router.get('/affiliates/:id', function(req, res, next) {
     fac = pairs;
     return
   })
-  .then(function(){
+  .then(() =>{
     res.render('affiliates/template', {
         title: aff.Name + ' - Shingo Institute',
         affiliate: aff,
         fac_pair: fac
     });
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "AFFILIATE ROUTE: %s\n%j", req.params.id, err)
       res.render('affiliates/template', {
           title: aff.Name + ' - Shingo Institute',
@@ -316,10 +339,10 @@ router.get('/affiliates/:id', function(req, res, next) {
 });
 
 /*  About Menu  */
-router.get('/about', function(req, res, next) {
+router.get('/about', (req, res, next) => {
   var staff = null;
-  request.getAsync('http://api.shingo.org/salesforce/about/staff')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/about/staff')
+  .then(results => {
     var response = JSON.parse(results.body);
     staff = response.staff;
     res.render('about/about', {
@@ -327,7 +350,7 @@ router.get('/about', function(req, res, next) {
         staff: staff
     });
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "ABOUT ROUTE\n%j", err)
       res.render('about/about', {
           title: 'Shingo Mission - Shingo Institute',
@@ -337,10 +360,10 @@ router.get('/about', function(req, res, next) {
 });
 
 /* GET academy */
-router.get('/academy', function(req, res, next) {
+router.get('/academy', (req, res, next) => {
   var academy = null;
-  request.getAsync('http://api.shingo.org/salesforce/about/academy')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/about/academy')
+  .then(results => {
     var response = JSON.parse(results.body);
     academy = response.academy;
     res.render('about/academy', {
@@ -348,7 +371,7 @@ router.get('/academy', function(req, res, next) {
         academy: academy
     });
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "ACADEMY ROUTE\n%j", err)
       res.render('about/academy', {
           title: 'Shingo Academy - Shingo Institute',
@@ -358,10 +381,10 @@ router.get('/academy', function(req, res, next) {
 });
 
 /* GET examiner */ // TODO Divide lists
-router.get('/examiners', function(req, res, next) {
+router.get('/examiners', (req, res, next) => {
   var examiners = null;
-  request.getAsync('http://api.shingo.org/salesforce/about/examiner/')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/about/examiner/')
+  .then(results => {
     var response = JSON.parse(results.body);
     examiners = response.examiners;
     res.render('about/examiners', {
@@ -369,7 +392,7 @@ router.get('/examiners', function(req, res, next) {
         examiner: examiners
     });
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "EXAMINERS ROUTE\n", err)
       res.render('about/examiners', {
           title: 'Examiners - Shingo Institute',
@@ -379,13 +402,13 @@ router.get('/examiners', function(req, res, next) {
 });
 
 /* GET seab */
-router.get('/seab', function(req, res, next) {
+router.get('/seab', (req, res, next) => {
   var seab = null;
-  request.getAsync('http://api.shingo.org/salesforce/about/seab/')
-  .then(function(results) {
+  request.getAsync('https://api.shingo.org/salesforce/about/seab/')
+  .then(results => {
     var response = JSON.parse(results.body);
     seab = response.records;
-    seab.forEach(function(member){
+    seab.forEach(member =>{
       member.Photograph__c = formatImage(member.Photograph__c, 300, 300)
       logger.log("debug", "member.Photograph__c (line 412) = %s", member.Photograph__c)
     })
@@ -395,7 +418,7 @@ router.get('/seab', function(req, res, next) {
         members: seab
     })
   })
-  .catch(function(err) {
+  .catch(err => {
       logger.log("error", "SEAB ROUTE\n%j", err)
       res.render('about/seab', {
           title: 'Shingo Executive Advisory Board - Shingo Institute',
@@ -405,35 +428,35 @@ router.get('/seab', function(req, res, next) {
 });
 
 /*Other Routes*/
-router.get('/linkedin', function(req, res, next) {
+router.get('/linkedin', (req, res, next) => {
   res.render('about/linkedin', {
     title: 'The Shingo Institute'
   })
 })
 
 /* GET research - Linked from homepage only */
-router.get('/research', function(req, res, next) {
+router.get('/research', (req, res, next) => {
     res.render('about/research', {
         title: 'Insight - Shingo Institute'
     });
 });
 
 /* GET privacy policy */
-router.get('/privacy-policy', function(req, res, next) {
+router.get('/privacy-policy', (req, res, next) => {
     res.render('about/privacy-policy', {
         title: 'Privacy Policy - Shingo Institute'
     });
 });
 
 /* GET Prize FAQ */
-router.get('/prizefaq', function(req, res, next) {
+router.get('/prizefaq', (req, res, next) => {
     res.render('about/prizefaq', {
         title: 'Prize Questions - Shingo Institute'
     });
 });
 
 /* GET Craftsmanship Landing Page */
-router.get('/craftsmanship', function(req, res, next) {
+router.get('/craftsmanship', (req, res, next) => {
     res.render('about/craftsmanship', {
         title: 'The Craftsmanship Project - Shingo Institute'
     });
@@ -442,17 +465,17 @@ router.get('/craftsmanship', function(req, res, next) {
 
 /*Files*/  // TODO Handle static file routing & storage
 /* GET .pdf - From challengefortheprize */
-router.get('/assets/Assessment_Process_Flow_Chart.pdf', function(req, res, next) {
+router.get('/assets/Assessment_Process_Flow_Chart.pdf', (req, res, next) => {
     res.download('../assets/Assessment_Process_Flow_Chart.pdf');
 });
 
 /* GET .pdf - From challengefortheprize*/
-router.get('/assets/Application_Guidelines.pdf', function(req, res, next) {
+router.get('/assets/Application_Guidelines.pdf', (req, res, next) => {
     res.download('../assets/Application_Guidelines.pdf');
 });
 
 /* GET .pdf - From researchaward*/
-router.get('/assets/Research-Award-Application-Form.pdf', function(req, res, next) {
+router.get('/assets/Research-Award-Application-Form.pdf', (req, res, next) => {
     res.download('../assets/Research-Award-Application-Form.pdf');
 });
 
