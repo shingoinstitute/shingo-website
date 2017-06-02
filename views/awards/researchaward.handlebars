@@ -38,11 +38,13 @@
             	<tr>
                 <td colspan="3"><h4 class="roboto"><strong>Research Award Recipients</strong></h4></td>
               </tr>
+              {{#each awards}}
       		    <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-      		  </tr>
+                <td>{{prettyMonth Press_Release_Date__c}}</td>
+                <td><a href="/researchaward/{{Id}}">{{Name}}</td>
+                <td>{{Public_Author_Name__c}}</td>
+              </tr>
+              {{/each}}
           </tbody>
         </table>
       </div>

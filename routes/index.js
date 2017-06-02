@@ -194,9 +194,32 @@ router.use('/awards', routes_recipients);
 
 /* GET researchaward  */
 router.get('/researchaward', function(req, res, next) {
-    res.render('awards/researchaward', {
-        title: 'Research Award - Shingo Institute'
-    });
+    request.getAsync('https://api.shingo.org/salesforce/awards/research')
+    .then(results => {
+        var response = JSON.parse(results.body);
+        var awards = response.records;
+        res.render('awards/researchaward', {
+            title: 'Research Award - Shingo Institute',
+            awards: awards
+        });
+    });    
+});
+
+// GET Resarch Award template
+router.get('/researchaward/:id', function(req, res, next) {
+    request.getAsync('https://api.shingo.org/salesforce/awards/research/' + req.params.id)
+   .then(function(results) {
+        res.render('awards/research-template', {
+            title: 'Research Award - Shingo Institute',
+            award: JSON.parse(results.body).records[0]
+        })
+    })
+    .catch(function(err){
+        res.render('awards/research-template', {
+            title: 'Research Award - Shingo Institute',
+            awards: null
+        })
+    })
 });
 
 /* GET publication award  */
@@ -231,7 +254,7 @@ router.get('/publicationaward/:id', function(req, res, next) {
         })
     })
     .catch(function(err){
-        res.rendder('awards/publication-template', {
+        res.render('awards/publication-template', {
             title: 'Publication Award - Shingo Institute',
             awards: null
         })
