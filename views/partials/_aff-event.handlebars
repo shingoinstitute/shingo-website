@@ -3,5 +3,5 @@
   <p class="indent">Host Company: {{Host_Site__c}}<br>
   Location: {{Event_City__c}}, {{Event_Country__c}}<br>
   Affiliate: <a href="affiliates/{{Organizing_Affiliate__r.Id}}"><em><strong>{{Organizing_Affiliate__r.Name}}</strong></em></a></p>
-  <p class="brown medium btn"><a href="{{Registration_Website__c}}" target="_blank">Register</a></p>
+  <p class="brown medium btn"><a href="{{Registration_Website__c}}" onclick="trackOutboundLink('{{Registration_Website__c}}')" target="_blank" >Register</a></p>
 </li>
