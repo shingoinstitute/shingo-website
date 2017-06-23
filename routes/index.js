@@ -95,6 +95,10 @@ router.get('/events/europe', (req, res) => res.redirect('https://events.shingo.o
 
 router.get('/usastudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'));
 
+router.get('/blog', (req ,res) => res.redirect('https://blog.shingo.org'));
+
+
+
 router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     var keynote = new Array()
