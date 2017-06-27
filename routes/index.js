@@ -97,7 +97,7 @@ router.get('/usastudytour', (req ,res) => res.redirect('https://events.shingo.or
 
 router.get('/blog', (req ,res) => res.redirect('https://blog.shingo.org'));
 
-
+router.get('/insight_initiate', (req ,res) => res.redirect('https://usu.co1.qualtrics.com/jfe/form/SV_4GgAN0KZ0qf6pkp'));
 
 router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
