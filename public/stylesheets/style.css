@@ -1142,6 +1142,10 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 
 /********EDUCATION********/
 
+.shingoButton {
+    width: 150px;
+    margin: 0px 25px;
+}
 #education {
     padding: 30px 0;
 }
@@ -1520,3 +1524,5 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
         font-size: 100% !important;
     }
 }
+
+
