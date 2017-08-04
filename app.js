@@ -15,7 +15,6 @@ var express = require('express'),
     MySQLStore = require('express-mysql-session')(session),
     moment = require('moment'),
     fs = require('fs'),
-    https = require('https'),
     subdomains = require('express-subdomains'),
     insight_routes = require('./routes/insight.js'),
     index = require('./routes/index.js')
@@ -23,13 +22,6 @@ var express = require('express'),
     _ = require('lodash'),
     xmlParser = require('xml2js').parseString,
     logger = new Logger().logger;
-
-// var privateKey = fs.readFileSync('/etc/ssl/private/server.key', 'utf8'),
-//     certificate = fs.readFileSync('/etc/ssl/certs/server.crt', 'utf8'),
-//     credentials = {
-//         key: privateKey,
-//         cert: certificate
-//     }
 
 var app = express();
 
@@ -47,57 +39,59 @@ app.use(
     })
 )
 
-app.get('/presentations', function(req, res, next) {
-    var files = new Array();
+// Get S3 bucket folder info
+function getAWSData(params){
+    // Destructure params
+    let {conf, year} = params;
+
+    // Create RegExs
+    const { p1: confPattern, p2: yearPattern } = { p1: /(international|latinamerica|manufacturing|european)/, p2: /2\d{3}/ };
+
+    // Test conf & year; set to default if fail
+    if(!conf) conf = 'international';
+    if(!yearPattern.test(year)) year = new Date().getFullYear();
+
+    const data =  { title: '', conf, year}
+    
+    // Return resulting title
+    if(conf === 'international') data.title = `${year} International Conference Presentations`;
+    else if(conf === 'latinamerica') data.title = `${year} Latin America Conference Presentations`;
+    else if(conf === 'european') data.title = `${year} European Conference Presentations`;
+    else if(conf === 'manufacturing') data.title = `${year} Manufacturing Summit Presentations`;
+    else {
+        const error = new Error(`Couldn't find presentations for ${JSON.stringify(params)}`);
+        error.status = 504;
+        throw error;
+    }
+    
+    return data;
+}
+
+app.get('/presentations/:conf?/:year?', function(req, res, next) {
+    const { title } = getAWSData(req.params);
+    
+    const files = new Array();
     request("https://s3-us-west-1.amazonaws.com/shingo-presentations", function(error, response, body){
-        if(error) { logger.log('error', error); return next(); }
+        if(error) { logger.error(`Error in GET: ${req.path}\n %j`, error); return next(); }
 
         xmlParser(body, function(err, bucket){
-            if(err) { logger.log('error', err); return next(); }
+            if(err) { logger.error(`Error in GET: ${req.path}\n %j`, error); return next(); }
             _.forOwn(bucket.ListBucketResult.Contents, function(val){
                 var pres = _.pick(val, 'Key');
                 if(pres && pres.Key && pres.Key.length) pres = pres.Key[0];
-                // logger.log('debug', "Presentation Path: %s", pres);
-                if(pres.includes("2017 International Conference Presentations") && pres.includes(".pdf")){
+                // logger.debug("Presentation Path: %s", pres);
+                if(pres.includes(title) && pres.includes(".pdf")){
                     var file = "https://s3-us-west-1.amazonaws.com/shingo-presentations/" + pres.replace(new RegExp(" ", 'g'), "+");
-                    files.push({file:file, name:pres});
+                    files.push({ file: file, name: pres.split('/')[1] });
                 }
             });
+
             res.render('presentations', {
                 title: "Download",
-                files: files
+                files: files,
+                conference: title
             });
         });
-    })
-})
-
-app.get('/latinamerica', function(req, res) {
-    var files = new Array();
-    fs.readdirSync(__dirname + '/public/presentations/LatinAmerica')
-        .filter(function(file) {
-            return (file.indexOf(".pdf") !== 0);
-        })
-        .forEach(function(file) {
-            files.push("LatinAmerica/" + file);
-        });
-    res.render('presentations', {
-        title: "Download",
-        files: files
-    })
-})
-
-app.get('/copenhagen', function(req, res) {
-    var files = new Array();
-    fs.readdirSync(__dirname + '/public/presentations/Copenhagen')
-        .filter(function(file) {
-            return (file.indexOf(".pdf") !== 0);
-        })
-        .forEach(function(file) {
-            files.push("Copenhagen/" + file);
-        });
-    res.render('presentations', {
-        title: "Download",
-        files: files
     })
 })
 
@@ -158,9 +152,6 @@ app.use('/api', api_route);
 
 app.use('/', index);
 
-
-
-
 app.get('/admin', function(req, res) {
     if (!req.session.access_token) {
         return res.redirect(config.sf.environment + "/services/oauth2/authorize?response_type=code&client_id=" + config.sf.client_id + "&redirect_uri=" + config.sf.redirect_uri)
@@ -207,29 +198,38 @@ app.use(function(req, res, next) {
 // Dev Error: Prints stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
+        const status = err.status || err.code === 'ENOENT' ? 404 : undefined || 500;
+        res.status(status);
         res.render('error', {
-            message: err.message,
-            error: err
+            message: `<h3>${err.message}</h3>`,
+            error: err,
+            status: status
         });
     });
 }
 
 // Production Error: No stacktrace leaked to user
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+    const status = err.status || err.code === 'ENOENT' ? 404 : undefined || 500;
+    let message;
+    switch(status){
+    case 404:
+        message = '<img style="width:500px" src="https://cdn.pixabay.com/photo/2016/04/24/22/30/monitor-1350918_960_720.png"><h3>Ooops! We couldn\'t find the resource you requested! Please check the URL or contact us at <a href="mailto: shingo.info@usu.edu">shingo.info@usu.edu</a>.</h3><br><br>';
+        break;
+    case 401:
+    case 403:
+        message = '<div style="font-size: 250%; color: red;">You are not allowed access to this resource!</div><br><br>';
+        break;
+    case 500:
+    default:
+        message = '<h3>Ooops! Something unexpected happened. Please contact us at <a href="mailto: shingo.development@usu.edu">shingo.development@usu.edu</a>!</h3><br><br>'
+    }
+    res.status(status);
+    res.render('error', { message });
 });
 
 app.listen(app.get('port'), function() {
-    logger.log("info", "Node is on port %s", app.get('port'));
+    logger.info("Node is on port %s", app.get('port'));
 });
-
-// var httpsServer = https.createServer(credentials, app)
-
-// httpsServer.listen(8443);
 
 module.exports = app;

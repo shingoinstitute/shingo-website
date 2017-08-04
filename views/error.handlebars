@@ -1,5 +1,10 @@
-<div class="row text-center">
-    <h1>{{message}}</h1>
-    <h2>{{error.status}}</h2>
-    <pre>{{error.stack}}</pre>
-</div>
+{{#if error}}
+    <div style="padding: 30px">
+        <h2 style="color: orange">HTTP CODE: {{status}}</h2>
+        <pre class="terminal error">{{error.stack}}</pre>
+    </div>
+{{else}}
+    <div class="row text-center">
+        {{{message}}}
+    </div>
+{{/if}}

@@ -5,7 +5,7 @@ HTTP=$2
 HTTPS=$3
 MYSQL_PATH=$4
 
-if [ -z "$1" ]; then
+if [ -z "$1" ] || [ "${TAG}" = '--log' ]; then
     TAG="local"
 fi
 if [ -z "$2" ]; then
@@ -43,3 +43,7 @@ docker run -itd                                             \
     --publish ${HTTPS}:443                                  \
     --network shingo-dev-net                                \
     shingo-website:${TAG}
+
+if [ "${1}" = '--log' ]; then
+    docker logs -f shingo-website-local;
+fi

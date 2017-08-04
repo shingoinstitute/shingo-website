@@ -1525,4 +1525,23 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     }
 }
 
+.terminal {
+    text-align: left;
+    color: green;
+    padding: 50px;
+    font-family: monospace;
+    margin: 50px;
+    background: black;
+    overflow: auto;
+    border: 4px outset;
+}
+
+.terminal.light {
+    background: white;
+}
+
+.terminal.error {
+    color: red;
+}
+
 
