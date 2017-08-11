@@ -99,6 +99,8 @@ router.get('/blog', (req ,res) => res.redirect('https://blog.shingo.org'));
 
 router.get('/insight_initiate', (req ,res) => res.redirect('https://usu.co1.qualtrics.com/jfe/form/SV_4GgAN0KZ0qf6pkp'));
 
+router.get('/japanstudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SseieEAB'));
+
 router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     var keynote = new Array()
@@ -483,6 +485,12 @@ router.get('/assets/Application_Guidelines.pdf', (req, res, next) => {
 /* GET .pdf - From researchaward*/
 router.get('/assets/Research-Award-Application-Form.pdf', (req, res, next) => {
     res.download('../assets/Research-Award-Application-Form.pdf');
+});
+
+router.get('/additional', (req, res, next) => {
+    res.render('education/additional', {
+        title: 'Additional Workshops - Shingo Institute'
+    });
 });
 
 
