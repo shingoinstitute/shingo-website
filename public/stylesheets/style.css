@@ -1544,4 +1544,10 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     color: red;
 }
 
+.sub-menu-item {
+    padding-left: 65px;
+}
 
+.sub-menu-item > a {
+    border-left: 1px solid #ccc;
+}
