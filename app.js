@@ -214,7 +214,7 @@ app.use(function(err, req, res, next) {
     let message;
     switch(status){
     case 404:
-        message = '<img style="width:500px" src="https://cdn.pixabay.com/photo/2016/04/24/22/30/monitor-1350918_960_720.png"><h3>Ooops! We couldn\'t find the resource you requested! Please check the URL or contact us at <a href="mailto: shingo.info@usu.edu">shingo.info@usu.edu</a>.</h3><br><br>';
+        message = '<img style="width:500px" src="/images/404.png"><h3>Ooops! We couldn\'t find the resource you requested! Please check the URL or contact us at <a href="mailto: shingo.info@usu.edu">shingo.info@usu.edu</a>.</h3><br><br>';
         break;
     case 401:
     case 403:
