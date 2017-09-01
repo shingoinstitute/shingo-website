@@ -493,5 +493,10 @@ router.get('/additional', (req, res, next) => {
     });
 });
 
+router.get('/faculty-fellows', (req, res, next) => {
+    res.render('about/faculty-fellows', {
+        title: 'Shingo Faculty Fellows - Shingo Institute'
+    });
+});
 
 module.exports = router;

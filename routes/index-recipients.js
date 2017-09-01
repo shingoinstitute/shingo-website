@@ -11,6 +11,15 @@ router.get('/', function(req, res, next) {
 
                       /********** Shingo Prize Recipients *********/
                       /* Boston Prize Profile */
+
+router.get('/prize-thermo-fisher', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-thermo-fisher', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/prize-thermo-fisher-pr', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-thermo-fisher-pr', { title: 'Recipients - Shingo Institute' });
+});
+
 router.get('/prize-ball-bev', function(req, res, next) {
   res.render('awards/prize-shingo/prize-ball-bev', { title: 'Recipients - Shingo Institute' });
 });
