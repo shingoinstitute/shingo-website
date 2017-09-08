@@ -10,7 +10,7 @@ var express = require('express'),
 
 var routes_recipients = require('./index-recipients.js');
 
-var formatImage = (url, height, width) =>{
+var formatImage = (url, height, width) => {
   var new_url;
   if (!url){
       return "https://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_" + height + ",w_" + width + "/v1414874243/silhouette_vzugec.png"
@@ -435,7 +435,14 @@ router.get('/seab', (req, res, next) => {
   })
 });
 
-/*Other Routes*/
+/* GET Faculty Fellows */
+router.get('/faculty-fellows', (req, res, next) => {
+    res.render('about/faculty-fellows', {
+        title: 'Shingo Faculty Fellows - Shingo Institute'
+    });
+});
+
+/* Other Routes */
 router.get('/linkedin', (req, res, next) => {
   res.render('about/linkedin', {
     title: 'The Shingo Institute'
@@ -471,7 +478,7 @@ router.get('/craftsmanship', (req, res, next) => {
 });
 
 
-/*Files*/  // TODO Handle static file routing & storage
+/* Files */  // TODO Handle static file routing & storage
 /* GET .pdf - From challengefortheprize */
 router.get('/assets/Assessment_Process_Flow_Chart.pdf', (req, res, next) => {
     res.download('../assets/Assessment_Process_Flow_Chart.pdf');
@@ -490,12 +497,6 @@ router.get('/assets/Research-Award-Application-Form.pdf', (req, res, next) => {
 router.get('/additional', (req, res, next) => {
     res.render('education/additional', {
         title: 'Additional Workshops - Shingo Institute'
-    });
-});
-
-router.get('/faculty-fellows', (req, res, next) => {
-    res.render('about/faculty-fellows', {
-        title: 'Shingo Faculty Fellows - Shingo Institute'
     });
 });
 
