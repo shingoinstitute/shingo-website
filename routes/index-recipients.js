@@ -89,7 +89,15 @@ router.get('/prize-goodyear-brasil', function(req, res, next) {
 
 
                       /******* Silver Recipients *********/
-/* Mettarottapharm Profile */
+
+router.get('/silver-visteon', function(req, res, next) {
+  res.render('awards/prize-silver/silver-visteon', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/silver-visteon-pr', function(req, res, next) {
+  res.render('awards/prize-silver/silver-visteon-pr', { title: 'Recipients - Shingo Institute' });
+});
+
 router.get('/silver-hospira', function(req, res, next) {
   res.render('awards/prize-silver/silver-hospira', { title: 'Recipients - Shingo Institute' });
 });
