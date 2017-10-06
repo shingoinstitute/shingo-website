@@ -101,6 +101,8 @@ router.get('/insight_initiate', (req ,res) => res.redirect('https://usu.co1.qual
 
 router.get('/japanstudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SseieEAB'));
 
+router.get('/irelandstudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000IC6CYEA1'));
+
 router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     var keynote = new Array()
