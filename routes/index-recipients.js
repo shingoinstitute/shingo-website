@@ -90,6 +90,10 @@ router.get('/prize-goodyear-brasil', function(req, res, next) {
 
                       /******* Silver Recipients *********/
 
+router.get('/silver-massmutual', function(req, res, next) {
+  res.render('awards/prize-silver/silver-massmutual', { title: 'Recipients - Shingo Institute' });
+});
+
 router.get('/silver-visteon', function(req, res, next) {
   res.render('awards/prize-silver/silver-visteon', { title: 'Recipients - Shingo Institute' });
 });
