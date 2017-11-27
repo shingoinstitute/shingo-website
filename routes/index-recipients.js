@@ -10,8 +10,11 @@ router.get('/', function(req, res, next) {
 });
 
                       /********** Shingo Prize Recipients *********/
+                      
+router.get('/prize-abbott-nutrition', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-abbott-nutrition', { title: 'Recipients - Shingo Institute' });
+});
                       /* Boston Prize Profile */
-
 router.get('/prize-thermo-fisher', function(req, res, next) {
   res.render('awards/prize-shingo/prize-thermo-fisher', { title: 'Recipients - Shingo Institute' });
 });
