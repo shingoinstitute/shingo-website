@@ -105,6 +105,8 @@ router.get('/irelandstudytour', (req ,res) => res.redirect('https://events.shing
 
 router.get('/midweststudytour', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000SupAFUAZ'));
 
+router.get('/rosencentre', (req, res) => res.redirect('https://www.phgsecure.com/IBE/bookingRedirect.ashx?propertyCode=ORLRH&group=GRPSHINGO&arrivalDate=04-04-2018&departureDate=04-18-2018'));
+
 router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
     var keynote = new Array()
