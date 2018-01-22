@@ -85,6 +85,8 @@ router.get('/events', (req ,res) => res.redirect('https://events.shingo.org'));
 
 router.get('/events/international', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'))
 
+router.get('/events/30', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'))
+
 router.get('/events/manufacturing', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'))
 
 router.get('/events/latinamerica', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'))
