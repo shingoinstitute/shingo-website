@@ -292,6 +292,11 @@ router.get('/affiliates', (req, res, next) => {
     myeducator = affiliates[i];
     affiliates.splice(i, 1);
 
+    // Remove Shingo Institute
+    var l = _.findIndex(affiliates, a =>{ return a.Id == '0011200001Gkm2uAAB'; });
+    shingoInstitute = affiliates[l];
+    affiliates.splice(l, 1);
+
     res.render('affiliates/affiliates', {
         title: 'Affiliates - Shingo Institute',
         affiliates: affiliates,
