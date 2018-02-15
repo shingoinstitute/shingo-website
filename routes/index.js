@@ -44,8 +44,8 @@ router.get('/model', (req, res, next) => {
     });
 });
 
-/* GET education */
-router.get('/education', (req, res, next) => {
+/* GET workshops */
+router.get('/workshops', (req, res, next) => {
   var query_res = {
       "Discover": new Array(),
       "Enable": new Array(),
@@ -67,11 +67,12 @@ router.get('/education', (req, res, next) => {
       query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
     }
     
-    res.render('education/education', {
-        title: 'Education - Shingo Institute',
+    res.render('education/workshops', {
+        title: 'Workshops - Shingo Institute',
         workshops: query_res
     });
   })
+  
   .catch(err => {
       logger.log("error", "EDUCATION ROUTE\n%j", err);
       res.render('education/education', {
@@ -79,6 +80,13 @@ router.get('/education', (req, res, next) => {
           workshops: query_res
       });
   })
+});
+
+/* GET education */
+router.get('/education', (req, res, next) => {
+    res.render('education/education', {
+        title: 'Workshops - Shingo Institute'
+    });
 });
 
 router.get('/events', (req ,res) => res.redirect('https://events.shingo.org'));
