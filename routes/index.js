@@ -89,6 +89,38 @@ router.get('/education', (req, res, next) => {
     });
 });
 
+// Standardized Link Redirects
+
+router.get('/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'));
+
+router.get('/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000NSAaXEAX'));
+
+router.get('/ireland/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000IC6CYEA1'));
+
+router.get('/ireland/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Rin6uEAB'));
+
+router.get('/midwest/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000SupAFUAZ'));
+
+router.get('/mountainwest/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000Sw5QfUAJ'));
+
+router.get('/mountainwest/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'));
+
+router.get('/japan/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000Sw5QVUAZ'));
+
+router.get('/japan/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SseieEAB'));
+
+router.get('/europe/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'));
+
+router.get('/oe/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RihJsEAJ'));
+
+router.get('/latinamerica/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'));
+
+router.get('/manufacturing/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'));
+
+//Additional
+
+router.get('/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'));
+
 router.get('/events', (req ,res) => res.redirect('https://events.shingo.org'));
 
 router.get('/events/international', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'))
