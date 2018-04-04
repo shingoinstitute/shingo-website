@@ -11,6 +11,14 @@ router.get('/', function(req, res, next) {
 
                       /********** Shingo Prize Recipients *********/
                       
+router.get('/prize-ball-bev-cans', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-ball-bev-cans', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/prize-abbvie', function(req, res, next) {
+  res.render('awards/prize-shingo/prize-abbvie', { title: 'Recipients - Shingo Institute' });
+});
+
 router.get('/prize-abbott-nutrition', function(req, res, next) {
   res.render('awards/prize-shingo/prize-abbott-nutrition', { title: 'Recipients - Shingo Institute' });
 });
@@ -139,6 +147,10 @@ router.get('/silver_pympsa', function(req, res, next) {
 
 
                     /******** Bronze Recipients ********/
+
+router.get('/bronze-forest-tosara', function(req, res, next) {
+  res.render('awards/prize-bronze/bronze-forest-tosara', { title: 'Recipients - Shingo Institute' });
+});
 
 router.get('/bronze-cardinalhealth', function(req, res, next) {
   res.render('awards/prize-bronze/bronze-cardinalhealth', { title: 'Recipients - Shingo Institute' });
