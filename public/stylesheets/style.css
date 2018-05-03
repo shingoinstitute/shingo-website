@@ -796,7 +796,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     }
 }
 @media only screen and (max-width: 767px) {
-    #about-other .four.columns:not(: first-of-type) {
+    #about-other .four.columns:not(:first-of-type) {
         border-left: none;
         border-top: 1px dotted #cccccc;
     }
@@ -1117,7 +1117,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     }
 }
 @media only screen and (max-width: 767px) {
-    #more-assess .four.columns:not(: first-of-type) {
+    #more-assess .four.columns:not(:first-of-type) {
         border-left: none;
         border-top: 1px solid #999999;
     }
