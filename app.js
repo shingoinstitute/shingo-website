@@ -25,19 +25,19 @@ var express = require('express'),
 
 var app = express();
 
-var store = new MySQLStore(config.mysql_connection)
-app.use(
-    session({
-        secret: 'iamawesome',
-        store: store,
-        resave: true,
-        saveUninitialized: true,
-        cookie: {
-            secure: config.cookie_security,
-            maxAge: 3600000
-        }
-    })
-)
+// var store = new MySQLStore(config.mysql_connection)
+// app.use(
+//     session({
+//         secret: 'iamawesome',
+//         store: store,
+//         resave: true,
+//         saveUninitialized: true,
+//         cookie: {
+//             secure: config.cookie_security,
+//             maxAge: 3600000
+//         }
+//     })
+// )
 
 // Get S3 bucket folder info
 function getAWSData(params){

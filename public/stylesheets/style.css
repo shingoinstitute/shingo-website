@@ -90,6 +90,10 @@ div iframe {
     vertical-align: middle;
     padding-bottom: 5px;
 }
+/* fix weird gumby dropdown issue when dropdown has less than 3 items  */
+.dropdown--size-small {
+    width: auto !important;
+}
 .gumby-no-touch .navbar ul li:hover> a, .gumby-touch .navbar ul li.active> a {
     background: none;
     color: #d04526;
