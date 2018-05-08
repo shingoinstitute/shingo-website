@@ -89,65 +89,55 @@ router.get('/education', (req, res, next) => {
     });
 });
 
-// Standardized Link Redirects
+/**
+ * Standardized Link Redirects
+ * 
+ * Format: shortnameYEAR
+ * 
+ * Existing redirects that do not meet the format are legacy: DO NOT CHANGE
+ * 
+ * Shingo Annual Conferences (International, etc) use only the YEAR
+ */
+const Redirects =
+    { '2018': 'https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'
+    , '2017': 'https://events.shingo.org/#!/events/a1B1200000NSAaXEAX'
+    , 'ireland2018': 'https://events.shingo.org/#!/events/a1B1200000IC6CYEA1'
+    , 'ireland2017': 'https://events.shingo.org/#!/events/a1B1200000Rin6uEAB'
+    , 'mountainwest2017': 'https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'
+    , 'japan2017': 'https://events.shingo.org/#!/events/a1B1200000SseieEAB'
+    , 'europe2017': 'https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'
+    , 'oe2017': 'https://events.shingo.org/#!/events/a1B1200000RihJsEAJ'
+    , 'latinamerica2017': 'https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'
+    , 'manufacturing2017': 'https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'
+    , 'midwest2018': 'https://events.shingo.org/#!/events/a1B1H00000SupAFUAZ'
+    , 'mountainwest2018': 'https://events.shingo.org/#!/events/a1B1H00000Sw5QfUAJ'
+    , 'japan2018': 'https://events.shingo.org/#!/events/a1B1H00000Sw5QVUAZ'
+    , '2018': 'https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'
+    , 'events': 'https://events.shingo.org'
+    , 'events/international': 'https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'
+    , 'events/30': 'https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'
+    , 'events/manufacturing': 'https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'
+    , 'events/latinamerica': 'https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'
+    , 'events/oe': 'https://events.shingo.org/#!/events/a1B1200000RihJsEAJ'
+    , 'events/europe': 'https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'
+    , 'usastudytour': 'https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'
+    , 'blog': 'https://blog.shingo.org'
+    , 'insight_initiate': 'https://usu.co1.qualtrics.com/jfe/form/SV_4GgAN0KZ0qf6pkp'
+    , 'japanstudytour': 'https://events.shingo.org/#!/events/a1B1200000SseieEAB'
+    , 'irelandstudytour': 'https://events.shingo.org/#!/events/a1B1200000IC6CYEA1'
+    , 'midweststudytour': 'https://events.shingo.org/#!/events/a1B1H00000SupAFUAZ'
+    , 'rosencentre': 'https://www.phgsecure.com/IBE/bookingRedirect.ashx?propertyCode=ORLRH&group=GRPSHINGO&arrivalDate=04-04-2018&departureDate=04-18-2018'
+    , 'latinamerica2018': 'https://events.shingo.org/#!/events/a1B1H00000Sx5piUAB'
+    , 'manufacturing2018': 'https://events.shingo.org/#!/events/a1B1H00000Sx4vAUAR'
+    , 'oe2018': 'https://events.shingo.org/#!/events/a1B1H00000GHrlhUAD'
+    , 'financial2018': 'https://events.shingo.org/#!/events/a1B1H00000GHh6nUAD'
+    , '2019': 'https://events.shingo.org/#!/events/a1B1H00000GHhWiUAL'
+    }
 
-router.get('/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'));
-
-router.get('/2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000NSAaXEAX'));
-
-router.get('/ireland2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000IC6CYEA1'));
-
-router.get('/ireland2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Rin6uEAB'));
-
-router.get('/midwest2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000SupAFUAZ'));
-
-router.get('/mountainwest2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000Sw5QfUAJ'));
-
-router.get('/mountainwest2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'));
-
-router.get('/japan2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000Sw5QVUAZ'));
-
-router.get('/japan2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SseieEAB'));
-
-router.get('/europe2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'));
-
-router.get('/oe2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RihJsEAJ'));
-
-router.get('/latinamerica2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'));
-
-router.get('/manufacturing2017', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'));
-
-//Additional
-
-router.get('/2018', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'));
-
-router.get('/events', (req ,res) => res.redirect('https://events.shingo.org'));
-
-router.get('/events/international', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'))
-
-router.get('/events/30', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000N7aHXEAZ'))
-
-router.get('/events/manufacturing', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SU9NBEA1'))
-
-router.get('/events/latinamerica', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RilBGEAZ'))
-
-router.get('/events/oe', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000RihJsEAJ'))
-
-router.get('/events/europe', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Ril1QEAR'))
-
-router.get('/usastudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000Sbgf1EAB'));
-
-router.get('/blog', (req ,res) => res.redirect('https://blog.shingo.org'));
-
-router.get('/insight_initiate', (req ,res) => res.redirect('https://usu.co1.qualtrics.com/jfe/form/SV_4GgAN0KZ0qf6pkp'));
-
-router.get('/japanstudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000SseieEAB'));
-
-router.get('/irelandstudytour', (req ,res) => res.redirect('https://events.shingo.org/#!/events/a1B1200000IC6CYEA1'));
-
-router.get('/midweststudytour', (req, res) => res.redirect('https://events.shingo.org/#!/events/a1B1H00000SupAFUAZ'));
-
-router.get('/rosencentre', (req, res) => res.redirect('https://www.phgsecure.com/IBE/bookingRedirect.ashx?propertyCode=ORLRH&group=GRPSHINGO&arrivalDate=04-04-2018&departureDate=04-18-2018'));
+Object.keys(Redirects).forEach(k => {
+    const path = Redirects[k]
+    router.get(`/${k}`, (req, res) => res.redirect(path))
+})
 
 router.get('/events/:name', (req, res, next) => {
     var event = jsonfile.readFileSync(__dirname + '/../models/' + req.params.name + '.json')
