@@ -358,9 +358,6 @@ footer img {
 }
 .tri-overlay ul h3, .tri-overlay ul h4 {
     color: white;
-    @include respond(portrait-tablets) {
-        font-size: 1.5em;
-    }
 }
 .tri-overlay ul h3:hover, .tri-overlay ul h4:hover {
     color: #d04526;
