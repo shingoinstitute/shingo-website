@@ -1,6 +1,7 @@
 #!/bin/bash
 
 TAG="${TAG:-latest}"
+IMG_NAME="shingo-website"
 
 HELP="USAGE: build.sh [OPTIONS]
 Build and optionally push an image
@@ -12,10 +13,10 @@ OPTIONS:
 "
 
 build() {
-    docker build --tag docker.shingo.org/shingo-website:"$TAG" "$@" .
+    docker build --tag docker.shingo.org/"$IMG_NAME":"$TAG" "$@" .
     if [[ "$PUSH" = true ]]; then
         docker login docker.shingo.org
-        docker push docker.shingo.org/shingo-website:"$TAG"
+        docker push docker.shingo.org/"$IMG_NAME":"$TAG"
     fi
 }
 
