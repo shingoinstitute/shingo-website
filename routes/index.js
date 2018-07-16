@@ -130,8 +130,9 @@ const Redirects =
     , 'latinamerica2018': 'https://www.cvent.com/events/2018-shingo-latin-america-conference/event-summary-3fcc59a22a3f45e985a5f2c1e7ec4e1e.aspx'
     , 'manufacturing2018': 'https://www.cvent.com/events/2018-shingo-manufacturing-summit/event-summary-7a99c175b4734dac9af3ebd91e3726cf.aspx'
     , 'oe2018': 'https://events.shingo.org/#!/events/a1B1H00000GHrlhUAD'
-    , 'financial2018': 'https://events.shingo.org/#!/events/a1B1H00000GHh6nUAD'
+    , 'financial2018': 'http://www.cvent.com/events/2018-shingo-financial-services-summit/event-summary-e89c1e845b0f43769d5a62127bdaa4e1.aspx'
     , '2019': 'https://events.shingo.org/#!/events/a1B1H00000GHhWiUAL'
+    , 'financialservices2018': 'http://www.cvent.com/events/2018-shingo-financial-services-summit/event-summary-e89c1e845b0f43769d5a62127bdaa4e1.aspx'
     }
 
 Object.keys(Redirects).forEach(k => {
