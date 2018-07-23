@@ -1,65 +1,68 @@
+{{>_workshop-buttons}}
 <article class="container" id="workshops">
-		<div class="row text-center">
-			<h2><strong>Upcoming Workshops</strong></h2>
-			<h4>All workshops are 8 am - 5 pm unless otherwise noted.</h4>
-			<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_d597I9U3a4lWAtf">here</a> if you are interested in hosting a workshop at your facility.</h4>
-			<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_erMNLlYVQfcxjsV">here</a> if you would like to attend a specific workshop in a specific region/language.</h4>
-			<br><br>
+	<div class="row text-center">
+		<h2><strong>Upcoming Workshops</strong></h2>
+		<h4>All workshops are 8 am - 5 pm unless otherwise noted.</h4>
+		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_d597I9U3a4lWAtf">here</a> if you are interested in hosting a workshop at your facility.</h4>
+		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_erMNLlYVQfcxjsV">here</a> if you would like to attend a specific workshop in a specific region/language.</h4>
+		<br><br>
 	</div>
-    <div class="row list">
-			<div class="two columns">
-					<h4 class="text-center" style="text-decoration: underline;"><a href="#discover"><img class="shingoButton" src="images/DiscoverButton.png"></a></h4><br>
-					<br>
-                    <ul>
-						{{#each workshops.Discover}}
-							{{>_aff-event this}}
-						{{/each}}
-					</ul>
-			</div>
-			<div class="two columns">
-					<h4 class="text-center" style="text-decoration: underline;"><a href="#enable"><img class="shingoButton" src="images/EnableButton.png"></a></h4><br>
-					<br>
-                    <ul>
-						{{#each workshops.Enable}}
-							{{>_aff-event this}}
-						{{/each}}
-					</ul>
-			</div>
-			<div class="two columns">
-					<h4 class="text-center" style="text-decoration: underline;"><a href="#improve"><img class="shingoButton" src="images/ImproveButton.png"></a></h4><br>
-					<br>
-                    <ul>
-						{{#each workshops.Improve}}
-							{{>_aff-event this}}
-						{{/each}}
-					</ul>
-			</div>
-			<div class="two columns">
-					<h4 class="text-center" style="text-decoration: underline;"><a href="#align"><img class="shingoButton" src="images/AlignResultsButton.png"></a></h4><br>
-					<br>
-					<ul>
-						{{#each workshops.Align}}
-							{{>_aff-event this}}
-						{{/each}}
-					</ul>
-			</div>
-			<div class="two columns">
-					<h4 class="text-center" style="text-decoration: underline;"><a href="#build"><img class="shingoButton" src="images/BuildButton.png"></a></h4><br>
-					<br>
-                    <ul>
-						{{#each workshops.Build}}
-							{{>_aff-event this}}
-						{{/each}}
-					</ul>
-			</div>
-    </div>
+	<div>
+		<select name="workshopType" onchange="filterWorkshops()">
+			<option value="">All</option>
+			<option value="Discover">Discover Excellence</option>
+			<option value="Enable">Cultural Enablers</option>
+			<option value="Improve">Continuous Improvement</option>
+			<option value="Align">Enterprise Alignment</option>
+			<option value="Build">Build Excellence</option>
+		</select>
+		<select name="location" onchange="filterWorkshops()">
+			<option value="">All</option>
+			{{#each locations}}
+				<option value={{this}}>{{this}}</option>
+			{{/each}}
+		</select>
+		<select name="month" onchange="filterWorkshops()">
+			<option value="">All</option>
+			{{#each months}}
+				<option value={{this}}>{{this}}</option>
+			{{/each}}
+		</select>
+	</div>
+	{{>_workshop-list this}}
 </article>
 <script>
-function change_tab (new_index){
-	// Use Gumgy's Tabs.js API to change tab
-	var $tabs = $('.tabs');
-	$tabs.trigger('gumby.set', new_index);
+	function filterWorkshops() {
+		var typeSelector = document.getElementsByName("workshopType")[0];
+		var selectedType = typeSelector.options[typeSelector.selectedIndex].value;
 
-	window.scrollTo(0, 1000);
-}
+		var locationSelector = document.getElementsByName("location")[0];
+		var selectedLocation = locationSelector.options[locationSelector.selectedIndex].value;
+		console.log(selectedLocation)
+
+		var monthSelector = document.getElementsByName("month")[0];
+		var selectedMonth = monthSelector.options[monthSelector.selectedIndex].value;
+
+		var workshopList = document.getElementById("workshop-list");
+		var workshops = workshopList.getElementsByClassName("workshop-card");
+
+		for (var i = 0; i < workshops.length; i++) {
+			var type = workshops[i].getElementsByClassName("getWorkshopType")[0].innerHTML;
+			var location = workshops[i].getElementsByClassName("getWorkshopLocation")[0].innerHTML;
+			var month = workshops[i].getElementsByClassName("getWorkshopMonth")[0].innerHTML;
+			if ((type.indexOf(selectedType) > -1) && (location.indexOf(selectedLocation) > -1) && (month.indexOf(selectedMonth) > -1)) {
+				workshops[i].style.display = "";
+			} else {
+				workshops[i].style.display = "none";
+			}
+		}
+	}
+
+	function change_tab (new_index){
+		// Use Gumgy's Tabs.js API to change tab
+		var $tabs = $('.tabs');
+		$tabs.trigger('gumby.set', new_index);
+
+		window.scrollTo(0, 1000);
+	}
 </script>

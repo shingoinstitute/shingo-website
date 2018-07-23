@@ -1,7 +1,12 @@
-<li>
-  <h6 class="quattrocento"><strong>{{prettyDate Start_Date__c End_Date__c}}</strong></h6>
-  <p class="indent">Host Company: {{Host_Site__c}}<br>
-  Location: {{Event_City__c}}, {{Event_Country__c}}<br>
-  Affiliate: <a href="affiliates/{{Organizing_Affiliate__r.Id}}" onclick="trackOutboundLink('{{Organizing_Affiliate__r.Name}}', 'Affiliate Page', 'Workshop - {{Id}}')"><em><strong>{{Organizing_Affiliate__r.Name}}</strong></em></a></p>
-  <p class="brown medium btn"><a href="{{Registration_Website__c}}" onclick="trackOutboundLink('{{Organizing_Affiliate__r.Name}}', 'Workshop Register', 'Workshop - {{Id}}')" target="_blank" >Register</a></p>
-</li>
+<div class="workshop-card">
+  <div>
+    <h5 class="quattrocento"><strong>{{prettyDate Start_Date__c End_Date__c}}</strong></h5>
+    <h6 class="quattrocento"><strong>{{Event_City__c}}, {{Event_Country__c}}</strong></h6>
+    <p class="indent">Host Company: {{Host_Site__c}}<br>
+    Affiliate: <a href="affiliates/{{Organizing_Affiliate__r.Id}}" onclick="trackOutboundLink('{{Organizing_Affiliate__r.Name}}', 'Affiliate Page', 'Workshop - {{Id}}')"><em><strong>{{Organizing_Affiliate__r.Name}}</strong></em></a></p>
+    <p class="brown medium btn bottom-centered-button {{Workshop_Type__c}}"><a href="{{Registration_Website__c}}" onclick="trackOutboundLink('{{Organizing_Affiliate__r.Name}}', 'Workshop Register', 'Workshop - {{Id}}')" target="_blank" >Register</a></p>
+  </div>
+  <div class="getWorkshopType" style="display: none">{{Workshop_Type__c}}</div>
+  <div class="getWorkshopLocation" style="display: none">{{Event_Country__c}}</div>
+  <div class="getWorkshopMonth" style="display: none">{{prettyMonth Start_Date__c}}</div> 
+</div>

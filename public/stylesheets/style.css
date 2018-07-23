@@ -551,7 +551,7 @@ footer img {
 #workshops img {
     max-width: 150px;
 }
-#workshops a:hover> img {
+.shingoButton:hover {
     border: rgba(64, 126, 193, 1) solid 5px;
     border-radius: 200px;
 }
@@ -1283,6 +1283,79 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     text-shadow: 1px 1px 2px #333333;
 }
 
+#workshop-list {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    align-items: space-between;
+    justify-content: center;
+}
+
+#workshop-list .workshop-card {
+    width: 300px;
+    height: 250px;
+    border-radius: 40px;
+    background: lavender;
+    box-shadow: 5px 5px 5px #222;
+    padding: 5px;
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workshop-card div {
+    width: 90%;
+    height: 90%;
+    position: relative;
+}
+
+.bottom-centered-button {
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.bottom-centered-button.Discover {
+    background: #5b3214
+}
+
+.bottom-centered-button.Enable {
+    background: #003768
+}
+
+.bottom-centered-button.Enable:hover {
+    background: #005199
+}
+
+.bottom-centered-button.Improve {
+    background: #640820
+}
+
+.bottom-centered-button.Improve:hover {
+    background: #c30837
+}
+
+.bottom-centered-button.Align {
+    background: #b27c33
+}
+
+.bottom-centered-button.Align:hover {
+    background: #da8b24
+}
+
+.bottom-centered-button.Build {
+    background: #405124
+}
+
+.bottom-centered-button.Build:hover {
+    background: #53682f
+}
+
 /********MODEL********/
 
 #model {
@@ -1585,3 +1658,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 .footnotes {
     font-size: .8em;
   }
+
+.br-vid {
+    border-radius: 10px;
+}

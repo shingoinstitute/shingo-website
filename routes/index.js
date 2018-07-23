@@ -1,6 +1,7 @@
 var express = require('express'),
     Promise = require('bluebird'),
     jsonfile = require('jsonfile'),
+    moment = require('moment'),
     SF = Promise.promisifyAll(require('../models/sf')),
     request = Promise.promisifyAll(require('request')),
     _ = require('lodash'),
@@ -46,13 +47,7 @@ router.get('/model', (req, res, next) => {
 
 /* GET workshops */
 router.get('/workshops', (req, res, next) => {
-  var query_res = {
-      "Discover": new Array(),
-      "Enable": new Array(),
-      "Improve": new Array(),
-      "Align": new Array(),
-      "Build": new Array()
-  }
+  var allWorkshops = new Array();
 
   request.getAsync('https://api.shingo.org/salesforce/workshops')
   .then(results => {
@@ -64,12 +59,43 @@ router.get('/workshops', (req, res, next) => {
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
-      query_res[workshops[i].Workshop_Type__c].push(workshops[i]);
+        allWorkshops.push(workshops[i]);
+    }
+
+    workshopLocations = new Array();
+    for (var i in workshops) {
+        var found = false
+        for (var j in workshopLocations) {
+            if (workshopLocations[j].indexOf(workshops[i].Event_Country__c) > -1) {
+                found = true;
+            }
+        }
+        if (!found) {
+            workshopLocations.push(workshops[i].Event_Country__c)
+        }
+    }
+    workshopLocations = workshopLocations.sort()
+
+    workshopMonths = new Array();
+    for (var i in workshops) {
+        var found = false
+        var month = moment(workshops[i].Start_Date__c).format('MMM YYYY')
+        console.log(workshops[i].Start_Date__c)
+        for (var j in workshopMonths) {
+            if (workshopMonths[j].indexOf(month) > -1) {
+                found = true;
+            }
+        }
+        if (!found) {
+            workshopMonths.push(month)
+        }
     }
     
     res.render('education/workshops', {
         title: 'Workshops - Shingo Institute',
-        workshops: query_res
+        workshops: allWorkshops,
+        locations: workshopLocations,
+        months: workshopMonths
     });
   })
   
@@ -87,6 +113,180 @@ router.get('/education', (req, res, next) => {
     res.render('education/education', {
         title: 'Workshops - Shingo Institute'
     });
+});
+
+
+/* EDUCATION/INFO PAGES */
+
+/* GET discover */
+router.get('/education/discover', (req, res, next) => {
+    var showWorkshops = new Array()
+
+    request.getAsync('https://api.shingo.org/salesforce/workshops')
+    .then(results => {
+        var records = JSON.parse(results.body);
+        workshops = records.workshops;
+        // Verify full url
+        workshops.forEach(workshop =>{
+            if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        })
+        workshops = _.sortBy(workshops, ['End_Date__c']);
+        for (var i in workshops) {
+            if(workshops[i].Workshop_Type__c == "Discover") showWorkshops.push(workshops[i])
+        }
+
+        res.render('education/discover', {
+            title: 'Discover - Shingo Institute',
+            workshops: showWorkshops,
+            workshopType: 'Discover Excellence',
+            color: '5b3214'
+        });
+    })
+
+    .catch(err => {
+        logger.log("error", "Discover ROUTE\n%j", err);
+        res.render('education/education', {
+            title: 'Education - Shingo Institute',
+            workshops: showWorkshops
+            
+        });
+    })
+});
+
+/* GET enable */
+router.get('/education/enable', (req, res, next) => {
+    var showWorkshops = new Array()
+
+    request.getAsync('https://api.shingo.org/salesforce/workshops')
+    .then(results => {
+        var records = JSON.parse(results.body);
+        workshops = records.workshops;
+        // Verify full url
+        workshops.forEach(workshop =>{
+            if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        })
+        workshops = _.sortBy(workshops, ['End_Date__c']);
+        for (var i in workshops) {
+            if(workshops[i].Workshop_Type__c == "Enable") showWorkshops.push(workshops[i])
+        }
+
+        res.render('education/enable', {
+            title: 'Enable - Shingo Institute',
+            workshops: showWorkshops,
+            workshopType: 'Cultural Enablers',
+            color: '003768'
+        });
+    })
+
+    .catch(err => {
+        logger.log("error", "Enable ROUTE\n%j", err);
+        res.render('education/education', {
+            title: 'Education - Shingo Institute',
+            workshops: showWorkshops
+        });
+    })
+});
+
+/* GET improve */
+router.get('/education/improve', (req, res, next) => {
+    var showWorkshops = new Array()
+
+    request.getAsync('https://api.shingo.org/salesforce/workshops')
+    .then(results => {
+        var records = JSON.parse(results.body);
+        workshops = records.workshops;
+        // Verify full url
+        workshops.forEach(workshop =>{
+            if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        })
+        workshops = _.sortBy(workshops, ['End_Date__c']);
+        for (var i in workshops) {
+            if(workshops[i].Workshop_Type__c == "Improve") showWorkshops.push(workshops[i])
+        }
+
+        res.render('education/improve', {
+            title: 'Improve - Shingo Institute',
+            workshops: showWorkshops,
+            workshopType: 'Continuous Improvement',
+            color: '640820'
+        });
+    })
+
+    .catch(err => {
+        logger.log("error", "Improve ROUTE\n%j", err);
+        res.render('education/education', {
+            title: 'Education - Shingo Institute',
+            workshops: showWorkshops
+        });
+    })
+});
+
+/* GET align */
+router.get('/education/align', (req, res, next) => {
+    var showWorkshops = new Array()
+
+    request.getAsync('https://api.shingo.org/salesforce/workshops')
+    .then(results => {
+        var records = JSON.parse(results.body);
+        workshops = records.workshops;
+        // Verify full url
+        workshops.forEach(workshop =>{
+            if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        })
+        workshops = _.sortBy(workshops, ['End_Date__c']);
+        for (var i in workshops) {
+            if(workshops[i].Workshop_Type__c == "Align") showWorkshops.push(workshops[i])
+        }
+
+        res.render('education/align', {
+            title: 'Align - Shingo Institute',
+            workshops: showWorkshops,
+            workshopType: 'Enterprise Alignment',
+            color: '627c33'
+        });
+    })
+
+    .catch(err => {
+        logger.log("error", "Align ROUTE\n%j", err);
+        res.render('education/education', {
+            title: 'Education - Shingo Institute',
+            workshops: showWorkshops
+        });
+    })
+});
+
+/* GET build */
+router.get('/education/build', (req, res, next) => {
+    var showWorkshops = new Array()
+
+    request.getAsync('https://api.shingo.org/salesforce/workshops')
+    .then(results => {
+        var records = JSON.parse(results.body);
+        workshops = records.workshops;
+        // Verify full url
+        workshops.forEach(workshop =>{
+            if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        })
+        workshops = _.sortBy(workshops, ['End_Date__c']);
+        for (var i in workshops) {
+            if(workshops[i].Workshop_Type__c == "Build") showWorkshops.push(workshops[i])
+        }
+
+        res.render('education/build', {
+            title: 'Build - Shingo Institute',
+            workshops: showWorkshops,
+            workshopType: 'Build Excellence',
+            color: '405124'
+        });
+    })
+
+    .catch(err => {
+        logger.log("error", "Build ROUTE\n%j", err);
+        res.render('education/education', {
+            title: 'Education - Shingo Institute',
+            workshops: showWorkshops
+        });
+    })
 });
 
 /**
