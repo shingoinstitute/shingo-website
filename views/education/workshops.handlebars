@@ -7,28 +7,38 @@
 		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_erMNLlYVQfcxjsV">here</a> if you would like to attend a specific workshop in a specific region/language.</h4>
 		<br><br>
 	</div>
-	<div>
-		<select name="workshopType" onchange="filterWorkshops()">
-			<option value="">All</option>
-			<option value="Discover">Discover Excellence</option>
-			<option value="Enable">Cultural Enablers</option>
-			<option value="Improve">Continuous Improvement</option>
-			<option value="Align">Enterprise Alignment</option>
-			<option value="Build">Build Excellence</option>
-		</select>
-		<select name="location" onchange="filterWorkshops()">
-			<option value="">All</option>
-			{{#each locations}}
-				<option value={{this}}>{{this}}</option>
-			{{/each}}
-		</select>
-		<select name="month" onchange="filterWorkshops()">
-			<option value="">All</option>
-			{{#each months}}
-				<option value={{this}}>{{this}}</option>
-			{{/each}}
-		</select>
+	<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+		<div>
+			<h5>Workshop Type: </h5>
+			<select name="workshopType" onchange="filterWorkshops()">
+				<option value="">All</option>
+				<option value="Discover">Discover Excellence</option>
+				<option value="Enable">Cultural Enablers</option>
+				<option value="Improve">Continuous Improvement</option>
+				<option value="Align">Enterprise Alignment</option>
+				<option value="Build">Build Excellence</option>
+			</select>
+		</div>
+		<div>
+			<h5>Country: </h5>
+			<select name="location" onchange="filterWorkshops()">
+				<option value="">All</option>
+				{{#each locations}}
+					<option value="{{this}}">{{this}}</option>
+				{{/each}}
+			</select>
+		</div>
+		<div>
+			<h5>Date: </h5>
+			<select name="month" onchange="filterWorkshops()">
+				<option value="">All</option>
+				{{#each months}}
+					<option value="{{this}}">{{this}}</option>
+				{{/each}}
+			</select>
+		</div>
 	</div>
+	<br>
 	{{>_workshop-list this}}
 </article>
 <script>

@@ -59,8 +59,27 @@ router.get('/workshops', (req, res, next) => {
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
+        switch(workshops[i].Workshop_Type__c) {
+            case "Discover":
+                console.log("Found Discover")
+                workshops[i].workshopTypeFull = "Discover Excellence";
+                break;
+            case "Enable":
+                workshops[i].workshopTypeFull = "Cultural Enablers";
+                break;
+            case "Improve":
+                workshops[i].workshopTypeFull = "Continuous Improvement";
+                break;
+            case "Align":
+                workshops[i].workshopTypeFull = "Enterprise Alignment";
+                break;
+            case "Build":
+                workshops[i].workshopTypeFull = "Build Excellence";
+                break;
+        }
         allWorkshops.push(workshops[i]);
     }
+
 
     workshopLocations = new Array();
     for (var i in workshops) {

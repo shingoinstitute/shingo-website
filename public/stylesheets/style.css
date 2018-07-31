@@ -1295,13 +1295,15 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     width: 300px;
     height: 250px;
     border-radius: 40px;
-    background: lavender;
+    background: #eee;
     box-shadow: 5px 5px 5px #222;
     padding: 5px;
     margin: 10px 20px;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .workshop-card div {
@@ -1310,46 +1312,70 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     position: relative;
 }
 
+#upcoming-title {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.button-image {
+    position: absolute;
+    width: 150px;
+    min-width: 150px;
+    height: 150px;
+    bottom: -75px;
+    right: -75px;
+    opacity: .75;
+    border-radius: 100%;
+}
+
 .bottom-centered-button {
     text-decoration: none;
     position: absolute;
-    bottom: 0;
-    margin-bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+    bottom: -5px;
+    margin: 0 auto;
+    left: 10%;
+    /* transform: translate(-50%);
+    -webkit-transform: translate(-50%); */
 }
 
-.bottom-centered-button.Discover {
-    background: #5b3214
+.Discover {
+    background: #5b3214;
+    border: 1px solid #5b3214;
 }
 
-.bottom-centered-button.Enable {
-    background: #003768
+.Enable {
+    background: #003768;
+    border: 1px solid #003768;
+}
+
+.Improve {
+    background: #640820;
+    border: 1px solid #640820;
+}
+
+.Align {
+    background: #b27c33;
+    border: 1px solid #b27c33;
+}
+
+.Build {
+    background: #405124;
+    border: 1px solid #405124;
 }
 
 .bottom-centered-button.Enable:hover {
     background: #005199
 }
 
-.bottom-centered-button.Improve {
-    background: #640820
-}
-
 .bottom-centered-button.Improve:hover {
     background: #c30837
 }
 
-.bottom-centered-button.Align {
-    background: #b27c33
-}
-
 .bottom-centered-button.Align:hover {
     background: #da8b24
-}
-
-.bottom-centered-button.Build {
-    background: #405124
 }
 
 .bottom-centered-button.Build:hover {
