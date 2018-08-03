@@ -3,13 +3,11 @@
 	<div class="row text-center">
 		<h2><strong>Upcoming Workshops</strong></h2>
 		<h4>All workshops are 8 am - 5 pm unless otherwise noted.</h4>
-		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_d597I9U3a4lWAtf">here</a> if you are interested in hosting a workshop at your facility.</h4>
-		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_erMNLlYVQfcxjsV">here</a> if you would like to attend a specific workshop in a specific region/language.</h4>
-		<br><br>
+		<br>
 	</div>
-	<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-		<div>
-			<h5>Workshop Type: </h5>
+	<div id="filter-menu">
+		<div class="filter-item">
+			<h5><strong>Workshop Type:</strong></h5>
 			<select name="workshopType" onchange="filterWorkshops()">
 				<option value="">All</option>
 				<option value="Discover">Discover Excellence</option>
@@ -19,8 +17,8 @@
 				<option value="Build">Build Excellence</option>
 			</select>
 		</div>
-		<div>
-			<h5>Country: </h5>
+		<div class="filter-item">
+			<h5><strong>Country:</strong></h5>
 			<select name="location" onchange="filterWorkshops()">
 				<option value="">All</option>
 				{{#each locations}}
@@ -28,8 +26,8 @@
 				{{/each}}
 			</select>
 		</div>
-		<div>
-			<h5>Date: </h5>
+		<div class="filter-item">
+			<h5><strong>Date:</strong></h5>
 			<select name="month" onchange="filterWorkshops()">
 				<option value="">All</option>
 				{{#each months}}
@@ -40,7 +38,13 @@
 	</div>
 	<br>
 	{{>_workshop-list this}}
-</article>
+	<br>
+	<div class="row text-center">
+		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_erMNLlYVQfcxjsV">here</a> if you would like to attend a specific workshop in a specific region/language.</h4>
+		<h4>Click <a href="https://usu.co1.qualtrics.com/jfe/form/SV_d597I9U3a4lWAtf">here</a> if you are interested in hosting a workshop at your facility.</h4>
+	</div>
+	<br>
+	</article>
 <script>
 	function filterWorkshops() {
 		var typeSelector = document.getElementsByName("workshopType")[0];
