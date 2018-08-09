@@ -55,10 +55,14 @@ router.get('/workshops', (req, res, next) => {
     workshops = records.workshops;
     // Verify full url
     workshops.forEach(workshop =>{
-        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        if (!workshop || !workshop.Registration_Website__c) {
+            throw new Error(`Invalid Workshop\n${JSON.stringify(workshop)}`);
+        } 
+        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;  
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
+
         switch(workshops[i].Workshop_Type__c) {
             case "Discover":
                 console.log("Found Discover")
