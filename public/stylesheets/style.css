@@ -553,7 +553,7 @@ footer img {
 }
 .shingoButton:hover {
     border: rgba(64, 126, 193, 1) solid 5px;
-    border-radius: 200px;
+    border-radius: 100%;
 }
 .grid ul {
     min-width: 870px;
@@ -1146,6 +1146,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 .shingoButton {
     width: 150px;
     max-width: 98%;
+    max-height: 98%;
     margin: auto;
 }
 
@@ -1287,10 +1288,12 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 
 .shingo-buttons a {
     width: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 30%;
+    max-width: 27vw;
+    max-height: 27vw;
 }
 
 .display-row {
