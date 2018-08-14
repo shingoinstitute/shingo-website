@@ -81,6 +81,11 @@ router.get('/workshops', (req, res, next) => {
                 workshops[i].workshopTypeFull = "Build Excellence";
                 break;
         }
+        if (workshops[i].Additional_Information__c && workshops[i].Additional_Information__c !== '') {
+            workshops[i].hasAdditionalInfo = true
+        } else {
+            workshops[i].hasAdditionalInfo = false
+        }
         allWorkshops.push(workshops[i]);
     }
 
