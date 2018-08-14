@@ -53,7 +53,6 @@
 
 		var locationSelector = document.getElementsByName("location")[0];
 		var selectedLocation = locationSelector.options[locationSelector.selectedIndex].value;
-		console.log(selectedLocation)
 
 		var monthSelector = document.getElementsByName("month")[0];
 		var selectedMonth = monthSelector.options[monthSelector.selectedIndex].value;
@@ -62,9 +61,9 @@
 		var workshops = workshopList.getElementsByClassName("workshop-card");
 
 		for (var i = 0; i < workshops.length; i++) {
-			var type = workshops[i].getElementsByClassName("getWorkshopType")[0].innerHTML;
-			var location = workshops[i].getElementsByClassName("getWorkshopLocation")[0].innerHTML;
-			var month = workshops[i].getElementsByClassName("getWorkshopMonth")[0].innerHTML;
+			var type = workshops[i].dataset.workshopType;
+			var location = workshops[i].dataset.workshopLocation;
+			var month = workshops[i].dataset.workshopMonth;
 			if ((type.indexOf(selectedType) > -1) && (location.indexOf(selectedLocation) > -1) && (month.indexOf(selectedMonth) > -1)) {
 				workshops[i].style.display = "";
 			} else {

@@ -65,7 +65,6 @@ router.get('/workshops', (req, res, next) => {
 
         switch(workshops[i].Workshop_Type__c) {
             case "Discover":
-                console.log("Found Discover")
                 workshops[i].workshopTypeFull = "Discover Excellence";
                 break;
             case "Enable":
@@ -108,7 +107,6 @@ router.get('/workshops', (req, res, next) => {
     for (var i in workshops) {
         var found = false
         var month = moment(workshops[i].Start_Date__c).format('MMM YYYY')
-        console.log(workshops[i].Start_Date__c)
         for (var j in workshopMonths) {
             if (workshopMonths[j].indexOf(month) > -1) {
                 found = true;
