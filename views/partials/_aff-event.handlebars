@@ -12,7 +12,7 @@
     <h5 class="quattrocento"><strong>{{prettyDate Start_Date__c End_Date__c}}</strong></h5>
     <h6 class="quattrocento"><strong>{{Event_City__c}}, {{Event_Country__c}}</strong></h6>
     <p class="indent">Host: {{Host_Site__c}}<br>
-    Affiliate: <a href="affiliates/{{Organizing_Affiliate__r.Id}}" onclick="trackOutboundLink('{{Organizing_Affiliate__r.Name}}', 'Affiliate Page', 'Workshop - {{Id}}')"><em><strong>{{Organizing_Affiliate__r.Name}}</strong></em></a></p>
+    Affiliate: <a href="../affiliates/{{Organizing_Affiliate__r.Id}}" onclick="trackOutboundLink('{{Organizing_Affiliate__r.Name}}', 'Affiliate Page', 'Workshop - {{Id}}')"><em><strong>{{Organizing_Affiliate__r.Name}}</strong></em></a></p>
     {{#if hasAdditionalInfo}}
       <p class="indent">{{Additional_Information__c}}</p>
     {{/if}}
