@@ -12,26 +12,13 @@
     </div>
     <br>
     <!-- Standard Size Screen -->
-    <div class="row">
-        <ul class="afflist three_up tiles centered hide-for-small">
-            {{#each affiliates}}
-                <li>
-                    <div class="row">
-                        <div class="twelve columns centered">
-                            <a href="affiliates/{{Id}}" onclick="trackOutboundLink('{{Name}}', 'Affiliate Page', 'Affiliates List')">
-                                <div class="text-center">
-                                    <img src="{{Logo__c}}" alt="{{Name}}">
-                                </div>
-                                <h4>{{Name}}</h4>
-                                <p>LANGUAGES: {{Languages__c}} </p>
-                                <br>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            {{/each}}
-        </ul>
-        <!-- Small Screen -->
+</article>
+<div class="display-row">
+    {{#each affiliates}}
+        {{>_affiliate-card}}
+    {{/each}}
+</div>
+        {{!-- <!-- Small Screen -->
         <ul class="afflist centered show-for-small">
             {{#each affiliates}}
                 <li>
@@ -49,9 +36,7 @@
                     </div>
                 </li>
             {{/each}}
-        </ul>
-    </div>
-</article>
+        </ul> --}}
 <article class="container" id="providers">
     <div class="row">
         <div class="nine centered columns text-center">
@@ -107,7 +92,7 @@
         </div>
     </div>
 </article>
-<script>
+{{!-- <script>
     $(document).ready(function(e) {
         $('ul.afflist').each(function() {
             // get current ul
@@ -128,4 +113,4 @@
             $liArr.appendTo($ul);
         });
     });
-</script>
+</script> --}}

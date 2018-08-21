@@ -551,6 +551,8 @@ router.get('/affiliates', (req, res, next) => {
     shingoInstitute = affiliates[l];
     affiliates.splice(l, 1);
 
+    affiliates = _.sortBy(affiliates, ['Name']);
+
     res.render('affiliates/affiliates', {
         title: 'Affiliates - Shingo Institute',
         affiliates: affiliates,
