@@ -11,13 +11,13 @@
         </div>
     </div>
     <br>
-    <!-- Standard Size Screen -->
+    <div class="display-row">
+        {{#each affiliates}}
+            {{>_affiliate-card}}
+        {{/each}}
+    </div>
 </article>
-<div class="display-row">
-    {{#each affiliates}}
-        {{>_affiliate-card}}
-    {{/each}}
-</div>
+
         {{!-- <!-- Small Screen -->
         <ul class="afflist centered show-for-small">
             {{#each affiliates}}

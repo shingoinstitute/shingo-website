@@ -1,12 +1,12 @@
-<div class="affiliate-card">
-    <div>
-        <a href="affiliates/{{Id}}" onclick="trackOutboundLink('{{Name}}', 'Affiliate Page', 'Affiliates List')">
-            <div class="text-center">
-                <img style="max-height: 100px;"src="{{Logo__c}}" alt="{{Name}}">
-            </div>
-            <h4>{{Name}}</h4>
+<a href="affiliates/{{Id}}" onclick="trackOutboundLink('{{Name}}', 'Affiliate Page', 'Affiliates List')">
+    <div class="affiliate-card">
+        <div class="affiliate-logo">
+            <img style="max-height: 100px;"src="{{Logo__c}}" alt="{{Name}}">
+        </div>
+        <div class="affiliate-card-body">
+            <h5><strong>{{Name}}</strong></h5>
             <p>LANGUAGES: {{Languages__c}} </p>
             <br>
-        </a>
+        </div>
     </div>
-</div>
+</a>
