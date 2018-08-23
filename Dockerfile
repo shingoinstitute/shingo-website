@@ -1,15 +1,9 @@
-FROM node
-
-WORKDIR /shingo-website
-
-RUN mkdir -p logs && touch logs/website.log
-
-RUN npm install -g nodemon
-
+FROM node:8.9-alpine
+ENV NODE_ENV production
 ENV PORT=80
-
-ENV NODE_ENV=development
-
+WORKDIR /usr/src/app
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+RUN npm install --production --silent
+COPY . .
 EXPOSE 80
-
-ENTRYPOINT nodemon app.js
+CMD npm start
