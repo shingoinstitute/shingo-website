@@ -3,13 +3,17 @@
 TAG="${TAG:-latest}"
 IMG_NAME="shingo-website"
 
-HELP="USAGE: build.sh [OPTIONS]
+HELP="USAGE: $(basename "$0") [OPTIONS] [-- DOCKER_ARGS]
 Build and optionally push an image
-Accepts all arguments that 'docker build' accepts
+
+POSITIONAL ARGUMENTS:
+    DOCKER_ARGS     Arguments to be passed to the docker build command
+                      Must be separated from the other arguments by --
 
 OPTIONS:
-    --push      Push image to registry after build
-    -h|--help   Show this
+    -p|--push       Push image to registry after build
+    -t|--tag TAG    Set image tag
+    -h|--help       Show this help
 "
 
 build() {
@@ -20,20 +24,37 @@ build() {
     fi
 }
 
+read_build_args() {
+    while [[ $# -gt 0 ]]; do
+        BUILD_ARGS+=("$1")
+        shift
+    done
+}
+
 PUSH=false
 BUILD_ARGS=()
 while [[ $# -gt 0 ]]; do
     arg="$1"
     case $arg in
-        --push)
+        -p|--push)
             PUSH=true
+            ;;
+        -t|--tag)
+            shift
+            TAG="$1"
             ;;
         -h|--help)
             echo "$HELP"
             exit 0
             ;;
+        --)
+            shift
+            read_build_args "$@"
+            shift $#
+            ;;
         *)
-            BUILD_ARGS+=("$arg")
+            echo "$HELP"
+            exit 1
             ;;
     esac
     shift
