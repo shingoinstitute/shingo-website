@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
                       /********** Shingo Prize Recipients *********/
-                      
+
 router.get('/prize-ball-bev-cans', function(req, res, next) {
   res.render('awards/prize-shingo/prize-ball-bev-cans', { title: 'Recipients - Shingo Institute' });
 });
@@ -105,6 +105,21 @@ router.get('/silver-massmutual', function(req, res, next) {
   res.render('awards/prize-silver/silver-massmutual', { title: 'Recipients - Shingo Institute' });
 });
 
+router.get('/silver-bridgestoneBATO', function(req, res, next) {
+  res.render('awards/prize-silver/silver-bridgestoneBATO', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/silver-bridgestoneBATO-pr', function(req, res, next) {
+  res.render('awards/prize-silver/silver-bridgestoneBATO-pr', { title: 'Recipients - Shingo Institute' });
+});
+router.get('/silver-ballbeverage', function(req, res, next) {
+  res.render('awards/prize-silver/silver-ballbeverage', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/silver-ballbeverage-pr', function(req, res, next) {
+  res.render('awards/prize-silver/silver-ballbeverage-pr', { title: 'Recipients - Shingo Institute' });
+});
+
 router.get('/silver-visteon', function(req, res, next) {
   res.render('awards/prize-silver/silver-visteon', { title: 'Recipients - Shingo Institute' });
 });
@@ -158,6 +173,14 @@ router.get('/bronze-cardinalhealth', function(req, res, next) {
 
 router.get('/bronze-cardinalhealth-pr', function(req, res, next) {
   res.render('awards/prize-bronze/bronze-cardinalhealth-pr', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/bronze-ipsenbio', function(req, res, next) {
+  res.render('awards/prize-bronze/bronze-ipsenbio', { title: 'Recipients - Shingo Institute' });
+});
+
+router.get('/bronze-ipsenbio-pr', function(req, res, next) {
+  res.render('awards/prize-bronze/bronze-ipsenbio-pr', { title: 'Recipients - Shingo Institute' });
 });
 
 router.get('/bronze-letterkenny', function(req, res, next) {
