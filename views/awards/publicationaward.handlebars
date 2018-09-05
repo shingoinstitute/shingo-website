@@ -39,17 +39,13 @@
             <tr>
                 <td colspan="3"><h4 class="roboto"><strong>Publication Award</strong> Recipients</h4></td>
             </tr>
-        <!-- Dynamically populated -->
-        <!-- 2017 Awards onward -->
-        {{#each awards}}
-        <tr>
-            <td>{{prettyMonth Press_Release_Date__c}}</td>
-            <td><a href="/publicationaward/{{Id}}" >{{Name}}</a></td>
-            <td>{{Public_Author_Name__c}}</td>
-        </tr>
-        {{/each}}
-        <!-- Historical Awards -->
-        <!-- Aker 2 Second Lean  -->
+            <!-- Dynamically populated -->
+            <!-- 2017 Awards onward -->
+            {{#each awards}}
+                {{>_recipient-table this}}
+            {{/each}}
+            <!-- Historical Awards -->
+            <!-- Aker 2 Second Lean  -->
         <tr>
             <td></td>
             <td><a href="awards/research-paul-aker">2 Second Lean</a></td>

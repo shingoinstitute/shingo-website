@@ -463,7 +463,58 @@ router.get('/challengefortheprize', (req, res, next) => {
 });
 
 /* GET awards routes */
-router.use('/awards', routes_recipients);
+router.get('/awards', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/prize')
+    .then(results => {
+        var response = JSON.parse(results.body);
+        var awards = response.records;
+
+        var shingoAwards = []
+        var silverAwards = []
+        var bronzeAwards = []
+        
+        awards.forEach(award => {
+            award.info = award.City__c + ", " + award.Country__c;
+            award.date =  award.Date_Awarded__c;
+            award.link = award.Company_Profile_Link__c;
+        })
+
+        awards.sort(function(a, b) {
+            if (a.date < b.date) {return 1}
+            if (a.date > b.date) {return -1}
+            return 0
+        })
+
+        awards.forEach(award => {
+            if (award.SV_Status__c == "The Shingo Prize") {
+                shingoAwards.push(award)
+            }
+            else if (award.SV_Status__c == "Silver Medallion") {
+                silverAwards.push(award)
+            }
+            else if (award.SV_Status__c == "Bronze Medallion") {
+                bronzeAwards.push(award)
+            }
+        })
+
+        res.render('awards/awards', {
+            title: 'Awards - Shingo Institute',
+            shingoAwards: shingoAwards,
+            silverAwards: silverAwards,
+            bronzeAwards: bronzeAwards
+        });
+    });
+});
+
+router.get('/awards/:id', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/prize/' + req.params.id)
+    .then(results => {
+        res.render('awards/prize-template', {
+            title: 'Award Recipient - Shingo Institute',
+            award: JSON.parse(results.body).records[0]
+        })
+    })
+})
 
 /* GET researchaward  */
 router.get('/researchaward', (req, res, next) => {
@@ -471,6 +522,13 @@ router.get('/researchaward', (req, res, next) => {
     .then(results => {
         var response = JSON.parse(results.body);
         var awards = response.records;
+
+        awards.forEach(award => {
+            award.info = award.Public_Author_Name__c;
+            award.date = award.Press_Release_Date__c;
+            award.link = "/researchaward/" + award.Id;
+        })
+
         res.render('awards/researchaward', {
             title: 'Research Award - Shingo Institute',
             awards: awards
@@ -501,6 +559,13 @@ router.get('/publicationaward', (req, res, next) => {
     .then(results => {
         var response = JSON.parse(results.body)
         var awards = response.records
+
+        awards.forEach(award => {
+            award.info = award.Public_Author_Name__c;
+            award.date = award.Press_Release_Date__c;
+            award.link = "/publicationaward/" + award.Id;
+        })
+
         res.render('awards/publicationaward', {
             title: 'Publication Award - Shingo Institute',
             awards: awards

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start:dev": "node app.js",
+    "start:dev": "nodemon app.js",
     "start": "forever app.js"
   },
   "author": "Shingo Institute - Case Haws",
@@ -32,5 +32,8 @@
     "serve-favicon": "^2.5.0",
     "winston": "^2.3.1",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
