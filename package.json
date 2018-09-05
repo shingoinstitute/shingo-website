@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start:dev": "node app.js",
+    "start:dev": "nodemon app.js",
     "start": "forever app.js"
   },
   "author": "Shingo Institute - Case Haws",
