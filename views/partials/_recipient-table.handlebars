@@ -1,5 +1,8 @@
 <tr>
     <td>{{prettyMonth date}}</td>
     <td><a href={{link}}>{{Name}}</a></td>
+    {{#if Press_Release_Link__c}}
+        <td>PR</td>
+    {{/if}}
     <td>{{info}}</td>
 </tr>

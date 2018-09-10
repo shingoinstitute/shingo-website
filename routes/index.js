@@ -477,6 +477,7 @@ router.get('/awards', (req, res, next) => {
             award.info = award.City__c + ", " + award.Country__c;
             award.date =  award.Date_Awarded__c;
             award.link = award.Company_Profile_Link__c;
+            award.Press_Release_Link__c = "#";
         })
 
         awards.sort(function(a, b) {
