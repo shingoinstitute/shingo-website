@@ -475,7 +475,9 @@ router.get('/awards', (req, res, next) => {
 
         awards.forEach(award => {
             award.info = award.City__c + ", " + award.Country__c;
-            award.date =  award.Date_Awarded__c;
+            var date =  moment(award.Date_Awarded__c);
+            date = date.format('YYYY');
+            award.date = date;
             award.link = award.Company_Profile_Link__c;
         })
 
@@ -483,6 +485,11 @@ router.get('/awards', (req, res, next) => {
             if (a.date < b.date) {return 1}
             if (a.date > b.date) {return -1}
             return 0
+        })
+
+        var foundDates = []
+        awards.forEach(award => {
+
         })
 
         awards.forEach(award => {
