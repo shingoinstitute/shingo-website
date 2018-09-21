@@ -473,23 +473,18 @@ router.get('/awards', (req, res, next) => {
         var silverAwards = []
         var bronzeAwards = []
 
-        awards.forEach(award => {
-            award.info = award.City__c + ", " + award.Country__c;
-            var date =  moment(award.Date_Awarded__c);
-            date = date.format('YYYY');
-            award.date = date;
-            award.link = award.Company_Profile_Link__c;
-        })
-
         awards.sort(function(a, b) {
-            if (a.date < b.date) {return 1}
-            if (a.date > b.date) {return -1}
+            if (a.Date_Awarded__c < b.Date_Awarded__c) {return 1}
+            if (a.Date_Awarded__c > b.Date_Awarded__c) {return -1}
             return 0
         })
 
-        var foundDates = []
         awards.forEach(award => {
-
+            award.info = award.City__c + ", " + award.Country__c;
+            var date = moment(award.Date_Awarded__c);
+            var formattedDate = date.format('YYYY');
+            award.date = formattedDate;
+            award.link = award.Company_Profile_Link__c;
         })
 
         awards.forEach(award => {
@@ -502,6 +497,42 @@ router.get('/awards', (req, res, next) => {
             else if (award.SV_Status__c == "Bronze Medallion") {
                 bronzeAwards.push(award)
             }
+        })
+
+        var foundDates = []
+        shingoAwards.forEach(award => {
+            var dateFound = false;
+            foundDates.forEach(date => {
+              if (award.date == date) {
+                dateFound = true;
+                award.date = "";
+              }
+            })
+            if (!dateFound) {foundDates.push(award.date)}
+        })
+
+        var foundDates = []
+        silverAwards.forEach(award => {
+            var dateFound = false;
+            foundDates.forEach(date => {
+              if (award.date == date) {
+                dateFound = true;
+                award.date = "";
+              }
+            })
+            if (!dateFound) {foundDates.push(award.date)}
+        })
+
+        var foundDates = []
+        bronzeAwards.forEach(award => {
+            var dateFound = false;
+            foundDates.forEach(date => {
+              if (award.date == date) {
+                dateFound = true;
+                award.date = "";
+              }
+            })
+            if (!dateFound) {foundDates.push(award.date)}
         })
 
         res.render('awards/awards', {
