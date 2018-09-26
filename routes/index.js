@@ -57,8 +57,8 @@ router.get('/workshops', (req, res, next) => {
     workshops.forEach(workshop =>{
         if (!workshop || !workshop.Registration_Website__c) {
             throw new Error(`Invalid Workshop\n${JSON.stringify(workshop)}`);
-        }
-        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
+        } 
+        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;  
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
@@ -116,7 +116,7 @@ router.get('/workshops', (req, res, next) => {
             workshopMonths.push(month)
         }
     }
-
+    
     res.render('education/workshops', {
         title: 'Workshops - Shingo Institute',
         workshops: allWorkshops,
@@ -124,7 +124,7 @@ router.get('/workshops', (req, res, next) => {
         months: workshopMonths
     });
   })
-
+  
   .catch(err => {
       logger.log("error", "EDUCATION ROUTE\n%j", err);
       res.render('education/education', {
@@ -162,7 +162,7 @@ router.get('/education/discover', (req, res, next) => {
         }
 
         res.render('education/discover', {
-            title: 'Discover Excellence - Shingo Institute',
+            title: 'Discover - Shingo Institute',
             workshops: showWorkshops,
             workshopType: 'Discover Excellence',
             color: '5b3214'
@@ -174,7 +174,7 @@ router.get('/education/discover', (req, res, next) => {
         res.render('education/education', {
             title: 'Education - Shingo Institute',
             workshops: showWorkshops
-
+            
         });
     })
 });
@@ -197,7 +197,7 @@ router.get('/education/enable', (req, res, next) => {
         }
 
         res.render('education/enable', {
-            title: 'Cultural Enablers - Shingo Institute',
+            title: 'Enable - Shingo Institute',
             workshops: showWorkshops,
             workshopType: 'Cultural Enablers',
             color: '003768'
@@ -231,7 +231,7 @@ router.get('/education/improve', (req, res, next) => {
         }
 
         res.render('education/improve', {
-            title: 'Continuous Improvement - Shingo Institute',
+            title: 'Improve - Shingo Institute',
             workshops: showWorkshops,
             workshopType: 'Continuous Improvement',
             color: '640820'
@@ -265,7 +265,7 @@ router.get('/education/align', (req, res, next) => {
         }
 
         res.render('education/align', {
-            title: 'Enterprise Alignment - Shingo Institute',
+            title: 'Align - Shingo Institute',
             workshops: showWorkshops,
             workshopType: 'Enterprise Alignment',
             color: '627c33'
@@ -299,7 +299,7 @@ router.get('/education/build', (req, res, next) => {
         }
 
         res.render('education/build', {
-            title: 'Build Excellence - Shingo Institute',
+            title: 'Build - Shingo Institute',
             workshops: showWorkshops,
             workshopType: 'Build Excellence',
             color: '405124'
@@ -317,11 +317,11 @@ router.get('/education/build', (req, res, next) => {
 
 /**
  * Standardized Link Redirects
- *
+ * 
  * Format: shortnameYEAR
- *
+ * 
  * Existing redirects that do not meet the format are legacy: DO NOT CHANGE
- *
+ * 
  * Shingo Annual Conferences (International, etc) use only the YEAR
  */
 const Redirects =
@@ -440,7 +440,7 @@ router.get('/irelandstudytour', (req, res, next) => {
             day.Shingo_Sessions__r = {'records': []}
         }
         })
-
+    
         res.render('education/irelandstudytour', {
         event: event_info,
         })
@@ -475,7 +475,7 @@ router.get('/researchaward', (req, res, next) => {
             title: 'Research Award - Shingo Institute',
             awards: awards
         });
-    });
+    });    
 });
 
 // GET Resarch Award template
@@ -543,7 +543,7 @@ router.get('/affiliates', (req, res, next) => {
   .then(results => {
     var response = JSON.parse(results.body);
     affiliates = response.affiliates;
-
+   
     // Remove MyEducator
     var i = _.findIndex(affiliates, a =>{ return a.Id == '0011200001Gl4QoAAJ'; })
     myeducator = affiliates[i];
