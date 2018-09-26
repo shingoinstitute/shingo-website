@@ -1,8 +1,10 @@
 <tr>
     <td>{{date}}</td>
     <td><a href={{link}}>{{Name}}</a></td>
-    {{#if Press_Release_Link__c}}
-        <td><a href={{Press_Release_Link__c}}>PR</a></td>
-    {{/if}}
+    <td>
+        {{#if Press_Release_Link__c}}
+            <a href={{Press_Release_Link__c}}>PR</a>
+        {{/if}}
+    </td>
     <td>{{info}}</td>
 </tr>
