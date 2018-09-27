@@ -563,7 +563,9 @@ router.get('/researchaward', (req, res, next) => {
 
         awards.forEach(award => {
             award.info = award.Public_Author_Name__c;
-            award.date = award.Press_Release_Date__c;
+            var date = moment(award.Press_Release_Date__c);
+            var formattedDate = date.format('MMM YYYY');
+            award.date = formattedDate;
             award.link = "/researchaward/" + award.Id;
         })
 
@@ -600,7 +602,9 @@ router.get('/publicationaward', (req, res, next) => {
 
         awards.forEach(award => {
             award.info = award.Public_Author_Name__c;
-            award.date = award.Press_Release_Date__c;
+            var date = moment(award.Press_Release_Date__c);
+            var formattedDate = date.format('MMM YYYY');
+            award.date = formattedDate;
             award.link = "/publicationaward/" + award.Id;
         })
 
