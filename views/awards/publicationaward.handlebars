@@ -42,7 +42,11 @@
             <!-- Dynamically populated -->
             <!-- 2017 Awards onward -->
             {{#each awards}}
-                {{>_recipient-table this}}
+                <tr>
+                    <td>{{prettyMonth Press_Release_Date__c}}</td>
+                    <td><a href="/publicationaward/{{Id}}" >{{Name}}</a></td>
+                    <td>{{Public_Author_Name__c}}</td>
+                </tr>
             {{/each}}
             <!-- Historical Awards -->
             <!-- Aker 2 Second Lean  -->
