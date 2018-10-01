@@ -499,41 +499,25 @@ router.get('/awards', (req, res, next) => {
             }
         })
 
-        var foundDates = []
-        shingoAwards.forEach(award => {
-            var dateFound = false;
-            foundDates.forEach(date => {
-              if (award.date == date) {
-                dateFound = true;
-                award.date = "";
-              }
+        function stripDates (awardList) {
+            var foundDates = []
+            var awards = awardList
+            awards.forEach(award => {
+                var dateFound = false;
+                foundDates.forEach(date => {
+                  if (award.date == date) {
+                    dateFound = true;
+                    award.date = "";
+                  }
+                })
+                if (!dateFound) {foundDates.push(award.date)}
             })
-            if (!dateFound) {foundDates.push(award.date)}
-        })
+            return awards
+        }
 
-        var foundDates = []
-        silverAwards.forEach(award => {
-            var dateFound = false;
-            foundDates.forEach(date => {
-              if (award.date == date) {
-                dateFound = true;
-                award.date = "";
-              }
-            })
-            if (!dateFound) {foundDates.push(award.date)}
-        })
-
-        var foundDates = []
-        bronzeAwards.forEach(award => {
-            var dateFound = false;
-            foundDates.forEach(date => {
-              if (award.date == date) {
-                dateFound = true;
-                award.date = "";
-              }
-            })
-            if (!dateFound) {foundDates.push(award.date)}
-        })
+        shingoAwards = stripDates(shingoAwards)
+        silverAwards = stripDates(silverAwards)
+        bronzeAwards = stripDates(bronzeAwards)
 
         res.render('awards/awards', {
             title: 'Awards - Shingo Institute',
@@ -566,7 +550,8 @@ router.get('/researchaward', (req, res, next) => {
             var date = moment(award.Press_Release_Date__c);
             var formattedDate = date.format('MMM YYYY');
             award.date = formattedDate;
-            award.link = "/researchaward/" + award.Id;
+            award.link = award.Press_Release_Link__c;
+            award.Press_Release_Link__c = null;
         })
 
         res.render('awards/researchaward', {
@@ -593,28 +578,22 @@ router.get('/researchaward/:id', (req, res, next) => {
     })
 });
 
+/* GET awards routes */
+router.use('/publication', routes_recipients);
+
 /* GET publication award  */
 router.get('/publicationaward', (req, res, next) => {
     request.getAsync('https://api.shingo.org/salesforce/awards/publication')
     .then(results => {
         var response = JSON.parse(results.body)
         var awards = response.records
-
-        awards.forEach(award => {
-            award.info = award.Public_Author_Name__c;
-            var date = moment(award.Press_Release_Date__c);
-            var formattedDate = date.format('MMM YYYY');
-            award.date = formattedDate;
-            award.link = "/publicationaward/" + award.Id;
-        })
-
         res.render('awards/publicationaward', {
             title: 'Publication Award - Shingo Institute',
             awards: awards
         })
     })
     .catch(err =>{
-        res.rendder('awards/publicationaward', {
+        res.render('awards/publicationaward', {
             title: 'Publication Award - Shingo Institute',
             awards: null
         })
