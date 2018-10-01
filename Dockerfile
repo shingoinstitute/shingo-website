@@ -1,4 +1,4 @@
-FROM node:8.9-alpine
+FROM node:8-alpine
 ENV NODE_ENV production
 ENV PORT=80
 WORKDIR /usr/src/app

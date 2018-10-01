@@ -900,6 +900,12 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     font-family: "Roboto";
     margin-top: 25px;
 }
+.affLicensedLogo {
+  width: 40%;
+  min-width: 300px;
+  height: auto;
+  margin: auto;
+}
 .cf {
     margin-bottom: 20px;
 }
@@ -1324,10 +1330,10 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 }
 
 #filter-menu {
-    display: flex; 
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap; 
-    align-items: space-between; 
+    flex-wrap: wrap;
+    align-items: space-between;
     justify-content: center;
 }
 
@@ -1344,9 +1350,9 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 }
 
 #workshop-list {
-    display: flex; 
-    flex-direction: row; 
-    flex-wrap: wrap; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: space-between;
     justify-content: center;
 }
@@ -1736,10 +1742,10 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 }
 
 .award-icon-container {
-    display: flex; 
-    flex-direction: row; 
-    width: 33%; 
-    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    align-items: center;
     justify-content: space-around;
 }
 
