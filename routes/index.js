@@ -57,8 +57,8 @@ router.get('/workshops', (req, res, next) => {
     workshops.forEach(workshop =>{
         if (!workshop || !workshop.Registration_Website__c) {
             throw new Error(`Invalid Workshop\n${JSON.stringify(workshop)}`);
-        } 
-        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;  
+        }
+        if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
     for (var i in workshops) {
@@ -116,7 +116,7 @@ router.get('/workshops', (req, res, next) => {
             workshopMonths.push(month)
         }
     }
-    
+
     res.render('education/workshops', {
         title: 'Workshops - Shingo Institute',
         workshops: allWorkshops,
@@ -124,7 +124,7 @@ router.get('/workshops', (req, res, next) => {
         months: workshopMonths
     });
   })
-  
+
   .catch(err => {
       logger.log("error", "EDUCATION ROUTE\n%j", err);
       res.render('education/education', {
@@ -174,7 +174,7 @@ router.get('/education/discover', (req, res, next) => {
         res.render('education/education', {
             title: 'Education - Shingo Institute',
             workshops: showWorkshops
-            
+
         });
     })
 });
@@ -317,11 +317,11 @@ router.get('/education/build', (req, res, next) => {
 
 /**
  * Standardized Link Redirects
- * 
+ *
  * Format: shortnameYEAR
- * 
+ *
  * Existing redirects that do not meet the format are legacy: DO NOT CHANGE
- * 
+ *
  * Shingo Annual Conferences (International, etc) use only the YEAR
  */
 const Redirects =
@@ -440,7 +440,7 @@ router.get('/irelandstudytour', (req, res, next) => {
             day.Shingo_Sessions__r = {'records': []}
         }
         })
-    
+
         res.render('education/irelandstudytour', {
         event: event_info,
         })
@@ -463,7 +463,80 @@ router.get('/challengefortheprize', (req, res, next) => {
 });
 
 /* GET awards routes */
-router.use('/awards', routes_recipients);
+router.get('/awards', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/prize')
+    .then(results => {
+        var response = JSON.parse(results.body);
+        var awards = response.records;
+
+        var shingoAwards = []
+        var silverAwards = []
+        var bronzeAwards = []
+
+        awards.sort(function(a, b) {
+            if (a.Date_Awarded__c < b.Date_Awarded__c) {return 1}
+            if (a.Date_Awarded__c > b.Date_Awarded__c) {return -1}
+            return 0
+        })
+
+        awards.forEach(award => {
+            award.info = award.City__c + ", " + award.Country__c;
+            var date = moment(award.Date_Awarded__c);
+            var formattedDate = date.format('YYYY');
+            award.date = formattedDate;
+            award.link = award.Company_Profile_Link__c;
+        })
+
+        awards.forEach(award => {
+            if (award.SV_Status__c == "The Shingo Prize") {
+                shingoAwards.push(award)
+            }
+            else if (award.SV_Status__c == "Silver Medallion") {
+                silverAwards.push(award)
+            }
+            else if (award.SV_Status__c == "Bronze Medallion") {
+                bronzeAwards.push(award)
+            }
+        })
+
+        function stripDates (awardList) {
+            var foundDates = []
+            var awards = awardList
+            awards.forEach(award => {
+                var dateFound = false;
+                foundDates.forEach(date => {
+                  if (award.date == date) {
+                    dateFound = true;
+                    award.date = "";
+                  }
+                })
+                if (!dateFound) {foundDates.push(award.date)}
+            })
+            return awards
+        }
+
+        shingoAwards = stripDates(shingoAwards)
+        silverAwards = stripDates(silverAwards)
+        bronzeAwards = stripDates(bronzeAwards)
+
+        res.render('awards/awards', {
+            title: 'Awards - Shingo Institute',
+            shingoAwards: shingoAwards,
+            silverAwards: silverAwards,
+            bronzeAwards: bronzeAwards
+        });
+    });
+});
+
+router.get('/awards/:id', (req, res, next) => {
+    request.getAsync('https://api.shingo.org/salesforce/awards/prize/' + req.params.id)
+    .then(results => {
+        res.render('awards/prize-template', {
+            title: 'Award Recipient - Shingo Institute',
+            award: JSON.parse(results.body).records[0]
+        })
+    })
+})
 
 /* GET researchaward  */
 router.get('/researchaward', (req, res, next) => {
@@ -471,11 +544,21 @@ router.get('/researchaward', (req, res, next) => {
     .then(results => {
         var response = JSON.parse(results.body);
         var awards = response.records;
+
+        awards.forEach(award => {
+            award.info = award.Public_Author_Name__c;
+            var date = moment(award.Press_Release_Date__c);
+            var formattedDate = date.format('MMM YYYY');
+            award.date = formattedDate;
+            award.link = award.Press_Release_Link__c;
+            award.Press_Release_Link__c = null;
+        })
+
         res.render('awards/researchaward', {
             title: 'Research Award - Shingo Institute',
             awards: awards
         });
-    });    
+    });
 });
 
 // GET Resarch Award template
@@ -495,6 +578,9 @@ router.get('/researchaward/:id', (req, res, next) => {
     })
 });
 
+/* GET awards routes */
+router.use('/publication', routes_recipients);
+
 /* GET publication award  */
 router.get('/publicationaward', (req, res, next) => {
     request.getAsync('https://api.shingo.org/salesforce/awards/publication')
@@ -507,7 +593,7 @@ router.get('/publicationaward', (req, res, next) => {
         })
     })
     .catch(err =>{
-        res.rendder('awards/publicationaward', {
+        res.render('awards/publicationaward', {
             title: 'Publication Award - Shingo Institute',
             awards: null
         })
@@ -543,7 +629,7 @@ router.get('/affiliates', (req, res, next) => {
   .then(results => {
     var response = JSON.parse(results.body);
     affiliates = response.affiliates;
-   
+
     // Remove MyEducator
     var i = _.findIndex(affiliates, a =>{ return a.Id == '0011200001Gl4QoAAJ'; })
     myeducator = affiliates[i];

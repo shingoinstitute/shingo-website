@@ -35,16 +35,17 @@
       <div class="twelve columns">
           <table class="striped">
             <tbody>
-            	<tr>
-                <td colspan="3"><h4 class="roboto"><strong>Research Award Recipients</strong></h4></td>
-              </tr>
-              {{#each awards}}
-      		    <tr>
-                <td>{{prettyMonth Press_Release_Date__c}}</td>
-                <td><a href="/researchaward/{{Id}}">{{Name}}</td>
-                <td>{{Public_Author_Name__c}}</td>
-              </tr>
-              {{/each}}
+                <tr>
+                    <td colspan="4"><h4 class="roboto"><strong>Research Award</strong> Recipients</h4></td>
+                </tr>
+                <tr>
+                  <td>Date</td>
+                  <td colspan="2">Title - <em>Click for Press Release</em></td>
+                  <td>Author</td>
+                </tr>
+                {{#each awards}}
+      		        {{>_recipient-table this}}
+                {{/each}}
           </tbody>
         </table>
       </div>

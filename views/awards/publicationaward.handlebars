@@ -39,20 +39,20 @@
             <tr>
                 <td colspan="3"><h4 class="roboto"><strong>Publication Award</strong> Recipients</h4></td>
             </tr>
-        <!-- Dynamically populated -->
-        <!-- 2017 Awards onward -->
-        {{#each awards}}
-        <tr>
-            <td>{{prettyMonth Press_Release_Date__c}}</td>
-            <td><a href="/publicationaward/{{Id}}" >{{Name}}</a></td>
-            <td>{{Public_Author_Name__c}}</td>
-        </tr>
-        {{/each}}
-        <!-- Historical Awards -->
-        <!-- Aker 2 Second Lean  -->
+            <!-- Dynamically populated -->
+            <!-- 2017 Awards onward -->
+            {{#each awards}}
+                <tr>
+                    <td>{{prettyMonth Press_Release_Date__c}}</td>
+                    <td><a href="/publicationaward/{{Id}}" >{{Name}}</a></td>
+                    <td>{{Public_Author_Name__c}}</td>
+                </tr>
+            {{/each}}
+            <!-- Historical Awards -->
+            <!-- Aker 2 Second Lean  -->
         <tr>
             <td></td>
-            <td><a href="awards/research-paul-aker">2 Second Lean</a></td>
+            <td><a href="publication/research-paul-aker">2 Second Lean</a></td>
             <td>Paul Aker</td>
         </tr>
         <!-- <div class="modal" id="management-engagement">
@@ -227,7 +227,7 @@
         <!-- Developing Lean Leaders -->
         <tr>
             <td></td>
-            <td><a href="awards/research_michael-bremer">How to Do a Gemba Walk</a></td>
+            <td><a href="publication/research_michael-bremer">How to Do a Gemba Walk</a></td>
             <!-- <td><a href="#" class="switch" gumby-trigger="#lean">Lean for the Long Term</a></td> -->
             <td>Michael Bremer</td>
             <!-- </tr>
@@ -255,7 +255,7 @@
             <!-- Developing Lean Leaders -->
             <tr>
                 <td></td>
-                <td><a href="awards/research_jeffrey-liker">Developing Lean Leaders</a></td>
+                <td><a href="publication/research_jeffrey-liker">Developing Lean Leaders</a></td>
                 <!-- <td><a href="#" class="switch" gumby-trigger="#lean">Lean for the Long Term</a></td> -->
                 <td>Jeffrey K. Liker</td>
                 <!-- </tr>
