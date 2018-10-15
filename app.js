@@ -59,6 +59,7 @@ function getAWSData(params){
     else if(conf === 'european') data.title = `${year} European Conference Presentations`;
     else if(conf === 'manufacturing') data.title = `${year} Manufacturing Summit Presentations`;
     else if(conf === 'oe') data.title = `${year} Operational Excellence Conference Presentations`;
+    else if(conf === 'financialservices') data.title = `${year} Financial Services Conference Presentations`;
     else {
         const error = new Error(`Couldn't find presentations for ${JSON.stringify(params)}`);
         error.status = 504;
