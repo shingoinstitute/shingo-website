@@ -28,24 +28,24 @@
 		<h3>Shingo Team</h3>
 		<hr>
 	</div>
-	<div class="row">
-		<ul class="two_up tiles">
-			{{#each staff}}
-				<li>
-					<div class="tile">
-						<img src="{{Photograph__c}}" alt="{{Name}}">
-					</div>
-					<div class="tile">
+	
+	<div class="row" style="margin: auto; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap;">
+		{{#each staff}}
+			
+				<div style="flex: 50%; display: flex; flex-direction: row; justify-content: center;">
+					<img style="height: 250px; width: 250px;" src="{{Photograph__c}}" alt="{{Name}}">
+					<div style="width: 150px; height: 228px; margin: 10px;">
 						<h4>{{Name}}</h4>
 						<br>
 						<p>{{Title}}
-							<br>
-							<a href="mailto:{{Email}}">{{Email}}</a>
-							<br>
-							<a href="tel:{{Phone}}">{{Phone}}</a></p>
+						<br>
+						<a href="mailto:{{Email}}">{{Email}}</a>
+						<br>
+						<a href="tel:{{Phone}}">{{Phone}}</a></p>
 					</div>
-				</li>
-			{{/each}}
-		</ul>
+				</div>
+				
+			
+		{{/each}}
 	</div>
 </article>
