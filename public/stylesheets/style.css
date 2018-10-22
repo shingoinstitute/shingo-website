@@ -1777,3 +1777,22 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     align-items: space-between;
     justify-content: center;
 }
+
+.workshop-info-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.workshop-description-flex {
+    width: 45%;
+    min-width: 300px;
+    margin: 15px auto;
+}
+
+@media only screen and (orientation: portrait) {
+    .workshop-info-title {text-align: center;}
+}
