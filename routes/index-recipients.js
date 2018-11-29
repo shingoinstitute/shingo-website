@@ -5,270 +5,157 @@ var router = express.Router();
 // All .pdf files are served statically and can be found at /public/assets/press
 
 /* GET awards  */
-router.get('/', function(req, res, next) {
-  res.render('awards/awards', { title: 'Recipients - Shingo Institute' });
-});
+/** @type {{ [name: string]: { path: string, title?: string }}} */
+const routes =
+{
+    '': { path: 'awards/awards' }
+    /********** Shingo Prize Recipients *********/
+    , 'prize-ball-bev-cans': { path: 'awards/prize-shingo/prize-ball-bev-cans' }
+    , 'prize-abbvie': { path: 'awards/prize-shingo/prize-abbvie' }
+    , 'prize-abbott-nutrition': { path: 'awards/prize-shingo/prize-abbott-nutrition' }
+    /* Boston Prize Profile */
+    , 'prize-thermo-fisher': { path: 'awards/prize-shingo/prize-thermo-fisher' }
+    , 'prize-thermo-fisher-pr': { path: 'awards/prize-shingo/prize-thermo-fisher-pr' }
+    , 'prize-ball-bev': { path: 'awards/prize-shingo/prize-ball-bev' }
+    , 'prize-ball-bev-pr': { path: 'awards/prize-shingo/prize-ball-bev-pr' }
 
-                      /********** Shingo Prize Recipients *********/
+    /* Boston Prize Profile */
+    , 'prize-boston': { path: 'awards/prize-shingo/prize-boston' }
+    , 'prize-boston-pr': { path: 'awards/prize-shingo/prize-boston-pr' }
 
-router.get('/prize-ball-bev-cans', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-ball-bev-cans', { title: 'Recipients - Shingo Institute' });
-});
+    /* Rexam Prize Profile */
+    , 'prize-rexam-bev': { path: 'awards/prize-shingo/prize-rexam-bev' }
 
-router.get('/prize-abbvie', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-abbvie', { title: 'Recipients - Shingo Institute' });
-});
+    /* Abbot Prize Profile */
+    , 'prize-abbott': { path: 'awards/prize-shingo/prize-abbott' }
 
-router.get('/prize-abbott-nutrition', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-abbott-nutrition', { title: 'Recipients - Shingo Institute' });
-});
-                      /* Boston Prize Profile */
-router.get('/prize-thermo-fisher', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-thermo-fisher', { title: 'Recipients - Shingo Institute' });
-});
+    /* ECA Prize Profile */
+    , 'prize-eca': { path: 'awards/prize-shingo/prize-eca' }
 
-router.get('/prize-thermo-fisher-pr', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-thermo-fisher-pr', { title: 'Recipients - Shingo Institute' });
-});
+    /* NewsPrinters Prize Profile */
+    , 'prize-newsprinters': { path: 'awards/prize-shingo/prize-newsprinters' }
 
-router.get('/prize-ball-bev', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-ball-bev', { title: 'Recipients - Shingo Institute' });
-});
+    /* Barnes Prize Profile */
+    , 'prize-barnes-ogden': { path: 'awards/prize-shingo/prize-barnes-ogden' }
 
-router.get('/prize-ball-bev-pr', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-ball-bev-pr', { title: "Recipients - Shingo Institute" });
-});
+    /* Depuy Prize Profile */
+    , 'prize-depuysynthes-ireland': { path: 'awards/prize-shingo/prize-depuysynthes-ireland' }
 
-/* Boston Prize Profile */
-router.get('/prize-boston', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-boston', { title: 'Recipients - Shingo Institute' });
-});
+    /* Abbott Vascular Prize Profile */
+    , 'prize-abbottvascular-ireland': { path: 'awards/prize-shingo/prize-abbottvascular' }
 
-router.get('/prize-boston-pr', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-boston-pr', { title: "Recipients - Shingo Institute" });
-});
+    /* Ethicon Prize Profile */
+    , 'prize-ethicon': { path: 'awards/prize-shingo/prize-ethicon' }
 
-/* Rexam Prize Profile */
-router.get('/prize-rexam-bev', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-rexam-bev', { title: 'Recipients - Shingo Institute' });
-});
+    /* Aguas Claras Prize Profile */
+    , 'prize-rexam': { path: 'awards/prize-shingo/prize-rexam' }
 
-/* Abbot Prize Profile */
-router.get('/prize-abbott', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-abbott', { title: 'Recipients - Shingo Institute' });
-});
-
-/* ECA Prize Profile */
-router.get('/prize-eca', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-eca', { title: 'Recipients - Shingo Institute' });
-});
-
-/* NewsPrinters Prize Profile */
-router.get('/prize-newsprinters', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-newsprinters', { title: 'Recipients - Shingo Institute' });
-});
-
-/* Barnes Prize Profile */
-router.get('/prize-barnes-ogden', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-barnes-ogden', { title: 'Recipients - Shingo Institute' });
-});
-
-/* Depuy Prize Profile */
-router.get('/prize-depuysynthes-ireland', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-depuysynthes-ireland', { title: 'Recipients - Shingo Institute' });
-});
-
-/* Abbott Vascular Prize Profile */
-router.get('/prize-abbottvascular-ireland', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-abbottvascular', { title: 'Recipients - Shingo Institute' });
-});
-
-/* Ethicon Prize Profile */
-router.get('/prize-ethicon', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-ethicon', { title: 'Recipients - Shingo Institute' });
-});
-
-/* Aguas Claras Prize Profile */
-router.get('/prize-rexam', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-rexam', { title: 'Recipients - Shingo Institute' });
-});
-
-/* Goodyear Brasil Prize Profile */
-router.get('/prize-goodyear-brasil', function(req, res, next) {
-  res.render('awards/prize-shingo/prize-goodyear-brasil', { title: 'Recipients - Shingo Institute' });
-});
+    /* Goodyear Brasil Prize Profile */
+    , 'prize-goodyear-brasil': { path: 'awards/prize-shingo/prize-goodyear-brasil' }
 
 
-                      /******* Silver Recipients *********/
+    /******* Silver Recipients *********/
 
-router.get('/silver-massmutual', function(req, res, next) {
-  res.render('awards/prize-silver/silver-massmutual', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-massmutual': { path: 'awards/prize-silver/silver-massmutual' }
 
-router.get('/silver-bridgestoneBATO', function(req, res, next) {
-  res.render('awards/prize-silver/silver-bridgestoneBATO', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-bridgestoneBATO': { path: 'awards/prize-silver/silver-bridgestoneBATO' }
 
-router.get('/silver-bridgestoneBATO-pr', function(req, res, next) {
-  res.render('awards/prize-silver/silver-bridgestoneBATO-pr', { title: 'Recipients - Shingo Institute' });
-});
-router.get('/silver-ballbeverage', function(req, res, next) {
-  res.render('awards/prize-silver/silver-ballbeverage', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-bridgestoneBATO-pr': { path: 'awards/prize-silver/silver-bridgestoneBATO-pr' }
+    , 'silver-ballbeverage': { path: 'awards/prize-silver/silver-ballbeverage' }
 
-router.get('/silver-ballbeverage-pr', function(req, res, next) {
-  res.render('awards/prize-silver/silver-ballbeverage-pr', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-ballbeverage-pr': { path: 'awards/prize-silver/silver-ballbeverage-pr' }
 
-router.get('/silver-visteon', function(req, res, next) {
-  res.render('awards/prize-silver/silver-visteon', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-visteon': { path: 'awards/prize-silver/silver-visteon' }
 
-router.get('/silver-visteon-pr', function(req, res, next) {
-  res.render('awards/prize-silver/silver-visteon-pr', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-visteon-pr': { path: 'awards/prize-silver/silver-visteon-pr' }
 
-router.get('/silver-hospira', function(req, res, next) {
-  res.render('awards/prize-silver/silver-hospira', { title: 'Recipients - Shingo Institute' });
-});
+    , 'silver-hospira': { path: 'awards/prize-silver/silver-hospira' }
 
-router.get('/silver-hospira-pr', function(req, res, next) {
-  res.render('awards/prize-silver/silver-hospira-pr', { title: "Recipients - Shingo Institute" });
-});
+    , 'silver-hospira-pr': { path: 'awards/prize-silver/silver-hospira-pr' }
 
-/* Mettarottapharm Profile */
-router.get('/silver-medarottapharm', function(req, res, next) {
-  res.render('awards/prize-silver/silver-medarottapharm', { title: 'Recipients - Shingo Institute' });
-});
+    /* Mettarottapharm Profile */
+    , 'silver-medarottapharm': { path: 'awards/prize-silver/silver-medarottapharm' }
 
-router.get('/silver-medarottapharm-pr', function(req, res, next) {
-  res.render('awards/prize-silver/silver-medarottapharm-pr', { title: "Recipients - Shingo Institute" });
-});
+    , 'silver-medarottapharm-pr': { path: 'awards/prize-silver/silver-medarottapharm-pr' }
 
-/* GET commonwealth */
-router.get('/silver_commonwealth', function(req, res, next) {
-  res.render('awards/prize-silver/silver-commonwealth', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET commonwealth */
+    , 'silver_commonwealth': { path: 'awards/prize-silver/silver-commonwealth' }
 
-/* GET rexam */
-router.get('/silver_rexam-jacarei', function(req, res, next) {
-  res.render('awards/prize-silver/silver-rexam-jacarei', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET rexam */
+    , 'silver_rexam-jacarei': { path: 'awards/prize-silver/silver-rexam-jacarei' }
 
-/* GET rexam */
-router.get('/silver_pympsa', function(req, res, next) {
-  res.render('awards/prize-silver/silver-pympsa', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET rexam */
+    , 'silver_pympsa': { path: 'awards/prize-silver/silver-pympsa' }
 
 
-                    /******** Bronze Recipients ********/
+    /******** Bronze Recipients ********/
 
-router.get('/bronze-forest-tosara', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-forest-tosara', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-forest-tosara': { path: 'awards/prize-bronze/bronze-forest-tosara' }
 
-router.get('/bronze-cardinalhealth', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-cardinalhealth', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-cardinalhealth': { path: 'awards/prize-bronze/bronze-cardinalhealth' }
 
-router.get('/bronze-cardinalhealth-pr', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-cardinalhealth-pr', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-cardinalhealth-pr': { path: 'awards/prize-bronze/bronze-cardinalhealth-pr' }
 
-router.get('/bronze-ipsenbio', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-ipsenbio', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-ipsenbio': { path: 'awards/prize-bronze/bronze-ipsenbio' }
 
-router.get('/bronze-ipsenbio-pr', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-ipsenbio-pr', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-ipsenbio-pr': { path: 'awards/prize-bronze/bronze-ipsenbio-pr' }
 
-router.get('/bronze-letterkenny', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-letterkenny', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-letterkenny': { path: 'awards/prize-bronze/bronze-letterkenny' }
 
-router.get('/bronze-letterkenny-pr', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-letterkenny-pr', { title: "Recipients - Shingo Institute" });
-});
+    , 'bronze-letterkenny-pr': { path: 'awards/prize-bronze/bronze-letterkenny-pr' }
 
-router.get('/bronze-landapparel', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-landapparel', { title: 'Recipients - Shingo Institute' });
-});
+    , 'bronze-landapparel': { path: 'awards/prize-bronze/bronze-landapparel' }
 
-router.get('/bronze-landapparel-pr', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-landapparel-pr', { title: "Recipients - Shingo Institute" });
-});
+    , 'bronze-landapparel-pr': { path: 'awards/prize-bronze/bronze-landapparel-pr' }
 
-/* GET rexam */
-router.get('/bronze_lake', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-lake', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET rexam */
+    , 'bronze_lake': { path: 'awards/prize-bronze/bronze-lake' }
 
-/* GET lundbeck*/
-router.get('/bronze_lundbeck-italy', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-lundbeck-italy', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET lundbeck*/
+    , 'bronze_lundbeck-italy': { path: 'awards/prize-bronze/bronze-lundbeck-italy' }
 
-/* GET vistaprint*/
-router.get('/bronze_vistaprint-australia', function(req, res, next) {
-  res.render('awards/prize-bronze/bronze-vistaprint-australia', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET vistaprint*/
+    , 'bronze_vistaprint-australia': { path: 'awards/prize-bronze/bronze-vistaprint-australia' }
 
-                      /******* Research Recipients *********/
-router.get('/publication-toyota-way-liker', function(req, res, next) {
-  res.render('awards/prize-publication/publication-toyota-way-liker', { title: 'Recipients - Shingo Institute'});
-});
+    /******* Research Recipients *********/
+    , 'publication-toyota-way-liker': { path: 'awards/prize-publication/publication-toyota-way-liker' }
 
-                      /******* Research Recipients *********/
-/* GET card-system */
-router.get('/publication-matthias-thur', function(req, res, next) {
-  res.render('awards/prize-publication/publication-matthias-thur', { title: 'Recipients - Shingo Institute' });
-});
+    /******* Research Recipients *********/
+    /* GET card-system */
+    , 'publication-matthias-thur': { path: 'awards/prize-publication/publication-matthias-thur' }
 
-/* GET lean farm */
-router.get('/publication-jan-compton', function(req, res, next) {
-  res.render('awards/prize-research/publication-jan-compton', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET lean farm */
+    , 'publication-jan-compton': { path: 'awards/prize-research/publication-jan-compton' }
 
-/* GET lean farm */
-router.get('/research-paul-aker', function(req, res, next) {
-  res.render('awards/prize-research/research-paul-aker', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET lean farm */
+    , 'research-paul-aker': { path: 'awards/prize-research/research-paul-aker' }
 
-/* GET lean farm */
-router.get('/research-ben-hartman', function(req, res, next) {
-  res.render('awards/prize-research/research-ben-hartman', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET lean farm */
+    , 'research-ben-hartman': { path: 'awards/prize-research/research-ben-hartman' }
 
-/* GET management on the mend */
-router.get('/research-john-toussaint', function(req, res, next) {
-  res.render('awards/prize-research/research-john-toussaint', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET management on the mend */
+    , 'research-john-toussaint': { path: 'awards/prize-research/research-john-toussaint' }
 
-/* GET lean-driven */
-router.get('/research-norbert-majerus', function(req, res, next) {
-  res.render('awards/prize-research/research-norbert-majerus', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET lean-driven */
+    , 'research-norbert-majerus': { path: 'awards/prize-research/research-norbert-majerus' }
 
-/* GET lean long term */
-router.get('/research-baker-rolfes', function(req, res, next) {
-  res.render('awards/prize-research/research-baker-rolfes', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET lean long term */
+    , 'research-baker-rolfes': { path: 'awards/prize-research/research-baker-rolfes' }
 
-/* GET fit org */
-router.get('/research-daniel-markovitz', function(req, res, next) {
-  res.render('awards/prize-research/research-daniel-markovitz', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET fit org */
+    , 'research-daniel-markovitz': { path: 'awards/prize-research/research-daniel-markovitz' }
 
-/* GET gemba walk */
-router.get('/research_michael-bremer', function(req, res, next) {
-  res.render('awards/prize-research/research-michael-bremer-gemba-walk', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET gemba walk */
+    , 'research_michael-bremer': { path: 'awards/prize-research/research-michael-bremer-gemba-walk' }
 
-/* GET vistaprint*/
-router.get('/research_jeffrey-liker', function(req, res, next) {
-  res.render('awards/prize-research/research-jeffrey-liker', { title: 'Recipients - Shingo Institute' });
-});
+    /* GET vistaprint*/
+    , 'research_jeffrey-liker': { path: 'awards/prize-research/research-jeffrey-liker' }
+}
+
+Object.keys(routes).forEach(name => {
+    const route = routes[name]
+    router.get(`/${name}`, (req, res, next) => { res.render(route.path, { title: route.title || 'Recipients - Shingo Institute' }) })
+})
 
 
 /* Historical .pdf */
