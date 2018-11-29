@@ -1,23 +1,21 @@
-var express = require('express'),
-  path = require("path"),
-  fs = require("fs"),
-  Promise = require('bluebird'),
-  jsonfile = require('jsonfile'),
-  SF = Promise.promisifyAll(require('../models/sf')),
-  router = express.Router()
+const express = require('express')
+const path = require('path')
+const fs = require('fs')
+const jsonfile = require('jsonfile')
+const router = express.Router()
 
-router.get('/', function(req, res) {
-  var events = new Array();
-  fs.readdirSync(__dirname + '/../models')
-    .filter(function(file) {
-      return (file.indexOf(".json") !== 0) && (file != 'sf.js');
-    })
-    .forEach(function(file) {
-      var event = jsonfile.readFileSync(path.join(__dirname, '/../models/' + file));
-      event.filename = file
-      events.push(event);
-    });
-  res.json(events)
+router.get('/', function (req, res) {
+    const events =
+        fs.readdirSync(__dirname + '/../models')
+            .filter(file => file.indexOf('.json') !== 0 && file != 'sf.js')
+            .map(file => {
+                const event = jsonfile.readFileSync(
+                    path.join(__dirname, '/../models/' + file),
+                )
+                event.filename = file
+                return event
+            })
+    res.json(events)
 })
 
 router.post('/', function(req, res) {
