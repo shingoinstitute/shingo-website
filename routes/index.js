@@ -45,6 +45,13 @@ router.get('/model', (req, res, next) => {
     });
 });
 
+/* GET journey */
+router.get('/journey', (req, res, next) => {
+    res.render('education/journey', {
+        title: 'Your Shingo Journey - Shingo Institute'
+    });
+});
+
 /* GET workshops */
 router.get('/workshops', (req, res, next) => {
   var allWorkshops = new Array();
@@ -58,6 +65,7 @@ router.get('/workshops', (req, res, next) => {
         if (!workshop || !workshop.Registration_Website__c) {
             throw new Error(`Invalid Workshop\n${JSON.stringify(workshop)}`);
         }
+        if(workshop.Registration_Website__c == null) workshop.Registration_Website__c = "https://www.shingo.org/workshops";
         if(workshop.Registration_Website__c.indexOf("http")) workshop.Registration_Website__c = "https://" + workshop.Registration_Website__c;
     })
     workshops = _.sortBy(workshops, ['End_Date__c']);
