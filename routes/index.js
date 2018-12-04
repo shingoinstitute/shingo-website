@@ -292,6 +292,7 @@ const Redirects =
     , 'financial2018': 'http://www.cvent.com/events/2018-shingo-financial-services-summit/event-summary-e89c1e845b0f43769d5a62127bdaa4e1.aspx'
     , '2019': 'https://events.shingo.org/#!/events/a1B1H00000GHhWiUAL'
     , 'financialservices2018': 'http://www.cvent.com/events/2018-shingo-financial-services-summit/event-summary-e89c1e845b0f43769d5a62127bdaa4e1.aspx'
+    , 'events/31': 'http://www.cvent.com/events/31st-annual-shingo-conference/event-summary-cc99906ddb2f4a5abdc73a67a0142f24.aspx'
     }
 
 Object.keys(Redirects).forEach(k => {
