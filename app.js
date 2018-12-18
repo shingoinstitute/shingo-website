@@ -1,43 +1,23 @@
-var path = require('path');
-require('dotenv').load({path: path.normalize(path.join(__dirname, '.env'))});
+const path = require('path');
+require('dotenv').load({ path: path.normalize(path.join(__dirname, '.env')) });
 
-var express = require('express'),
-    exphbs = require('express-handlebars'),
-    favicon = require('serve-favicon'),
-    logger = require('morgan'),
-    cookieParser = require('cookie-parser'),
-    bodyParser = require('body-parser'),
-    config = require('./config.js'),
-    api_route = require('./admin-app/events'),
-    Promise = require('bluebird'),
-    request = Promise.promisifyAll(require('request')),
-    session = require('express-session'),
-    MySQLStore = require('express-mysql-session')(session),
-    moment = require('moment'),
-    fs = require('fs'),
-    subdomains = require('express-subdomains'),
-    insight_routes = require('./routes/insight.js'),
-    index = require('./routes/index.js')
-    Logger = require('./Logger'),
-    _ = require('lodash'),
-    xmlParser = require('xml2js').parseString,
-    logger = new Logger().logger;
+const express = require('express')
+const exphbs = require('express-handlebars')
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const config = require('./config.js')
+const api_route = require('./admin-app/events')
+const request = require('request-promise-native')
+const moment = require('moment')
+const subdomains = require('express-subdomains')
+const insight_routes = require('./routes/insight.js')
+const index = require('./routes/index.js')
+const _ = require('lodash')
+const xmlParser = require('xml2js').parseString
 
-var app = express();
-
-// var store = new MySQLStore(config.mysql_connection)
-// app.use(
-//     session({
-//         secret: 'iamawesome',
-//         store: store,
-//         resave: true,
-//         saveUninitialized: true,
-//         cookie: {
-//             secure: config.cookie_security,
-//             maxAge: 3600000
-//         }
-//     })
-// )
+const app = express();
 
 // Get S3 bucket folder info
 function getAWSData(params){
@@ -71,13 +51,11 @@ function getAWSData(params){
 
 app.get('/presentations/:conf?/:year?', function(req, res, next) {
     const { title } = getAWSData(req.params);
-    
-    const files = new Array();
-    request("https://s3-us-west-1.amazonaws.com/shingo-presentations", function(error, response, body){
-        if(error) { logger.error(`Error in GET: ${req.path}\n %j`, error); return next(); }
 
+    const files = []
+    request("https://s3-us-west-1.amazonaws.com/shingo-presentations").then(body => {
         xmlParser(body, function(err, bucket){
-            if(err) { logger.error(`Error in GET: ${req.path}\n %j`, error); return next(); }
+            if(err) { console.error(`Error in GET: ${req.path}\n`, err); return next(); }
             _.forOwn(bucket.ListBucketResult.Contents, function(val){
                 var pres = _.pick(val, 'Key');
                 if(pres && pres.Key && pres.Key.length) pres = pres.Key[0];
@@ -94,6 +72,10 @@ app.get('/presentations/:conf?/:year?', function(req, res, next) {
                 conference: title
             });
         });
+    })
+    .catch(error => {
+        console.error(`Error in GET: ${req.path}\n`, error)
+        return next(error)
     })
 })
 
@@ -137,7 +119,7 @@ app.set('view engine', 'handlebars');
 
 
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
-// app.use(logger('dev'));
+app.use(logger('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -156,7 +138,7 @@ app.use('/', index);
 
 app.get('/admin', function(req, res) {
     if (!req.session.access_token) {
-        return res.redirect(config.sf.environment + "/services/oauth2/authorize?response_type=code&client_id=" + config.sf.client_id + "&redirect_uri=" + config.sf.redirect_uri)
+        return res.redirect(`${config.sf.environment}/services/oauth2/authorize?response_type=code&client_id=${config.sf.client_id}&redirect_uri=${config.sf.redirect_uri}`)
     }
     res.sendFile(__dirname + '/public/admin-app/index.html')
 })
@@ -171,20 +153,16 @@ app.get('/auth_callback', function(req, res) {
     }
 
     var options = {
-        url: config.sf.environment + '/services/oauth2/token',
-        form: post_data
+        uri: config.sf.environment + '/services/oauth2/token',
+        formData: post_data,
+        json: true
     }
 
-    request.postAsync(options).then(function(body) {
-        if (body.statusCode != 200) {
-            throw new Error("status_code:" + body.status_code)
-        }
-        response = JSON.parse(body.body);
-
+    request.post(options).then(response => {
         req.session.access_token = response.access_token
         return res.redirect('/admin')
     }).catch(function(err) {
-        logger.log("error", "AUTH_CALLBACK ROUTE\n%j", err);
+        console.error("AUTH_CALLBACK ROUTE\n", err);
         return res.redirect('/')
     })
 })
@@ -231,7 +209,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(app.get('port'), function() {
-    logger.info("Node is on port %s", app.get('port'));
+    console.log("Node is on port ", app.get('port'));
 });
 
 module.exports = app;
