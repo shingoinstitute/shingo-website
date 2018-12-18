@@ -401,6 +401,9 @@ footer img {
 .tri-overlay ul h3:hover, .tri-overlay ul h4:hover {
     color: #d04526;
 }
+.tri-overlay ul .no-hover:hover {
+    color: white;
+}
 .tri-overlay ul li:hover> ul {
     display: block;
 }
