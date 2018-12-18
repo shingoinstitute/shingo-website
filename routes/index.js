@@ -37,6 +37,14 @@ router.get('/model', (req, res, next) => {
     });
 });
 
+/* GET journey */
+router.get('/journey', (req, res, next) => {
+    res.render('education/journey', {
+        title: 'Your Shingo Journey - Shingo Institute'
+    });
+});
+
+
 /**
  * Ensures that a workshop's Registration_Website__c is a valid url
  *

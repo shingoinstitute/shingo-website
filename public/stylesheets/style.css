@@ -315,18 +315,56 @@ footer img {
 #home-tri .columns h6 {
     line-height: 1.45em;
 }
-#home-model {
+.home-model {
     background: #f0f0f0 url('../images/shingo-model_no-text.png') no-repeat center center fixed;
     background-size: cover;
     padding: 70px 30px;
 }
-#home-model h3, #home-model h4, #home-model .btn {
+.home-model h3, .home-model h4, .home-model .btn {
     margin: 30px auto;
 }
-#home-model h3 {
+.home-model h3, .home-model h1 {
     font-family: "Quattrocento Sans";
-    margin: 30px;
+    margin: 30px auto;
 }
+
+.journey-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.journey-button{
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    background: rgb(5, 48, 85);
+    width: 285px;
+    height: 40px;
+    margin: 10px 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey-button:hover {
+    background: rgb(12, 77, 136);
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .journey-button {
+        margin: 10px 20px;
+        font-weight: 900;
+        font-size: 20px;
+    }
+}
+
 #home-tri .btn {
     margin: 20px auto;
 }
@@ -344,11 +382,12 @@ footer img {
 .tri-overlay {
     position: relative;
     height: 400px;
-    margin-bottom: 10px;
+    width: 325px;
+    margin-bottom: 30px;
 }
 .tri-overlay ul:not(.droplist) {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 0;
     width: 100%;
     padding: 10px 10px;
@@ -361,6 +400,9 @@ footer img {
 }
 .tri-overlay ul h3:hover, .tri-overlay ul h4:hover {
     color: #d04526;
+}
+.tri-overlay ul .no-hover:hover {
+    color: white;
 }
 .tri-overlay ul li:hover> ul {
     display: block;
@@ -376,18 +418,32 @@ footer img {
     font-size: 1.2em;
     font-weight: 300;
 }
+#home-events .tri-overlay {
+    background: url('../images/Events_Homepage.jpg') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+#home-events .tri-overlay ul:not(.droplist) {
+    background: rgba(100, 9, 33, 0.7);
+    transition: background .75s;
+}
+#home-events .tri-overlay ul:hover {
+    background: rgba(100, 9, 33, 1);
+    
+}
 #home-research .tri-overlay {
-    background: url('../images/research_globe.jpg') no-repeat center;
+    background: url('../images/Research_Homepage.jpg') no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 #home-research .tri-overlay ul:not(.droplist) {
-    background: rgba(177, 124, 49, 0.7);
+    background: rgba(60, 78, 35, 0.7);
     transition: background .75s;
 }
 #home-research .tri-overlay ul:hover {
-    background: rgba(177, 124, 49, 1);
+    background: rgba(60, 78, 35, 1);
 }
 #home-education .tri-overlay {
     background: url('../images/education_blue.jpg') no-repeat center;
@@ -403,17 +459,17 @@ footer img {
     background: rgba(0, 47, 86, 1);
 }
 #home-recognition .tri-overlay {
-    background: url('../images/recognition_gear.jpg') no-repeat center;
+    background: url('../images/research_globe.jpg') no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 #home-recognition .tri-overlay ul:not(.droplist) {
-    background: rgba(100, 9, 33, 0.7);
+    background: rgba(177, 124, 49, 0.7);
     transition: background .75s;
 }
 #home-recognition .tri-overlay ul:hover {
-    background: rgba(100, 9, 33, 1);
+    background: rgba(177, 124, 49, 1);
 }
 #home-aff {
     padding: 70px 30px;
@@ -1663,8 +1719,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     font-family: "Quattrocento Sans";
 }
 #sticky-Right-Banner {
-    display: none;
-    position: fixed;
+    display: block;
     height: 50px;
     min-width: 100%;
     background: #640921;
@@ -1778,6 +1833,19 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     justify-content: center;
 }
 
+.display-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .workshop-info-flex {
     display: flex;
     flex-direction: row;
@@ -1795,4 +1863,276 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 
 @media only screen and (orientation: portrait) {
     .workshop-info-title {text-align: center;}
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    
+    border-left: 40px solid black;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    
+    border-top: 20px solid black;
+}
+
+.arrow-right.training {
+    border-left: 40px solid rgb(7, 56, 103);
+
+    position: absolute;
+    left: 0;
+    top: 110px;
+}
+
+.arrow-right.sustainment {
+    border-left: 40px solid rgb(98, 6, 33);
+
+    position: absolute;
+    left: 0;
+    top: 35px;
+}
+
+.arrow-right.assessment {
+    border-left: 40px solid rgb(177, 123, 54);
+
+    position: absolute;
+    left: 0;
+    top: 35px;
+}
+
+.type-banner {
+    width: 40vw;
+    max-width: 500px;
+    height: 300px; 
+    margin: 0;
+}
+
+.type-banner.short {
+    height: 150px;
+}
+
+.example-banner {
+    background: #C3C3C3;
+    width: 60vw;
+    max-width: 700px;
+    height: 300px;
+    margin: 0;
+    position: relative;
+}
+
+.example-banner.short {
+    height: 150px;
+}
+
+.type-banner.training {
+    background: rgb(7, 56, 103);
+}
+
+.type-banner.sustainment {
+    background: rgb(98, 6, 33);
+}
+
+.type-banner.assessment {
+    background: rgb(177, 123, 54);
+}
+
+@media only screen and (max-width: 786px) {
+    .type-banner h2 {
+        font-size: 6vw;
+    }
+
+    .example-banner h3 {
+        font-size: 4vw;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .type-banner {
+        height: 40vw;
+    }
+
+    .example-banner {
+        height: 40vw;
+    }
+
+    .type-banner.short {
+        height: 20vw;
+    }
+
+    .example-banner.short {
+        height: 20vw;
+    }
+
+    .arrow-right { 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+    }
+
+    .arrow-right.training {
+        border-left: 20px solid rgb(7, 56, 103);
+        top: calc(20vw - 20px);
+    }
+
+    .arrow-right.sustainment {
+        border-left: 20px solid rgb(98, 6, 33);
+        top: calc(10vw - 20px);
+    }
+
+    .arrow-right.assessment {
+        border-left: 20px solid rgb(177, 123, 54);
+        top: calc(10vw - 20px);
+    }
+}
+
+.journey-example-container {
+    border: 5px solid #C0C0C0;
+    width: 90%;
+    max-width: 1250px;
+    margin: auto auto 20px;
+}
+
+.journey-steps {
+    width: 400px;
+    padding: 20px 75px;
+    margin: 20px 0;
+}
+
+.display-row.journey {
+    flex-wrap: nowrap;
+}
+
+.side-borders {
+    border-left: 3px solid #c0c0c0;
+    border-right: 3px solid #c0c0c0;
+}
+
+@media only screen and (max-width: 1345px) {
+    .side-borders {
+        border-right: 3px solid transparent;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    .side-borders {
+        border: none;
+    }
+}
+
+.org-circle {
+    background: #C0C0C0;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.training {
+    color: rgb(7, 56, 103);
+    text-align: center;
+}
+.sustainment {
+    color: rgb(98, 6, 33);
+    text-align: center;  
+}
+.assessment {
+    color: rgb(177, 123, 54);
+    text-align: center;   
+}
+.example-banner .training:hover {
+    color: #295a89;
+    font-weight: 800;
+}
+.example-banner .sustainment:hover {
+    color: #842843;
+    font-weight: 800;
+}
+.example-banner .assessment:hover {
+    color: #d39d58;
+    font-weight: 800;
+}
+
+.journey-steps h5 {
+    margin: 15px auto;
+    font-weight: 400;
+}
+
+.org-circle h5 {
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+
+.tooltip {
+    background: rgba(0, 0, 0, .85);
+    width: 350px;
+    margin: auto;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    border-radius: 30px;
+
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .25s, opacity .25s linear;
+}
+
+.title-container {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 860px) {
+    .title-container:hover .tooltip, .title-container:hover .arrow-up {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .25s linear;
+    }
+} 
+
+
+.training-title {
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.arrow-up {
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-bottom: 15px solid rgba(0, 0, 0, .85);
+
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .25s, opacity .25s linear;
+}
+
+.tip-text {
+    color: white;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
 }

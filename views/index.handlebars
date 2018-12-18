@@ -1,11 +1,23 @@
 <!-- Begin Body Content -->
 <!-- International Conference Section -->
+<article class="container home-model" style="margin-top: 0">
+    <div class="row text-center">
+        <div class="eight centered columns" style="width: 100%; margin: auto;">
+            <h1 style="max-width: 700px;">Shape your culture to drive operational excellence</h1>
+            <div class="journey-button-container">
+                <a href="/model" class="journey-button">Introduction to Shingo</a>
+                <a href="/journey" class="journey-button">Your Shingo Journey</a>
+            </div>
+        </div>
+    </div>
+</article>
+
 <article class="container">
     <div style="display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around;">
         <div style="display: flex; flex-flow: row nowrap; align-items: center; justify-content: space-around;">
             <!-- <a class="column" href="/financialservices2018"><img class="clickable" src="images/FS_homepage.png" /></a> -->
             <!-- <a class="column" href="/ireland2018"><img class="clickable" src="images/homepage-Ireland.png" /></a> -->
-            <a href="https://www.cvent.com/d/ngqnct"><video muted autoplay loop style="max-width: 1040px;width: 100%;margin: 10px 34px 0 34px;">
+            <a href="https://www.cvent.com/d/ngqnct"><video muted autoplay loop style="max-width: 1040px;width: 95vw;margin: 10px 34px 0 34px;">
                 <source src="images/homepage_gif.mp4" type="video/mp4">
                 Your browser does not support this video
             </video></a>
@@ -13,17 +25,21 @@
         <p style="font-size: 24px"><a href="/japan2018">Learn more about Japan Study Tour</a></p>
     </div>
 </article>
-<article class="container" id="home-tri">
+<article>
+    <br>
     <div class="row">
-        <p style="font-size: 36px">What we do...</p>
+        <p style="font-size: 36px; text-align: center;">What we do...</p>
     </div>
 
-    <div class="row">
+    <div class="display-row" style="width: 90%; margin: auto;">
         <div class="four columns" id="home-education">
             <div class="tri-overlay">
                 <ul>
-                    <li><a href="https://events.shingo.org/#!/upcoming"><h3>EVENTS</h3></a></li>
+                    <li><a href="https://events.shingo.org/#!/upcoming"><h3>TRAINING</h3></a></li>
                     <li><a href="../education#workshops"><h4>Workshops</h4></a></li>
+                    
+                    {{!-- <li><a href="/events/international"><h4>30th Shingo Conference</h4></a></li> --}}
+                    <li><a href="http://www.sme.org/LeanWhitePaper/" target="_blank"><h4>Lean Certification</h4></a></li>
                     <li>
                         <a href="../midwest2018"><h4>Study Tours</h4></a>
                         <!-- Links to next tour available -->
@@ -33,8 +49,6 @@
                             <li><a href="../midwest2018"><h4>Midwest Tour</h4></a></li>
                         </ul>
                     </li>
-                    {{!-- <li><a href="/events/international"><h4>30th Shingo Conference</h4></a></li> --}}
-                    <li><a href="http://www.sme.org/LeanWhitePaper/" target="_blank"><h4>Lean Certification</h4></a></li>
                 </ul>
             </div>
             {{!--<h6>Dive deep into the <em>Shingo Model</em> and accelerate your improvement efforts.</h6>
@@ -42,13 +56,28 @@
                 <div class="medium primary btn"><a href="education">Learn More</a></div>
             </div>--}}
         </div>
+        <div class="four columns" id="home-events">
+            <div class="tri-overlay">
+                <ul>
+                    <li><h3>EVENTS</h3></li>
+                    <li><a href="https://events.shingo.org"><h4>Conferences</h4></a></li>
+                    <!-- Leave as http -->
+                    <li><a href="https://events.shingo.org"><h4>Summits</h4></a></li>
+                </ul>
+            </div>
+            {{!--<h6>The Shingo Institute uses research to continually improve the <em>Shingo Model</em> and its teachings.</h6>
+            <div class="text-center">
+                <div class="medium info btn"><a href="../research">Learn More</a></div>
+            </div>--}}
+        </div>
         <div class="four columns" id="home-recognition">
             <div class="tri-overlay">
                 <ul>
-                    <li><a href="../awards"><h3>THE SHINGO PRIZE</h3></a></li>
+                    <li><a href="../awards"><h3>ASSESSMENT</h3></a></li>
+                    <li><a href="../awards"><h4>The Shingo Prize</h4></a></li>
+                    <li><a href="../insight"><h4>Shingo Insight</h4></a></li>
                     <li><a href="../researchaward"><h4>Research Award</h4></a></li>
-                    <li><a href="../publicationaward"><h4>Publication Award</h4></a></li>
-                    <li><a href="../model"><h4>Shingo Model™</h4></a></li>                    
+                    <li><a href="../publicationaward"><h4>Publication Award</h4></a></li>                    
                 </ul>
             </div>
             {{!--<h6>We promote and recognize world-class organizational culture that drives results.</h6>
@@ -60,9 +89,9 @@
             <div class="tri-overlay">
                 <ul>
                     <li><h3>RESEARCH</h3></li>
-                    <li><a href="../insight"><h4>Shingo Insight</h4></a></li>
                     <!-- Leave as http -->
                     <li><a href="http://blog.shingo.org"><h4>Articles</h4></a></li>
+                    <li><a><h4 class="no-hover"><span style="color: #d04526">Books</span> - Coming Soon</h4></a></li>
                 </ul>
             </div>
             {{!--<h6>The Shingo Institute uses research to continually improve the <em>Shingo Model</em> and its teachings.</h6>
@@ -73,7 +102,7 @@
     </div>
 </article>
 
-<article class="container" id="home-model">
+<article class="container home-model">
     <div class="row text-center">
         <div class="eight centered columns">
             <h3>Discover the <em>Shingo Model™</em> and learn what makes the difference.</h3>
