@@ -1896,7 +1896,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 
     position: absolute;
     left: 0;
-    top: 35px;
+    top: 60px;
 }
 
 .arrow-right.assessment {
@@ -1904,7 +1904,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 
     position: absolute;
     left: 0;
-    top: 35px;
+    top: 60px;
 }
 
 .type-banner {
@@ -1915,7 +1915,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 }
 
 .type-banner.short {
-    height: 150px;
+    height: 200px;
 }
 
 .example-banner {
@@ -1928,7 +1928,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 }
 
 .example-banner.short {
-    height: 150px;
+    height: 200px;
 }
 
 .type-banner.training {
@@ -1953,41 +1953,79 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
         width: 90%;
         margin: 0 auto;
     }
+    
+    .display-row.journey {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .type-banner {
-        height: 40vw;
+        height: 30vw;
+        width: 90%;
+        max-width: 90%;
     }
 
     .example-banner {
         height: 40vw;
+        width: 90%;
     }
 
     .type-banner.short {
-        height: 20vw;
+        height: 40vw;
     }
 
     .example-banner.short {
-        height: 20vw;
+        height: 25vw;
     }
 
     .arrow-right { 
-        border-top: 20px solid transparent;
-        border-bottom: 20px solid transparent;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
     }
 
     .arrow-right.training {
-        border-left: 20px solid rgb(7, 56, 103);
-        top: calc(20vw - 20px);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        border-top: 20px solid rgb(7, 56, 103);
     }
 
     .arrow-right.sustainment {
-        border-left: 20px solid rgb(98, 6, 33);
-        top: calc(10vw - 20px);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        border-top: 20px solid rgb(98, 6, 33);
     }
 
     .arrow-right.assessment {
-        border-left: 20px solid rgb(177, 123, 54);
-        top: calc(10vw - 20px);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        border-top: 20px solid rgb(177, 123, 54);
     }
 }
 
@@ -2108,7 +2146,7 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
 .training-title {
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 10px 0;
 }
 
 .arrow-up {
