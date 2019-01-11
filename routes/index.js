@@ -367,7 +367,11 @@ router.get('/awards', (req, res, next) => {
         })
 
         awards.forEach(award => {
-            award.info = award.City__c + ", " + award.Country__c;
+            if (award.State__c != null) {
+                console.log("Found State " + award.Name)
+                award.info = award.City__c + ", " + award.State__c + ", " + award.Country__c;
+            }
+            else award.info = award.City__c + ", " + award.Country__c;
             var date = moment(award.Date_Awarded__c);
             var formattedDate = date.format('YYYY');
             award.date = formattedDate;
