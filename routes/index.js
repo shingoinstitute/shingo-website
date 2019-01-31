@@ -509,6 +509,33 @@ router.get('/publicationaward/:id', (req, res, next) => {
     })
 });
 
+/* GET alumni  */
+router.get('/alumni', (req, res, next) => {
+    request.get('https://api.shingo.org/salesforce/awards/alumni')
+    .then(results => {
+        var response = JSON.parse(results)
+        var awards = response.records;
+
+        awards.forEach(award => {
+            award.info = award.Account.Name;
+            award.date = award.Name;
+            award.Name = award.Title;
+            award.Press_Release_Link__c = null;
+        })
+
+        res.render('awards/alumni', {
+            title: 'Shingo Alumni - Shingo Institute',
+            awards: awards
+        });
+    }).catch(err => {
+        console.error('awards/researchaward', err)
+        res.render('awards/researchaward', {
+            title: 'Research Award - Shingo Institute',
+            awards: []
+        });
+    });
+});
+
 /*  Affiliates Route */
 /* GET affiliates */
 router.get('/affiliates', (req, res, next) => {
