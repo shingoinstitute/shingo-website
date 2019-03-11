@@ -340,7 +340,7 @@ footer img {
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 25px;
     background: rgb(5, 48, 85);
     width: 285px;
@@ -360,7 +360,7 @@ footer img {
 @media only screen and (max-width: 768px) {
     .journey-button {
         margin: 10px 20px;
-        font-weight: 900;
+        font-weight: 700;
         font-size: 20px;
     }
 }
