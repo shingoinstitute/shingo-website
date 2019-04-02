@@ -673,23 +673,61 @@ router.get('/academy', (req, res, next) => {
 
 /* GET examiner */ // TODO Divide lists
 router.get('/examiners', (req, res, next) => {
-  request.get('https://api.shingo.org/salesforce/about/examiner/')
+    request.get('https://api.shingo.org/salesforce/about/examiner/site')
+    .then(results => {
+      const response = JSON.parse(results);
+      const examiners = response.examiners;
+      res.render('about/siteExaminers', {
+          title: 'Site Examiners - Shingo Institute',
+          examiner: examiners
+      });
+    })
+    .catch(err => {
+        console.error( "EXAMINERS ROUTE\n", err)
+        res.render('about/siteExaminers', {
+            title: 'Site Examiners - Shingo Institute',
+            examiner: null
+        });
+    })
+  });
+
+router.get('/siteexaminers', (req, res, next) => {
+  request.get('https://api.shingo.org/salesforce/about/examiner/site')
   .then(results => {
     const response = JSON.parse(results);
     const examiners = response.examiners;
-    res.render('about/examiners', {
-        title: 'Examiners - Shingo Institute',
+    res.render('about/siteExaminers', {
+        title: 'Site Examiners - Shingo Institute',
         examiner: examiners
     });
   })
   .catch(err => {
       console.error( "EXAMINERS ROUTE\n", err)
-      res.render('about/examiners', {
+      res.render('about/siteExaminers', {
           title: 'Examiners - Shingo Institute',
           examiner: null
       });
   })
 });
+
+router.get('/researchpublicationexaminers', (req, res, next) => {
+    request.get('https://api.shingo.org/salesforce/about/examiner/respub')
+    .then(results => {
+      const response = JSON.parse(results);
+      const examiners = response.examiners;
+      res.render('about/rpexaminers', {
+          title: 'Research & Publication Examiners - Shingo Institute',
+          examiner: examiners
+      });
+    })
+    .catch(err => {
+        console.error( "EXAMINERS ROUTE\n", err)
+        res.render('about/rpexaminers', {
+            title: 'Research & Publication Examiners - Shingo Institute',
+            examiner: null
+        });
+    })
+  });
 
 /* GET seab */
 router.get('/seab', (req, res, next) => {
