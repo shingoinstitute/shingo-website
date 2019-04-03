@@ -146,10 +146,10 @@ const routes =
     , 'research-daniel-markovitz': { path: 'awards/prize-research/research-daniel-markovitz' }
 
     /* GET gemba walk */
-    , 'research_michael-bremer': { path: 'awards/prize-research/research-michael-bremer-gemba-walk' }
+    , 'research-michael-bremer': { path: 'awards/prize-research/research-michael-bremer-gemba-walk' }
 
     /* GET vistaprint*/
-    , 'research_jeffrey-liker': { path: 'awards/prize-research/research-jeffrey-liker' }
+    , 'research-jeffrey-liker': { path: 'awards/prize-research/research-jeffrey-liker' }
 }
 
 Object.keys(routes).forEach(name => {
