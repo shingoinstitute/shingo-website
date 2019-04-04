@@ -710,7 +710,7 @@ router.get('/siteexaminers', (req, res, next) => {
   })
 });
 
-router.get('/researchpublicationexaminers', (req, res, next) => {
+router.get('/examinersresearchpublication', (req, res, next) => {
     request.get('https://api.shingo.org/salesforce/about/examiner/respub')
     .then(results => {
       const response = JSON.parse(results);
