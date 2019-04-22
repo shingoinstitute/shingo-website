@@ -13,11 +13,11 @@ const formatImage = (url, height, width) => {
             `https://res.cloudinary.com/shingo/image/upload/c_fill,g_face,h_${height},w_${width}/v1414874243/silhouette_vzugec.png`
         )
     }
-    const first = url.split('d/')
+    const first = url.split('upload/')
     const second = first[1].split('/v')
     return url.indexOf('w_') < 0
-        ? `${first[0]}d/c_fill,g_face,h_${height},w_${width}/${first[1]}`
-        : `${first[0]}d/c_fill,g_face,h_${height},w_${width}/v${second[1]}`
+        ? `${first[0]}upload/c_fill,g_face,h_${height},w_${width}/${first[1]}`
+        : `${first[0]}upload/c_fill,g_face,h_${height},w_${width}/v${second[1]}`
 }
 
 
