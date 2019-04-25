@@ -605,21 +605,11 @@ router.get('/affiliates/:id', (req, res, next) => {
     return [aff, fac]
   })
   .then(([aff, fac]) =>{
-      if (aff.Name == "The Manufacturing Institute") {
-          res.render('affiliates/tmiBannerPage', {
-              title: aff.Name + ' - Shingo Institute',
-              affiliate: aff,
-              fac_pair: fac
-          })
-      }
-      else {
         res.render('affiliates/template', {
             title: aff.Name + ' - Shingo Institute',
             affiliate: aff,
             fac_pair: fac
         });
-      }
-    
   })
   .catch(err => {
       console.error(`AFFILIATE ROUTE: ${req.params.id}\n`, err)
