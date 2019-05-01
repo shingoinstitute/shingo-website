@@ -1,26 +1,18 @@
 <article>
-    <!-- TITLE BLOCK -->
-    <div style="
-        width: 100vw;
-        height: 40vh;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        background: url(https://res.cloudinary.com/shingo/image/upload/v1556208335/Events/IntlConference/2020/rosen-centre-color-corrected.jpg) no-repeat fixed center;
-        background-size: cover;
-    ">
-        <div style="
-            text-align: center;
-        ">
-            <h3 style="color: white;">2020 Shingo Conference</h3>
-            <h1 style="color: white;">Join Us & Celebrate</h1>
-            <h3 style="color: white;">April 14-17, 2020</h3>
-            <h4 style="color: white;">ORLANDO, FLORIDA</h4>
-        </div>
-        <br>
-        <div style="
+    <style>
+        #titleblock {
+            width: 100vw;
+            height: 40vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1556208335/Events/IntlConference/2020/rosen-centre-color-corrected.jpg) no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .registerbutton {
             width: 250px;
             height: 50px;
             margin: 0 auto;
@@ -31,22 +23,76 @@
             flex-direction: column;
             align-content: center;
             justify-content: center;
+        }
+
+        .redregister {
+            background: rgba(100, 9, 33, .85);
+        }
+
+        .redregister:hover {
+            background: rgba(100, 9, 33, 1)
+        }
+
+        .yellowregister {
+            background: #b17c31;
+            margin: 10px 0;
+        }
+
+        .yellowregister:hover {
+            background: #c18c41;
+        }
+
+        #quotecontent {
+            min-height: 12vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #contentblock {
+            width: 100vw;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 1100px) {
+            #contentblock {
+                justify-content: center;
+            }
+            #quotecontent {
+                justify-content: center;
+            }
+        }
+    </style>
+    <!-- TITLE BLOCK -->
+    <div id="titleblock">
+        <div style="
+            text-align: center;
         ">
-            <h4 style="color: white;">REGISTER NOW</h4>
+            <h3 style="color: white;">2020 Shingo Conference</h3>
+            <h1 style="color: white;">Join Us & Celebrate</h1>
+            <h3 style="color: white;">April 14-17, 2020</h3>
+            <h4 style="color: white;">ORLANDO, FLORIDA</h4>
+        </div>
+        <br>
+        <div class="registerbutton redregister">
+            <h4 style="color: white;">REGISTER SOON</h4>
         </div>
     </div>
     <br>
+    <br>
     <!-- CONTENT BLOCK -->
-    <div style="
-        width: 100vw;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    ">
+    <div id="contentblock">
         <div style="
             width: 90%;
             max-width: 550px;
@@ -62,12 +108,13 @@
             </ul>
             <p>Post-conference tour sites are yet to be determined but we always choose sites that will inspire you with new ideas for improvement. Be sure to sign up for a workshop and/or site tour to get these valuable experiences.</p>
         </div>
-        <div style="
-            width: 90%;
-            max-width: 550px;
-        ">
-            Photos
-        </div>
+        <iframe src="https://www.youtube.com/embed/ofhB2HjRP8Y?autoplay=1&mute=1" style="
+            width: 500px;
+            height: 281px;
+            max-width: 90vw;
+            max-height: 45vw;
+            margin: auto 0;">
+        </iframe>
     </div>
     <br>
     <!-- QUOTE BLOCK -->
@@ -75,30 +122,10 @@
         width: 100vw;
         background: rgb(50, 65, 80);
     ">
-        <div style="
-            min-height: 12vh;
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        ">
+        <div id="quotecontent">
             <p style="color: white; font-size: 30px; width: 90%; max-width: 850px;">"The speakers were excellent, the organization of the conference was brilliant, and the venue was a great place to attend!"</p>
-            <div style="
-                width: 250px;
-                height: 50px;
-                text-align: center;
-                color: white;
-                background: #b17c31;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            ">
-                <h4 style="color: white;">REGISTER NOW</h4>
+            <div class="registerbutton yellowregister">
+                <h4 style="color: white;">REGISTER SOON</h4>
             </div>
         </div>
     </div>
