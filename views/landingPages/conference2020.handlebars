@@ -12,6 +12,10 @@
             background-size: cover;
         }
 
+        #titleinfo {
+            text-align: center;
+        }
+
         .registerbutton {
             width: 250px;
             height: 50px;
@@ -54,6 +58,13 @@
             flex-wrap: wrap;
         }
 
+        #quote {
+            color: white; 
+            font-size: 30px; 
+            width: 90%; 
+            max-width: 850px;
+        }
+
         #contentblock {
             width: 100vw;
             max-width: 1200px;
@@ -65,6 +76,10 @@
             flex-wrap: wrap;
         }
 
+        #infolist {
+            list-style: disc inside;
+        }
+
         @media only screen and (max-width: 1100px) {
             #contentblock {
                 justify-content: center;
@@ -72,13 +87,25 @@
             #quotecontent {
                 justify-content: center;
             }
+
+            #quote {
+                text-align: center;
+            }
+
+            #titleinfo h1 {
+                font-size: 8vmin;
+            }
+            #titleinfo h3 {
+                font-size: 5vmin;
+            }
+            #titleinfo h4 {
+                font-size: 4vmin;
+            }
         }
     </style>
     <!-- TITLE BLOCK -->
     <div id="titleblock">
-        <div style="
-            text-align: center;
-        ">
+        <div id="titleinfo">
             <h3 style="color: white;">2020 Shingo Conference</h3>
             <h1 style="color: white;">Join Us & Celebrate</h1>
             <h3 style="color: white;">April 14-17, 2020</h3>
@@ -86,7 +113,7 @@
         </div>
         <br>
         <div class="registerbutton redregister">
-            <h4 style="color: white;">REGISTER SOON</h4>
+            <h4 style="color: white;">COMING SOON</h4>
         </div>
     </div>
     <br>
@@ -100,7 +127,7 @@
             <h2>Why You Should Attend</h2>
             <p>A big part of shaping a culture that drives operational excellence is engaging the entire organization in improvement efforts. This year's theme of "Make Work Meaningful" is about finding ways to create that culture of engagement in continuous improvement.</p>
             <p>Join us to learn from leaders how to make great transformations in your organization using the principles of the <em>Shingo Model</em>.</p>
-            <ul>
+            <ul id="infolist">
                 <li>Network with Lean practitioners like you, all striving to improve their organizations.</li>
                 <li>Discover what process improvement practitioners like you have done to make notable improvements to their organizations.</li>
                 <li>Listen to experienced leaders as keynote speakers.</li>
@@ -123,9 +150,9 @@
         background: rgb(50, 65, 80);
     ">
         <div id="quotecontent">
-            <p style="color: white; font-size: 30px; width: 90%; max-width: 850px;">"The speakers were excellent, the organization of the conference was brilliant, and the venue was a great place to attend!"</p>
+            <p id="quote">"The speakers were excellent, the organization of the conference was brilliant, and the venue was a great place to attend!"</p>
             <div class="registerbutton yellowregister">
-                <h4 style="color: white;">REGISTER SOON</h4>
+                <h4 style="color: white;">COMING SOON</h4>
             </div>
         </div>
     </div>
