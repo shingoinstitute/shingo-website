@@ -794,6 +794,19 @@ router.get('/craftsmanship', (req, res, next) => {
 });
 
 
+
+
+/* GET Event Landing Pages */
+router.get('/conference', (req, res, next) => {
+    res.render('landingPages/conference2020', {
+        title: 'Shingo Conference | Orlando, Florida'
+    });
+});
+
+
+
+
+
 /* Files */  // TODO Handle static file routing & storage
 /* GET .pdf - From challengefortheprize */
 router.get('/assets/Assessment_Process_Flow_Chart.pdf', (req, res, next) => {

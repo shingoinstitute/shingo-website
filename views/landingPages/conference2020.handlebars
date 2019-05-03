@@ -1,0 +1,159 @@
+<article>
+    <style>
+        #titleblock {
+            width: 100vw;
+            height: 40vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1556208335/Events/IntlConference/2020/rosen-centre-color-corrected.jpg) no-repeat fixed center;
+            background-size: cover;
+        }
+
+        #titleinfo {
+            text-align: center;
+        }
+
+        .registerbutton {
+            width: 250px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            background: #640921;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .redregister {
+            background: rgba(100, 9, 33, .85);
+        }
+
+        .redregister:hover {
+            background: rgba(100, 9, 33, 1)
+        }
+
+        .yellowregister {
+            background: #b17c31;
+            margin: 10px 0;
+        }
+
+        .yellowregister:hover {
+            background: #c18c41;
+        }
+
+        #quotecontent {
+            min-height: 12vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #quote {
+            color: white; 
+            font-size: 30px; 
+            width: 90%; 
+            max-width: 850px;
+        }
+
+        #contentblock {
+            width: 100vw;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #infolist {
+            list-style: disc inside;
+        }
+
+        @media only screen and (max-width: 1100px) {
+            #contentblock {
+                justify-content: center;
+            }
+            #quotecontent {
+                justify-content: center;
+            }
+
+            #quote {
+                text-align: center;
+            }
+
+            #titleinfo h1 {
+                font-size: 8vmin;
+            }
+            #titleinfo h3 {
+                font-size: 5vmin;
+            }
+            #titleinfo h4 {
+                font-size: 4vmin;
+            }
+        }
+    </style>
+    <!-- TITLE BLOCK -->
+    <div id="titleblock">
+        <div id="titleinfo">
+            <h3 style="color: white;">2020 Shingo Conference</h3>
+            <h1 style="color: white;">Join Us & Celebrate</h1>
+            <h3 style="color: white;">April 14-17, 2020</h3>
+            <h4 style="color: white;">ORLANDO, FLORIDA</h4>
+        </div>
+        <br>
+        <div class="registerbutton redregister">
+            <h4 style="color: white;">COMING SOON</h4>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!-- CONTENT BLOCK -->
+    <div id="contentblock">
+        <div style="
+            width: 90%;
+            max-width: 550px;
+        ">
+            <h2>Why You Should Attend</h2>
+            <p>A big part of shaping a culture that drives operational excellence is engaging the entire organization in improvement efforts. This year's theme of "Make Work Meaningful" is about finding ways to create that culture of engagement in continuous improvement.</p>
+            <p>Join us to learn from leaders how to make great transformations in your organization using the principles of the <em>Shingo Model</em>.</p>
+            <ul id="infolist">
+                <li>Network with Lean practitioners like you, all striving to improve their organizations.</li>
+                <li>Discover what process improvement practitioners like you have done to make notable improvements to their organizations.</li>
+                <li>Listen to experienced leaders as keynote speakers.</li>
+                <li>Join the discussion in break-out sessions.</li>
+            </ul>
+            <p>Post-conference tour sites are yet to be determined but we always choose sites that will inspire you with new ideas for improvement. Be sure to sign up for a workshop and/or site tour to get these valuable experiences.</p>
+        </div>
+        <iframe src="https://www.youtube.com/embed/ofhB2HjRP8Y?autoplay=1&mute=1" style="
+            width: 500px;
+            height: 281px;
+            max-width: 90vw;
+            max-height: 45vw;
+            margin: auto 0;">
+        </iframe>
+    </div>
+    <br>
+    <!-- QUOTE BLOCK -->
+    <div style="
+        width: 100vw;
+        background: rgb(50, 65, 80);
+    ">
+        <div id="quotecontent">
+            <p id="quote">"The speakers were excellent, the organization of the conference was brilliant, and the venue was a great place to attend!"</p>
+            <div class="registerbutton yellowregister">
+                <h4 style="color: white;">COMING SOON</h4>
+            </div>
+        </div>
+    </div>
+</article>
