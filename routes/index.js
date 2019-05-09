@@ -803,8 +803,12 @@ router.get('/conference', (req, res, next) => {
     });
 });
 
-
-
+/* GET /Study Tours Landing Pages */
+router.get('/studytours/midwest', (req, res, next) => {
+    res.render('landingPages/midwestStudyTour2019', {
+        title: 'Shingo Study Tours | Midwest 2019'
+    });
+});
 
 
 /* Files */  // TODO Handle static file routing & storage

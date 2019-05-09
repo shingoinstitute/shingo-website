@@ -1,0 +1,184 @@
+<article>
+    <style>
+        #titleblock {
+            width: 100vw;
+            height: 40vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1557421462/Events/StudyTours/Midwest%20Study%20Tour%202019/minneapolis-skyline_darken.jpg) no-repeat fixed bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #titleinfo {
+            text-align: center;
+        }
+
+        .registerbutton {
+            width: 250px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            background: #640921;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .redregister {
+            background: rgba(100, 9, 33, .85);
+        }
+
+        .redregister:hover {
+            background: rgba(100, 9, 33, 1)
+        }
+
+        .yellowregister {
+            background: #b17c31;
+            margin: 10px 0;
+        }
+
+        .yellowregister:hover {
+            background: #c18c41;
+        }
+
+        #quotecontent {
+            min-height: 12vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #quote {
+            color: white; 
+            font-size: 30px; 
+            width: 90%; 
+            max-width: 850px;
+        }
+
+        #contentblock {
+            width: 100vw;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #infolist {
+            list-style: disc inside;
+        }
+
+        @media only screen and (max-width: 1100px) {
+            #contentblock {
+                justify-content: center;
+            }
+            #quotecontent {
+                justify-content: center;
+            }
+
+            #quote {
+                text-align: center;
+            }
+
+            #titleinfo h1 {
+                font-size: 8vmin;
+            }
+            #titleinfo h3 {
+                font-size: 5vmin;
+            }
+            #titleinfo h4 {
+                font-size: 4vmin;
+            }
+        }
+    </style>
+
+    <!-- TITLE BLOCK -->
+    <div id="titleblock">
+      <div id="titleinfo">
+            <h3 style="color: white; ">Midwest Shingo Study Tour</h3>
+            <h1 style="color: white;">Join Us & Learn</h1>
+            <h3 style="color: white;">June 18-20, 2019</h3>
+            <h4 style="color: white;">Minneapolis/St. Paul, Minnesota</h4>
+        </div>
+        <br>
+        <div class="registerbutton redregister">
+            <a href='https://www.cvent.com/events/2019-shingo-midwest-study-tour/registration-4710c2f9240542a2bfc583ee32b06417.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <!-- IMAGE BLOCK -->
+    <div>
+        <img src="https://res.cloudinary.com/shingo/image/upload/v1557355218/Events/StudyTours/Midwest%20Study%20Tour%202019/Instruction_Graphic.png"
+        style="
+            width: 100%;
+            height: 100%;
+            ">
+    </div>
+    <div id="contentblock">
+        <div style="
+            width: 90%;
+            max-width: 550px;
+        ">
+            <h2> About Shingo Study Tours </h2>
+            <p> Shingo Study Tours Are Better </p>
+            <p> Study tours with the Shingo Institute are different that other study tours. </p>
+            <p> We take you to organizations that practice Shingo principles and teach you about those principles so you can use them better at your organization. </p>
+            <p> You will tour the following facilities: </p>
+            <ul id="infolist">
+                <li> SUEZ Water Technologies and Solutions </li>
+                <li> 3M </li>
+                <li> Uponor </li>
+                <li> and more! </li>
+            </ul>
+            <h2> What is Included on a Shingo Study Tour </h2>
+            <ul id="infolist">
+                <li> Three nights’ hotel accommodations </li>
+                <li> Daily breakfast </li>
+                <li> Daily Lunch </li>
+                <li> One Dinner </li>
+                <li> Shingo Executive Overview </li>
+                <li> Transportation to all site visits </li>
+                <li> Time with site leadership </li>
+                <li> Debriefs with Shingo Staff Members </li>
+            </ul>
+        </div>
+        <img src="https://res.cloudinary.com/shingo/image/upload/v1557353021/Events/StudyTours/Midwest%20Study%20Tour%202019/minneapolis-skyline.jpg"
+        style="
+            width: 50%;
+            height: 50%;
+            ">
+    </div>
+    <br>
+    <!-- QUOTE BLOCK -->
+    <div style="
+        width: 100vw;
+        background: rgb(50, 65, 80);
+    ">
+        <div id="quotecontent">
+            <p id="quote">"The Shingo Study Tour was an incredible eye opening experience, it was like the Disney World of Lean.” <em> ~ Nicole Blanco, Manufacturing Engineer, Membrane VSM, SUEZ Water Technologies and Solutions </em></p>
+            <div class="registerbutton yellowregister">
+                <a href='https://www.cvent.com/events/2019-shingo-midwest-study-tour/registration-4710c2f9240542a2bfc583ee32b06417.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
+            </div>
+            <p id="quote">"The tour opened my eyes to what is possible. Lean is simple and hard.” <em> ~ Philip Draper, Continuous Improvement Manager, STERIS Corporation </em></p>
+
+            <p id="quote">“Listening to high-level companies share their CI and lean journey and how they incorporate Shingo principles was invaluable. I found immediate areas of improvement for my own work as well as long-term goals of growing a culture that supports continuous improvement.” <em> ~ Jason Nate, Principal, Kimberly Area School District </em></p>
+            
+        </div>
+    </div>
+</article>
