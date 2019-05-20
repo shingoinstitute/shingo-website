@@ -515,33 +515,17 @@ router.get('/alumni', (req, res, next) => {
     .then(results => {
         var response = JSON.parse(results)
         var awards = response.records;
-        var recipients_A_to_F = []
-        var recipients_G_to_M = []
-        var recipients_N_to_Z = []
 
         awards.forEach(award => {
             award.info = award.Account.Name;
-            award.name = award.Name;
+            award.date = award.Name;
             award.Name = award.Title;
             award.Press_Release_Link__c = null;
         })
 
-        for(let i = 1; i < awards.length; i++) {
-            if (awards[i].name[0] < 'F') {
-                recipients_A_to_F.push(awards[i])  
-            } else if (awards[i].name[0] < 'N') {
-                recipients_G_to_M.push(awards[i])  
-            } else {
-                recipients_N_to_Z.push(awards[i])  
-            }
-        }
-
         res.render('awards/alumni', {
             title: 'Shingo Alumni - Shingo Institute',
-            awards: awards,
-            recipients_A_to_F: recipients_A_to_F,
-            recipients_G_to_M: recipients_G_to_M,
-            recipients_N_to_Z: recipients_N_to_Z
+            awards: awards
         });
     }).catch(err => {
         console.error('awards/researchaward', err)
@@ -663,28 +647,9 @@ router.get('/academy', (req, res, next) => {
   .then(results => {
     const response = JSON.parse(results);
     const academy = response.academy;
-    const names_A_to_F = []
-    const names_G_to_M = []
-    const names_N_to_Z = []
-    // for loop to separate out academy members alphabetically by first name
-    // based on first name, each name will be added to one of the above empty array
-    for (let i = 0; i < academy.length; i++){
-        if(academy[i].Name[0] < 'F') {
-            names_A_to_F.push(academy[i])
-        }
-        else if (academy[i].Name[0] < 'N') {
-            names_G_to_M.push(academy[i])
-        }
-        else {
-            names_N_to_Z.push(academy[i])
-        }
-    };
     res.render('about/academy', {
         title: 'Shingo Academy - Shingo Institute',
-        academy: academy,
-        names_A_to_F: names_A_to_F,
-        names_G_to_M: names_G_to_M,
-        names_N_to_Z: names_N_to_Z
+        academy: academy
     });
   })
   .catch(err => {
@@ -721,28 +686,9 @@ router.get('/siteexaminers', (req, res, next) => {
   .then(results => {
     const response = JSON.parse(results);
     const examiners = response.examiners;
-    const examiners_A_to_F = []
-    const examiners_G_to_M = []
-    const examiners_N_to_Z = []
-    // for loop to separate out examiners alphabetically by first name
-    // based on first name, each name will be added to one of the above empty array
-    for (let i = 0; i < examiners.length; i++){
-        if(examiners[i].Name[0] < 'F') {
-            examiners_A_to_F.push(examiners[i])
-        }
-        else if (examiners[i].Name[0] < 'N') {
-            examiners_G_to_M.push(examiners[i])
-        }
-        else {
-            examiners_N_to_Z.push(examiners[i])
-        }
-    };
     res.render('about/siteExaminers', {
         title: 'Site Examiners - Shingo Institute',
-        examiner: examiners,
-        examiners_A_to_F: examiners_A_to_F,
-        examiners_G_to_M: examiners_G_to_M,
-        examiners_N_to_Z: examiners_N_to_Z
+        examiner: examiners
     });
   })
   .catch(err => {
@@ -759,28 +705,9 @@ router.get('/researchpublicationexaminers', (req, res, next) => {
     .then(results => {
       const response = JSON.parse(results);
       const examiners = response.examiners;
-      const examiners_A_to_F = []
-      const examiners_G_to_M = []
-      const examiners_N_to_Z = []
-      // for loop to separate out examiners alphabetically by first name
-      // based on first name, each name will be added to one of the above empty array
-      for (let i = 0; i < examiners.length; i++){
-        if(examiners[i].Name[0] < 'F') {
-            examiners_A_to_F.push(examiners[i])
-        }
-        else if (examiners[i].Name[0] < 'N') {
-            examiners_G_to_M.push(examiners[i])
-        }
-        else {
-            examiners_N_to_Z.push(examiners[i])
-        }
-      };
       res.render('about/rpExaminers', {
           title: 'Research & Publication Examiners - Shingo Institute',
-          examiner: examiners,
-          examiners_A_to_F: examiners_A_to_F,
-          examiners_G_to_M: examiners_G_to_M,
-          examiners_N_to_Z: examiners_N_to_Z
+          examiner: examiners
       });
     })
     .catch(err => {

@@ -48,68 +48,22 @@
                     <td>O.C. Tanner Company</td>
                 </tr>
             </tbody>
-            <div class="row">
-                <table class="striped">
-                    <div style="margin-bottom: 10px;">
-                        <button class="med-btn-blue" onclick='changePage(`page1`)'>A - F</button>
-                        <button class="med-btn-blue" onclick='changePage(`page2`)'>G - M</button>
-                        <button class="med-btn-blue" onclick='changePage(`page3`)'>N - Z</button>
-                        <p style="display: inline-block;">(Examiners filtered alphabetically by first name.)</p>
-                    </div>
-                    <thead>
-                        <tr>
-                            <th>Examiner</th>
-                            <th>Position</th>
-                            <th>Company</th>
-                        </tr>
-                    </thead>
-                    <tbody id='page1' style='display: '>                
-                                            {{#each examiners_A_to_F}}
-                                                <tr>
-                                                    <td>{{Name}}</td>
-                                                    <td>{{Title}}</td>
-                                                    <td>{{Account.Name}}</td>
-                                                </tr> 
-                                            {{/each}}                                       
-                            </tbody>
-                            <tbody id='page2' style='display: none'>                
-                                            {{#each examiners_G_to_M}}
-                                                <tr>
-                                                    <td>{{Name}}</td>
-                                                    <td>{{Title}}</td>
-                                                    <td>{{Account.Name}}</td>
-                                                </tr> 
-                                            {{/each}}                                       
-                            </tbody>
-                            <tbody id='page3' style='display:none'>                
-                                            {{#each examiners_N_to_Z}}
-                                                <tr>
-                                                    <td>{{Name}}</td>
-                                                    <td>{{Title}}</td>
-                                                    <td>{{Account.Name}}</td>
-                                                </tr> 
-                                            {{/each}}                                       
-                            </tbody>
-                        </table>
-                    </div>
-                    <script>
-                        /* This function takes the id of a page as an input
-                        and changes that page's display to '', if the id does not
-                        match then the display is changed to none so that only the
-                        selected pages actually displays */
-
-                        function changePage(id) {
-                        const pages = ['page1','page2','page3']
-                        document.getElementById(id).style.display = ''
-                        for(let i = 0; i < 4; i++) {
-                            if(id != pages[i]) {
-                                document.getElementById(pages[i]).style.display = 'none'
-                            }
-                        }
-                        }
-                    </script>
-                </table> 
-            </div>
+            <thead>
+            	<tr>
+                	<th>Examiner</th>
+                    <th>Position</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+            <tbody>
+							{{#each examiner}}
+								<tr>
+									<td>{{Name}}</td>
+									<td>{{Title}}</td>
+									<td>{{Account.Name}}</td>
+								</tr>
+							{{/each}}
+            </tbody>
         </table>
     </div>
     <br>

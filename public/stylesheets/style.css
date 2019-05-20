@@ -2173,15 +2173,3 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     margin: 0 auto;
     padding: 15px 0;
 }
-
-.med-btn-blue {
-    background-color: rgb(7, 56, 103);
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
