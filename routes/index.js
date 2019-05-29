@@ -810,6 +810,13 @@ router.get('/studytours/midwest', (req, res, next) => {
     });
 });
 
+/* GET /Assessment Page */
+router.get('/Assessment', (req, res, next) => {
+    res.render('index', {
+        title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
+    });
+});
+
 
 /* Files */  // TODO Handle static file routing & storage
 /* GET .pdf - From challengefortheprize */
