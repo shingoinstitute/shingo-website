@@ -744,12 +744,6 @@ router.get('/seab', (req, res, next) => {
   })
 });
 
-/* GET Career Page */
-router.get('/careers', (req, res, next) => {
-    res.render('about/careers', {
-        title: 'Shingo Careers - Shingo Institute'
-    });
-});
 
 /* GET Faculty Fellows */
 router.get('/faculty-fellows', (req, res, next) => {
