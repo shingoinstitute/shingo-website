@@ -9,7 +9,7 @@
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            background: url(https://res.cloudinary.com/shingo/image/upload/v1557421462/Events/StudyTours/Midwest%20Study%20Tour%202019/minneapolis-skyline_darken.jpg) no-repeat fixed bottom;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1559675568/WebContent/photo-173161.jpg) no-repeat fixed bottom;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom;
@@ -17,6 +17,7 @@
 
         #titleinfo {
             text-align: center;
+            padding:1em;
         }
 
         .registerbutton {
@@ -59,6 +60,7 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            padding:1em;
         }
 
         #quote {
@@ -67,6 +69,7 @@
             width: 90%; 
             max-width: 850px;
             margin-top: 5vh;
+            padding:1em;
         }
 
         #person-quoted {
@@ -86,11 +89,27 @@
             align-content: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            padding:2em;
         }
 
         #infolist {
             list-style: disc inside;
         }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            display:inline-block;
+            
+            
+        }
+        .nowrap {
+            white-space: nowrap;
+            
+        }
+        
 
         @media only screen and (max-width: 1100px) {
             #contentblock {
@@ -103,6 +122,7 @@
             #quote {
                 text-align: center;
             }
+
 
             
         }
@@ -117,6 +137,8 @@
                 font-size: 4vmin;
             }
         }
+        }
+
     </style>
 
     <!-- TITLE BLOCK -->
@@ -129,20 +151,25 @@
         </div>
         <br>
         <div class="registerbutton redregister">
-            <a href='http://www.cvent.com/events/2019-shingo-midwest-study-tour/event-summary-4710c2f9240542a2bfc583ee32b06417.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
+            <a href='http://www.cvent.com/events/2019-shingo-mountain-west-study-tour/event-summary-61d3e809ff2c4b0cb3a6b8bb7a5c02e7.aspx'><h4 style="color: white;">REGISTER NOW</h4></a>
         </div>
     </div>
 
     <br>
     <br>
     <!-- IMAGE BLOCK -->
-    <div>
-        <img src="https://res.cloudinary.com/shingo/image/upload/v1557355218/Events/StudyTours/Midwest%20Study%20Tour%202019/Instruction_Graphic.png"
-        style="
-            width: 100%;
-            height: 100%;
-            ">
+    <div id="titleinfo">
+        <h1>Reasons Why You Should Attend</h1>
+        <h4>As a participant of a Shingo Study Tour, you will see and experience first-hand what is at the heart of the 
+            lean business model through a series of plant tours, workshops and peer networking. See what "great" looks like.
+        </h4>
+            <div class="grid-item"><img src="https://img.icons8.com/dotty/64/000000/skyscrapers.png"><h3 class="nowrap">Site Tours</h3><h5>Inside look at world-class facilities <br> and Shingo recipients.</h5></div>
+            <div class="grid-item"><img src="https://img.icons8.com/wired/64/000000/groups.png"><h3>Peer Networking</h3><h5>Connect with experts, <br>leaders, and managers.</h5></div>  
+            <div class="grid-item"><img src="https://img.icons8.com/ios/64/000000/settings.png"><h3 class="nowrap">Customizations</h3><h5>Shingo executives ask what you want to gain <br>from the tour and ensure you receive answers.</h5></div>
+            <div class="grid-item"><img src="https://img.icons8.com/ios/64/000000/combo-chart.png"><h3 class="nowrap">Workshops</h3><h5>Hands-on experience <br>and overview of the <em>Shingo Model</em></h5></div>     
+        <br>    
     </div>
+    <!-- END IMAGE BLOCK -->
     <div id="contentblock">
         <div style="
             width: 90%;
@@ -171,11 +198,9 @@
                 <li> Debriefs with Shingo staff members </li>
             </ul>
         </div>
-        <img src="https://res.cloudinary.com/shingo/image/upload/v1557353021/Events/StudyTours/Midwest%20Study%20Tour%202019/minneapolis-skyline.jpg"
-        style="
-            width: 50%;
-            height: 50%;
-            ">
+        <!-- YOUTUBE VIDEO IFRAME -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H0NzCwTGnxc" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <br>
     <!-- QUOTE BLOCK -->
@@ -186,7 +211,7 @@
         <div id="quotecontent">
             <p id="quote">"The Shingo Study Tour was an incredible eye opening experience, it was like the Disney World of Lean.”</p><em id='person-quoted'> ~ Nicole Blanco, Manufacturing Engineer, Membrane VSM, SUEZ Water Technologies and Solutions </em> 
             <div class="registerbutton yellowregister">
-                <a href='https://www.cvent.com/events/2019-shingo-midwest-study-tour/registration-4710c2f9240542a2bfc583ee32b06417.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
+                <a href='https://www.cvent.com/events/2019-shingo-mountain-west-study-tour/registration-61d3e809ff2c4b0cb3a6b8bb7a5c02e7.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
             </div>
             <p id="quote">"The tour opened my eyes to what is possible. Lean is simple and hard.”</p><em id='person-quoted'> ~ Philip Draper, Continuous Improvement Manager, STERIS Corporation </em>
 
