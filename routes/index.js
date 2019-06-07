@@ -797,10 +797,17 @@ router.get('/conference', (req, res, next) => {
     });
 });
 
-/* GET /Study Tours Landing Pages */
+/* GET / Mountain West Study Tours Landing Pages */
 router.get('/studytours/mountainWest', (req, res, next) => {
     res.render('landingPages/MountainWest2019', {
         title: 'Shingo Study Tours | Mountain West 2019'
+    });
+});
+
+/* GET / Mountain West Study Tours Landing Pages */
+router.get('/studytours/midwest', (req, res, next) => {
+    res.render('landingPages/midwestStudyTour2019', {
+        title: 'Shingo Study Tours | Midwest 2019'
     });
 });
 
