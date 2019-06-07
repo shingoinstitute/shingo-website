@@ -798,14 +798,21 @@ router.get('/conference', (req, res, next) => {
 });
 
 /* GET /Study Tours Landing Pages */
-router.get('/studytours/midwest', (req, res, next) => {
-    res.render('landingPages/midwestStudyTour2019', {
-        title: 'Shingo Study Tours | Midwest 2019'
+router.get('/studytours/mountainWest', (req, res, next) => {
+    res.render('landingPages/MountainWest2019', {
+        title: 'Shingo Study Tours | Mountain West 2019'
     });
 });
 
 /* GET /Assessment Page */
-router.get('/Assessment', (req, res, next) => {
+router.get('/assessment', (req, res, next) => {
+    res.render('index', {
+        title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
+    });
+});
+
+/* GET /Assessment Page */
+router.get('/assessments', (req, res, next) => {
     res.render('index', {
         title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
     });
