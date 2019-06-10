@@ -9,7 +9,7 @@
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            background: url(https://res.cloudinary.com/shingo/image/upload/v1557421462/Events/StudyTours/Midwest%20Study%20Tour%202019/minneapolis-skyline_darken.jpg) no-repeat fixed bottom;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1559675568/WebContent/photo-173161.jpg) no-repeat fixed bottom;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom;
@@ -17,6 +17,7 @@
 
         #titleinfo {
             text-align: center;
+            padding:1em;
         }
 
         .registerbutton {
@@ -59,6 +60,7 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            padding:1em;
         }
 
         #quote {
@@ -67,6 +69,7 @@
             width: 90%; 
             max-width: 850px;
             margin-top: 5vh;
+            padding:1em;
         }
 
         #person-quoted {
@@ -86,11 +89,27 @@
             align-content: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            padding:2em;
         }
 
         #infolist {
             list-style: disc inside;
         }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            display:inline-block;
+            
+            
+        }
+        .nowrap {
+            white-space: nowrap;
+            
+        }
+        
 
         @media only screen and (max-width: 1100px) {
             #contentblock {
@@ -103,6 +122,7 @@
             #quote {
                 text-align: center;
             }
+
 
             
         }
@@ -117,65 +137,61 @@
                 font-size: 4vmin;
             }
         }
+        }
+
     </style>
 
     <!-- TITLE BLOCK -->
     <div id="titleblock">
       <div id="titleinfo">
-            <h3 style="color: white; ">Midwest Shingo Study Tour</h3>
+            <h3 style="color: white; ">Shingo Manufacturing Summit</h3>
             <h1 style="color: white;">Join Us & Learn</h1>
-            <h3 style="color: white;">June 18-20, 2019</h3>
-            <h4 style="color: white;">Minneapolis/St. Paul, Minnesota</h4>
+            <h3 style="color: white;">September 24-25, 2019</h3>
+            <h4 style="color: white;">Detroit,MI</h4>
         </div>
         <br>
         <div class="registerbutton redregister">
-            <a href='http://www.cvent.com/events/2019-shingo-midwest-study-tour/event-summary-4710c2f9240542a2bfc583ee32b06417.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
+            <a href='http://www.cvent.com/events/2019-shingo-mountain-west-study-tour/event-summary-61d3e809ff2c4b0cb3a6b8bb7a5c02e7.aspx'><h4 style="color: white;">REGISTER NOW</h4></a>
         </div>
     </div>
 
     <br>
     <br>
     <!-- IMAGE BLOCK -->
-    <div>
-        <img src="https://res.cloudinary.com/shingo/image/upload/v1557355218/Events/StudyTours/Midwest%20Study%20Tour%202019/Instruction_Graphic.png"
-        style="
-            width: 100%;
-            height: 100%;
-            ">
+    <div id="titleinfo">
+        <h1>Reasons Why You Should Attend</h1>
+        <h4>Keep your continuous improvement efforts fresh and invigorated. Bring your team to the Shingo Manufacturing Summit.</h4>
+        <div class="grid-item"><img src="https://img.icons8.com/wired/64/000000/groups.png"><h3>Networking</h3><h5>Talk with authors, speakers, and other thought<br>leaders in the field of continuous improvement.</h5></div>  
+        <div class="grid-item"><img src="https://img.icons8.com/dotty/64/000000/skyscrapers.png"><h3 class="nowrap">Industry Focused</h3><h5>All attendees and speakers will be in your<br>industry and similar industries.</h5></div> 
+        <div class="grid-item"><img src="https://img.icons8.com/ios/64/000000/combo-chart.png"><h3 class="nowrap">Workshops</h3><h5>Workshops, including Shingo workshops, deepen your<br>understanding of operational excellence. </h5></div>     
+        <br>    
     </div>
+    <!-- END IMAGE BLOCK -->
     <div id="contentblock">
         <div style="
             width: 90%;
             max-width: 550px;
         ">
-            <h2> About Shingo Study Tours </h2>
-            <p> Shingo Study Tours Are Better </p>
-            <p> Study tours with the Shingo Institute are different that other study tours. </p>
-            <p> We take you to organizations that practice Shingo principles and teach you about those principles so you can use them better at your organization. </p>
-            <p> You will tour the following facilities: </p>
+            <h2> Shingo Manufacturing Summit </h2>
+            <p> The Manufacturing Summit is smaller than most operational excellence conferences and is attended almost exclusively by people in the manufacturing industry. All the 
+                speakers and workshop are geared toward manufacturing settings and you have access to speakers, authors, and other thought-leaders in operational excellence.</p>
+            <h2> Included with Your Registration </h2>
             <ul id="infolist">
-                <li> SUEZ Water Technologies and Solutions </li>
-                <li> 3M </li>
-                <li> Uponor </li>
-                <li> and more! </li>
+                <li> Breakfast and lunch both days of the Summit </li>
+                <li> Access to any and all keynote sessions and breakout sessions/workshops </li>
+                <li> Complimentary snacks and beverages </li>
+                <li> Several networking opportunities </li>
             </ul>
-            <h2> What is Included on a Shingo Study Tour </h2>
+            <h2> Extras You Can Include as Your Register </h2>
             <ul id="infolist">
-                <li> Four nights’ hotel accommodations </li>
-                <li> Daily breakfast </li>
-                <li> Daily lunch </li>
-                <li> One dinner </li>
-                <li> Shingo Executive Overview </li>
-                <li> Transportation to all site visits </li>
-                <li> Time with site leadership </li>
-                <li> Debriefs with Shingo staff members </li>
+                <li> Pre-conference site tours </li>
+                <li> Shingo Discover Excellence Workshop, including site visit </li>
+                <li> Shingo Cultural Enablers Workshop, including site visit (requires Discover Excellence as a prerequisite) </li>
             </ul>
         </div>
-        <img src="https://res.cloudinary.com/shingo/image/upload/v1557353021/Events/StudyTours/Midwest%20Study%20Tour%202019/minneapolis-skyline.jpg"
-        style="
-            width: 50%;
-            height: 50%;
-            ">
+        <!-- YOUTUBE VIDEO IFRAME -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H0NzCwTGnxc" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <br>
     <!-- QUOTE BLOCK -->
@@ -186,7 +202,7 @@
         <div id="quotecontent">
             <p id="quote">"The Shingo Study Tour was an incredible eye opening experience, it was like the Disney World of Lean.”</p><em id='person-quoted'> ~ Nicole Blanco, Manufacturing Engineer, Membrane VSM, SUEZ Water Technologies and Solutions </em> 
             <div class="registerbutton yellowregister">
-                <a href='https://www.cvent.com/events/2019-shingo-midwest-study-tour/registration-4710c2f9240542a2bfc583ee32b06417.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
+                <a href='https://www.cvent.com/events/2019-shingo-mountain-west-study-tour/registration-61d3e809ff2c4b0cb3a6b8bb7a5c02e7.aspx?fqp=true'><h4 style="color: white;">REGISTER NOW</h4></a>
             </div>
             <p id="quote">"The tour opened my eyes to what is possible. Lean is simple and hard.”</p><em id='person-quoted'> ~ Philip Draper, Continuous Improvement Manager, STERIS Corporation </em>
 
