@@ -797,27 +797,62 @@ router.get('/conference', (req, res, next) => {
     });
 });
 
-/* GET /Study Tours Landing Pages */
-router.get('/summits/manufacturing', (req, res, next) => {
-    res.render('landingPages/manufacturingSummit2019', {
-        title: 'Shingo Summits | Manufacturing 2019'
-    });
-});
-
-/* GET /Study Tours Landing Pages */
+/* GET / Mountain West Study Tours Landing Pages */
 router.get('/studytours/mountainWest', (req, res, next) => {
     res.render('landingPages/MountainWest2019', {
         title: 'Shingo Study Tours | Mountain West 2019'
     });
 });
 
+/* GET / Mountain West Study Tours Landing Pages */
+router.get('/summits/manufacturing', (req, res, next) => {
+    res.render('landingPages/manufacturingSummit2019', {
+        title: 'Summits | Manufacturing 2019'
+    });
+});
+
+/* GET / About Page Shingo Insight */
+router.get('/insight/about', (req, res, next) => {
+    res.render('insight/about_insight', {
+        title: 'Shingo Insight | About'
+    });
+});
+
+/* GET / Details Page Shingo Insight */
+router.get('/insight/details', (req, res, next) => {
+    res.render('insight/insight_details', {
+        title: 'Shingo Insight | Details'
+    });
+});
+
+/* GET / Pricing Page Shingo Insight */
+router.get('/insight/pricing-and-FAQ', (req, res, next) => {
+    res.render('insight/insight_pricing_and_FAQ', {
+        title: 'Shingo Insight | Pricing & FAQ'
+    });
+});
+
+/* GET / Signup Page Shingo Insight */
+router.get('/insight/signup', (req, res, next) => {
+    res.render('insight/insight_signup', {
+        title: 'Shingo Insight | Signup'
+>>>>>>> 015278dc3678eea91adbbc1a37b6f1cf67cadab6
+    });
+});
+
 /* GET /Assessment Page */
-router.get('/Assessment', (req, res, next) => {
+router.get('/assessment', (req, res, next) => {
     res.render('index', {
         title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
     });
 });
 
+/* GET /Assessment Page */
+router.get('/assessments', (req, res, next) => {
+    res.render('index', {
+        title: 'Shingo Institute - Leading a New Era of Enterprise Excellence'
+    });
+});
 
 /* Files */  // TODO Handle static file routing & storage
 /* GET .pdf - From challengefortheprize */
