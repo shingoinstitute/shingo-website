@@ -1,0 +1,211 @@
+<article>
+    <style>
+        #titleblock {
+            width: 100vw;
+            height: 40vh;
+            min-height: 350px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1559675568/WebContent/photo-173161.jpg) no-repeat fixed bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #titleinfo {
+            text-align: center;
+            padding:1em;
+        }
+
+        .registerbutton {
+            width: 250px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            background: #640921;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .redregister {
+            background: rgba(100, 9, 33, .85);
+        }
+
+        .redregister:hover {
+            background: rgba(100, 9, 33, 1)
+        }
+
+        .yellowregister {
+            background: #b17c31;
+            margin: 10px 0;
+        }
+
+        .yellowregister:hover {
+            background: #c18c41;
+        }
+
+        #quotecontent {
+            min-height: 12vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding:1em;
+        }
+
+        #quote {
+            color: white; 
+            font-size: 30px; 
+            width: 90%; 
+            max-width: 850px;
+            margin-top: 5vh;
+            padding:1em;
+        }
+
+        #person-quoted {
+            color: white; 
+            font-size: 20px; 
+            width: 90%; 
+            max-width: 850px;
+            margin-bottom: 10vh;
+        }
+
+        #contentblock {
+            width: 100vw;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding:2em;
+        }
+
+        #infolist {
+            list-style: disc inside;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            display:inline-block;
+            
+            
+        }
+        .nowrap {
+            white-space: nowrap;
+            
+        }
+        
+
+        @media only screen and (max-width: 1100px) {
+            #contentblock {
+                justify-content: center;
+            }
+            #quotecontent {
+                justify-content: center;
+            }
+
+            #quote {
+                text-align: center;
+            }
+
+
+            
+        }
+        @media only screen and (max-width: 768px) {
+            #titleinfo h1 {
+                font-size: 8vmin;
+            }
+            #titleinfo h3 {
+                font-size: 5vmin;
+            }
+            #titleinfo h4 {
+                font-size: 4vmin;
+            }
+        }
+        }
+
+    </style>
+
+    <!-- TITLE BLOCK -->
+    <div id="titleblock">
+      <div id="titleinfo">
+            <h1 style="color:white; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color:rgb(50, 65, 80);">Shingo Manufacturing Summit</h1>
+        </div>
+        <br>
+        <div class="registerbutton redregister">
+            <a href='http://www.cvent.com/events/2019-shingo-manufacturing-summit/event-summary-e895e7f661d24878b5154399e039b9c7.aspx' target="_blank"><h4 style="color: white;">REGISTER NOW</h4></a>
+        </div>
+    </div>
+    <!-- IMAGE BLOCK -->
+    <div id="titleinfo">
+        <div id="titleinfo">
+            <div style="display:inline-block;">
+                <img src="https://res.cloudinary.com/shingo/image/upload/v1560365867/WebContent/summit_logo.png" width="350px">
+            </div>
+            <div style="display:inline-block; padding-left:2em; vertical-align:top; padding-top:1.5em;">
+                <h4>September 24-25, 2019</h4>
+                <h4>Detroit,MI</h4>
+            </div>
+        </div>
+        <h4>Keep your continuous improvement efforts fresh and invigorated. Bring your team to the Shingo Manufacturing Summit.</h4>
+        <div class="grid-item"><img src="https://img.icons8.com/wired/64/000000/groups.png"><h3>Networking</h3><h5>Talk with authors, speakers, and other thought<br>leaders in the field of continuous improvement.</h5></div>  
+        <div class="grid-item"><img src="https://img.icons8.com/dotty/64/000000/skyscrapers.png"><h3 class="nowrap">Industry Focused</h3><h5>All attendees and speakers will be in your<br>industry and similar industries.</h5></div> 
+        <div class="grid-item"><img src="https://img.icons8.com/ios/64/000000/combo-chart.png"><h3 class="nowrap">Workshops</h3><h5>Workshops, including Shingo workshops, deepen your<br>understanding of operational excellence. </h5></div>     
+        <br>    
+    </div>
+    <div id="contentblock">
+        <div style="
+            width: 100%;
+            
+        ">
+            <h2> Shingo Manufacturing Summit </h2>
+            <p> The Manufacturing Summit is smaller than most operational excellence conferences and is attended almost exclusively by people in the manufacturing industry. All the 
+                speakers and workshop are geared toward manufacturing settings and you have access to speakers, authors, and other thought-leaders in operational excellence.</p>
+            <h2> Included with Your Registration </h2>
+            <ul id="infolist">
+                <li> Breakfast and lunch both days of the Summit </li>
+                <li> Access to any and all keynote sessions and breakout sessions/workshops </li>
+                <li> Complimentary snacks and beverages </li>
+                <li> Several networking opportunities </li>
+            </ul>
+            <h2> Extras You Can Include as Your Register </h2>
+            <ul id="infolist">
+                <li> Pre-conference site tours </li>
+                <li> Shingo Discover Excellence Workshop, including site visit </li>
+                <li> Shingo Cultural Enablers Workshop, including site visit (requires Discover Excellence as a prerequisite) </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <!-- QUOTE BLOCK -->
+    <div style="
+        width: 100vw;
+        background: rgb(50, 65, 80);
+    ">
+        <div id="quotecontent">
+            <p id="quote">“Some very engaging key note speakers. Lots of different ideas that I can take back and implement at my workplace.”</p>
+            <div class="registerbutton yellowregister">
+                <a href='http://www.cvent.com/events/2019-shingo-manufacturing-summit/event-summary-e895e7f661d24878b5154399e039b9c7.aspx'  target="_blank"><h4 style="color: white;">REGISTER NOW</h4></a>
+            </div>
+            <p id="quote">“I enjoyed being around like-minded people and getting to hear about and learn from their experiences.”</p>
+
+            <p id="quote">“I liked how the conference was geared to the Shingo principles more than the improvement tools.”</p>
+            
+        </div>
+    </div>
+</article>
