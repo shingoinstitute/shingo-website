@@ -805,7 +805,7 @@ router.get('/studytours/mountainWest', (req, res, next) => {
 });
 
 /* GET / Mountain West Study Tours Landing Pages */
-router.get('/summits/manufacturing-summit', (req, res, next) => {
+router.get('/summits/manufacturing', (req, res, next) => {
     res.render('landingPages/manufacturingSummit2019', {
         title: 'Summits | Manufacturing 2019'
     });
@@ -836,7 +836,6 @@ router.get('/insight/pricing-and-FAQ', (req, res, next) => {
 router.get('/insight/signup', (req, res, next) => {
     res.render('insight/insight_signup', {
         title: 'Shingo Insight | Signup'
->>>>>>> 015278dc3678eea91adbbc1a37b6f1cf67cadab6
     });
 });
 
