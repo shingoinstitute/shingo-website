@@ -805,7 +805,7 @@ router.get('/studytours/mountainWest', (req, res, next) => {
 });
 
 /* GET / Mountain West Study Tours Landing Pages */
-router.get('/summits/manufacturing', (req, res, next) => {
+router.get('/summits/manufacturing-summit', (req, res, next) => {
     res.render('landingPages/manufacturingSummit2019', {
         title: 'Summits | Manufacturing 2019'
     });
