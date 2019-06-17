@@ -804,10 +804,17 @@ router.get('/studytours/mountainWest', (req, res, next) => {
     });
 });
 
-/* GET / Mountain West Study Tours Landing Pages */
+/* GET / Manufacturing Summit Landing Page */
 router.get('/summits/manufacturing', (req, res, next) => {
     res.render('landingPages/manufacturingSummit2019', {
         title: 'Summits | Manufacturing 2019'
+    });
+});
+
+/* GET / Goodyear Showcases Landing Page */
+router.get('/showcases/goodyear', (req, res, next) => {
+    res.render('landingPages/goodyearShowcase', {
+        title: 'Showcases | Goodyear 2019'
     });
 });
 
