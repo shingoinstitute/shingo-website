@@ -846,6 +846,20 @@ router.get('/insight/signup', (req, res, next) => {
     });
 });
 
+/* GET / Privacy Policy Page Shingo Insight */
+router.get('/insight/privacy', (req, res, next) => {
+    res.render('insight/insight_privacy_policy', {
+        title: 'Shingo Insight | Privacy Policy'
+    });
+});
+
+/* GET / Terms of Use Page Shingo Insight */
+router.get('/insight/terms', (req, res, next) => {
+    res.render('insight/insight_terms_of_use', {
+        title: 'Shingo Insight | Terms of Use'
+    });
+});
+
 /* GET /Assessment Page */
 router.get('/assessment', (req, res, next) => {
     res.render('index', {
