@@ -2,17 +2,16 @@
     <style>
         #titleblock {
             width: 100vw;
-            height: 40vh;
-            min-height: 350px;
+            height: 25vh;       
             margin: 0;
             display: flex;
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            background: url(https://res.cloudinary.com/shingo/image/upload/v1559675568/WebContent/photo-173161.jpg) no-repeat fixed bottom;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1560963348/WebContent/Shingo_Showcase_-_Landing_Page_HDR.jpg) no-repeat;
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: bottom;
+            background-position: center;
         }
 
         #titleinfo {
@@ -84,7 +83,7 @@
             width: 100vw;
             max-width: 1300px;
             margin: 0 auto;
-            display: flex;
+            display: inline-block;
             flex-direction: row;
             align-content: center;
             justify-content: space-between;
@@ -94,6 +93,16 @@
 
         #infolist {
             list-style: disc inside;
+        }
+
+        div.showcase-block {
+            display: inline-block;
+            width: 40%;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center;   
+
         }
 
         .grid-item {
@@ -143,11 +152,7 @@
 
     <!-- TITLE BLOCK -->
     <div id="titleblock">
-        <h1 style="color:white; text-align:center; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color:white;">Shingo Showcase at Goodyear</h1>
-        <br>
-        <div class="registerbutton redregister">
-            <a href='http://www.cvent.com/events/2019-shingo-manufacturing-summit/event-summary-e895e7f661d24878b5154399e039b9c7.aspx'><h4 style="color: white;">REGISTER NOW</h4></a>
-        </div>
+        
     </div>
     <!-- IMAGE BLOCK -->
     <div id="titleinfo">
@@ -166,25 +171,6 @@
         <div class="grid-item"><img src="https://img.icons8.com/wired/64/000000/training.png"><h3 class="nowrap">Training</h3><h5>Choose from two excellent 3-hour workshops<br>to round out your day of learning.</h5></div>     
         <br>    
     </div>
-    <!-- END IMAGE BLOCK -->
-    <div id="contentblock">
-        <div style="
-            width: 100%;
-            
-        ">
-            <h2> Included with Each Shingo Showcase </h2>
-            <ul id="infolist">
-                <li> Tour of the host facility, complete with Q&A with leaders </li>
-                <li> A choice between two excellent 3-hour workshops </li>
-                <li> Lunch a the facility </li>
-                <li> Networking opportunities</li>
-            </ul>
-            <h2> About Goodyear's Akron Facility </h2>
-            <p>Goodyear is one of the largest tire companies in the world and has been around for more than 100 years. The Akron plant houses Goodyear's global headquarters,
-                 Americas headquarters, innovation center, racing tires, chemicals, tire proving grounds, and airship operations.</p>
-        </div>
-    </div>
-    <br>
     <!-- QUOTE BLOCK -->
     <div style="
         width: 100vw;
