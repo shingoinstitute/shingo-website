@@ -812,9 +812,9 @@ router.get('/summits/manufacturing', (req, res, next) => {
 });
 
 /* GET / Goodyear Showcases Landing Page */
-router.get('/showcases/goodyear', (req, res, next) => {
+router.get('/showcases/goodyear-and-denso', (req, res, next) => {
     res.render('landingPages/goodyearShowcase', {
-        title: 'Showcases | Goodyear 2019'
+        title: 'Showcases | Goodyear and Denso 2019'
     });
 });
 
