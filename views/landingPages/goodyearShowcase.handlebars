@@ -2,21 +2,25 @@
     <style>
         #titleblock {
             width: 100vw;
-            height: 25vh;       
+            height: 100%;       
             margin: 0;
-            display: flex;
+            display: inline-block;
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            background: url(https://res.cloudinary.com/shingo/image/upload/v1560963348/WebContent/Shingo_Showcase_-_Landing_Page_HDR.jpg) no-repeat;
+            background: url(https://res.cloudinary.com/shingo/image/upload/v1560973296/WebContent/BG-ShingoShowcase_-LandingPage-HDR.jpg) no-repeat;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            text-align: center;
         }
 
         #titleinfo {
             text-align: center;
-            padding:1em;
+            padding:2em;
+            padding-left:8em;
+            padding-right:8em;
+          
         }
 
         .registerbutton {
@@ -43,6 +47,8 @@
         .yellowregister {
             background: #b17c31;
             margin: 10px 0;
+            text-align: center;
+            margin-left:27%;
         }
 
         .yellowregister:hover {
@@ -81,7 +87,7 @@
 
         #contentblock {
             width: 100vw;
-            max-width: 1300px;
+            max-width: 1100px;
             margin: 0 auto;
             display: inline-block;
             flex-direction: row;
@@ -108,15 +114,32 @@
         .grid-item {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
+            padding-top: 2em;
             font-size: 30px;
             text-align: center;
             display:inline-block;
-            
-            
+                 
+        }
+
+        .showcase-card {
+            background-color: rgba(255, 255, 255, 0.8);      
+            padding-top: 1em;
+            font-size: 30px;
+            text-align: center;
+            display:inline-block;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+            transition: 0.3s;
+            width: 550px;
+            margin:.25em;
         }
         .nowrap {
             white-space: nowrap;
             
+        }
+
+        .bold {
+            font-weight: 800;
+            padding-top:1em;
         }
         
 
@@ -150,36 +173,50 @@
 
     </style>
 
-    <!-- TITLE BLOCK -->
-    <div id="titleblock">
-        
-    </div>
     <!-- IMAGE BLOCK -->
-    <div id="titleinfo">
-        <div id="titleinfo">
-            <div style="display:inline-block;">
-                <img src="https://res.cloudinary.com/shingo/image/upload/v1560365863/WebContent/Showcase_Logo_color.png" width="350px">
-            </div>
-            <div style="display:inline-block; padding-left:2em; vertical-align:top; padding-top:1.5em;">
-                <h4>August 27, 2019</h4>
-                <h4>Akson, Ohio</h4>
+    <div id="titleblock">
+        <div id="titleinfo" style="padding:6em;">     
+            <div style="display:inline-block; padding-bottom:2em;">
+                <h2 style="color:white;">One-Day Showcase of Operation Excellence</h2>
+                <img src="https://res.cloudinary.com/shingo/image/upload/v1560973705/WebContent/Showcase_Logo_white.png" width="300px"> 
             </div>
         </div>
-        <h4>Bring your CI team to refresh your mental picture of "Great" and get some fresh training in the process, all on one value-packed day. </h4>
-        <div class="grid-item"><img src="https://img.icons8.com/ios/50/000000/search.png"><h3>Inside Look</h3><h5>Take a two-and-a-half hour tour through a mature<br>facility that exemplifies operational excellence.</h5></div>  
-        <div class="grid-item"><img src="https://img.icons8.com/ios/64/000000/scuba-diving.png"><h3 class="nowrap">Deep Dive</h3><h5>Talk with company leaders about their continuous<br>improvement journey, their missteps, and their break-throughs.</h5></div> 
-        <div class="grid-item"><img src="https://img.icons8.com/wired/64/000000/training.png"><h3 class="nowrap">Training</h3><h5>Choose from two excellent 3-hour workshops<br>to round out your day of learning.</h5></div>     
-        <br>    
     </div>
-    <!-- QUOTE BLOCK -->
-    <div style="
-        width: 100vw;
-        background: rgb(50, 65, 80);
-    ">
-        <div id="quotecontent" style="display: flex; justify-content: center;">
+    <!-- CONTENT BLOCK -->
+     <div id="titleinfo">   
+        <h2>Bring your CI team </h2><h4 style="padding-right: 6em; padding-left:6em;">Refresh your mental picture of "Great" and get some fresh training in the process, all on one value-packed day. </h4>
+        <div class="grid-item"><img src="https://img.icons8.com/ios/50/000000/search.png"><h3>Inside Look</h3><h5>Take a two-and-a-half hour<br>tour through a mature facility that<br> exemplifies operational excellence.</h5></div>  
+        <div class="grid-item"><img src="https://img.icons8.com/ios/64/000000/scuba-diving.png"><h3 class="nowrap">Deep Dive</h3><h5>Talk with company leaders<br>about their continuous improvement journey,<br> their missteps, and their break-throughs.</h5></div> 
+        <div class="grid-item"><img src="https://img.icons8.com/wired/64/000000/training.png"><h3 class="nowrap">Training</h3><h5>Choose from two excellent<br> 3-hour workshops to round<br> out your day of learning.</h5></div>              
+    </div>
+    <!-- CONTENT BLOCK -->
+    <h2 style="text-align: center;">Pick a Showcase</h2>
+    <div id="titleinfo">    
+        <div class="showcase-card">
+            <img src="https://res.cloudinary.com/shingo/image/upload/v1560979471/WebContent/Goodyear-Logo.jpg">
+            <h5 class="bold">August 27, 2019 | Akson, Ohio</h5>
+            <p style="padding:1em; font-size:18px;">Goodyear is one of the largest tire companies in the world and has been around for more than 100 years. The Akron plant houses Goodyear's 
+                global headquarters, Americas headquarters, innovation center, racing tires, chemicals, tire proving grounds, and airship operations.</p>
             <div class="registerbutton yellowregister">
                 <a href='http://www.cvent.com/events/2019-shingo-manufacturing-summit/event-summary-e895e7f661d24878b5154399e039b9c7.aspx'><h4 style="color: white;">REGISTER NOW</h4></a>
             </div>
-        </div>
+        </div> 
+        <div class="showcase-card">
+            <img src="https://res.cloudinary.com/shingo/image/upload/v1560980033/WebContent/Denso.png">
+            <h5 class="bold">August 29, 2019 | Maryville, TN</h5>
+            <p style="padding:1em; font-size:18px">DENSO is one of the largest global automotive suppliers of advanced technology, systems, and components. 
+                From advanced safety systems for automated driving to hybrid and electric vehicle components, 
+                they craft the core technologies of modern mobility.</p>
+                <div class="registerbutton yellowregister">
+                    <a href='http://www.cvent.com/events/2019-shingo-manufacturing-summit/event-summary-e895e7f661d24878b5154399e039b9c7.aspx'><h4 style="color: white;">REGISTER NOW</h4></a>
+                </div>
+        </div>              
     </div>
 </article>
+
+<!--
+<div class="registerbutton yellowregister">
+                <a href='http://www.cvent.com/events/2019-shingo-manufacturing-summit/event-summary-e895e7f661d24878b5154399e039b9c7.aspx'><h4 style="color: white;">REGISTER NOW</h4></a>
+            </div>
+
+-->
