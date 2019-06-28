@@ -804,6 +804,13 @@ router.get('/studytours/mountainWest', (req, res, next) => {
     });
 });
 
+/* GET / Ireland Study Tour Landing Pages */
+router.get('/studytours/Ireland', (req, res, next) => {
+    res.render('landingPages/irelandStudyTour', {
+        title: 'Shingo Study Tours | Ireland2019'
+    });
+});
+
 /* GET / Manufacturing Summit Landing Page */
 router.get('/summits/manufacturing', (req, res, next) => {
     res.render('landingPages/manufacturingSummit2019', {
