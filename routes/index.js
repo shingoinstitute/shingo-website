@@ -807,7 +807,14 @@ router.get('/studytours/mountainWest', (req, res, next) => {
 /* GET / Ireland Study Tour Landing Pages */
 router.get('/studytours/Ireland', (req, res, next) => {
     res.render('landingPages/irelandStudyTour', {
-        title: 'Shingo Study Tours | Ireland2019'
+        title: 'Shingo Study Tours | Ireland 2019'
+    });
+});
+
+/* GET / Japan Study Tour Landing Pages */
+router.get('/studytours/Japan', (req, res, next) => {
+    res.render('landingPages/Japan', {
+        title: 'Shingo Study Tours | Japan 2019'
     });
 });
 
@@ -815,6 +822,27 @@ router.get('/studytours/Ireland', (req, res, next) => {
 router.get('/summits/manufacturing', (req, res, next) => {
     res.render('landingPages/manufacturingSummit2019', {
         title: 'Summits | Manufacturing 2019'
+    });
+});
+
+/* GET / Financial Services Summit Landing Page */
+router.get('/summits/financial', (req, res, next) => {
+    res.render('landingPages/financialServices', {
+        title: 'Summits | Financial Services 2019'
+    });
+});
+
+/* GET / O.E. Conference Landing Page */
+router.get('/Conferences/OE', (req, res, next) => {
+    res.render('landingPages/OE_Conference', {
+        title: 'Conferences | O.E. Conference 2019'
+    });
+});
+
+/* GET / European Conference Landing Page */
+router.get('/Conferences/Europe', (req, res, next) => {
+    res.render('landingPages/europeanConference', {
+        title: 'Conferences | Europe 2019'
     });
 });
 
