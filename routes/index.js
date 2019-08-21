@@ -819,7 +819,7 @@ router.get('/studytours/Japan', (req, res, next) => {
 });
 
 /* GET / Manufacturing Summit Landing Page */
-router.get('/summits/manufacturing', (req, res, next) => {
+router.get('/mfg2019', (req, res, next) => {
     res.render('landingPages/manufacturingSummit2019', {
         title: 'Summits | Manufacturing 2019'
     });
