@@ -1501,6 +1501,11 @@ figure:hover figcaption::before, figure:hover h2, figure:hover h2 i {
     border: 1px solid #405124;
 }
 
+.Systems {
+    background: #405124;
+    border: 1px solid #405124;
+}
+
 .bottom-centered-button.Enable:hover {
     background: #005199
 }

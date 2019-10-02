@@ -256,6 +256,26 @@ router.get('/education/build', (req, res, next) => {
         })
 })
 
+/* GET systems */
+router.get('/education/systems', (req, res, next) => {
+    getWorkshopType('Systems')
+        .then(showWorkshops => {
+            res.render('education/systems', {
+                title: 'Systems - Shingo Institute',
+                workshops: showWorkshops,
+                workshopType: 'Systems Design',
+                color: '405124',
+            })
+        })
+        .catch(err => {
+            console.error('Systems ROUTE\n', err)
+            res.render('education/education', {
+                title: 'Education - Shingo Institute',
+                workshops: [],
+            })
+        })
+})
+
 /**
  * Standardized Link Redirects
  *
