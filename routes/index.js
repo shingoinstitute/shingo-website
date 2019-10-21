@@ -867,9 +867,9 @@ router.get('/Conferences/Europe', (req, res, next) => {
 });
 
 /* GET / Goodyear Showcases Landing Page */
-router.get('/showcases/denso', (req, res, next) => {
-    res.render('landingPages/goodyearShowcase', {
-        title: 'Showcases | Goodyear and Denso 2019'
+router.get('/showcases', (req, res, next) => {
+    res.render('landingPages/showcases', {
+        title: 'Shingo Showcases'
     });
 });
 
