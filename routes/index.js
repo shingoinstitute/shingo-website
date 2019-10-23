@@ -811,7 +811,7 @@ router.get('/craftsmanship', (req, res, next) => {
 
 
 /* GET Event Landing Pages */
-router.get('/conference', (req, res, next) => {
+router.get('/2020conf', (req, res, next) => {
     res.render('landingPages/conference2020', {
         title: 'Shingo Conference | Orlando, Florida'
     });
