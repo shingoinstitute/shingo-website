@@ -807,11 +807,14 @@ router.get('/craftsmanship', (req, res, next) => {
     });
 });
 
-
+/* REDIRECT TO CVENT PAGE */
+router.get('/2020conf', (req, res, next) => {
+    res.redirect('http://www.cvent.com/events/32nd-annual-shingo-conference/event-summary-6b4aae9d79eb427d8fb1daec9c76415d.aspx');
+});
 
 
 /* GET Event Landing Pages */
-router.get('/2020conf', (req, res, next) => {
+router.get('/conference', (req, res, next) => {
     res.render('landingPages/conference2020', {
         title: 'Shingo Conference | Orlando, Florida'
     });
